@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Raiders Wiki - 多语言支持</title>
+    <link rel="stylesheet" href="css/language-switch.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .main-content {
+            padding: 20px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #ccc;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="page-title">ARC Raiders Wiki</h1>
+        <p>多语言支持的ARC Raiders游戏数据维基</p>
+    </div>
+
+    <div class="main-content">
+        <!-- 物品部分 -->
+        <div class="section">
+            <h2 data-en="Items" data-zh="物品">Items</h2>
+            <div class="items-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading items...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 任务部分 -->
+        <div class="section">
+            <h2 data-en="Quests" data-zh="任务">Quests</h2>
+            <div class="quests-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading quests...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 技能节点部分 -->
+        <div class="section">
+            <h2 data-en="Skill Nodes" data-zh="技能节点">Skill Nodes</h2>
+            <div class="skill-nodes-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading skill nodes...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 隐藏所模块部分 -->
+        <div class="section">
+            <h2 data-en="Hideout Modules" data-zh="隐藏所模块">Hideout Modules</h2>
+            <div class="hideout-modules-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading hideout modules...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/language-manager.js"></script>
+    <script>
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 等待语言管理器加载完成
+            setTimeout(() => {
+                // 更新所有带有data-en和data-zh属性的元素
+                updateTranslatableElements();
+                
+                // 移除加载动画
+                removeLoadingAnimations();
+            }, 1000);
+        });
+
+        function updateTranslatableElements() {
+            const elements = document.querySelectorAll('[data-en][data-zh]');
+            elements.forEach(element => {
+                const currentLang = languageManager.currentLanguage;
+                const text = element.getAttribute(`data-${currentLang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+        }
+
+        function removeLoadingAnimations() {
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach(element => {
+                element.style.display = 'none';
+            });
+        }
+
+        // 监听语言切换事件
+        document.addEventListener('languageChanged', function() {
+            updateTranslatableElements();
+        });
+    </script>
+</body>
+</html>
