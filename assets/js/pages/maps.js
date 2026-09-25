@@ -1,0 +1,75 @@
+/* Maps: overview images, the ARC and quests on each map, and map events. */
+
+(function () {
+  const { html, mount, t, L, alt, asset, link, url, data, num } = ARC;
+  const maps = data.maps;
+  const events = data.events || [];
+  const bots = data.arc || [];
+  const quests = data.quests || [];
+
+  // Quests name Stella Montis as a whole; count them for both of its levels.
+  const questCount = (id) =>
+    quests.filter((q) => (q.maps || []).some((m) => m === id || (id.startsWith('stella_montis') && m === 'stella_montis'))).length;
+
+  const picture = (m) =>
+    m.tiles
+      ? html`<div class="map-card__img map-card__img--tiles">${m.tiles.map((src) => html`<img src="${asset(src)}" alt="" loading="lazy" data-fallback>`)}</div>`
+      : html`<div class="map-card__img">${m.img ? html`<img src="${asset(m.img)}" alt="" loading="lazy" data-fallback>` : ''}</div>`;
+
+  function card(m) {
+    const here = bots.filter((b) => (b.maps || []).includes(m.id));
+    const count = questCount(m.id);
+    const questMap = m.id.startsWith('stella_montis') ? 'stella_montis' : m.id;
+    return html`<article class="map-card" id="${m.id}">
+      ${picture(m)}
+      <div class="map-card__body">
+        <div>
+          <h2>${L(m.name)}</h2>
+          ${alt(m.name) ? html`<p class="detail__alt">${alt(m.name)}</p>` : ''}
+        </div>
+        ${here.length
+          ? html`<div class="arc-card__block"><h3>${t('maps.arc')}</h3><div class="tags">${here.map(
+              (b) => html`<a class="tag" href="${link('arc', b.id)}">${L(b.name)}</a>`
+            )}</div></div>`
+          : ''}
+        ${count
+          ? html`<p class="map-card__quests"><a href="${url(`pages/quests.html?map=${questMap}`)}">${t('maps.quests')}</a>
+              <span class="note">${t('common.count', { n: count })}</span></p>`
+          : ''}
+      </div>
+    </article>`;
+  }
+
+  function eventList(category) {
+    const list = events.filter((e) => e.category === category);
+    if (!list.length) return '';
+    return html`<div class="events">
+      <h3>${t(`maps.${category}`)}</h3>
+      <ul class="events__list">
+        ${list.map(
+          (e) => html`<li class="event"><img src="${asset(e.icon)}" alt="" loading="lazy" data-fallback>
+            <span><span class="event__name">${L(e.name)}</span>${alt(e.name) ? html`<span class="note">${alt(e.name)}</span>` : ''}</span></li>`
+        )}
+      </ul>
+    </div>`;
+  }
+
+  function render() {
+    mount('#lede', t('maps.lede', { count: num(maps.length), events: num(events.length) }));
+    mount(
+      '#maps',
+      html`<section class="section"><div class="map-grid">${maps.map(card)}</div></section>
+      <section class="section" id="events">
+        <div class="section__head"><h2>${t('maps.events')}</h2></div>
+        <div class="events-wrap">${eventList('major')}${eventList('minor')}</div>
+      </section>`
+    );
+  }
+
+  render();
+  document.addEventListener('arc:lang', render);
+  if (location.hash) {
+    const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el) el.scrollIntoView();
+  }
+})();

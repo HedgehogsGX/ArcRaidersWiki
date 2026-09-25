@@ -1,0 +1,228 @@
+/* Interface text in both languages. Game terms follow the official zh-CN
+   wording used in the upstream data (奇袭者, 藏身处, 制作配方, 限购 …). */
+
+window.ARC_STRINGS = {
+  // Site shell
+  'site.name': { zh: 'ARC Raiders 维基', en: 'ARC Raiders Wiki' },
+  'site.name.short': { zh: '维基', en: 'Wiki' },
+  'site.home': { zh: '首页', en: 'Home' },
+  'site.menu': { zh: '菜单', en: 'Menu' },
+  'site.close': { zh: '关闭', en: 'Close' },
+  'site.skip': { zh: '跳到正文', en: 'Skip to content' },
+  'site.langLabel': { zh: '界面语言', en: 'Language' },
+  'site.meta': { zh: '数据对应游戏 {version} 版本，更新于 {date}', en: 'Data from game version {version}, updated {date}' },
+
+  'nav.world': { zh: '世界', en: 'World' },
+  'nav.gear': { zh: '装备', en: 'Gear' },
+  'nav.progress': { zh: '成长', en: 'Progression' },
+  'nav.speranza': { zh: '斯佩兰扎', en: 'Speranza' },
+
+  'page.arc': { zh: 'ARC 机械', en: 'ARC' },
+  'page.maps': { zh: '地图与事件', en: 'Maps & events' },
+  'page.items': { zh: '物品', en: 'Items' },
+  'page.quests': { zh: '任务', en: 'Quests' },
+  'page.skills': { zh: '技能树', en: 'Skill tree' },
+  'page.projects': { zh: '计划', en: 'Projects' },
+  'page.hideout': { zh: '藏身处', en: 'Hideout' },
+  'page.traders': { zh: '商人', en: 'Traders' },
+
+  'desc.arc': { zh: '威胁等级、弱点与掉落', en: 'Threat, weak points, drops' },
+  'desc.maps': { zh: '地图总览与地图事件', en: 'Map overview and events' },
+  'desc.items': { zh: '制作、回收与获取途径', en: 'Crafting, recycling, sources' },
+  'desc.quests': { zh: '按任务链排列的目标与奖励', en: 'Objectives and rewards in chain order' },
+  'desc.skills': { zh: '三条分支的全部节点', en: 'Every node in all three branches' },
+  'desc.projects': { zh: '各阶段提交物与奖励', en: 'Hand-ins and rewards per phase' },
+  'desc.hideout': { zh: '设施升级需求与解锁的制作', en: 'Upgrade costs and unlocked crafts' },
+  'desc.traders': { zh: '商店库存、价格与任务', en: 'Stock, prices and quests' },
+
+  'search.label': { zh: '搜索', en: 'Search' },
+  'search.placeholder': { zh: '搜索物品、任务、技能…', en: 'Search items, quests, skills…' },
+  'search.empty': { zh: '没有找到“{q}”。', en: 'Nothing matches “{q}”.' },
+  'search.kind.item': { zh: '物品', en: 'Item' },
+  'search.kind.quest': { zh: '任务', en: 'Quest' },
+  'search.kind.skill': { zh: '技能', en: 'Skill' },
+  'search.kind.station': { zh: '藏身处', en: 'Hideout' },
+  'search.kind.arc': { zh: 'ARC', en: 'ARC' },
+  'search.kind.map': { zh: '地图', en: 'Map' },
+  'search.kind.trader': { zh: '商人', en: 'Trader' },
+  'search.kind.project': { zh: '计划', en: 'Project' },
+
+  'footer.about': {
+    zh: '非官方玩家资料站，与 Embark Studios、Nexon 无关。文字内容遵循 CC BY-NC-SA 4.0 协议共享。',
+    en: 'An unofficial player-made reference, not affiliated with Embark Studios or Nexon. Text is shared under CC BY-NC-SA 4.0.',
+  },
+  'footer.browse': { zh: '资料', en: 'Browse' },
+  'footer.official': { zh: '官方渠道', en: 'Official links' },
+  'footer.data': { zh: '数据来源', en: 'Data' },
+  'footer.dataNote': { zh: '游戏数据与物品图标由社区项目提供：', en: 'Game data and item icons come from community projects:' },
+  'footer.legal': { zh: '商标声明', en: 'Trademark notices' },
+  'link.site': { zh: '官方网站', en: 'Official site' },
+
+  // Shared
+  'common.none': { zh: '无', en: 'None' },
+  'common.all': { zh: '全部', en: 'All' },
+  'common.clear': { zh: '清除筛选', en: 'Clear filters' },
+  'common.count': { zh: '{n} 项', en: '{n} entries' },
+  'common.level': { zh: '{n} 级', en: 'Level {n}' },
+  'common.xp': { zh: '{n} 经验', en: '{n} XP' },
+  'common.enOnly': { zh: '官方暂无中文，以下为英文原文。', en: '' },
+
+  // Home
+  'home.lede': {
+    zh: '物品、任务、技能树、藏身处和 ARC 资料，直接取自游戏数据，中英双语，随版本更新。',
+    en: 'Items, quests, skills, hideout upgrades and ARC, taken straight from game data and updated with each patch.',
+  },
+  'home.directory': { zh: '资料目录', en: 'Browse the wiki' },
+  'home.recent': { zh: '{version} 版本新增', en: 'New in {version}' },
+  'home.news': { zh: '官方公告', en: 'Announcements' },
+
+  // News
+  'page.news': { zh: '官方公告', en: 'News' },
+  'desc.news': { zh: '官网公告全文与视频', en: 'Official posts in full, with videos' },
+  'news.lede': {
+    zh: '自动同步自 ARC Raiders 官网的最新公告，包含全文、图片和视频。',
+    en: 'The latest posts from the official ARC Raiders site, synced automatically with full text, images and videos.',
+  },
+  'news.all': { zh: '全部公告（{n}）', en: 'All news ({n})' },
+  'news.source': { zh: '在官网阅读原文', en: 'Read on arcraiders.com' },
+  'news.enOnly': { zh: '本文尚未翻译，以下为官网英文原文。', en: '' },
+  'news.empty': { zh: '暂时没有公告。', en: 'No posts yet.' },
+  'news.other': { zh: '其他', en: 'Other' },
+  'news.tag.patch-notes': { zh: '更新说明', en: 'Patch notes' },
+  'news.tag.store-update': { zh: '商店更新', en: 'Store update' },
+  'news.tag.hotfix': { zh: '热修复', en: 'Hotfix' },
+
+  // Items
+  'items.lede': {
+    zh: '游戏内全部 {count} 件物品。点开任一物品，查看制作配方、回收产出、获取途径和用途。',
+    en: 'Every item in the game, {count} in total. Open one to see its recipe, what it recycles into, where to get it and what needs it.',
+  },
+  'items.filter': { zh: '按名称筛选', en: 'Filter by name' },
+  'items.category': { zh: '分类', en: 'Category' },
+  'items.rarity': { zh: '稀有度', en: 'Rarity' },
+  'items.sort': { zh: '排序', en: 'Sort' },
+  'items.sort.rarity': { zh: '稀有度', en: 'Rarity' },
+  'items.sort.value': { zh: '价值', en: 'Value' },
+  'items.sort.name': { zh: '名称', en: 'Name' },
+  'items.shown': { zh: '显示 {n} 件', en: 'Showing {n}' },
+  'items.empty': { zh: '没有符合条件的物品。', en: 'No items match these filters.' },
+  'items.value': { zh: '价值', en: 'Value' },
+  'items.weight': { zh: '重量', en: 'Weight' },
+  'items.stack': { zh: '堆叠', en: 'Stack' },
+  'items.stats': { zh: '属性', en: 'Stats' },
+  'items.recipe': { zh: '制作配方', en: 'Crafting recipe' },
+  'items.station': { zh: '{bench} {level} 级', en: '{bench} level {level}' },
+  'items.makes': { zh: '每次制作 {n} 个', en: 'Makes {n}' },
+  'items.recycles': { zh: '回收产出', en: 'Recycles into' },
+  'items.salvages': { zh: '拆解', en: 'Salvages into' },
+  'items.upgradesTo': { zh: '升级为', en: 'Upgrades to' },
+  'items.upgradeCost': { zh: '升级花费', en: 'Upgrade cost' },
+  'items.repairCost': { zh: '修理花费', en: 'Repair cost' },
+  'items.sources': { zh: '获取途径', en: 'Where to get it' },
+  'items.soldBy': { zh: '{trader} 出售', en: 'Sold by {trader}' },
+  'items.droppedBy': { zh: 'ARC 掉落', en: 'Dropped by ARC' },
+  'items.questReward': { zh: '任务奖励', en: 'Quest reward' },
+  'items.foundIn': { zh: '常见位置', en: 'Found in' },
+  'items.uses': { zh: '用途', en: 'Used for' },
+  'items.usedCraft': { zh: '用于制作', en: 'Crafting' },
+  'items.usedHideout': { zh: '藏身处升级', en: 'Hideout upgrades' },
+  'items.usedQuest': { zh: '任务提交', en: 'Quest hand-ins' },
+  'items.usedProject': { zh: '计划提交', en: 'Project hand-ins' },
+  'items.compatible': { zh: '兼容武器', en: 'Fits' },
+  'items.mods': { zh: '改装槽位', en: 'Mod slots' },
+  'items.blueprint': { zh: '需要蓝图解锁', en: 'Needs a blueprint' },
+  'items.questItem': { zh: '任务物品', en: 'Quest item' },
+  'items.added': { zh: '{version} 版本加入', en: 'Added in {version}' },
+  'items.limit': { zh: '限购 {n}', en: 'Limit {n}' },
+  'items.tip': { zh: '提示（英文原文）', en: 'Tip' },
+  'items.close': { zh: '关闭详情', en: 'Close details' },
+  'items.notFound': { zh: '找不到这件物品。', en: 'That item does not exist.' },
+
+  // Quests
+  'quests.lede': {
+    zh: '{count} 个任务，按任务链先后排列。数字表示它在任务链中的位置。',
+    en: '{count} quests in chain order. The number shows how deep each quest sits in the chain.',
+  },
+  'quests.allTraders': { zh: '全部商人', en: 'All traders' },
+  'quests.objectives': { zh: '目标', en: 'Objectives' },
+  'quests.oneRound': { zh: '需在一局内完成全部目标', en: 'Complete every objective in one raid' },
+  'quests.required': { zh: '需要提交', en: 'Hand in' },
+  'quests.rewards': { zh: '奖励', en: 'Rewards' },
+  'quests.granted': { zh: '接取时获得', en: 'Given on accept' },
+  'quests.other': { zh: '其他条件', en: 'Other requirements' },
+  'quests.prev': { zh: '前置任务', en: 'Unlocked by' },
+  'quests.next': { zh: '后续任务', en: 'Unlocks' },
+  'quests.depth': { zh: '任务链第 {n} 环', en: 'Step {n} in the chain' },
+
+  // Skills
+  'skills.lede': {
+    zh: '三条技能分支，共 {count} 个节点。选择节点查看效果和前置条件。',
+    en: 'Three branches with {count} nodes. Pick a node to see its effect and what unlocks it.',
+  },
+  'skills.maxPoints': { zh: '最大点数：{max}', en: 'Max points: {max}' },
+  'skills.impact': { zh: '效果', en: 'Impact' },
+  'skills.prereq': { zh: '前置条件', en: 'Prerequisite' },
+  'skills.unlocks': { zh: '解锁', en: 'Unlocks' },
+  'skills.major': { zh: '关键节点', en: 'Key node' },
+  'skills.known': { zh: '已知数值', en: 'Known values' },
+  'skills.pick': { zh: '选择一个节点。', en: 'Pick a node.' },
+
+  // Hideout
+  'hideout.lede': {
+    zh: '{count} 个设施的升级需求，以及每个等级解锁的制作。',
+    en: 'Upgrade costs for all {count} stations, and what each level lets you craft.',
+  },
+  'hideout.levels': { zh: '最高 {n} 级', en: 'Up to level {n}' },
+  'hideout.needs': { zh: '升级需要', en: 'Upgrade needs' },
+  'hideout.free': { zh: '初始等级，无需材料', en: 'Starting level, no materials' },
+  'hideout.crafts': { zh: '可制作', en: 'Crafts' },
+  'hideout.base': { zh: '基础设施，无需升级。', en: 'Base station, no upgrades.' },
+
+  // ARC
+  'arc.lede': {
+    zh: '{count} 种 ARC 机械的威胁等级、弱点、出没地图和掉落物，按威胁从高到低排列。',
+    en: 'Threat level, weak points, maps and drops for {count} ARC units, most dangerous first.',
+  },
+  'arc.threat': { zh: '威胁', en: 'Threat' },
+  'arc.weakness': { zh: '弱点', en: 'Weak point' },
+  'arc.maps': { zh: '出没地图', en: 'Found on' },
+  'arc.drops': { zh: '掉落', en: 'Drops' },
+  'arc.destroyXp': { zh: '摧毁经验', en: 'Destroy XP' },
+  'arc.lootXp': { zh: '搜刮经验', en: 'Loot XP' },
+
+  // Maps
+  'maps.lede': {
+    zh: '{count} 张地图，以及当前的 {events} 种地图事件。',
+    en: '{count} maps and the {events} map events currently in rotation.',
+  },
+  'maps.arc': { zh: '出没 ARC', en: 'ARC here' },
+  'maps.quests': { zh: '相关任务', en: 'Quests here' },
+  'maps.events': { zh: '地图事件', en: 'Map events' },
+  'maps.major': { zh: '大型事件', en: 'Major events' },
+  'maps.minor': { zh: '小型事件', en: 'Minor events' },
+
+  // Traders
+  'traders.lede': {
+    zh: '斯佩兰扎的 {count} 位商人：商店库存、价格与限购，以及各自发布的任务。',
+    en: 'The {count} traders of Speranza: what they sell, for how much, and the quests they give.',
+  },
+  'traders.shop': { zh: '商店', en: 'Shop' },
+  'traders.quests': { zh: '{n} 个任务', en: '{n} quests' },
+  'traders.daily': { zh: '每日 {n}', en: '{n} a day' },
+  'traders.level': { zh: '需等级 {n}', en: 'Level {n}+' },
+  'traders.item': { zh: '物品', en: 'Item' },
+  'traders.price': { zh: '价格', en: 'Price' },
+  'traders.terms': { zh: '条件', en: 'Terms' },
+
+  // Projects
+  'projects.lede': {
+    zh: '斯佩兰扎的集体建设计划。每个阶段需要提交物品，部分提交会给予奖励。',
+    en: 'Community building projects in Speranza. Each phase asks for items, and some hand-ins pay out a reward.',
+  },
+  'projects.live': { zh: '进行中', en: 'Running' },
+  'projects.ended': { zh: '已结束', en: 'Ended' },
+  'projects.phase': { zh: '第 {n} 阶段', en: 'Phase {n}' },
+  'projects.reward': { zh: '奖励', en: 'Reward' },
+  'projects.value': { zh: '价值 {n}', en: 'Worth {n}' },
+  'projects.showEnded': { zh: '查看已结束的计划（{n}）', en: 'Show ended projects ({n})' },
+};

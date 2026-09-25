@@ -1,251 +1,102 @@
-# ARC Raiders Wiki 多语言支持系统
+# ARC Raiders 维基
 
-这是一个为ARC Raiders Wiki设计的完整多语言支持系统，支持中英文切换。
+非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、藏身处、ARC、地图、商人与计划，以及同步自官网的公告。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，中文使用游戏官方译名。
 
-## 功能特性
+纯静态站点，浏览不需要安装或构建。npm 依赖只用于公告翻译脚本。
 
-- 🌍 **双语支持**: 支持英文和中文
-- 🔄 **实时切换**: 无需刷新页面即可切换语言
-- 💾 **持久化存储**: 语言选择会保存到本地存储
-- 📱 **响应式设计**: 支持移动端和桌面端
-- 🎨 **美观界面**: 现代化的UI设计
+## 本地预览
 
-## 文件结构
-
-```
-ArcRaidersWiki/
-├── translations/                 # 翻译文件目录
-│   ├── items_zh.json            # 物品中文翻译
-│   ├── quests_zh.json            # 任务中文翻译
-│   ├── skillNodes_zh.json       # 技能节点中文翻译
-│   └── hideoutModules_zh.json   # 隐藏所模块中文翻译
-├── js/
-│   └── language-manager.js       # 语言管理器核心文件
-├── css/
-│   └── language-switch.css      # 语言切换样式文件
-├── multilang-demo.html          # 多语言演示页面
-└── README.md                    # 说明文档
+```bash
+npm run serve
 ```
 
-## 使用方法
+等同于 `python3 scripts/serve.py`，然后打开 http://localhost:8000。直接双击 `index.html` 也能使用，只是字体等外部资源取决于网络。这个服务器和 `python3 -m http.server` 相同，只是关闭了浏览器缓存，改完文件刷新即可看到。
 
-### 1. 引入文件
+## 目录结构
 
-在你的HTML页面中引入必要的文件：
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC Raiders Wiki</title>
-    <link rel="stylesheet" href="css/language-switch.css">
-</head>
-<body>
-    <!-- 你的页面内容 -->
-    
-    <script src="js/language-manager.js"></script>
-</body>
-</html>
+```
+index.html              首页
+pages/                  各资料页（news、items、quests、skills、hideout、arc、maps、traders、projects）
+  _template.html        新页面模板，内有步骤说明
+assets/
+  css/                  base（色板、字体、质感）→ layout（页头页脚）→ components（通用组件）→ pages（各页专属）
+  js/core.js            路径、语言切换、HTML 模板、物品查询等公共函数
+  js/strings.js         界面文字（中 / 英）
+  js/site.js            页头、导航、搜索、页脚，导航结构在 SECTIONS 中统一配置
+  js/news.js            公告列表与展开动画，首页和公告页共用
+  js/pages/             每个页面一个脚本
+  img/brand/            标志、主视觉
+  img/game/             由构建脚本生成的 ARC、商人、设施、地图图片
+content/
+  news.js               由 fetch-news.mjs 生成的公告，不要手动修改
+  news-zh.json          公告中文译文缓存，每篇只翻译一次
+data/                   由构建脚本生成的数据包，不要手动修改
+vendor/arcraiders-data  上游数据（git 子模块）
+scripts/
+  build-data.mjs        从上游生成 data/ 与 assets/img/game/
+  glossary.mjs          上游缺少中文的术语（商人、ARC 名称等），注明来源
+  fetch-news.mjs        同步官网公告并翻译
+  build-site.mjs        把待发布的文件复制到 dist/
+  serve.py              本地预览服务器
+.github/workflows/      每日同步公告的 GitHub Actions
+wrangler.jsonc          Cloudflare 海外站配置
+worker.js               Cloudflare 海外站：把首页 / 指向 index.html
 ```
 
-### 2. 基本使用
+## 更新游戏数据
 
-语言管理器会自动初始化并创建语言切换按钮。你可以通过以下方式使用：
+上游更新后：
 
-```javascript
-// 获取当前语言
-const currentLang = languageManager.currentLanguage;
-
-// 切换语言
-languageManager.switchLanguage('zh'); // 切换到中文
-languageManager.switchLanguage('en'); // 切换到英文
-
-// 获取翻译数据
-const items = languageManager.getTranslatedData('items');
-const quests = languageManager.getTranslatedData('quests');
-
-// 获取特定翻译
-const itemName = languageManager.getTranslation('items', 'ferro_i', 'name');
+```bash
+git submodule update --remote vendor/arcraiders-data
+node scripts/build-data.mjs
 ```
 
-### 3. 自定义翻译元素
+需要 Node 18 以上。脚本只保留英文和简体中文，会列出引用了却不存在的物品 id，并在上游出现新物品类型时提醒更新 `ITEM_CATEGORIES`。ARC、商人、设施或地图图片有变化时，改用 `node scripts/build-data.mjs --images`（需要 macOS 自带的 `sips`）。
 
-对于需要翻译的HTML元素，使用`data-en`和`data-zh`属性：
+上游仓库包含两百多 MB 图片，本站不需要它们。首次克隆时可以跳过：
 
-```html
-<h1 data-en="ARC Raiders Wiki" data-zh="ARC Raiders 维基">ARC Raiders Wiki</h1>
-<p data-en="Welcome to the wiki" data-zh="欢迎来到维基">Welcome to the wiki</p>
+```bash
+git submodule update --init
+git -C vendor/arcraiders-data sparse-checkout set --no-cone '/*' '!/images/'
 ```
 
-## API 参考
+构建脚本需要图片时会直接从 git 对象中读取。
 
-### LanguageManager 类
+## 同步官方公告
 
-#### 构造函数
-```javascript
-new LanguageManager()
-```
-创建语言管理器实例。
+官网没有 RSS 或公开接口，脚本直接读取 https://arcraiders.com/news 的页面，保留最新 12 篇的全文、图片和 YouTube 视频。正文只保留白名单内的标签，翻译结果也经过同样的过滤。
 
-#### 方法
-
-##### switchLanguage(lang)
-切换语言
-- `lang` (string): 语言代码 ('en' 或 'zh')
-
-##### getTranslation(category, id, field)
-获取特定翻译
-- `category` (string): 数据类别 ('items', 'quests', 'skillNodes', 'hideoutModules')
-- `id` (string): 项目ID
-- `field` (string): 字段名 ('name', 'description', 等)
-- 返回: 翻译文本或null
-
-##### getTranslatedData(category)
-获取完整翻译数据
-- `category` (string): 数据类别
-- 返回: 翻译数据数组
-
-##### updateUI()
-更新UI语言切换按钮状态
-
-##### updatePageContent()
-更新页面内容
-
-## 翻译文件格式
-
-### 物品翻译 (items_zh.json)
-```json
-[
-  {
-    "id": "fabric",
-    "name": "布料",
-    "description": "一种常见的制作材料。",
-    "type": "材料",
-    "imageFilename": "https://cdn.arctracker.io/items/fabric.png"
-  }
-]
+```bash
+npm install
+ANTHROPIC_API_KEY=你的密钥 npm run news
 ```
 
-### 任务翻译 (quests_zh.json)
-```json
-[
-  {
-    "id": "m1",
-    "name": "地表之上",
-    "trader": "莎妮",
-    "objectives": ["首次前往地表", "可选 - 标记任何ARC"],
-    "rewardItemIds": [
-      { "itemId": "ferro_i", "quantity": 1 },
-      { "itemId": "heavy_ammo", "quantity": 20 }
-    ],
-    "xp": 4000
-  }
-]
-```
+官网只有英文。设置了 `ANTHROPIC_API_KEY` 时，新文章或有改动的文章会用 Claude（`claude-opus-5`）翻译成简体中文，并按游戏数据中的官方译名处理物品、任务、地图等名词；译文缓存在 `content/news-zh.json`，同一篇文章不会重复翻译。没有密钥时只更新英文，中文界面会注明"尚未翻译"。
 
-### 技能节点翻译 (skillNodes_zh.json)
-```json
-[
-  {
-    "id": "cond_1",
-    "name": "年轻肺活量",
-    "description": "增加你的最大耐力。",
-    "impactedSkill": "最大耐力",
-    "knownValue": [],
-    "category": "体能",
-    "maxPoints": 5,
-    "iconName": "skill_running.png",
-    "isMajor": true,
-    "position": {
-      "x": 25,
-      "y": 75
-    },
-    "prerequisiteNodeIds": []
-  }
-]
-```
+**自动同步**：`.github/workflows/news-sync.yml` 每天 03:17 UTC 运行一次，有新内容时开启或更新名为 "Sync official news" 的 PR，合并后网站即更新。启用前需要：
 
-### 隐藏所模块翻译 (hideoutModules_zh.json)
-```json
-[
-  {
-    "id": "scrappy",
-    "name": "小淘气",
-    "maxLevel": 6,
-    "levels": [
-      { "level": 1, "requirementItemIds": [] },
-      { "level": 2, "requirementItemIds": [
-        { "itemId": "dog_collar", "quantity": 1 },
-        { "itemId": "torn_blanket", "quantity": 1 }
-      ]}
-    ]
-  }
-]
-```
+1. 在仓库 Settings → Secrets and variables → Actions 中添加 `ANTHROPIC_API_KEY`；
+2. 在 Settings → Actions → General 中勾选 "Allow GitHub Actions to create and approve pull requests"；
+3. 将工作流合并到 `main`（定时任务只在默认分支上运行）。也可以在 Actions 页面手动运行。
 
-## 样式定制
+## 部署
 
-### CSS 变量
-你可以通过修改CSS变量来自定义样式：
+站点没有真正的构建步骤。`npm run build` 只是把浏览器会加载的文件（`index.html`、`pages/`、`assets/`、`data/`、`content/news.js`）复制到 `dist/`，托管平台只发布这个目录，子模块、脚本和译文缓存不会公开。两个平台都连接本仓库，`main` 有新提交时自动重新部署，所以合并公告同步 PR 后两边会一起更新。
 
-```css
-:root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #ffa500;
-    --text-color: #ffffff;
-    --background-color: rgba(0, 0, 0, 0.8);
-}
-```
+**海外：Cloudflare Workers**，配置在 `wrangler.jsonc` 和 `worker.js`。在 Cloudflare 控制台 Workers & Pages → Create → Import a repository 中选择本仓库，Worker 名称填 `arc-raiders-wiki`（须与 `wrangler.jsonc` 一致），构建命令填 `npm run build`，部署命令保持默认的 `npx wrangler deploy`。其他分支和 PR 会生成预览链接，并以评论贴到 PR 上。
 
-### 自定义语言切换按钮
-```css
-.language-switch-btn {
-    /* 你的自定义样式 */
-}
-```
+`html_handling` 设为 `none` 是有意的：默认设置会把 `items.html` 重定向到 `items`，`core.js` 比较路径时就对不上，同页的 `#id` 链接会整页刷新并丢掉筛选条件。关闭后，首页 `/` 由 `worker.js` 指向 `index.html`。
 
-## 扩展支持
+**中国大陆及全球：腾讯云 EdgeOne Pages**。导入本仓库，构建命令 `npm run build`，输出目录 `dist`。加速区域选「全球可用区（含中国大陆）」时，自定义域名必须已完成 ICP 备案；首次备案期间该域名不能对外访问。备案通过后，页脚要显示备案号并链接到 https://beian.miit.gov.cn/ 。
 
-### 添加新语言
-1. 创建新的翻译文件 (例如 `items_fr.json` 用于法语)
-2. 在 `LanguageManager` 类中添加新语言支持
-3. 更新语言切换按钮
+## 约定
 
-### 添加新的数据类别
-1. 创建对应的翻译文件
-2. 在 `loadTranslations()` 方法中添加加载逻辑
-3. 在 `updatePageContent()` 方法中添加更新逻辑
+- **语言**：界面文字写在 `assets/js/strings.js`；数据中的文字是 `{ en, zh }`，用 `ARC.L()` 取当前语言，缺中文时回退英文。语言选择保存在浏览器本地，默认中文。
+- **译名**：优先使用上游数据中的官方中文（如 奇袭者、斯佩兰扎、藏身处）。上游没有的术语补在 `scripts/glossary.mjs`，并标明是游戏原文（game）还是本站译法（site）。ARC 的介绍目前只有英文，页面上会注明。
+- **配色**：色板取自游戏标志。四条色带各代表一个分区：青色为世界、绿色为装备、黄色为成长、红色为斯佩兰扎；物品稀有度沿用游戏内颜色。
+- **链接**：每条资料都能用 `#id` 直接定位，例如 `pages/items.html#anvil_i`、`pages/quests.html#a_bad_feeling`。物品页的筛选条件保存在网址参数中，如 `?category=weapons&rarity=Epic`。
 
-## 浏览器支持
+## 版权
 
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
-
-## 注意事项
-
-1. 确保翻译文件路径正确
-2. 翻译文件必须是有效的JSON格式
-3. 所有翻译文件中的ID必须与原始数据文件保持一致
-4. 建议定期更新翻译文件以保持数据同步
-
-## 更新日志
-
-### v1.0.0 (2025-01-14)
-- 初始版本发布
-- 支持中英文切换
-- 包含完整的翻译文件
-- 响应式设计
-- 本地存储支持
-
-## 贡献
-
-欢迎提交翻译改进和新语言支持！
-
-## 许可证
-
-MIT License
+ARC Raiders 及相关商标归 Embark Studios AB 所有。本站为玩家制作的非官方项目，与 Embark Studios、Nexon 无关。游戏数据以 MIT 协议由 RaidTheory/arcraiders-data 提供；本站文字内容遵循 CC BY-NC-SA 4.0 协议。

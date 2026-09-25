@@ -1,0 +1,18 @@
+{
+  "name": "arc-raiders-wiki",
+  "private": true,
+  "description": "Unofficial bilingual ARC Raiders wiki. Static site; npm run build copies the published files into dist/, the other scripts refresh its data.",
+  "scripts": {
+    "serve": "python3 scripts/serve.py",
+    "build": "node scripts/build-site.mjs",
+    "data": "node scripts/build-data.mjs",
+    "images": "node scripts/build-data.mjs --images",
+    "news": "node scripts/fetch-news.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  }
+}
