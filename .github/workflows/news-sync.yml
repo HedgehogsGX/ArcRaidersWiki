@@ -48,6 +48,7 @@ jobs:
           add-paths: |
             content/news.js
             content/news-zh.json
+            content/news-img
           commit-message: Sync official news from arcraiders.com
           author: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
           committer: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>

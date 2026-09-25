@@ -12,9 +12,11 @@
     return text === key ? tag : text;
   };
 
-  // Chinese when the post has been translated, English otherwise.
+  // Chinese when the post has been translated, English otherwise. Copied
+  // images are stored relative to the site root (content/news-img/).
   const translated = (post) => Boolean(post.title.zh);
-  const blockHtml = (b) => raw((ARC.lang === 'zh' && b.zh) || b.en || b.html || '');
+  const rooted = (s) => s.replace(/(<img\b[^>]*?\ssrc=")(?!https?:)/g, (m, before) => before + ARC.root);
+  const blockHtml = (b) => raw(rooted((ARC.lang === 'zh' && b.zh) || b.en || b.html || ''));
 
   function block(b, i) {
     const style = `--i:${i}`;

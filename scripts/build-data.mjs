@@ -94,6 +94,22 @@ function effects(raw) {
   return out.length ? out : undefined;
 }
 
+// Item icons are served from assets/img/game/items/ (written with the bundles
+// below) so pages don't depend on the arctracker CDN, which is slow from
+// mainland China. Icons upstream doesn't ship yet keep their CDN URL.
+const upstreamIcons = new Set(
+  execFileSync('git', ['-C', SRC, 'ls-tree', '--name-only', 'HEAD', 'images/items/'], { encoding: 'utf8' })
+    .split('\n')
+    .map((p) => p.slice('images/items/'.length))
+);
+const icons = new Set();
+function icon(src) {
+  const file = src && src.slice(src.lastIndexOf('/') + 1);
+  if (!file || !upstreamIcons.has(file)) return src;
+  icons.add(file);
+  return `assets/img/game/items/${file}`;
+}
+
 const items = rawItems.map((i) =>
   compact({
     id: i.id,
@@ -104,7 +120,7 @@ const items = rawItems.map((i) =>
     value: i.value,
     weight: i.weightKg,
     stack: i.stackSize,
-    img: i.imageFilename,
+    img: icon(i.imageFilename),
     bench: i.craftBench ? list(i.craftBench) : undefined,
     level: i.stationLevelRequired,
     recipe: pairs(i.recipe),
@@ -486,6 +502,17 @@ for (const [name, value] of Object.entries(bundles)) {
   console.log(`  data/${name}.js`.padEnd(24), `${(body.length / 1024).toFixed(1).padStart(7)} KB`);
 }
 console.log(`  ${'total'.padEnd(22)} ${(total / 1024).toFixed(1).padStart(7)} KB`);
+
+// Rewritten each run so icons of removed items don't linger.
+const ICON_OUT = path.join(IMG_OUT, 'items');
+fs.rmSync(ICON_OUT, { recursive: true, force: true });
+fs.mkdirSync(ICON_OUT, { recursive: true });
+for (const file of icons) {
+  const png = execFileSync('git', ['-C', SRC, 'show', `HEAD:images/items/${file}`], { maxBuffer: 64 << 20 });
+  fs.writeFileSync(path.join(ICON_OUT, file), png);
+}
+const cdnIcons = items.filter((i) => /^https?:/.test(i.img || '')).map((i) => i.id);
+console.log(`  ${icons.size} item icons in assets/img/game/items/; still on the CDN: ${cdnIcons.join(', ') || 'none'}`);
 console.log(`Game ${meta.gameVersion}, upstream ${meta.commit} (${meta.updated})`);
 if (missing.length) console.log(`Referenced ids without an item file: ${missing.join(', ')}`);
 

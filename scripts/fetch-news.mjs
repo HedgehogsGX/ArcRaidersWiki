@@ -12,7 +12,8 @@
 // translated once. Without credentials the Chinese side falls back to English.
 //
 // Article HTML is reduced to a small whitelist of tags before it is stored,
-// and translated HTML goes through the same filter.
+// and translated HTML goes through the same filter. Images are copied into
+// content/news-img/ as WebP (needs sharp from npm install).
 
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
@@ -24,6 +25,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://arcraiders.com';
 const OUT = path.join(ROOT, 'content/news.js');
 const CACHE = path.join(ROOT, 'content/news-zh.json');
+const IMG_DIR = path.join(ROOT, 'content/news-img');
 const limitArg = process.argv.indexOf('--limit');
 const LIMIT = limitArg > 0 ? Number(process.argv[limitArg + 1]) : 12;
 
@@ -351,6 +353,71 @@ async function makeClient() {
   }
 }
 
+// ---- images -----------------------------------------------------------------------
+
+// assets.arcraiders.com is served by Google and doesn't load in mainland China,
+// so thumbnails and article images are copied into content/news-img/ as WebP
+// and linked relative to the site root. Existing copies are reused and copies
+// no longer linked are deleted. An image that can't be fetched or converted
+// keeps its original URL.
+async function localizeImages(news) {
+  let sharp = null;
+  try {
+    ({ default: sharp } = await import('sharp'));
+  } catch (err) {
+    console.log(`New images stay remote: ${err.message.split('\n')[0]} (run npm install)`);
+  }
+  fs.mkdirSync(IMG_DIR, { recursive: true });
+  const linked = new Set();
+  const done = new Map();
+
+  async function copy(src) {
+    const name = `${path.basename(new URL(src).pathname).replace(/\.\w+$/, '').replace(/[^\w.-]+/g, '-')}.webp`;
+    const file = path.join(IMG_DIR, name);
+    if (!fs.existsSync(file)) {
+      if (!sharp) return src;
+      try {
+        const res = await fetch(src);
+        if (!res.ok) throw new Error(`${res.status}`);
+        const input = Buffer.from(await res.arrayBuffer());
+        await sharp(input).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 78 }).toFile(file);
+        console.log(`  saved content/news-img/${name}`);
+      } catch (err) {
+        console.log(`  kept remote image ${src}: ${err.message}`);
+        return src;
+      }
+    }
+    linked.add(name);
+    return `content/news-img/${name}`;
+  }
+  const local = (src) => {
+    if (src.startsWith('content/news-img/')) linked.add(src.slice('content/news-img/'.length));
+    if (!/^https?:/.test(src)) return src;
+    if (!done.has(src)) done.set(src, copy(src));
+    return done.get(src);
+  };
+
+  const IMG_SRC = /(<img\b[^>]*?\ssrc=")([^"]+)"/g;
+  async function rewrite(html) {
+    const srcs = [...html.matchAll(IMG_SRC)].map((m) => m[2]);
+    const to = new Map();
+    for (const src of srcs) to.set(src, await local(src.replace(/&amp;/g, '&')));
+    return html.replace(IMG_SRC, (m, before, src) => `${before}${escAttr(to.get(src))}"`);
+  }
+
+  for (const post of news) {
+    if (post.thumb) post.thumb = await local(post.thumb);
+    for (const b of post.body) for (const key of ['html', 'en', 'zh']) if (b[key]) b[key] = await rewrite(b[key]);
+  }
+  let removed = 0;
+  for (const name of fs.readdirSync(IMG_DIR))
+    if (!linked.has(name)) {
+      fs.rmSync(path.join(IMG_DIR, name));
+      removed += 1;
+    }
+  console.log(`Images: ${linked.size} in content/news-img/${removed ? `, ${removed} old ones removed` : ''}.`);
+}
+
 // ---- main -------------------------------------------------------------------------
 
 const hash = (post) => createHash('sha1').update(JSON.stringify([post.title, post.blocks])).digest('hex').slice(0, 16);
@@ -412,6 +479,7 @@ async function main() {
       ),
     };
   });
+  await localizeImages(news);
 
   fs.writeFileSync(CACHE, `${JSON.stringify(cache, null, 2)}\n`);
   fs.writeFileSync(
@@ -423,7 +491,7 @@ async function main() {
   console.log(`Wrote ${news.length} posts to content/news.js (${translated} with Chinese).`);
 }
 
-export { parseListing, parseArticle, sanitize, translatePost, buildGlossary, loadData };
+export { parseListing, parseArticle, sanitize, translatePost, buildGlossary, loadData, localizeImages };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch((err) => {
