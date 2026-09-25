@@ -1,0 +1,17 @@
+{
+  "name": "arc-raiders-wiki",
+  "private": true,
+  "description": "Unofficial bilingual ARC Raiders wiki. Static site; these scripts only refresh its data.",
+  "scripts": {
+    "serve": "python3 scripts/serve.py",
+    "data": "node scripts/build-data.mjs",
+    "images": "node scripts/build-data.mjs --images",
+    "news": "node scripts/fetch-news.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  }
+}

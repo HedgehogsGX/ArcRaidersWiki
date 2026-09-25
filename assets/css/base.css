@@ -1,0 +1,195 @@
+/* Foundation: tokens, reset, type, texture.
+   Colors are sampled from the game's own logo: the plum-black background,
+   the bone-cream wordmark and the four slanted stripes. */
+
+:root {
+  --night: #130918;
+  --night-2: #1b1225;
+  --night-3: #261a32;
+  --night-4: #33243f;
+  --bone: #ebe6d7;
+  --bone-2: #c9c2b4;
+  --dust: #9d958f;
+  --rule: rgba(235, 230, 215, 0.1);
+  --rule-2: rgba(235, 230, 215, 0.2);
+
+  /* The four stripes, left to right as in the logo. Each also marks one
+     section of the wiki: world, gear, progression, Speranza. */
+  --cyan: #62e6ee;
+  --green: #3fd97a;
+  --yellow: #f5d63d;
+  --red: #e4362d;
+
+  /* In-game rarity colors. */
+  --common: #a4a6aa;
+  --uncommon: #52c06a;
+  --rare: #3a9be8;
+  --epic: #cb52d8;
+  --legendary: #f0b43c;
+
+  --font: 'Jost', Futura, 'Century Gothic', 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+
+  /* Type scale: major third from 16px. */
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: 1.953rem;
+  --step-4: clamp(2rem, 1.4rem + 2.4vw, 2.75rem);
+  --step-5: clamp(2.6rem, 1.6rem + 4.4vw, 4.5rem);
+
+  --gutter: clamp(16px, 4vw, 32px);
+  --page: 1200px;
+  --header-h: 64px;
+  --radius: 4px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--night);
+  color: var(--bone);
+  font: 400 var(--step-0) / 1.6 var(--font);
+  font-feature-settings: 'tnum' 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Film grain over everything, like the print texture on the key art.
+   Light specks only, so it never darkens images or text. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.4 0 0 0 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--rule-2);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--night);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.muted {
+  color: var(--dust);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--page) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Section color, set on any container: world / gear / progression / speranza. */
+[data-tone='cyan'] { --tone: var(--cyan); }
+[data-tone='green'] { --tone: var(--green); }
+[data-tone='yellow'] { --tone: var(--yellow); }
+[data-tone='red'] { --tone: var(--red); }
+
+[data-rarity='Common'] { --rarity: var(--common); }
+[data-rarity='Uncommon'] { --rarity: var(--uncommon); }
+[data-rarity='Rare'] { --rarity: var(--rare); }
+[data-rarity='Epic'] { --rarity: var(--epic); }
+[data-rarity='Legendary'] { --rarity: var(--legendary); }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
