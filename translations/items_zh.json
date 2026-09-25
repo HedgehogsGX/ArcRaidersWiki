@@ -1,0 +1,1215 @@
+[
+  {
+    "id": "fabric",
+    "name": "布料",
+    "description": "一种常见的制作材料。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/fabric.png"
+  },
+  {
+    "id": "tick_pod",
+    "name": "蜱虫囊",
+    "description": "来自蜱虫的爆炸囊。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/tick_pod.png"
+  },
+  {
+    "id": "explosive_mixture",
+    "name": "爆炸混合物",
+    "description": "一种不稳定的制作组件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/explosive_mixture.png"
+  },
+  {
+    "id": "dog_collar",
+    "name": "狗项圈",
+    "description": "一个磨损的狗项圈。",
+    "type": "任务物品"
+  },
+  {
+    "id": "torn_blanket",
+    "name": "破毯子",
+    "description": "一块破旧的布料。",
+    "type": "材料"
+  },
+  {
+    "id": "lemon",
+    "name": "柠檬",
+    "description": "一种酸味的柑橘类水果。",
+    "type": "消耗品"
+  },
+  {
+    "id": "apricot",
+    "name": "杏子",
+    "description": "一种甜美的橙色水果。",
+    "type": "消耗品"
+  },
+  {
+    "id": "metal_parts",
+    "name": "金属零件",
+    "description": "用于制作各种物品。",
+    "type": "材料",
+    "rarity": "普通",
+    "value": 75,
+    "weightKg": 0.15,
+    "imageFilename": "https://cdn.arctracker.io/items/metal_parts.png"
+  },
+  {
+    "id": "rubber_parts",
+    "name": "橡胶零件",
+    "description": "用于制作的橡胶废料。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/rubber_parts.png"
+  },
+  {
+    "id": "plastic_parts",
+    "name": "塑料零件",
+    "description": "用于制作的塑料废料。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/plastic_parts.png"
+  },
+  {
+    "id": "voltage_converter",
+    "name": "电压转换器",
+    "description": "一种调节电压的设备，用于各种制作目的。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/voltage_converter.png"
+  },
+  {
+    "id": "arc_motion_core",
+    "name": "ARC运动核心",
+    "description": "用于ARC机械的强大核心。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/arc_motion_core.png"
+  },
+  {
+    "id": "toaster",
+    "name": "烤面包机",
+    "description": "一个回收的烤面包机，重新用于制作。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/toaster.png"
+  },
+  {
+    "id": "arc_circuitry",
+    "name": "ARC电路",
+    "description": "用于ARC技术的先进电路。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/arc_circuitry.png"
+  },
+  {
+    "id": "motor",
+    "name": "马达",
+    "description": "一个小型电动机，用于各种设备。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/motor.png"
+  },
+  {
+    "id": "queen_part",
+    "name": "女王零件",
+    "description": "从女王单位回收的稀有零件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/queen_part.png"
+  },
+  {
+    "id": "wires",
+    "name": "电线",
+    "description": "一束导电电线，用于制作。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/wires.png"
+  },
+  {
+    "id": "hornet_driver",
+    "name": "大黄蜂驱动器",
+    "description": "用于操作大黄蜂无人机或载具的控制模块。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/hornet_driver.png"
+  },
+  {
+    "id": "fried_motherboard",
+    "name": "烧毁的主板",
+    "description": "一个损坏的主板，可用于回收。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/fried_motherboard.png"
+  },
+  {
+    "id": "rusted_tools",
+    "name": "生锈的工具",
+    "description": "一套工具，虽然生锈但仍可用于制作。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/rusted_tools.png"
+  },
+  {
+    "id": "wasp_driver",
+    "name": "黄蜂驱动器",
+    "description": "用于操作黄蜂无人机或载具的控制模块。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/wasp_driver.png"
+  },
+  {
+    "id": "rusted_gear",
+    "name": "生锈齿轮",
+    "description": "一个生锈的齿轮，但仍然可用。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/rusted_gear.png"
+  },
+  {
+    "id": "sentinel_part",
+    "name": "哨兵零件",
+    "description": "从哨兵单位回收的组件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/sentinel_part.png"
+  },
+  {
+    "id": "rollbot_part",
+    "name": "滚动机器人零件",
+    "description": "从滚动机器人单位回收的组件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/rollbot_part.png"
+  },
+  {
+    "id": "synthesized_fuel",
+    "name": "合成燃料",
+    "description": "一罐合成燃料混合物。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/synthesized_fuel.png"
+  },
+  {
+    "id": "fireball_burner",
+    "name": "火球燃烧器",
+    "description": "来自火球单位的燃烧器模块。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/fireball_burner.png"
+  },
+  {
+    "id": "laboratory_reagents",
+    "name": "实验室试剂",
+    "description": "一套用于实验室实验的化学试剂。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/laboratory_reagents.png"
+  },
+  {
+    "id": "syringe",
+    "name": "注射器",
+    "description": "一个用于医疗的无菌注射器。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/syringe.png"
+  },
+  {
+    "id": "antiseptic",
+    "name": "消毒剂",
+    "description": "一瓶用于清洁伤口的消毒液。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/antiseptic.png"
+  },
+  {
+    "id": "snitch_scanner",
+    "name": "告密者扫描器",
+    "description": "一个用于检测隐藏发射器的手持扫描器。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/snitch_scanner.png"
+  },
+  {
+    "id": "rusted_shut_medical_kit",
+    "name": "生锈的医疗包",
+    "description": "一个生锈的医疗包，内容未知。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/rusted_shut_medical_kit.png"
+  },
+  {
+    "id": "bastion_part",
+    "name": "堡垒零件",
+    "description": "从堡垒单位回收的组件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/bastion_part.png"
+  },
+  {
+    "id": "spring",
+    "name": "弹簧",
+    "description": "一个紧密缠绕的金属线圈，用于制作机械装置。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/spring.png"
+  },
+  {
+    "id": "heavy_gun_parts",
+    "name": "重型枪械零件",
+    "description": "从重型火器回收的专业组件，用于先进武器制作。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/heavy_gun_parts.png"
+  },
+  {
+    "id": "arc_alloy",
+    "name": "ARC合金",
+    "description": "来自ARC技术的专业合金。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/arc_alloy.png"
+  },
+  {
+    "id": "ferro_i",
+    "name": "费罗I型",
+    "description": "一把基础的费罗步枪。",
+    "type": "武器"
+  },
+  {
+    "id": "light_ammo",
+    "name": "轻型弹药",
+    "description": "主要用于冲锋枪和轻型手枪的轻型子弹。",
+    "type": "弹药",
+    "imageFilename": "https://cdn.arctracker.io/items/light_ammo.png",
+    "compatibleWith": ["水壶", "布尔莱塔", "发夹", "山猫", "缝合器"]
+  },
+  {
+    "id": "heavy_ammo",
+    "name": "重型弹药",
+    "description": "主要用于大口径武器的重型子弹。",
+    "type": "弹药",
+    "compatibleWith": ["铁砧"]
+  },
+  {
+    "id": "medium_ammo",
+    "name": "中型弹药",
+    "description": "主要用于中口径武器的中型子弹。",
+    "type": "弹药",
+    "compatibleWith": ["琶音"]
+  },
+  {
+    "id": "herbal_bandages",
+    "name": "草药绷带",
+    "description": "注入治疗草药的绷带。",
+    "type": "消耗品"
+  },
+  {
+    "id": "sterilized_bandage",
+    "name": "无菌绷带",
+    "description": "用于治疗伤口的无菌绷带。",
+    "type": "消耗品",
+    "imageFilename": "https://cdn.arctracker.io/items/sterilized_bandage.png"
+  },
+  {
+    "id": "lure_grenade",
+    "name": "诱饵手榴弹",
+    "description": "一种吸引注意力的手榴弹。",
+    "type": "装备"
+  },
+  {
+    "id": "jump_mines",
+    "name": "跳跃地雷",
+    "description": "发射到空中的近距地雷。",
+    "type": "装备"
+  },
+  {
+    "id": "ferro_iv",
+    "name": "费罗IV型",
+    "description": "一个先进的费罗设备。",
+    "type": "武器"
+  },
+  {
+    "id": "blaze_grenades",
+    "name": "烈焰手榴弹",
+    "description": "燃烧手榴弹。",
+    "type": "装备"
+  },
+  {
+    "id": "apreggio_i",
+    "name": "琶音I型",
+    "baseItemId": "apreggio_rifle",
+    "tier": 1,
+    "description": "一把3发点射突击步枪。",
+    "type": "突击步枪",
+    "rarity": "普通",
+    "imageFilename": "https://cdn.arctracker.io/items/arpeggio.png",
+    "tags": ["突击步枪", "点射"],
+    "ammoType": "中型弹药",
+    "statBars": { "damage": 10, "fireRate": 60, "range": 30, "stability": 70, "agility": 35, "stealth": 20 },
+    "weightKg": 5.8,
+    "value": 2000
+  },
+  {
+    "id": "apreggio_iv",
+    "name": "琶音IV型",
+    "baseItemId": "apreggio_rifle",
+    "tier": 4,
+    "description": "一把3发点射突击步枪，具有不错的伤害输出和精度。",
+    "type": "突击步枪",
+    "rarity": "不常见",
+    "imageFilename": "https://cdn.arctracker.io/items/arpeggio.png", 
+    "tags": ["突击步枪", "点射"],
+    "flavorText": "对ARC装甲板有一定效果",
+    "ammoType": "中型弹药",
+    "magazineSize": 24,
+    "magazineCurrent": 24,
+    "modsEquippedMax": 4,
+    "statBars": { 
+      "damage": 20, 
+      "fireRate": 70, 
+      "range": 40, 
+      "stability": 85, 
+      "agility": 30, 
+      "stealth": 25 
+    },
+    "bonuses": [
+      "60% 增加射速",
+      "50% 减少装弹时间",
+      "70% 减少耐久度消耗率"
+    ],
+    "weightKg": 6,
+    "value": 7000
+  },
+  {
+    "id": "rubber_duck",
+    "name": "橡皮鸭",
+    "description": "一只吱吱叫的黄色橡皮鸭。",
+    "type": "杂项"
+  },
+  {
+    "id": "faded_photograph",
+    "name": "褪色照片",
+    "description": "一张老旧褪色的照片。",
+    "type": "杂项"
+  },
+  {
+    "id": "arc_powercell",
+    "name": "ARC能量电池",
+    "description": "用于ARC技术的强大能量电池。",
+    "type": "杂项"
+  },
+  {
+    "id": "water_filter",
+    "name": "净水器",
+    "description": "用于净化水的便携式过滤设备。",
+    "type": "杂项"
+  },
+  {
+    "id": "water_pump",
+    "name": "水泵",
+    "description": "一个用于移动水的小型电动泵。",
+    "type": "杂项"
+  },
+  {
+    "id": "sensor",
+    "name": "传感器",
+    "description": "用于环境监测的敏感电子传感器。",
+    "type": "杂项"
+  },
+  {
+    "id": "advanced_electrical_components",
+    "name": "先进电气组件",
+    "description": "用于先进维修和升级的专业电气零件。",
+    "type": "杂项"
+  },
+  {
+    "id": "deflated_football",
+    "name": "漏气足球",
+    "description": "一个磨损漏气的足球。需要充气但仍有情感价值。",
+    "type": "杂项"
+  },
+  {
+    "id": "duct_tape",
+    "name": "胶带",
+    "description": "一卷强力多用途胶带。可用于各种维修。",
+    "type": "杂项"
+  },
+  {
+    "id": "flute",
+    "name": "长笛",
+    "description": "一种简单的乐器，轻便易携。",
+    "type": "杂项"
+  },
+  {
+    "id": "empty_wine_bottle",
+    "name": "空酒瓶",
+    "description": "一个曾经装满酒的玻璃瓶，现在空了。",
+    "type": "杂项"
+  },
+  {
+    "id": "light_impact_grenade",
+    "name": "轻型冲击手榴弹",
+    "description": "一种设计用于轻型冲击和人群控制的小型手榴弹。",
+    "type": "杂项"
+  },
+  {
+    "id": "oil",
+    "name": "油",
+    "description": "一小罐多用途油，用于维护和制作。",
+    "type": "杂项"
+  },
+  {
+    "id": "snap_hook",
+    "name": "快挂",
+    "description": "一个带有弹簧门的坚固金属钩，用于快速连接。",
+    "type": "杂项"
+  },
+  {
+    "id": "esr_analyzer",
+    "name": "ESR分析仪",
+    "description": "一种用于分析红细胞沉降率的专业医疗设备。",
+    "type": "杂项"
+  },
+  {
+    "id": "rocketeer_part",
+    "name": "火箭兵零件",
+    "description": "从火箭兵单位回收的组件。",
+    "type": "杂项",
+    "imageFilename": "https://cdn.arctracker.io/items/rocketeer_part.png"
+  },
+  {
+    "id": "wolfpack",
+    "name": "狼群",
+    "description": "一捆高爆炸药，通常被掠夺者使用。",
+    "type": "杂项"
+  },
+  {
+    "id": "bison_driver",
+    "name": "野牛驱动器",
+    "description": "来自野牛载具的关键控制组件。",
+    "type": "杂项"
+  },
+  {
+    "id": "equalizer",
+    "name": "均衡器",
+    "description": "一种强大的稀有武器或设备，用于平衡战局。",
+    "type": "杂项"
+  },
+  {
+    "id": "camera_lens",
+    "name": "相机镜头",
+    "description": "一个精密的光学镜头，脆弱但珍贵。",
+    "type": "杂项"
+  },
+  {
+    "id": "film_reel",
+    "name": "胶片卷",
+    "description": "一卷摄影胶片，用于记录图像。",
+    "type": "杂项"
+  },
+  {
+    "id": "electrical_components",
+    "name": "电气组件",
+    "description": "一套用于电气维修的电线、芯片和连接器。",
+    "type": "杂项"
+  },
+  {
+    "id": "raider_augment_i",
+    "name": "掠夺者增强I型",
+    "description": "可装备以获得更多装备空间和携带能力。还允许装备更好的护盾。",
+    "type": "增强",
+    "rarity": "不常见",
+    "backpackSlots": 16,
+    "weightLimitKg": 50,
+    "weaponSlots": 2,
+    "quickUseSlots": 6,
+    "safePocketSlots": 2,
+    "shieldCompatibility": ["轻型", "中型"],
+    "crafting": {
+      "rubber_parts": 12,
+      "plastic_parts": 8
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/raider_augment_i.png"
+  },
+  {
+    "id": "raider_augment_ii",
+    "name": "掠夺者增强II型",
+    "description": "可装备以获得更多装备空间和携带能力。还允许装备更好的护盾。",
+    "type": "增强",
+    "rarity": "稀有",
+    "backpackSlots": 18,
+    "weightLimitKg": 55,
+    "weaponSlots": 2,
+    "quickUseSlots": 6,
+    "safePocketSlots": 2,
+    "shieldCompatibility": ["轻型", "中型"],
+    "crafting": {
+      "rubber_parts": 20,
+      "processor": 2
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/raider_augment_ii.png"
+  },
+  {
+    "id": "canister",
+    "name": "罐子",
+    "description": "一个用于储存加压气体或燃料的金属容器，某些先进武器和设备必不可少。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/canister.png"
+  },
+  {
+    "id": "advanced_mechanical_components",
+    "name": "先进机械组件",
+    "description": "主要用于制作先进武器。可回收为制作材料。",
+    "type": "先进材料",
+    "rarity": "史诗",
+    "value": 3000,
+    "weightKg": 1,
+    "imageFilename": "https://cdn.arctracker.io/items/advanced_mechanical_components.png"
+  },
+  {
+    "id": "simple_gun_parts",
+    "name": "简单枪械零件",
+    "description": "从普通火器回收的基础组件，用于武器制作。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/simple_gun_parts.png"
+  },
+  {
+    "id": "mechanical_components",
+    "name": "机械组件",
+    "description": "一套用于武器和设备制作的齿轮、弹簧和金属零件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/mechanical_components.png"
+  },
+  {
+    "id": "arpeggio_i",
+    "name": "琶音I型",
+    "description": "一把3发点射突击步枪，具有不错的伤害输出和精度。",
+    "type": "突击步枪",
+    "rarity": "不常见",
+    "damage": 11,
+    "fireRate": 18.3,
+    "range": 53.7,
+    "stability": 82.4,
+    "agility": 60,
+    "stealth": 14,
+    "crafting": {
+      "mechanical_components": 1,
+      "magnet": 3
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/arpeggio_i.png"
+  },
+  {
+    "id": "venator_i",
+    "name": "维纳托I型",
+    "description": "半自动手枪。一次发射两发子弹。",
+    "type": "手枪",
+    "rarity": "稀有",
+    "damage": 18,
+    "fireRate": 21.7,
+    "range": 48.4,
+    "stability": 71.2,
+    "agility": 77.6,
+    "stealth": 12,
+    "crafting": {
+      "advanced_mechanical_components": 2,
+      "magnet": 4
+    },
+    "stationLevelRequired": 2,
+    "imageFilename": "https://cdn.arctracker.io/items/venator_i.png"
+  },
+  {
+    "id": "vulcano_i",
+    "name": "火山I型",
+    "description": "半自动霰弹枪，具有良好的子弹散布但衰减严重。",
+    "type": "霰弹枪",
+    "rarity": "史诗",
+    "damage": 58.5,
+    "fireRate": 8.3,
+    "range": 22.1,
+    "stability": 70.3,
+    "agility": 70.7,
+    "stealth": 15,
+    "increasedFireRate": 10,
+    "reducedReloadTime": 13,
+    "reducedDurabilityBurnRate": 23,
+    "crafting": {
+      "advanced_mechanical_components": 3,
+      "canister": 4
+    },
+    "stationLevelRequired": 3,
+    "imageFilename": "https://cdn.arctracker.io/items/vulcano.png"
+  },
+  {
+    "id": "vulcano_ii",
+    "name": "火山II型",
+    "description": "半自动霰弹枪，具有良好的子弹散布但衰减严重。",
+    "type": "霰弹枪",
+    "rarity": "史诗",
+    "damage": 58.5,
+    "fireRate": 14.3,
+    "range": 22.1,
+    "stability": 70.3,
+    "agility": 70.7,
+    "stealth": 15,
+    "increasedFireRate": 20,
+    "reducedReloadTime": 26,
+    "reducedDurabilityBurnRate": 46,
+    "crafting": {
+      "mechanical_components": 1,
+      "simple_gun_parts": 3
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/vulcano.png"
+  },
+  {
+    "id": "venator_ii",
+    "name": "维纳托II型",
+    "description": "半自动手枪。一次发射两发子弹。",
+    "type": "手枪",
+    "rarity": "稀有",
+    "damage": 18,
+    "fireRate": 26.7,
+    "range": 48.4,
+    "stability": 71.2,
+    "agility": 77.6,
+    "stealth": 12,
+    "increasedFireRate": 22,
+    "reducedReloadTime": 16,
+    "reducedDurabilityBurnRate": 23,
+    "crafting": {
+      "mechanical_components": 1,
+      "simple_gun_parts": 3
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/venator.png"
+  },
+  {
+    "id": "arpeggio_iii",
+    "name": "琶音III型",
+    "description": "一把3发点射突击步枪，具有不错的伤害输出和精度。",
+    "type": "突击步枪",
+    "rarity": "不常见",
+    "damage": 11,
+    "fireRate": 18.3,
+    "range": 53.7,
+    "stability": 82.4,
+    "agility": 60,
+    "stealth": 14,
+    "increasedFireRate": 40,
+    "reducedReloadTime": 25,
+    "reducedDurabilityBurnRate": 46,
+    "imageFilename": "https://cdn.arctracker.io/items/arpeggio.png"
+  },
+  {
+    "id": "arpeggio_iv",
+    "name": "琶音IV型",
+    "description": "一把3发点射突击步枪，具有不错的伤害输出和精度。",
+    "type": "突击步枪",
+    "rarity": "不常见",
+    "damage": 11,
+    "fireRate": 23.3,
+    "range": 53.7,
+    "stability": 82.4,
+    "agility": 60,
+    "stealth": 14,
+    "increasedFireRate": 60,
+    "reducedReloadTime": 50,
+    "reducedDurabilityBurnRate": 70,
+    "crafting": {
+      "mechanical_components": 1,
+      "medium_gun_parts": 2
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/arpeggio.png"
+  },
+  {
+    "id": "anvil_iii",
+    "name": "铁砧III型",
+    "description": "单动手炮，具有高伤害输出和爆头伤害，但操作缓慢。",
+    "type": "手炮",
+    "rarity": "不常见",
+    "damage": 40,
+    "fireRate": 14.7,
+    "range": 51.3,
+    "stability": 66.5,
+    "agility": 68,
+    "stealth": 10,
+    "reducedDispersionRecoveryTime": 30,
+    "increasedFireRate": 30,
+    "reducedDurabilityBurnRate": 46,
+    "imageFilename": "https://cdn.arctracker.io/items/anvil.png"
+  },
+  {
+    "id": "anvil_iv",
+    "name": "铁砧IV型",
+    "description": "单动手炮，具有高伤害输出和爆头伤害，但操作缓慢。",
+    "type": "手炮",
+    "rarity": "不常见",
+    "damage": 40,
+    "fireRate": 20.7,
+    "range": 51.3,
+    "stability": 66.5,
+    "agility": 74,
+    "stealth": 10,
+    "reducedDispersionRecoveryTime": 45,
+    "increasedFireRate": 45,
+    "reducedDurabilityBurnRate": 62,
+    "crafting": {
+      "mechanical_components": 1,
+      "heavy_gun_parts": 2
+    },
+    "imageFilename": "https://cdn.arctracker.io/items/anvil.png"
+  },
+  {
+    "id": "raider_augment_iii",
+    "name": "掠夺者增强III型",
+    "description": "可装备以获得更多装备空间和携带能力。还允许装备更好的护盾。",
+    "type": "增强",
+    "rarity": "史诗",
+    "backpackSlots": 20,
+    "weightLimitKg": 55,
+    "weaponSlots": 2,
+    "quickUseSlots": 6,
+    "safePocketSlots": 2,
+    "shieldCompatibility": ["轻型", "中型", "重型"],
+    "crafting": {
+      "electrical_components": 1,
+      "processor": 2
+    },
+    "stationLevelRequired": 2,
+    "imageFilename": "https://cdn.arctracker.io/items/raider_augment_iii.png"
+  },
+  {
+    "id": "raider_augment_iv",
+    "name": "掠夺者增强IV型",
+    "description": "可装备以获得更多装备空间和携带能力。还允许装备更好的护盾。",
+    "type": "增强",
+    "rarity": "传说",
+    "backpackSlots": 24,
+    "weightLimitKg": 60,
+    "weaponSlots": 2,
+    "quickUseSlots": 8,
+    "safePocketSlots": 3,
+    "shieldCompatibility": ["轻型", "中型", "重型"],
+    "crafting": {
+      "power_rod": 1,
+      "processor": 4
+    },
+    "stationLevelRequired": 3,
+    "imageFilename": "https://cdn.arctracker.io/items/raider_augment_iv.png"
+  },
+  {
+    "id": "medium_gun_parts",
+    "name": "中型枪械零件",
+    "description": "从中型火器回收的组件，用于武器制作。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/medium_gun_parts.png"
+  },
+  {
+    "id": "chemicals",
+    "name": "化学品",
+    "description": "用于制作医疗用品、爆炸物和实用物品。",
+    "type": "基础材料",
+    "rarity": "普通",
+    "value": 50,
+    "weightKg": 0.15,
+    "imageFilename": "https://cdn.arctracker.io/items/power_rod.png"
+  },
+  {
+    "id": "power_rod",
+    "name": "能量棒",
+    "description": "用于制作护盾。可回收为制作材料。",
+    "type": "先进材料",
+    "rarity": "史诗",
+    "value": 3000,
+    "weightKg": 1,
+    "imageFilename": "https://cdn.arctracker.io/items/power_rod.png"
+  },
+  {
+    "id": "industrial_battery",
+    "name": "工业电池",
+    "description": "一个用于工业设备的大型高容量电池。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/industrial_battery.png"
+  },
+  {
+    "id": "advanced_electrical_components",
+    "name": "先进电气组件",
+    "description": "一套用于先进电子设备和维修的高等级组件。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/advanced_electrical_components.png"
+  },
+  {
+    "id": "power_cable",
+    "name": "电源线",
+    "description": "一根用于传输电力的重型电缆。",
+    "type": "材料",
+    "imageFilename": "https://cdn.arctracker.io/items/power_cable.png"
+  },
+  {
+    "id": "faded_photograph",
+    "name": "褪色照片",
+    "description": "一张细节随时间褪色的照片。",
+    "type": "贵重物品",
+    "value": 640
+  },
+  {
+    "id": "portable_television",
+    "name": "便携式电视",
+    "description": "一台小型过时的便携式电视。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "deflated_football",
+    "name": "漏气足球",
+    "description": "一个经历过更好时光的足球。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "empty_wine_bottle",
+    "name": "空酒瓶",
+    "description": "一个曾经装满美酒的空瓶子。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "rubber_ducky",
+    "name": "橡皮鸭",
+    "description": "一只经典的黄色橡皮鸭。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "cat_bed",
+    "name": "猫床",
+    "description": "一张为心爱猫咪准备的舒适床铺。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "bloated_tuna_can",
+    "name": "膨胀金枪鱼罐头",
+    "description": "一罐可疑膨胀的金枪鱼罐头。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "coffee_pot",
+    "name": "咖啡壶",
+    "description": "一个使用频繁的咖啡壶。",
+    "type": "贵重物品",
+    "value": 1000
+  },
+  {
+    "id": "very_comfortable_pillow",
+    "name": "非常舒适的枕头",
+    "description": "一个比大多数枕头更柔软的枕头。",
+    "type": "贵重物品",
+    "value": 2000
+  },
+  {
+    "id": "pottery",
+    "name": "陶器",
+    "description": "一件手工制作的陶器。",
+    "type": "贵重物品",
+    "value": 2000
+  },
+  {
+    "id": "film_reel",
+    "name": "胶片卷",
+    "description": "一卷可能包含回忆的旧胶片。",
+    "type": "贵重物品",
+    "value": 2000
+  },
+  {
+    "id": "air_freshener",
+    "name": "空气清新剂",
+    "description": "一个香味几乎消失的香薰空气清新剂。",
+    "type": "贵重物品",
+    "value": 2000
+  },
+  {
+    "id": "poster_natural_wonder",
+    "name": "自然奇观海报",
+    "description": "一张描绘令人叹为观止的自然景观的海报。",
+    "type": "贵重物品",
+    "value": 2000
+  },
+  {
+    "id": "light_bulb",
+    "name": "灯泡",
+    "description": "一个用于照明的脆弱玻璃灯泡。",
+    "type": "贵重物品",
+    "value": 2000
+  },
+  {
+    "id": "statuette",
+    "name": "小雕像",
+    "description": "一个小装饰雕像。",
+    "type": "贵重物品",
+    "value": 3000
+  },
+  {
+    "id": "silver_teaspoon_set",
+    "name": "银茶匙套装",
+    "description": "一套华丽的银茶匙。",
+    "type": "贵重物品",
+    "value": 3000
+  },
+  {
+    "id": "music_album",
+    "name": "音乐专辑",
+    "description": "一张经典音乐专辑，仍在封套中。",
+    "type": "贵重物品",
+    "value": 3000
+  },
+  {
+    "id": "watch",
+    "name": "手表",
+    "description": "一只停止走动的腕表。",
+    "type": "贵重物品",
+    "value": 3000
+  },
+  {
+    "id": "vase",
+    "name": "花瓶",
+    "description": "一个装饰花瓶，可能很珍贵。",
+    "type": "贵重物品",
+    "value": 3000
+  },
+  {
+    "id": "music_box",
+    "name": "音乐盒",
+    "description": "一个播放令人难忘曲调的音乐盒。",
+    "type": "贵重物品",
+    "value": 5000
+  },
+  {
+    "id": "red_coral_jewelry",
+    "name": "红珊瑚珠宝",
+    "description": "一件用红珊瑚制作的珠宝。",
+    "type": "贵重物品",
+    "value": 5000
+  },
+  {
+    "id": "playing_cards",
+    "name": "扑克牌",
+    "description": "一副扑克牌，有些缺失。",
+    "type": "贵重物品",
+    "value": 5000
+  },
+  {
+    "id": "snow_globe",
+    "name": "雪花球",
+    "description": "一个包含雪景的球体。",
+    "type": "贵重物品",
+    "value": 7000
+  },
+  {
+    "id": "lances_mixtape_5th_edition",
+    "name": "兰斯的混音带（第5版）",
+    "description": "一张稀有的混音带，收藏家们趋之若鹜。",
+    "type": "贵重物品",
+    "value": 10000
+  },
+  {
+    "id": "raider_hatch_key",
+    "name": "掠夺者舱门钥匙",
+    "type": "钥匙",
+    "description": "开启掠夺者舱门。",
+    "rarity": "稀有",
+    "imageFilename": "https://cdn.arctracker.io/items/raider_hatch_key.png"
+  },
+  {
+    "id": "medium_shield",
+    "name": "中型护盾",
+    "type": "护盾",
+    "rarity": "稀有",
+    "description": "一个标准护盾，提供公平的保护，对机动性有适度影响。",
+    "durability": 100,
+    "shieldCharge": 80,
+    "damageMitigation": 45,
+    "movementSpeedModifier": -5,
+    "weight": 7,
+    "value": 2000,
+    "imageFilename": "https://cdn.arctracker.io/items/medium_shield.png"
+  },
+  {
+    "id": "zipline",
+    "name": "滑索",
+    "type": "快速使用",
+    "rarity": "不常见",
+    "description": "一个可部署的滑索，允许你在两个位置之间快速移动。",
+    "rangeMeters": 60,
+    "weight": 0.8,
+    "value": 2000,
+    "imageFilename": "https://cdn.arctracker.io/items/zipline.png"
+  },
+  {
+    "id": "arc_flex_rubber",
+    "name": "ARC弹性橡胶",
+    "type": "可回收",
+    "rarity": "稀有",
+    "description": "从ARC敌人或活动中获得。可回收为橡胶。",
+    "weightKg": 1,
+    "value": 1000,
+    "imageFilename": "https://cdn.arctracker.io/items/arc_flex_rubber.png"
+  },
+  {
+    "id": "damaged_heat_sink",
+    "name": "损坏的散热器",
+    "type": "可回收",
+    "rarity": "稀有",
+    "description": "可回收为制作材料。",
+    "weightKg": 2,
+    "value": 640,
+    "imageFilename": "https://cdn.arctracker.io/items/damaged_heat_sink.png"
+  },
+  {
+    "id": "snap_grenade",
+    "name": "爆震手榴弹",
+    "description": "一种使目标迷失方向的手榴弹。",
+    "type": "装备"
+  },
+  {
+    "id": "heavy_fuse_grenade",
+    "name": "重型引信手榴弹",
+    "description": "一种带有定时引信的强力爆炸物。",
+    "type": "装备"
+  },
+  {
+    "id": "showstopper",
+    "name": "表演终结者",
+    "description": "未知",
+    "type": "装备"
+  },
+  {
+    "id": "photoelectric_cloak",
+    "name": "光电斗篷",
+    "description": "一件让你躲避ARC的斗篷",
+    "type": "装备"
+  },
+  {
+    "id": "burletta_recipe",
+    "name": "布尔莱塔配方",
+    "description": "制作布尔莱塔武器的配方。",
+    "type": "配方"
+  },
+  {
+    "id": "binoculars",
+    "name": "双筒望远镜",
+    "description": "用于观察远处物体的光学仪器。",
+    "type": "装备"
+  },
+  {
+    "id": "silencer_i",
+    "name": "消音器I型",
+    "description": "一个标准消音器附件。",
+    "type": "武器改装"
+  },
+  {
+    "id": "silencer_i_recipe",
+    "name": "消音器I型配方",
+    "description": "制作消音器I型的配方。",
+    "type": "配方"
+  },
+  {
+    "id": "vita_shot",
+    "name": "维他命注射",
+    "description": "一种医疗兴奋剂。",
+    "type": "消耗品"
+  },
+  {
+    "id": "vita_spray",
+    "name": "维他命喷雾",
+    "description": "一种治疗喷雾。",
+    "type": "消耗品"
+  },
+  {
+    "id": "jolt_mine",
+    "name": "电击地雷",
+    "description": "一个电击陷阱。",
+    "type": "装备"
+  },
+  {
+    "id": "dam_staff_room_key",
+    "name": "大坝员工室钥匙",
+    "description": "大坝员工室的钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "buried_city_residential_master_key",
+    "name": "埋城住宅万能钥匙",
+    "description": "埋城住宅区的万能钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "barricade_kit",
+    "name": "路障套件",
+    "description": "部署临时路障的套件。",
+    "type": "装备"
+  },
+  {
+    "id": "defibrillator",
+    "name": "除颤器",
+    "description": "一种用于复苏失去行动能力个体的设备。",
+    "type": "装备"
+  },
+  {
+    "id": "buried_city_town_hall_key",
+    "name": "埋城市政厅钥匙",
+    "description": "埋城市政厅的钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "trigger_nade",
+    "name": "触发手榴弹",
+    "description": "一种遥控引爆的爆炸物。",
+    "type": "装备"
+  },
+  {
+    "id": "spaceport_container_storage_key",
+    "name": "太空港集装箱存储钥匙",
+    "description": "太空港集装箱存储的钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "burletta_i",
+    "name": "布尔莱塔I型",
+    "description": "一把1级布尔莱塔武器。",
+    "type": "武器"
+  },
+  {
+    "id": "spaceport_warehouse_key",
+    "name": "太空港仓库钥匙",
+    "description": "太空港仓库的钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "osprey_i",
+    "name": "鱼鹰I型",
+    "description": "一把1级鱼鹰武器。",
+    "type": "武器"
+  },
+  {
+    "id": "buried_city_hospital_key",
+    "name": "埋城医院钥匙",
+    "description": "埋城医院内区域的钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "padded_stock",
+    "name": "软垫枪托",
+    "description": "一个软垫枪托武器改装。",
+    "type": "武器改装"
+  },
+  {
+    "id": "padded_stock_recipe",
+    "name": "软垫枪托配方",
+    "description": "制作软垫枪托的配方。",
+    "type": "配方"
+  },
+  {
+    "id": "adrenaline_shot",
+    "name": "肾上腺素注射",
+    "description": "提供临时提升。",
+    "type": "消耗品"
+  },
+  {
+    "id": "gas_grenades",
+    "name": "毒气手榴弹",
+    "description": "释放令人虚弱的毒气云的手榴弹。",
+    "type": "装备"
+  },
+  {
+    "id": "torrente_i",
+    "name": "托伦特I型",
+    "description": "一把1级托伦特武器。",
+    "type": "武器"
+  },
+  {
+    "id": "dam_utility_key",
+    "name": "大坝公用设施钥匙",
+    "description": "大坝公用设施通道的钥匙。",
+    "type": "钥匙"
+  },
+  {
+    "id": "tempest_i",
+    "name": "暴风雨I型",
+    "description": "一把1级暴风雨武器。",
+    "type": "武器"
+  }
+]

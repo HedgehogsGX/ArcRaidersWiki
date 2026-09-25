@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ARC Raiders 社区维基 | Community Wiki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #140c1c;
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            padding-top: 70px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('IMG/News_bg2.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(5px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        nav {
+            background-color: rgba(20, 12, 28, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: white;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #6c5ce7;
+            box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            width: 18px;
+            height: 18px;
+            fill: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+        }
+
+        .nav-dropdowns {
+            display: flex;
+            gap: 1rem;
+            margin: 0 1rem;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-button:hover {
+            color: #6c5ce7;
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .dropdown-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-button::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            background: rgba(20, 12, 28, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(108, 92, 231, 0.1);
+            color: #6c5ce7;
+            transform: translateX(5px);
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            color: #6c5ce7;
+        }
+
+        .language-btn.active {
+            color: white;
+            background: rgba(108, 92, 231, 0.3);
+        }
+
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+            background: transparent;
+        }
+
+        .news-section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #6c5ce7;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .news-item {
+            background: rgba(20, 12, 28, 0.85);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .news-preview {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: start;
+            gap: 1.5rem;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .news-preview:hover {
+            background: rgba(108, 92, 231, 0.05);
+        }
+
+        .news-preview-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .news-posted {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: #6c5ce7;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 4px;
+        }
+
+        .news-title {
+            font-size: 1.3rem;
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .news-thumbnail {
+            width: auto;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .news-item:hover .news-thumbnail {
+            opacity: 1;
+            transform: scale(1.02);
+            border-color: rgba(108, 92, 231, 0.4);
+        }
+
+        .expand-button {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            align-self: center;
+        }
+
+        .news-item:hover .expand-button {
+            background: rgba(108, 92, 231, 0.1);
+            color: #6c5ce7;
+        }
+
+        .news-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .news-content-inner {
+            padding: 0 1.5rem 1.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+        }
+
+        .news-image {
+            width: 100%;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .news-item.active .news-content {
+            max-height: 2000px;
+        }
+
+        .news-item.active .news-content-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .news-item.active .expand-button {
+            transform: rotate(45deg);
+            color: #6c5ce7;
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        footer {
+            background-color: rgba(20, 12, 28, 0.95);
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .logo {
+                height: 32px;
+            }
+
+            .search-container {
+                order: 3;
+                min-width: 100%;
+                margin: 0.5rem 0 0 0;
+            }
+
+            .nav-dropdowns {
+                display: none;
+            }
+
+            .news-preview {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .news-thumbnail {
+                width: 100%;
+                height: auto;
+                max-height: 150px;
+                order: -1;
+            }
+
+            .expand-button {
+                position: absolute;
+                right: 1.5rem;
+                top: 1.5rem;
+            }
+
+            .news-section-title {
+                font-size: 1.8rem;
+            }
+
+            .news-content-inner {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-box {
+                padding: 8px 16px 8px 36px;
+                font-size: 0.9rem;
+            }
+
+            .search-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .news-section-title {
+                font-size: 1.6rem;
+            }
+
+            body {
+                padding-bottom: 450px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .section-title-content {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #6c5ce7;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(108, 92, 231, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 新增footer链接样式 */
+        .footer-links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-links-column {
+            border-left: 2px solid rgba(108, 92, 231, 0.3);
+            padding-left: 1.5rem;
+        }
+
+        .footer-links-title {
+            color: #6c5ce7;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links-list a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .footer-links-list a::before {
+            content: "•";
+            color: #6c5ce7;
+            position: absolute;
+            left: 0;
+            opacity: 0.6;
+        }
+
+        .footer-links-list a:hover {
+            color: #6c5ce7;
+            transform: translateX(5px);
+        }
+
+        .footer-links-list.two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links-list.two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            /* ...rest of existing media query styles... */
+        }
+
+        /* 新增细节类别样式 */
+        .details-section {
+            padding: 2rem 5%;
+            background: transparent;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 140px);
+            gap: 2rem;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 140px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .details-grid {
+                grid-template-columns: repeat(1, 140px);
+            }
+        }
+
+        .card {
+            width: 140px;
+            height: 140px;
+            background-image: url(#);
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(108, 92, 231, 0.3);
+            border-color: rgba(108, 92, 231, 0.4);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .card:hover::before {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .card-text {
+            position: absolute;
+            bottom: 12px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 3px black;
+            font-size: 0.9rem;
+            padding: 0 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-text {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .detail-card {
+                aspect-ratio: 1.2/1;
+            }
+
+            .card-label {
+                font-size: 0.85rem;
+                bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div style="display: flex; align-items: center; gap: 1rem; order: 1;">
+                <img src="IMG/icon.jpg" alt="Arc Raiders Logo" class="logo">
+                <span style="color: white; font-size: 1.2rem; font-weight: 500;">Arc Raiders Wiki</span>
+            </div>
+
+            <div class="search-container" style="order: 2;">
+                <div class="search-wrapper">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z" />
+                    </svg>
+                    <input type="text" class="search-box" placeholder="搜索维基内容...">
+                </div>
+            </div>
+
+            <div class="nav-dropdowns" style="order: 3;">
+                <div class="dropdown">
+                    <button class="dropdown-button" data-text-en="World & Systems" data-text-zh="世界与系统">世界与系统</button>
+                    <div class="dropdown-content">
+                        <a href="subpages/Quests.html" class="dropdown-item" data-text-en="Quests" data-text-zh="任务">任务</a>
+                        <a href="subpages/Augments.html" class="dropdown-item" data-text-en="Augments" data-text-zh="增强">增强</a>
+                        <a href="subpages/Shields.html" class="dropdown-item" data-text-en="Shields" data-text-zh="护盾">护盾</a>
+                        <a href="subpages/Traders.html" class="dropdown-item" data-text-en="Traders" data-text-zh="商人">商人</a>
+                        <a href="subpages/ARC.html" class="dropdown-item" data-text-en="ARC" data-text-zh="ARC">ARC</a>
+                        <a href="subpages/Skill_Tree.html" class="dropdown-item" data-text-en="Skill Tree" data-text-zh="技能树">技能树</a>
+                        <a href="subpages/Locations.html" class="dropdown-item" data-text-en="Locations" data-text-zh="地点">地点</a>
+                        <a href="subpages/Dynamic_Events.html" class="dropdown-item" data-text-en="Dynamic Events" data-text-zh="动态事件">动态事件</a>
+                        <a href="subpages/Battlepass.html" class="dropdown-item" data-text-en="Battlepass" data-text-zh="战斗通行证">战斗通行证</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button" data-text-en="Gear and Items" data-text-zh="装备与物品">装备与物品</button>
+                    <div class="dropdown-content">
+                        <a href="subpages/Items.html" class="dropdown-item" data-text-en="Items" data-text-zh="物品">物品</a>
+                        <a href="subpages/Keys.html" class="dropdown-item" data-text-en="Keys" data-text-zh="钥匙">钥匙</a>
+                        <a href="subpages/Recipes.html" class="dropdown-item" data-text-en="Recipes" data-text-zh="配方">配方</a>
+                        <a href="subpages/Weapons.html" class="dropdown-item" data-text-en="Weapons & Ammo" data-text-zh="武器与弹药">武器与弹药</a>
+                        <a href="subpages/Attachments.html" class="dropdown-item" data-text-en="Attachments" data-text-zh="配件">配件</a>
+                        <a href="subpages/Grenades.html" class="dropdown-item" data-text-en="Grenades & Gadgets" data-text-zh="手雷与小工具">手雷与小工具</a>
+                        <a href="subpages/Medical.html" class="dropdown-item" data-text-en="Medical" data-text-zh="医疗">医疗</a>
+                        <a href="subpages/Shields.html" class="dropdown-item" data-text-en="Shields" data-text-zh="护盾">护盾</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="language-switcher" style="order: 4;">
+                <button class="language-btn active" data-lang="zh">中</button>
+                <button class="language-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 百科图鉴部分 -->
+        <div class="details-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-title-content">
+                        <h2 class="section-title" data-text-en="Encyclopedia" data-text-zh="百科图鉴">百科图鉴</h2>
+                        <p class="section-subtitle" data-text-en="Explore key elements of ARC Raiders"
+                            data-text-zh="探索 ARC Raiders 的核心要素">常用百科分支</p>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <!-- 第一行 -->
+                    <a href="subpages/Weapons.html" class="card" style="background-image: url('IMG/weapons.jpg')">
+                        <span class="card-text" data-text-en="Weapons" data-text-zh="武器">武器</span>
+                    </a>
+                    <a href="subpages/Equipment.html" class="card" style="background-image: url('IMG/equipment.jpg')">
+                        <span class="card-text" data-text-en="Equipment" data-text-zh="装备">装备</span>
+                    </a>
+                    <a href="subpages/Maps.html" class="card" style="background-image: url('IMG/maps.jpg')">
+                        <span class="card-text" data-text-en="Maps" data-text-zh="地图">地图</span>
+                    </a>
+                    <a href="subpages/ARC.html" class="card" style="background-image: url('IMG/arc.jpg')">
+                        <span class="card-text" data-text-en="ARC" data-text-zh="ARC">ARC</span>
+                    </a>
+                    <a href="subpages/Quests.html" class="card" style="background-image: url('IMG/quests.jpg')">
+                        <span class="card-text" data-text-en="Quests" data-text-zh="任务">任务</span>
+                    </a>
+                    <a href="subpages/Workshop.html" class="card" style="background-image: url('IMG/workshop.jpg')">
+                        <span class="card-text" data-text-en="Workshop" data-text-zh="工坊">工坊</span>
+                    </a>
+                    
+                    <!-- 第二行 -->
+                    <a href="subpages/Skills.html" class="card" style="background-image: url('IMG/skills.jpg')">
+                        <span class="card-text" data-text-en="Skills" data-text-zh="技能">技能</span>
+                    </a>
+                    <a href="subpages/Traders.html" class="card" style="background-image: url('IMG/traders.jpg')">
+                        <span class="card-text" data-text-en="Traders" data-text-zh="商人">商人</span>
+                    </a>
+                    <a href="subpages/Speranza.html" class="card" style="background-image: url('IMG/speranza.jpg')">
+                        <span class="card-text" data-text-en="Speranza" data-text-zh="Speranza">Speranza</span>
+                    </a>
+                    <a href="subpages/Mastery.html" class="card" style="background-image: url('IMG/mastery.jpg')">
+                        <span class="card-text" data-text-en="Mastery" data-text-zh="精通">精通</span>
+                    </a>
+                    <a href="subpages/Looting.html" class="card" style="background-image: url('IMG/looting.jpg')">
+                        <span class="card-text" data-text-en="Looting" data-text-zh="搜刮">搜刮</span>
+                    </a>
+                    <a href="subpages/Lore.html" class="card" style="background-image: url('IMG/lore.jpg')">
+                        <span class="card-text" data-text-en="Lore" data-text-zh="背景故事">背景故事</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 最新新闻部分 -->
+        <div class="news-container">
+            <div class="section-container news-section">
+                <div class="section-header">
+                    <div class="section-title-content">
+                        <h2 class="section-title" data-text-en="Latest News" data-text-zh="最新新闻">最新新闻</h2>
+                        <p class="section-subtitle" data-text-en="Stay updated with the latest developments"
+                            data-text-zh="了解最新的游戏动态">了解最新的游戏动态</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-preview">
+                        <div class="news-preview-content">
+                            <div class="news-meta">
+                                <span class="news-posted" data-text-en="Posted" data-text-zh="发布于">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                                    </svg>
+                                    发布于
+                                </span>
+                                <span class="news-date">2024.04.16</span>
+                            </div>
+                            <h3 class="news-title" data-text-en="Get Ready for the next ARC Raiders Tech Test 2"
+                                data-text-zh="ARC Raiders第二次技术测试于4月30日开启">ARC Raiders第二次技术测试于4月30日开启</h3>
+                        </div>
+                        <img src="../IMG/News_preview2.png" alt="测试预览" class="news-thumbnail">
+                        <div class="expand-button">+</div>
+                    </div>
+
+                    <div class="news-content">
+                        <div class="news-content-inner">
+                            <img src="../IMG/News_bg.png" alt="ARC Raiders Tech Test 2" class="news-image">
+                            <p data-text-en="Raiders!" data-text-zh="战士们！">Raiders!</p>
+                            <p data-text-en="On Wednesday, April 30th, we're kicking off the ARC Raiders Tech Test 2, where invited playtesters on Steam, Epic Games Store, and consoles will be able to experience the deadly exploits of the Rust Belt, for five full days."
+                                data-text-zh="我们将在4月30日星期三启动ARC Raiders第二次技术测试，受邀的测试玩家可以通过Steam、Epic Games Store和主机平台体验锈带地区的致命冒险，测试将持续五天。">
+                                On Wednesday, April 30th, we're kicking off the ARC Raiders Tech Test 2, where invited
+                                playtesters on Steam, Epic Games Store, and consoles will be able to experience the
+                                deadly
+                                exploits of the Rust Belt, for five full days.
+                            </p>
+
+                            <p data-text-en="This will be our largest test of ARC Raiders to date, for the first time also including players on PlayStation 5, Xbox Series X|S, and the Epic Games Store. The purpose of the test is to see how the game performs in a live environment across all launch platforms and gather key insights and feedback from players like you."
+                                data-text-zh="这将是我们迄今为止规模最大的一次测试，首次包含PlayStation 5、Xbox Series X|S和Epic Games Store平台的玩家。测试目的是观察游戏在所有发布平台上的实时表现，并收集像您这样的玩家的关键见解和反馈。">
+                            <p>
+                                <a href="#signup"
+                                    style="color: #6c5ce7; text-decoration: none; transition: all 0.3s ease;"
+                                    onmouseover="this.style.textShadow='0 0 8px rgba(108, 92, 231, 0.4)'"
+                                    onmouseout="this.style.textShadow='none'" data-text-en="Sign up"
+                                    data-text-zh="立即报名">Sign up</a>
+                                <span data-text-en=" now for your chance to play ARC Raiders."
+                                    data-text-zh="，获取游玩 ARC Raiders 的机会。">now for your chance to play ARC
+                                    Raiders.</span>
+                            </p>
+
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; margin: 2rem 0;">
+                                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                    src="https://www.youtube.com/embed/W-NUcKbwVb8" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy" referrerpolicy="no-referrer" title="Video content">
+                                </iframe>
+                            </div>
+
+                            <h4 style="margin: 2rem 0 1rem;" data-text-en="So, what can I expect?"
+                                data-text-zh="那么，我可以期待什么？">那么，我可以期待什么？</h4>
+
+                            <p data-text-en="For those who may need a refresher: ARC Raiders is a multiplayer extraction adventure, set in a lethal future earth, where little remains of the world we know today."
+                                data-text-zh="对于需要复习的玩家：ARC Raiders是一款多人提取冒险游戏，设定在一个致命的未来地球，这里几乎看不到我们今天所熟知的世界。">
+                                对于需要复习的玩家：ARC Raiders是一款多人提取冒险游戏，设定在一个致命的未来地球，这里几乎看不到我们今天所熟知的世界。
+                            </p>
+
+                            <p data-text-en="On the surface, threats are everywhere: ARC machines loom high in the skies and lurk in the shadowy corners of abandoned spaceports and run-down warehouses. You'll encounter everything from roaming rollbots to multi-legged behemoths, and the choice will be yours — team up to defeat them, or risk combat with your fellow Raiders if you'd rather keep the spoils for yourself."
+                                data-text-zh="在地表，威胁无处不在：ARC机器在天空中盘旋，潜伏在废弃太空港和破旧仓库的阴暗角落。从游荡的滚动机器人到多足巨兽，你都将遭遇各种敌人。选择权在你——与队友合作击败它们，或者如果你想独占战利品，可以冒险与其他掠夺者作战。">
+                                在地表，威胁无处不在：ARC机器在天空中盘旋，潜伏在废弃太空港和破旧仓库的阴暗角落。从游荡的滚动机器人到多足巨兽，你都将遭遇各种敌人。选择权在你——与队友合作击败它们，或者如果你想独占战利品，可以冒险与其他掠夺者作战。
+                            </p>
+
+                            <p data-text-en="While the line between friend and foe is razor thin on the surface, in Speranza, you'll find refuge. The Traders there are ready to supply you with quests and gear. You can also craft equipment in your Raider Den, such as advanced weapon mods or unique gadgets. With every level gained on the surface, you can invest your experience into a branching skill tree."
+                                data-text-zh="虽然在地表朋友与敌人之间的界限非常模糊，但在Speranza，你能找到庇护所。那里的商人随时准备为你提供任务和装备。你还可以在掠夺者巢穴中制作装备，比如先进的武器配件或独特的小工具。在地表获得的每一级经验都可以投入到分支技能树中。">
+                                虽然在地表朋友与敌人之间的界限非常模糊，但在Speranza，你能找到庇护所。那里的商人随时准备为你提供任务和装备。你还可以在掠夺者巢穴中制作装备，比如先进的武器配件或独特的小工具。在地表获得的每一级经验都可以投入到分支技能树中。
+                            </p>
+
+                            <h4 style="margin: 2rem 0 1rem;" data-text-en="How do I get a chance to play?"
+                                data-text-zh="如何获得游玩机会？">如何获得游玩机会？</h4>
+
+                            <p data-text-en="This will be our largest test of ARC Raiders to date, for the first time also including players on PlayStation 5, Xbox Series X|S, and the Epic Games Store. The purpose of the test is to see how the game performs in a live environment across all launch platforms and gather key insights and feedback from players like you."
+                                data-text-zh="这将是我们迄今为止规模最大的一次测试，首次包含PlayStation 5、Xbox Series X|S和Epic Games Store平台的玩家。测试目的是观察游戏在所有发布平台上的实时表现，并收集像您这样的玩家的关键见解和反馈。">
+                                这将是我们迄今为止规模最大的一次测试，首次包含PlayStation 5、Xbox Series X|S和Epic Games
+                                Store平台的玩家。测试目的是观察游戏在所有发布平台上的实时表现，并收集像您这样的玩家的关键见解和反馈。
+                            </p>
+                            <p data-text-en="This time around, you're free to share or stream gameplay capture and tell the world of your experience in ARC Raiders — in other words, the playtest is not confidential."
+                                data-text-zh="本次测试中，您可以自由分享或直播游戏内容，向全世界讲述您在ARC Raiders中的体验——换句话说，这次测试不是保密的。">
+                                本次测试中，您可以自由分享或直播游戏内容，向全世界讲述您在ARC Raiders中的体验——换句话说，这次测试不是保密的。
+                            </p>
+                            <p data-text-en="Sign up now for your chance to play ARC Raiders."
+                                data-text-zh="立即报名，获取游玩ARC Raiders的机会。">
+                                立即报名，获取游玩ARC Raiders的机会。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-preview">
+                        <div class="news-preview-content">
+                            <div class="news-meta">
+                                <span class="news-posted" data-text-en="Posted" data-text-zh="发布于">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                                    </svg>
+                                    发布于
+                                </span>
+                                <span class="news-date">2024.11.13</span>
+                            </div>
+                            <h3 class="news-title" data-text-en="ARC Raiders | Gameplay Reveal"
+                                data-text-zh="ARC Raiders | 玩法展示">ARC Raiders | 玩法展示</h3>
+                        </div>
+                        <img src="IMG/News_preview.png" alt="玩法展示预览" class="news-thumbnail">
+                        <div class="expand-button">+</div>
+                    </div>
+
+                    <div class="news-content">
+                        <div class="news-content-inner">
+                            <img src="IMG/News_bg.png" alt="ARC Raiders Gameplay Reveal" class="news-image">
+                            <p data-text-en="Raiders!" data-text-zh="战士们！">Raiders!</p>
+                            <p data-text-en="We're still busy reviewing all the feedback from last month's tech test. Again, thanks so much for taking the time to play with us! Early software and all, this was a really encouraging playtest. Lots of great feedback and many of you seem to appreciate the atmosphere of the world we've created and the immersion we're bringing to the table with ARC Raiders."
+                                data-text-zh="我们仍在忙于审查上个月技术测试的所有反馈。再次感谢您抽出时间与我们一起游玩！作为早期软件，这次测试令人非常鼓舞。我们收到了许多很好的反馈，很多玩家似乎都很欣赏我们在 ARC Raiders 中营造的世界氛围和带来的沉浸感。">
+                                我们仍在忙于审查上个月技术测试的所有反馈。再次感谢您抽出时间与我们一起游玩！作为早期软件，这次测试令人非常鼓舞。我们收到了许多很好的反馈，很多玩家似乎都很欣赏我们在 ARC
+                                Raiders 中营造的世界氛围和带来的沉浸感。
+                            </p>
+
+                            <p data-text-en="There's also a lot we can do to continue optimizing and balancing the experience. As we keep developing the game, we're keen to deliver on a much expanded late-game experience, with deeper progression and extensive quests that take players across new locations — as well as a larger variety of ARC machines and other world-encounters, and some other improvements and surprises (!)."
+                                data-text-zh="我们还可以做很多事情来继续优化和平衡游戏体验。随着游戏开发的推进，我们热衷于提供更加丰富的后期游戏体验，包括更深入的进程系统和带领玩家探索新地点的大量任务——以及更多种类的 ARC 机器和其他世界遭遇，还有一些其他改进和惊喜（！）。">
+                                我们还可以做很多事情来继续优化和平衡游戏体验。随着游戏开发的推进，我们热衷于提供更加丰富的后期游戏体验，包括更深入的进程系统和带领玩家探索新地点的大量任务——以及更多种类的
+                                ARC
+                                机器和其他世界遭遇，还有一些其他改进和惊喜（！）。
+                            </p>
+
+                            <p data-text-en="To those of you who didn't get access this time around, stay tuned. We're aiming to host more playtests across all platforms before release. We also know many of you are eager to see the game, so we decided to put together a longer gameplay reveal and walkthrough!"
+                                data-text-zh="对于这次没有获得测试资格的玩家，请继续关注。我们计划在发布前在所有平台上进行更多的游戏测试。我们也知道很多玩家都急于一睹游戏真容，所以我们决定制作一个更长的游戏玩法展示和演示视频！">
+                                对于这次没有获得测试资格的玩家，请继续关注。我们计划在发布前在所有平台上进行更多的游戏测试。我们也知道很多玩家都急于一睹游戏真容，所以我们决定制作一个更长的游戏玩法展示和演示视频！
+                            </p>
+
+                            <p data-text-en="In this gameplay reveal, which was captured on the tech test build, we follow a squad of three Raiders as they venture above ground on a quest to extract valuable items within the Buried City of Southern Calabretta; attempting to avoid ARC and cautiously discovering if other Raiders are friends or foes. The footage also provides a glimpse of Speranza, the place Raiders call home and where every Raider's adventure begins — and hopefully ends."
+                                data-text-zh="在这个基于技术测试版本录制的游戏玩法展示中，我们跟随一支三人掠夺者小队，他们冒险前往地面，执行在南卡拉布雷塔被掩埋之城中提取贵重物品的任务；试图避开 ARC，同时谨慎地判断其他掠夺者是敌是友。视频还展示了掠夺者称之为家的地方——希望扎，每个掠夺者的冒险都始于此，也希望能结束于此。">
+                                在这个基于技术测试版本录制的游戏玩法展示中，我们跟随一支三人掠夺者小队，他们冒险前往地面，执行在南卡拉布雷塔被掩埋之城中提取贵重物品的任务；试图避开
+                                ARC，同时谨慎地判断其他掠夺者是敌是友。视频还展示了掠夺者称之为家的地方——希望扎，每个掠夺者的冒险都始于此，也希望能结束于此。
+                            </p>
+
+                            <p data-text-en="Check it out here:" data-text-zh="观看视频：">观看视频：</p>
+
+                            <div style="position: relative; padding-bottom: 56.25%; height: 0; margin: 2rem 0;">
+                                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                    src="https://www.youtube.com/embed/OpCooWm-PDs" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy" referrerpolicy="no-referrer" title="Video content">
+                                </iframe>
+                            </div>
+
+                            <p data-text-en="With that, keep following us for updates. Can't wait to see you in the Rust Belt soon!"
+                                data-text-zh="请继续关注我们的更新。迫不及待想在锈带地区见到你！">
+                                请继续关注我们的更新。迫不及待想在锈带地区见到你！
+                            </p>
+
+                            <p data-text-en="/Aleksander Grøndal, Executive Producer on ARC Raiders"
+                                data-text-zh="/Aleksander Grøndal，ARC Raiders 执行制作人">
+                                /Aleksander Grøndal，ARC Raiders 执行制作人
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const translations = {
+            // Navigation elements
+            'Arc Raiders Wiki': {
+                en: 'Arc Raiders Wiki',
+                zh: 'Arc Raiders 维基'
+            },
+            'Search wiki content...': {
+                en: 'Search wiki content...',
+                zh: '搜索维基内容...'
+            },
+            'World & Systems': {
+                en: 'World & Systems',
+                zh: '世界与系统'
+            },
+            'Gear and Items': {
+                en: 'Gear and Items',
+                zh: '装备与物品'
+            },
+            // Navigation dropdown items
+            'Quests': {
+                en: 'Quests',
+                zh: '任务'
+            },
+            'Raider Den': {
+                en: 'Raider Den',
+                zh: '掠夺者巢穴'
+            },
+            'Traders': {
+                en: 'Traders',
+                zh: '商人'
+            },
+            'ARC': {
+                en: 'ARC',
+                zh: 'ARC'
+            },
+            'Skills': {
+                en: 'Skills',
+                zh: '技能'
+            },
+            'Maps': {
+                en: 'Maps',
+                zh: '地图'
+            },
+            'Workshop': {
+                en: 'Workshop',
+                zh: '工坊'
+            },
+            'Speranza': {
+                en: 'Speranza',
+                zh: 'Speranza'
+            },
+            'Mastery': {
+                en: 'Mastery',
+                zh: '精通'
+            },
+            'Looting': {
+                en: 'Looting',
+                zh: '搜刮'
+            },
+            'Lore': {
+                en: 'Lore',
+                zh: '背景故事'
+            },
+            'Equipment': {
+                en: 'Equipment',
+                zh: '装备'
+            },
+            // Section titles
+            'Latest News': {
+                en: 'Latest News',
+                zh: '最新新闻'
+            },
+            'Stay updated with the latest developments': {
+                en: 'Stay updated with the latest developments',
+                zh: '了解最新的游戏动态'
+            },
+            'Posted': {
+                en: 'Posted',
+                zh: '发布于'
+            },
+            // News titles and content
+            'Get Ready for the next ARC Raiders Tech Test 2': {
+                en: 'Get Ready for the next ARC Raiders Tech Test 2',
+                zh: 'ARC Raiders第二次技术测试于4月30日开启'
+            },
+            'ARC Raiders | Gameplay Reveal': {
+                en: 'ARC Raiders | Gameplay Reveal',
+                zh: 'ARC Raiders | 玩法展示'
+            },
+            'Raiders!': {
+                en: 'Raiders!',
+                zh: '战士们！'
+            },
+            'Sign up': {
+                en: 'Sign up',
+                zh: '立即报名'
+            },
+            ' now for your chance to play ARC Raiders.': {
+                en: ' now for your chance to play ARC Raiders.',
+                zh: '，获取游玩 ARC Raiders 的机会。'
+            },
+            'So, what can I expect?': {
+                en: 'So, what can I expect?',
+                zh: '那么，我可以期待什么？'
+            },
+            'How do I get a chance to play?': {
+                en: 'How do I get a chance to play?',
+                zh: '如何获得游玩机会？'
+            },
+            'Check it out here:': {
+                en: 'Check it out here:',
+                zh: '观看视频：'
+            },
+            'With that, keep following us for updates. Can\'t wait to see you in the Rust Belt soon!': {
+                en: 'With that, keep following us for updates. Can\'t wait to see you in the Rust Belt soon!',
+                zh: '请继续关注我们的更新。迫不及待想在锈带地区见到你！'
+            },
+            '/Aleksander Grøndal, Executive Producer on ARC Raiders': {
+                en: '/Aleksander Grøndal, Executive Producer on ARC Raiders',
+                zh: '/Aleksander Grøndal，ARC Raiders 执行制作人'
+            },
+            // Footer
+            '© 2023 Arc Raiders Community Wiki. Unofficial fan work, not affiliated with the developers.': {
+                en: '© 2023 Arc Raiders Community Wiki. Unofficial fan work, not affiliated with the developers.',
+                zh: '© 2023 Arc Raiders 玩家社区维基。非官方粉丝作品，与开发商无关。'
+            },
+            'Content is available under CC BY-NC-SA 4.0 license': {
+                en: 'Content is available under CC BY-NC-SA 4.0 license',
+                zh: '遵循 CC BY-NC-SA 4.0 协议共享内容'
+            },
+            'Wiki Tools': {
+                en: 'Wiki Tools',
+                zh: '维基工具'
+            },
+            'Official Links': {
+                en: 'Official Links',
+                zh: '官方链接'
+            },
+            'Interactive Map': {
+                en: 'Interactive Map',
+                zh: '交互地图'
+            },
+            'Weapon Calculator': {
+                en: 'Weapon Calculator',
+                zh: '武器计算器'
+            },
+            'Progress Tracker': {
+                en: 'Progress Tracker',
+                zh: '进度追踪'
+            },
+            'Item Tracker': {
+                en: 'Item Tracker',
+                zh: '物品追踪'
+            },
+            'Loadout Generator': {
+                en: 'Loadout Generator',
+                zh: '装备生成器'
+            },
+            'Official Website': {
+                en: 'Official Website',
+                zh: '官方网站'
+            },
+            'Steam Page': {
+                en: 'Steam Page',
+                zh: 'Steam页面'
+            },
+            'Epic Games Page': {
+                en: 'Epic Games Page',
+                zh: 'Epic商店页面'
+            },
+            'Discord Invite': {
+                en: 'Discord Invite',
+                zh: 'Discord邀请'
+            },
+            'Official Twitch': {
+                en: 'Official Twitch',
+                zh: '官方Twitch'
+            },
+            'Facebook Page': {
+                en: 'Facebook Page',
+                zh: 'Facebook主页'
+            },
+            'Official Twitter': {
+                en: 'Official Twitter',
+                zh: '官方Twitter'
+            },
+            'Official Subreddit': {
+                en: 'Official Subreddit',
+                zh: '官方Reddit'
+            },
+            // Encyclopedia section titles
+            'Encyclopedia': {
+                en: 'Encyclopedia',
+                zh: '百科图鉴'
+            },
+            'Explore key elements of ARC Raiders': {
+                en: 'Explore key elements of ARC Raiders',
+                zh: '探索 ARC Raiders 的核心要素'
+            },
+            
+            // Category cards
+            'Weapons': {
+                en: 'Weapons',
+                zh: '武器'
+            },
+            'Equipment': {
+                en: 'Equipment',
+                zh: '装备'
+            },
+            'Maps': {
+                en: 'Maps',
+                zh: '地图'
+            },
+            'ARC': {
+                en: 'ARC',
+                zh: 'ARC'
+            },
+            'Quests': {
+                en: 'Quests',
+                zh: '任务'
+            },
+            'Workshop': {
+                en: 'Workshop',
+                zh: '工坊'
+            },
+            'Skills': {
+                en: 'Skills',
+                zh: '技能'
+            },
+            'Traders': {
+                en: 'Traders',
+                zh: '商人'
+            },
+            'Speranza': {
+                en: 'Speranza',
+                zh: 'Speranza'
+            },
+            'Mastery': {
+                en: 'Mastery',
+                zh: '精通'
+            },
+            'Looting': {
+                en: 'Looting',
+                zh: '搜刮'
+            },
+            'Lore': {
+                en: 'Lore',
+                zh: '背景故事'
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Language switching functionality
+            const languageButtons = document.querySelectorAll('.language-btn');
+            let currentLang = localStorage.getItem('arc-wiki-lang') || 'zh'; // Default to Chinese or saved preference
+
+            function switchLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('arc-wiki-lang', lang);
+
+                // Update active button state
+                languageButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update all translatable elements
+                document.querySelectorAll('[data-text-en]').forEach(element => {
+                    const textKey = element.textContent.trim();
+
+                    // Check if this element has direct translation data attributes
+                    if (element.hasAttribute('data-text-en')) {
+                        element.textContent = element.getAttribute(`data-text-${lang}`);
+                    }
+                    // Otherwise check if the text matches a translation key
+                    else if (translations[textKey] && translations[textKey][lang]) {
+                        element.textContent = translations[textKey][lang];
+                    }
+                });
+
+                // Update placeholder text for search
+                const searchBox = document.querySelector('.search-box');
+                if (searchBox) {
+                    searchBox.placeholder = translations['Search wiki content...'][lang];
+                }
+
+                // Update wiki title
+                const wikiTitle = document.querySelector('nav .nav-container span');
+                if (wikiTitle) {
+                    wikiTitle.textContent = translations['Arc Raiders Wiki'][lang];
+                }
+
+                // Update page title
+                document.title = lang === 'zh' ?
+                    'ARC Raiders 社区维基 | Community Wiki' :
+                    'ARC Raiders Community Wiki | 社区维基';
+            }
+
+            // Add click handlers to language buttons
+            languageButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const lang = this.dataset.lang;
+                    switchLanguage(lang);
+                });
+            });
+
+            // News expansion functionality
+            document.querySelectorAll('.news-preview').forEach(preview => {
+                preview.addEventListener('click', function (e) {
+                    // Don't toggle if click was on a link
+                    if (e.target.tagName === 'A') return;
+
+                    const newsItem = this.closest('.news-item');
+                    newsItem.classList.toggle('active');
+
+                    document.querySelectorAll('.news-item').forEach(item => {
+                        if (item !== newsItem) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Prevent expand button click event propagation
+            document.querySelectorAll('.expand-button').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const newsItem = this.closest('.news-item');
+                    newsItem.classList.toggle('active');
+                });
+            });
+
+            // Initialize with saved language preference
+            switchLanguage(currentLang);
+        });
+    </script>
+    <footer>
+        <div class="footer-content">
+            <!-- 新增工具和官方链接部分 -->
+            <div class="footer-links-container">
+                <div class="footer-links-column">
+                    <h4 class="footer-links-title" data-text-en="Wiki Tools" data-text-zh="维基工具">维基工具</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#" data-text-en="Interactive Map" data-text-zh="交互地图">交互地图</a></li>
+                        <li><a href="#" data-text-en="Weapon Calculator" data-text-zh="武器计算器">武器计算器</a></li>
+                        <li><a href="#" data-text-en="Progress Tracker" data-text-zh="进度追踪">进度追踪</a></li>
+                        <li><a href="#" data-text-en="Item Tracker" data-text-zh="物品追踪">物品追踪</a></li>
+                        <li><a href="#" data-text-en="Loadout Generator" data-text-zh="装备生成器">装备生成器</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-column">
+                    <h4 class="footer-links-title" data-text-en="Official Links" data-text-zh="官方链接">官方链接</h4>
+                    <ul class="footer-links-list two-columns">
+                        <li><a href="https://www.arcraiders.com" target="_blank" data-text-en="Official Website"
+                                data-text-zh="官方网站">官方网站</a></li>
+                        <li><a href="https://store.steampowered.com" target="_blank" data-text-en="Steam Page"
+                                data-text-zh="Steam页面">Steam页面</a></li>
+                        <li><a href="https://store.epicgames.com" target="_blank" data-text-en="Epic Games Page"
+                                data-text-zh="Epic商店页面">Epic商店页面</a></li>
+                        <li><a href="https://discord.gg" target="_blank" data-text-en="Discord Invite"
+                                data-text-zh="Discord邀请">Discord邀请</a></li>
+                        <li><a href="https://twitch.tv" target="_blank" data-text-en="Official Twitch"
+                                data-text-zh="官方Twitch">官方Twitch</a></li>
+                        <li><a href="https://facebook.com" target="_blank" data-text-en="Facebook Page"
+                                data-text-zh="Facebook主页">Facebook主页</a></li>
+                        <li><a href="https://twitter.com" target="_blank" data-text-en="Official Twitter"
+                                data-text-zh="官方Twitter">官方Twitter</a></li>
+                        <li><a href="https://reddit.com" target="_blank" data-text-en="Official Subreddit"
+                                data-text-zh="官方Reddit">官方Reddit</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 原有版权声明 -->
+            <p>ARC RAIDERS © 2025 Embark Studios AB. ARC RAIDERS and EMBARK trademarks and logos are trademarks or
+                registered trademarks of Embark Studios AB.</p>
+            <p>NEXON trademark and logo are trademarks or registered trademarks of NXC Corporation.</p>
+            <p>© 2025 Sony Interactive Entertainment LLC. PlayStation, the PlayStation Family Mark, PS5 and the PS5 logo
+                are registered trademarks or trademarks of Sony Interactive Entertainment Inc.</p>
+            <p>Microsoft, the Xbox Sphere mark and Xbox Series X|S are trademarks of the Microsoft group of companies.
+            </p>
+            <p>© 2025 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve
+                Corporation in the U.S. and/or other countries.</p>
+            <p>© 2025 Epic Games, Inc. All rights reserved. Epic, Epic Games, Epic Games Store, Unreal, Unreal Engine
+                and their respective logos are trademarks or registered trademarks of Epic Games, Inc.</p>
+            <p>NVIDIA, the NVIDIA logo and the GeForce Now logo are trademarks and/or registered trademarks of NVIDIA
+                Corporation in the U.S. and/or other countries.</p>
+            <p style="margin-top: 1.5rem;"
+                data-text-en="© 2023 Arc Raiders Community Wiki. Unofficial fan work, not affiliated with the developers."
+                data-text-zh="© 2023 Arc Raiders 玩家社区维基。非官方粉丝作品，与开发商无关。">© 2023 Arc Raiders 玩家社区维基。非官方粉丝作品，与开发商无关。</p>
+            <p data-text-en="Content is available under CC BY-NC-SA 4.0 license"
+                data-text-zh="遵循 CC BY-NC-SA 4.0 协议共享内容">遵循 CC BY-NC-SA 4.0 协议共享内容</p>
+        </div>
+    </footer>
+
+
+
+</body>
+dy>
+
+</html>

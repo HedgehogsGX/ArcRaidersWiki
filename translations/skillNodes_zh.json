@@ -1,0 +1,574 @@
+[
+  {
+    "id": "cond_1",
+    "name": "年轻肺活量",
+    "description": "增加你的最大耐力。",
+    "impactedSkill": "最大耐力",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 5,
+    "iconName": "skill_running.png",
+    "isMajor": true,
+    "position": {
+      "x": 25,
+      "y": 75
+    },
+    "prerequisiteNodeIds": []
+  },
+  {
+    "id": "cond_2l",
+    "name": "倔强骡子",
+    "description": "超重对你的耐力恢复影响较小。",
+    "impactedSkill": "耐力恢复",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 5,
+    "iconName": "skill_weight.png",
+    "isMajor": false,
+    "position": {
+      "x": 20,
+      "y": 65
+    },
+    "prerequisiteNodeIds": [
+      "cond_1"
+    ]
+  },
+  {
+    "id": "cond_2r",
+    "name": "正确呼吸",
+    "description": "你的耐力恢复更快",
+    "impactedSkill": "耐力恢复",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 5,
+    "iconName": "skill_heart.png",
+    "isMajor": false,
+    "position": {
+      "x": 30,
+      "y": 65
+    },
+    "prerequisiteNodeIds": [
+      "cond_1"
+    ]
+  },
+  {
+    "id": "cond_3l",
+    "name": "习惯重量",
+    "description": "佩戴护盾不会让你减速太多。",
+    "impactedSkill": "移动速度",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 5,
+    "iconName": "skill_shield.png",
+    "isMajor": false,
+    "position": {
+      "x": 20,
+      "y": 55
+    },
+    "prerequisiteNodeIds": [
+      "cond_2l"
+    ]
+  },
+  {
+    "id": "cond_3r",
+    "name": "三次深呼吸",
+    "description": "在技能消耗你的耐力后，你恢复得更快。",
+    "impactedSkill": "耐力恢复",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 5,
+    "iconName": "skill_heart.png",
+    "isMajor": false,
+    "position": {
+      "x": 30,
+      "y": 55
+    },
+    "prerequisiteNodeIds": [
+      "cond_2r"
+    ]
+  },
+  {
+    "id": "cond_4l",
+    "name": "焕然一新",
+    "description": "在治疗效果下，耐力恢复增加。",
+    "impactedSkill": "耐力恢复",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 1,
+    "iconName": "skill_heart.png",
+    "isMajor": true,
+    "position": {
+      "x": 20,
+      "y": 45
+    },
+    "prerequisiteNodeIds": [
+      "cond_3l"
+    ]
+  },
+  {
+    "id": "cond_4r",
+    "name": "第二风",
+    "description": "在低耐力时，你的移动速度增加。",
+    "impactedSkill": "移动速度",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 1,
+    "iconName": "skill_running.png",
+    "isMajor": true,
+    "position": {
+      "x": 30,
+      "y": 45
+    },
+    "prerequisiteNodeIds": [
+      "cond_3r"
+    ]
+  },
+  {
+    "id": "cond_5",
+    "name": "马拉松选手",
+    "description": "你的最大耐力大幅增加。",
+    "impactedSkill": "最大耐力",
+    "knownValue": [],
+    "category": "体能",
+    "maxPoints": 1,
+    "iconName": "skill_running.png",
+    "isMajor": true,
+    "position": {
+      "x": 25,
+      "y": 35
+    },
+    "prerequisiteNodeIds": [
+      "cond_4l",
+      "cond_4r"
+    ]
+  },
+  {
+    "id": "combat_1",
+    "name": "基础训练",
+    "description": "增加你的武器伤害。",
+    "impactedSkill": "武器伤害",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 5,
+    "iconName": "skill_weapon.png",
+    "isMajor": true,
+    "position": {
+      "x": 75,
+      "y": 75
+    },
+    "prerequisiteNodeIds": []
+  },
+  {
+    "id": "combat_2l",
+    "name": "精准射击",
+    "description": "增加你的武器精度。",
+    "impactedSkill": "武器精度",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 5,
+    "iconName": "skill_aim.png",
+    "isMajor": false,
+    "position": {
+      "x": 70,
+      "y": 65
+    },
+    "prerequisiteNodeIds": [
+      "combat_1"
+    ]
+  },
+  {
+    "id": "combat_2r",
+    "name": "快速装弹",
+    "description": "减少你的装弹时间。",
+    "impactedSkill": "装弹时间",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 5,
+    "iconName": "skill_reload.png",
+    "isMajor": false,
+    "position": {
+      "x": 80,
+      "y": 65
+    },
+    "prerequisiteNodeIds": [
+      "combat_1"
+    ]
+  },
+  {
+    "id": "combat_3l",
+    "name": "爆头专家",
+    "description": "增加爆头伤害。",
+    "impactedSkill": "爆头伤害",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 5,
+    "iconName": "skill_headshot.png",
+    "isMajor": false,
+    "position": {
+      "x": 70,
+      "y": 55
+    },
+    "prerequisiteNodeIds": [
+      "combat_2l"
+    ]
+  },
+  {
+    "id": "combat_3r",
+    "name": "火力压制",
+    "description": "增加你的射速。",
+    "impactedSkill": "射速",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 5,
+    "iconName": "skill_fire_rate.png",
+    "isMajor": false,
+    "position": {
+      "x": 80,
+      "y": 55
+    },
+    "prerequisiteNodeIds": [
+      "combat_2r"
+    ]
+  },
+  {
+    "id": "combat_4l",
+    "name": "狙击手",
+    "description": "大幅增加远距离武器伤害。",
+    "impactedSkill": "远距离伤害",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 1,
+    "iconName": "skill_sniper.png",
+    "isMajor": true,
+    "position": {
+      "x": 70,
+      "y": 45
+    },
+    "prerequisiteNodeIds": [
+      "combat_3l"
+    ]
+  },
+  {
+    "id": "combat_4r",
+    "name": "突击手",
+    "description": "大幅增加近距离武器伤害。",
+    "impactedSkill": "近距离伤害",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 1,
+    "iconName": "skill_assault.png",
+    "isMajor": true,
+    "position": {
+      "x": 80,
+      "y": 45
+    },
+    "prerequisiteNodeIds": [
+      "combat_3r"
+    ]
+  },
+  {
+    "id": "combat_5",
+    "name": "武器大师",
+    "description": "你的武器伤害大幅增加。",
+    "impactedSkill": "武器伤害",
+    "knownValue": [],
+    "category": "战斗",
+    "maxPoints": 1,
+    "iconName": "skill_weapon.png",
+    "isMajor": true,
+    "position": {
+      "x": 75,
+      "y": 35
+    },
+    "prerequisiteNodeIds": [
+      "combat_4l",
+      "combat_4r"
+    ]
+  },
+  {
+    "id": "stealth_1",
+    "name": "潜行基础",
+    "description": "增加你的潜行能力。",
+    "impactedSkill": "潜行",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 5,
+    "iconName": "skill_stealth.png",
+    "isMajor": true,
+    "position": {
+      "x": 25,
+      "y": 25
+    },
+    "prerequisiteNodeIds": []
+  },
+  {
+    "id": "stealth_2l",
+    "name": "无声移动",
+    "description": "减少移动时的噪音。",
+    "impactedSkill": "移动噪音",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 5,
+    "iconName": "skill_quiet.png",
+    "isMajor": false,
+    "position": {
+      "x": 20,
+      "y": 15
+    },
+    "prerequisiteNodeIds": [
+      "stealth_1"
+    ]
+  },
+  {
+    "id": "stealth_2r",
+    "name": "阴影大师",
+    "description": "在阴影中更难被发现。",
+    "impactedSkill": "阴影潜行",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 5,
+    "iconName": "skill_shadow.png",
+    "isMajor": false,
+    "position": {
+      "x": 30,
+      "y": 15
+    },
+    "prerequisiteNodeIds": [
+      "stealth_1"
+    ]
+  },
+  {
+    "id": "stealth_3l",
+    "name": "背刺专家",
+    "description": "增加背刺伤害。",
+    "impactedSkill": "背刺伤害",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 5,
+    "iconName": "skill_backstab.png",
+    "isMajor": false,
+    "position": {
+      "x": 20,
+      "y": 5
+    },
+    "prerequisiteNodeIds": [
+      "stealth_2l"
+    ]
+  },
+  {
+    "id": "stealth_3r",
+    "name": "伪装大师",
+    "description": "增加伪装效果持续时间。",
+    "impactedSkill": "伪装持续时间",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 5,
+    "iconName": "skill_disguise.png",
+    "isMajor": false,
+    "position": {
+      "x": 30,
+      "y": 5
+    },
+    "prerequisiteNodeIds": [
+      "stealth_2r"
+    ]
+  },
+  {
+    "id": "stealth_4l",
+    "name": "暗杀者",
+    "description": "大幅增加潜行攻击伤害。",
+    "impactedSkill": "潜行攻击伤害",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 1,
+    "iconName": "skill_assassin.png",
+    "isMajor": true,
+    "position": {
+      "x": 20,
+      "y": -5
+    },
+    "prerequisiteNodeIds": [
+      "stealth_3l"
+    ]
+  },
+  {
+    "id": "stealth_4r",
+    "name": "幽灵",
+    "description": "大幅增加潜行能力。",
+    "impactedSkill": "潜行",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 1,
+    "iconName": "skill_ghost.png",
+    "isMajor": true,
+    "position": {
+      "x": 30,
+      "y": -5
+    },
+    "prerequisiteNodeIds": [
+      "stealth_3r"
+    ]
+  },
+  {
+    "id": "stealth_5",
+    "name": "潜行大师",
+    "description": "你的潜行能力大幅增加。",
+    "impactedSkill": "潜行",
+    "knownValue": [],
+    "category": "潜行",
+    "maxPoints": 1,
+    "iconName": "skill_stealth.png",
+    "isMajor": true,
+    "position": {
+      "x": 25,
+      "y": -15
+    },
+    "prerequisiteNodeIds": [
+      "stealth_4l",
+      "stealth_4r"
+    ]
+  },
+  {
+    "id": "tech_1",
+    "name": "技术基础",
+    "description": "增加你的技术能力。",
+    "impactedSkill": "技术",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 5,
+    "iconName": "skill_tech.png",
+    "isMajor": true,
+    "position": {
+      "x": 75,
+      "y": 25
+    },
+    "prerequisiteNodeIds": []
+  },
+  {
+    "id": "tech_2l",
+    "name": "黑客",
+    "description": "增加黑客能力。",
+    "impactedSkill": "黑客",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 5,
+    "iconName": "skill_hack.png",
+    "isMajor": false,
+    "position": {
+      "x": 70,
+      "y": 15
+    },
+    "prerequisiteNodeIds": [
+      "tech_1"
+    ]
+  },
+  {
+    "id": "tech_2r",
+    "name": "工程师",
+    "description": "增加工程能力。",
+    "impactedSkill": "工程",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 5,
+    "iconName": "skill_engineer.png",
+    "isMajor": false,
+    "position": {
+      "x": 80,
+      "y": 15
+    },
+    "prerequisiteNodeIds": [
+      "tech_1"
+    ]
+  },
+  {
+    "id": "tech_3l",
+    "name": "系统破解",
+    "description": "增加系统破解能力。",
+    "impactedSkill": "系统破解",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 5,
+    "iconName": "skill_system.png",
+    "isMajor": false,
+    "position": {
+      "x": 70,
+      "y": 5
+    },
+    "prerequisiteNodeIds": [
+      "tech_2l"
+    ]
+  },
+  {
+    "id": "tech_3r",
+    "name": "设备维修",
+    "description": "增加设备维修能力。",
+    "impactedSkill": "设备维修",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 5,
+    "iconName": "skill_repair.png",
+    "isMajor": false,
+    "position": {
+      "x": 80,
+      "y": 5
+    },
+    "prerequisiteNodeIds": [
+      "tech_2r"
+    ]
+  },
+  {
+    "id": "tech_4l",
+    "name": "网络专家",
+    "description": "大幅增加网络操作能力。",
+    "impactedSkill": "网络操作",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 1,
+    "iconName": "skill_network.png",
+    "isMajor": true,
+    "position": {
+      "x": 70,
+      "y": -5
+    },
+    "prerequisiteNodeIds": [
+      "tech_3l"
+    ]
+  },
+  {
+    "id": "tech_4r",
+    "name": "机械师",
+    "description": "大幅增加机械操作能力。",
+    "impactedSkill": "机械操作",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 1,
+    "iconName": "skill_mechanic.png",
+    "isMajor": true,
+    "position": {
+      "x": 80,
+      "y": -5
+    },
+    "prerequisiteNodeIds": [
+      "tech_3r"
+    ]
+  },
+  {
+    "id": "tech_5",
+    "name": "技术大师",
+    "description": "你的技术能力大幅增加。",
+    "impactedSkill": "技术",
+    "knownValue": [],
+    "category": "技术",
+    "maxPoints": 1,
+    "iconName": "skill_tech.png",
+    "isMajor": true,
+    "position": {
+      "x": 75,
+      "y": -15
+    },
+    "prerequisiteNodeIds": [
+      "tech_4l",
+      "tech_4r"
+    ]
+  }
+]
