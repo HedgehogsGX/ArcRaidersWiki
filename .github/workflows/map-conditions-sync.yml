@@ -1,0 +1,55 @@
+# Checks https://arcraiders.com/map-conditions every hour. When the official
+# schedule differs from content/map-conditions.js, or the published one has less
+# than 12 hours left, it commits the new schedule straight to main, and both hosts
+# redeploy from there. Most hours nothing changes and nothing is committed; see
+# scripts/fetch-map-conditions.mjs for the rules.
+#
+# Unlike news, this skips the pull request: the schedule is plain data that goes
+# stale within a day, so waiting for a review would defeat the sync. Scheduled
+# runs only start once this file is on the default branch.
+
+name: Map conditions sync
+
+on:
+  schedule:
+    - cron: '7 * * * *' # hourly; GitHub may start scheduled runs a few minutes late
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: map-conditions-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Uses only Node's standard library, so no npm install.
+      - name: Check the official schedule
+        run: node scripts/fetch-map-conditions.mjs
+
+      - name: Commit to main when it changed
+        run: |
+          git add content/map-conditions.js assets/img/game/conditions
+          if git diff --cached --quiet; then
+            echo "Schedule unchanged."
+            exit 0
+          fi
+          git config user.name HedgehogsGX
+          git config user.email 203076171+HedgehogsGX@users.noreply.github.com
+          git commit --quiet -m "Sync map conditions from arcraiders.com"
+          # main may have moved since checkout; this job only touches its own files.
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin main && git push --quiet origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1
