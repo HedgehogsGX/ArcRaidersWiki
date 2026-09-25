@@ -127,7 +127,8 @@
   };
   const link = (kind, id) => url(`pages/${PAGE_OF[kind]}.html${id ? '#' + encodeURIComponent(id) : ''}`);
 
-  // Game images live next to the site; item icons come from the arctracker CDN.
+  // Game images and most item icons live next to the site; the newest item
+  // icons (not yet upstream) and news images are full URLs.
   const asset = (path) => (!path ? '' : /^https?:/.test(path) ? path : url(path));
 
   const humanize = (id) => id.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());

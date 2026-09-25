@@ -5,14 +5,14 @@ window.ARC_NEWS = [
   "url": "https://arcraiders.com/news/pve-toggle-beta-test",
   "date": "2026-09-24",
   "tags": [],
-  "thumb": "https://assets.arcraiders.com/article-cards/4382ddb0-bfc3-pve-toggle-card-600x200-600x200.png",
+  "thumb": "content/news-img/4382ddb0-bfc3-pve-toggle-card-600x200-600x200.webp",
   "title": {
    "en": "We’re testing a PvE Toggle: here’s what it means for you"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/2fcfcc36-537c-ARC-Raiders__Header-PvEToggle_1920x622-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/2fcfcc36-537c-ARC-Raiders__Header-PvEToggle_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -48,7 +48,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/0bd8819b-7dec-PvE_toggle_blog-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/0bd8819b-7dec-PvE_toggle_blog-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -173,7 +173,7 @@ window.ARC_NEWS = [
   "url": "https://arcraiders.com/news/frozen-trail-content-preview",
   "date": "2026-09-23",
   "tags": [],
-  "thumb": "https://assets.arcraiders.com/article-cards/2c0b3305-9d3d-first-look-card-600x200-600x200.png",
+  "thumb": "content/news-img/2c0b3305-9d3d-first-look-card-600x200-600x200.webp",
   "title": {
    "en": "Frozen Trail First Look: Content highlights from October 8"
   },
@@ -221,7 +221,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/2-1-1024x576.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2-1-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -249,7 +249,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/2d6c93ef-e277-AR_Bumper_ARC_Bully_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2d6c93ef-e277-AR_Bumper_ARC_Bully_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -261,7 +261,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/c83fa8f9-0b7d-AR_Bumper_ARC_Skulker_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/c83fa8f9-0b7d-AR_Bumper_ARC_Skulker_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -273,7 +273,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/a6a68676-3b59-AR_Bumper_ARC_Hydra_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/a6a68676-3b59-AR_Bumper_ARC_Hydra_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -293,7 +293,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/7a701a7d-8df3-AR_Bumper_Location_Outposts_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/7a701a7d-8df3-AR_Bumper_Location_Outposts_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -313,7 +313,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/3591bdaa-b6f0-AR_Bumper_Amplified-Weapons_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/3591bdaa-b6f0-AR_Bumper_Amplified-Weapons_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -325,7 +325,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/8d30b481-cc19-AR_Bumper_Weapon_Stiletto_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/8d30b481-cc19-AR_Bumper_Weapon_Stiletto_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -337,7 +337,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/840002ea-b0ea-AR_Bumper_Weapon_Bantam_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/840002ea-b0ea-AR_Bumper_Weapon_Bantam_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -349,7 +349,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/d77a737d-0e92-AR_Bumper_Gadgets_GrapplingHook_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/d77a737d-0e92-AR_Bumper_Gadgets_GrapplingHook_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -361,7 +361,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/aa0aa1dc-2c28-AR_Bumper_Gadgets_TetherLauncher_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/aa0aa1dc-2c28-AR_Bumper_Gadgets_TetherLauncher_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -373,7 +373,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/9e76df9b-694a-Screenshot%202026-09-16%20173735-1024x456.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"456\">"
+    "html": "<img src=\"content/news-img/9e76df9b-694a-Screenshot-202026-09-16-20173735-1024x456.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"456\">"
    },
    {
     "type": "html",
@@ -385,7 +385,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/9e904fd5-01b4-AR_Bumper_Instrument_Harmonica_16_9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/9e904fd5-01b4-AR_Bumper_Instrument_Harmonica_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -445,14 +445,14 @@ window.ARC_NEWS = [
    "Store Update",
    "Patch Notes"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/83d80ad9-8b0f-store-update-1.47-card-600x200-600x200.png",
+  "thumb": "content/news-img/83d80ad9-8b0f-store-update-1.47-card-600x200-600x200.webp",
   "title": {
    "en": "Store Update 1.47.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/ed2c29dc-6dce-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622%20(2)-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/ed2c29dc-6dce-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-20-2--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -604,7 +604,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/270045c6-e0ab-duck2-1024x251.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"251\">"
+    "html": "<img src=\"content/news-img/270045c6-e0ab-duck2-1024x251.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"251\">"
    },
    {
     "type": "html",
@@ -643,14 +643,14 @@ window.ARC_NEWS = [
   "tags": [
    "Store Update"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/09ccc2ff-c2cb-store-update-1.46-card-600x200-600x200.png",
+  "thumb": "content/news-img/09ccc2ff-c2cb-store-update-1.46-card-600x200-600x200.webp",
   "title": {
    "en": "Store Update 1.46.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/92dab6d2-6f6c-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622%20(4)-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/92dab6d2-6f6c-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-4--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -690,7 +690,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/6e33f558-68ca-ArcRaiders_ScreenShot_16x9_TrialsSeason05-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/6e33f558-68ca-ArcRaiders_ScreenShot_16x9_TrialsSeason05-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -705,14 +705,14 @@ window.ARC_NEWS = [
   "tags": [
    "Patch Notes"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/708ee0b9-a1e2-store-update-1.45-card-600x200-600x200.png",
+  "thumb": "content/news-img/708ee0b9-a1e2-store-update-1.45-card-600x200-600x200.webp",
   "title": {
    "en": "Live Update 1.45.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/ab1dc116-b67b-ARC-Raiders_Blog_EventHeader_LiveUpdate_1920x622-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/ab1dc116-b67b-ARC-Raiders_Blog_EventHeader_LiveUpdate_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -744,7 +744,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/c0d3f2f8-6b9e-ArcRaiders_ScreenShot_16x9_Narrative_01-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/c0d3f2f8-6b9e-ArcRaiders_ScreenShot_16x9_Narrative_01-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -776,7 +776,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/2cf42228-8c79-ArcRaiders_ScreenShot_Master_16_9_Duckies-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2cf42228-8c79-ArcRaiders_ScreenShot_Master_16_9_Duckies-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -844,7 +844,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/a4b678dd-0879-ArcRaiders_ScreenShot_16x9_Project-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/a4b678dd-0879-ArcRaiders_ScreenShot_16x9_Project-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -867,14 +867,14 @@ window.ARC_NEWS = [
   "tags": [
    "Store Update"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/8719da3d-4da0-store-update-1.44-card-300x100-300x100.png",
+  "thumb": "content/news-img/8719da3d-4da0-store-update-1.44-card-300x100-300x100.webp",
   "title": {
    "en": "Store Update 1.44.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/2c21c7cf-f8ef-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622%20(3)-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/2c21c7cf-f8ef-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-3--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -905,14 +905,14 @@ window.ARC_NEWS = [
   "tags": [
    "Store Update"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/0b922c8b-8406-store-update-1.43-card-300x100-300x100.png",
+  "thumb": "content/news-img/0b922c8b-8406-store-update-1.43-card-300x100-300x100.webp",
   "title": {
    "en": "Store Update 1.43.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/5e256021-afd6-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/5e256021-afd6-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -940,7 +940,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/cf8183a7-6685-unnamed-1024x576.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/cf8183a7-6685-unnamed-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -997,7 +997,7 @@ window.ARC_NEWS = [
   "url": "https://arcraiders.com/news/the-5th-expedition",
   "date": "2026-08-21",
   "tags": [],
-  "thumb": "https://assets.arcraiders.com/article-cards/14d605cc-af1e-expedition-5-blog-card-300x100-300x100.png",
+  "thumb": "content/news-img/14d605cc-af1e-expedition-5-blog-card-300x100-300x100.webp",
   "title": {
    "en": "The 5th Expedition"
   },
@@ -1040,7 +1040,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/a635bda4-86ba-ARCRaiders_Expeditions%20Infographic_05-Approved-1024x576.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/a635bda4-86ba-ARCRaiders_Expeditions-20Infographic_05-Approved-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1085,14 +1085,14 @@ window.ARC_NEWS = [
   "url": "https://arcraiders.com/news/subway-arc-raiders-partnership",
   "date": "2026-08-20",
   "tags": [],
-  "thumb": "https://assets.arcraiders.com/article-cards/8f78db08-9682-subway-card-300x100-300x100.png",
+  "thumb": "content/news-img/8f78db08-9682-subway-card-300x100-300x100.webp",
   "title": {
    "en": "ARC Raiders x Subway: Exclusive Subterranean outfit"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/8c69d591-d5f8-ARC-Raiders_Steam_EventHeader_1920x622-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/8c69d591-d5f8-ARC-Raiders_Steam_EventHeader_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1112,7 +1112,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/04c5c270-3021-ArcRaiders_ScreenShot_Subway_16x9_02-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/04c5c270-3021-ArcRaiders_ScreenShot_Subway_16x9_02-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1128,7 +1128,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/627f108c-4078-ArcRaiders_ScreenShot_Subway_16x9_04-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/627f108c-4078-ArcRaiders_ScreenShot_Subway_16x9_04-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1151,14 +1151,14 @@ window.ARC_NEWS = [
   "tags": [
    "Patch Notes"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/17866e04-91ae-store-update-1.42-card-300x100-300x100.png",
+  "thumb": "content/news-img/17866e04-91ae-store-update-1.42-card-300x100-300x100.webp",
   "title": {
    "en": "Live Update 1.42.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/c107664e-f682-ARC-Raiders_Steam_EventHeader_LiveUpdate_1920x622%20(1)-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/c107664e-f682-ARC-Raiders_Steam_EventHeader_LiveUpdate_1920x622-20-1--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1186,7 +1186,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/2fa346cc-2883-ArcRaiders_ScreenShot_GlitchedARC_16x9-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2fa346cc-2883-ArcRaiders_ScreenShot_GlitchedARC_16x9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1262,7 +1262,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/898f2a90-a50f-ARC-Raiders_Steam_EventHeader_Ducks_1920x622-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/898f2a90-a50f-ARC-Raiders_Steam_EventHeader_Ducks_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1339,14 +1339,14 @@ window.ARC_NEWS = [
   "url": "https://arcraiders.com/news/frozen-trail-is-coming-october-8th",
   "date": "2026-08-12",
   "tags": [],
-  "thumb": "https://assets.arcraiders.com/article-cards/7ba2a90c-db37-ArcRaiders_Blogs_GeneralAsset_PatchNotes_300x100-300x100.png",
+  "thumb": "content/news-img/7ba2a90c-db37-ArcRaiders_Blogs_GeneralAsset_PatchNotes_300x100-300x100.webp",
   "title": {
    "en": "Frozen Trail is coming October 8!"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/e3b333c7-1a2f-ARC%20Raiders_Blog_Header_DevUpdate_1920x622_3-1024x332.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/e3b333c7-1a2f-ARC-20Raiders_Blog_Header_DevUpdate_1920x622_3-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1374,7 +1374,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/ArcRaiders_ScreenShot_16x9_04-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/ArcRaiders_ScreenShot_16x9_04-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1446,7 +1446,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/5d36182d-f462-ArcRaiders_ScreenShot_16x9_03-1024x576.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/5d36182d-f462-ArcRaiders_ScreenShot_16x9_03-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1493,14 +1493,14 @@ window.ARC_NEWS = [
   "tags": [
    "Store Update"
   ],
-  "thumb": "https://assets.arcraiders.com/article-cards/9f1dc4b5-342d-store-update-1.41-card-300x100-300x100.png",
+  "thumb": "content/news-img/9f1dc4b5-342d-store-update-1.41-card-300x100-300x100.webp",
   "title": {
    "en": "Store Update 1.41.0"
   },
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"https://assets.arcraiders.com/media/255e01cb-27d1-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622%20(2)-1024x332.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/255e01cb-27d1-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-2--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
