@@ -10,7 +10,7 @@
 npm run serve
 ```
 
-等同于 `python3 scripts/serve.py`，然后打开 http://localhost:8000。直接双击 `index.html` 也能使用，只是字体等外部资源取决于网络。这个服务器和 `python3 -m http.server` 相同，只是关闭了浏览器缓存，改完文件刷新即可看到。
+等同于 `python3 scripts/serve.py`，然后打开 http://localhost:8000。直接双击 `index.html` 也能使用，只是公告图片等外部资源取决于网络。这个服务器和 `python3 -m http.server` 相同，只是关闭了浏览器缓存，改完文件刷新即可看到。
 
 ## 目录结构
 
@@ -26,7 +26,8 @@ assets/
   js/news.js            公告列表与展开动画，首页和公告页共用
   js/pages/             每个页面一个脚本
   img/brand/            标志、主视觉
-  img/game/             由构建脚本生成的 ARC、商人、设施、地图图片
+  img/game/             由构建脚本生成的 ARC、商人、设施、地图图片与物品图标
+  fonts/                Jost 字体（SIL OFL 协议，见 OFL.txt）
 content/
   news.js               由 fetch-news.mjs 生成的公告，不要手动修改
   news-zh.json          公告中文译文缓存，每篇只翻译一次
@@ -52,7 +53,7 @@ git submodule update --remote vendor/arcraiders-data
 node scripts/build-data.mjs
 ```
 
-需要 Node 18 以上。脚本只保留英文和简体中文，会列出引用了却不存在的物品 id，并在上游出现新物品类型时提醒更新 `ITEM_CATEGORIES`。ARC、商人、设施或地图图片有变化时，改用 `node scripts/build-data.mjs --images`（需要 macOS 自带的 `sips`）。
+需要 Node 18 以上。脚本只保留英文和简体中文，会列出引用了却不存在的物品 id，并在上游出现新物品类型时提醒更新 `ITEM_CATEGORIES`。物品图标每次都从上游复制到 `assets/img/game/items/`，不依赖 arctracker 的 CDN（在中国大陆很慢）；上游还没有图标的新物品暂时沿用 CDN 地址，脚本会列出这些物品。ARC、商人、设施或地图图片有变化时，改用 `node scripts/build-data.mjs --images`（需要 macOS 自带的 `sips`）。
 
 上游仓库包含两百多 MB 图片，本站不需要它们。首次克隆时可以跳过：
 
@@ -99,4 +100,4 @@ ANTHROPIC_API_KEY=你的密钥 npm run news
 
 ## 版权
 
-ARC Raiders 及相关商标归 Embark Studios AB 所有。本站为玩家制作的非官方项目，与 Embark Studios、Nexon 无关。游戏数据以 MIT 协议由 RaidTheory/arcraiders-data 提供；本站文字内容遵循 CC BY-NC-SA 4.0 协议。
+ARC Raiders 及相关商标归 Embark Studios AB 所有。本站为玩家制作的非官方项目，与 Embark Studios、Nexon 无关。游戏数据以 MIT 协议由 RaidTheory/arcraiders-data 提供；本站文字内容遵循 CC BY-NC-SA 4.0 协议。Jost 字体以 SIL Open Font License 1.1 授权。
