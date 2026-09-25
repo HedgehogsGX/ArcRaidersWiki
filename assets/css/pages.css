@@ -577,8 +577,7 @@
 }
 
 .station,
-.trader,
-.project {
+.trader {
   padding: 36px 0;
   border-top: 1px solid var(--rule);
 }
@@ -936,33 +935,172 @@
 
 /* ---- projects ------------------------------------------------------------------ */
 
-.project:first-child {
-  border-top: 0;
-  padding-top: 0;
+/* Contents sidebar beside the list; on phones it becomes a bar under the header. */
+.projects {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
 }
 
-.project__head {
+.toc {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+
+.toc__toggle {
+  display: none;
+}
+
+.toc__body {
+  position: relative;
+  max-height: calc(100vh - var(--header-h) - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.toc__tools {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-size: var(--step--1);
+}
+
+.toc__tools button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--bone-2);
+}
+
+.toc__tools button:hover {
+  color: var(--bone);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.toc__group {
+  margin: 20px 0 6px;
+  color: var(--dust);
+  font-size: var(--step--1);
+  font-weight: 500;
+}
+
+.toc__tools + .toc__group {
+  margin-top: 0;
+}
+
+.toc__list {
+  border-left: 1px solid var(--rule);
+}
+
+.toc__link {
+  display: flex;
+  flex-direction: column;
+  margin-left: -1px;
+  padding: 6px 0 6px 14px;
+  border-left: 2px solid transparent;
+  color: var(--bone-2);
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.toc__link:hover {
+  color: var(--bone);
+}
+
+.toc__link[aria-current='true'] {
+  border-left-color: var(--yellow);
+  color: var(--bone);
+}
+
+.toc__name {
+  font-size: 0.9375rem;
+}
+
+.toc__meta {
+  color: var(--dust);
+  font-size: 0.75rem;
+}
+
+.projects__group + .projects__group {
+  margin-top: 48px;
+}
+
+.projects__group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--dust);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.project {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* html's scroll-padding already clears the header; the shared scroll-margin below would double it. */
+.projects .project {
+  scroll-margin-top: 0;
+}
+
+.project > summary {
+  position: relative;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 12px;
+  gap: 8px 16px;
+  padding: 22px 36px 22px 0;
+  cursor: pointer;
 }
 
-.project__head h2 {
-  font-size: var(--step-3);
+.project > summary::-webkit-details-marker {
+  display: none;
+}
+
+.project > summary::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -6px;
+  border-right: 1.5px solid var(--dust);
+  border-bottom: 1.5px solid var(--dust);
+  transform: rotate(45deg);
+  transition: transform 0.2s var(--ease);
+}
+
+.project[open] > summary::after {
+  margin-top: -2px;
+  transform: rotate(225deg);
+}
+
+.project > summary:hover h3 {
+  color: var(--tone, var(--bone));
+}
+
+.project__head h3 {
+  font-size: var(--step-2);
+  transition: color 0.12s;
 }
 
 .project__head .tags {
   align-items: center;
 }
 
-.project__desc {
-  margin-top: 12px;
+.project__body {
+  padding-bottom: 32px;
 }
 
 .phases {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .phase {
@@ -990,7 +1128,7 @@
   min-width: 0;
 }
 
-.phase__body h3 {
+.phase__body h4 {
   font-size: var(--step-0);
   font-weight: 500;
 }
@@ -1013,20 +1151,78 @@
   gap: 6px;
 }
 
-.ended {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
-}
+@media (max-width: 959px) {
+  .projects {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
 
-.ended > summary {
-  width: max-content;
-  color: var(--bone-2);
-  cursor: pointer;
-}
+  .toc {
+    top: var(--header-h);
+    z-index: 5;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    background: var(--night);
+    border-bottom: 1px solid var(--rule);
+  }
 
-.ended[open] > summary {
-  margin-bottom: 8px;
+  .toc__toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 24px 12px 0;
+    position: relative;
+    border: 0;
+    background: none;
+    text-align: left;
+  }
+
+  .toc__toggle::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    margin-top: -5px;
+    border-right: 1.5px solid var(--dust);
+    border-bottom: 1.5px solid var(--dust);
+    transform: rotate(45deg);
+  }
+
+  .toc.is-open .toc__toggle::after {
+    margin-top: -1px;
+    transform: rotate(225deg);
+  }
+
+  .toc__label {
+    font-weight: 500;
+  }
+
+  .toc__current {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--dust);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .toc__body {
+    display: none;
+    max-height: 60vh;
+    padding-bottom: 16px;
+  }
+
+  .toc.is-open .toc__body {
+    display: block;
+  }
+
+  /* Clear the contents bar too. */
+  .projects .project {
+    scroll-margin-top: 48px;
+  }
 }
 
 /* Anchored sections clear the sticky header. */
