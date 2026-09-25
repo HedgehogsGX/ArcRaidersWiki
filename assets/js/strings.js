@@ -75,6 +75,30 @@ window.ARC_STRINGS = {
   'home.directory': { zh: '资料目录', en: 'Browse the wiki' },
   'home.recent': { zh: '{version} 版本新增', en: 'New in {version}' },
   'home.news': { zh: '官方公告', en: 'Announcements' },
+  'home.conditions': { zh: '地图条件', en: 'Map conditions' },
+
+  // Map conditions (home page)
+  'cond.region': { zh: '服务器区域', en: 'Server region' },
+  'cond.region.europe': { zh: '欧洲', en: 'Europe' },
+  'cond.region.north-america': { zh: '北美', en: 'North America' },
+  'cond.region.brazil': { zh: '南美', en: 'South America' },
+  'cond.region.east-asia': { zh: '亚洲', en: 'Asia' },
+  'cond.region.oceania': { zh: '大洋洲', en: 'Oceania' },
+  'cond.active': { zh: '进行中', en: 'Active now' },
+  'cond.upcoming': { zh: '即将开始', en: 'Coming up' },
+  'cond.none': { zh: '当前没有进行中的地图条件。', en: 'No conditions are active right now.' },
+  'cond.major': { zh: '大型', en: 'Major' },
+  'cond.endsIn': { zh: '剩余 {t}', en: '{t} left' },
+  'cond.startsIn': { zh: '{t} 后开始', en: 'in {t}' },
+  'cond.tomorrow': { zh: '明天', en: 'Tomorrow' },
+  'cond.next': { zh: '接下来', en: 'Next' },
+  'cond.all': { zh: '全部排期', en: 'Full schedule' },
+  'cond.note': {
+    zh: '时间按你的本地时区显示。排期取自官网，每小时核对一次。',
+    en: 'Times are in your local time zone. The schedule comes from the official site and is checked every hour.',
+  },
+  'cond.source': { zh: '官网完整排期', en: 'Full schedule on arcraiders.com' },
+  'cond.stale': { zh: '本站保存的排期已过期。', en: 'The saved schedule has run out.' },
 
   // News
   'page.news': { zh: '官方公告', en: 'News' },

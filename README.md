@@ -1,6 +1,6 @@
 # ARC Raiders 维基
 
-非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、藏身处、ARC、地图、商人与计划，以及同步自官网的公告。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，中文使用游戏官方译名。
+非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、藏身处、ARC、地图、商人与计划，以及同步自官网的公告和地图条件排期。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，中文使用游戏官方译名。
 
 纯静态站点，浏览不需要安装或构建。npm 依赖只用于公告翻译脚本。
 
@@ -24,23 +24,26 @@ assets/
   js/strings.js         界面文字（中 / 英）
   js/site.js            页头、导航、搜索、页脚，导航结构在 SECTIONS 中统一配置
   js/news.js            公告列表与展开动画，首页和公告页共用
+  js/conditions.js      首页的地图条件：主视觉里的进行中面板，以及完整排期与倒计时
   js/pages/             每个页面一个脚本
   img/brand/            标志、主视觉
-  img/game/             由构建脚本生成的 ARC、商人、设施、地图图片与物品图标
+  img/game/             由构建脚本生成的 ARC、商人、设施、地图图片与物品图标；conditions/ 是官网的地图条件图标
   fonts/                Jost 字体（SIL OFL 协议，见 OFL.txt）
 content/
   news.js               由 fetch-news.mjs 生成的公告，不要手动修改
   news-zh.json          公告中文译文缓存，每篇只翻译一次
   news-img/             公告图片的 WebP 副本，由 fetch-news.mjs 维护
+  map-conditions.js     由 fetch-map-conditions.mjs 生成的地图条件排期，不要手动修改
 data/                   由构建脚本生成的数据包，不要手动修改
 vendor/arcraiders-data  上游数据（git 子模块）
 scripts/
   build-data.mjs        从上游生成 data/ 与 assets/img/game/
   glossary.mjs          上游缺少中文的术语（商人、ARC 名称等），注明来源
   fetch-news.mjs        同步官网公告并翻译
+  fetch-map-conditions.mjs  同步官网的地图条件排期
   build-site.mjs        把待发布的文件复制到 dist/
   serve.py              本地预览服务器
-.github/workflows/      每日同步公告的 GitHub Actions
+.github/workflows/      每日同步公告、每小时核对地图条件的 GitHub Actions
 wrangler.jsonc          Cloudflare 海外站配置
 worker.js               Cloudflare 海外站：把首页 / 指向 index.html
 ```
@@ -82,9 +85,24 @@ ANTHROPIC_API_KEY=你的密钥 npm run news
 2. 在 Settings → Actions → General 中勾选 "Allow GitHub Actions to create and approve pull requests"；
 3. 将工作流合并到 `main`（定时任务只在默认分支上运行）。也可以在 Actions 页面手动运行。
 
+## 同步地图条件
+
+首页的「地图条件」来自 https://arcraiders.com/map-conditions 。官网页面里带有未来约 24 小时、五个服务器区域（欧洲、北美、南美、亚洲、大洋洲）的完整排期，脚本从中读取，写入 `content/map-conditions.js`：
+
+```bash
+node scripts/fetch-map-conditions.mjs           # 需要时才写入
+node scripts/fetch-map-conditions.mjs --force   # 总是写入
+```
+
+排期记录的是绝对时间，首页按访客的本地时钟计算「进行中」「即将开始」和倒计时，所以文件不必每小时更新也保持准确。脚本只在这些情况下改写文件：官网排期与已发布的不一致、已发布的排期剩余不足 12 小时、条件或地图的名称有变化。只需要 Node 18 以上，不用 `npm install`。新出现的地图条件会自动下载官网图标到 `assets/img/game/conditions/`；中文名先查脚本里的 `CLIENT_ZH`（游戏客户端译名），再查 `data/events.js`，都没有时脚本会提示。
+
+首页顶部的主视觉里有一个「进行中」面板（手机上紧跟在标题下），一进站就能看到当前的地图条件、剩余时间和下一批开始的条件；完整的即将开始列表在下方的地图条件区。服务器区域默认按访客的时区推断，两处都能手动切换且互相同步，选择保存在浏览器本地。页面开着时，每小时会重新载入一次排期文件。
+
+**自动同步**：`.github/workflows/map-conditions-sync.yml` 每小时运行一次，文件有变化时以 HedgehogsGX 的身份直接提交到 `main`（通常每天两三次），两个托管平台随即重新部署。这份数据一天内就会过期，所以不像公告那样走 PR。定时任务同样只在默认分支上运行。
+
 ## 部署
 
-站点没有真正的构建步骤。`npm run build` 只是把浏览器会加载的文件（`index.html`、`pages/`、`assets/`、`data/`、`content/news.js` 与 `content/news-img/`）复制到 `dist/`，托管平台只发布这个目录，子模块、脚本和译文缓存不会公开。两个平台都连接本仓库，`main` 有新提交时自动重新部署，所以合并公告同步 PR 后两边会一起更新。
+站点没有真正的构建步骤。`npm run build` 只是把浏览器会加载的文件（`index.html`、`pages/`、`assets/`、`data/`、`content/news.js` 与 `content/news-img/`、`content/map-conditions.js`）复制到 `dist/`，托管平台只发布这个目录，子模块、脚本和译文缓存不会公开。两个平台都连接本仓库，`main` 有新提交时自动重新部署，所以合并公告同步 PR、或地图条件同步提交后，两边会一起更新。
 
 **海外：Cloudflare Workers**，配置在 `wrangler.jsonc` 和 `worker.js`。在 Cloudflare 控制台 Workers & Pages → Create → Import a repository 中选择本仓库，Worker 名称填 `arc-raiders-wiki`（须与 `wrangler.jsonc` 一致），构建命令填 `npm run build`，部署命令保持默认的 `npx wrangler deploy`。其他分支和 PR 会生成预览链接，并以评论贴到 PR 上。
 
