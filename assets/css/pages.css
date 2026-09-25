@@ -76,6 +76,146 @@
   }
 }
 
+/* ---- home: map conditions ---------------------------------------------------- */
+
+.conditions__region {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.conditions__region .select {
+  height: 32px;
+  font-size: 0.875rem;
+}
+
+.conditions {
+  display: grid;
+  gap: 28px;
+}
+
+.conditions__group h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--dust);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.conditions__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+
+.condition {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--night-2);
+}
+
+.condition--live {
+  border-color: color-mix(in srgb, var(--tone) 40%, transparent);
+  background: color-mix(in srgb, var(--tone) 6%, var(--night-2));
+}
+
+.condition__icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.condition__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.condition__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.condition__name .tag {
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.condition__maps {
+  color: var(--bone-2);
+  font-size: var(--step--1);
+}
+
+.condition__maps a {
+  text-decoration: none;
+}
+
+.condition__maps a:hover {
+  color: var(--tone);
+}
+
+.condition__when {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.condition__count {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.condition--live .condition__count {
+  color: var(--tone);
+}
+
+.condition__time {
+  color: var(--dust);
+  font-size: var(--step--1);
+}
+
+.conditions__note {
+  margin-top: 16px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--tone) 60%, transparent);
+  animation: live-pulse 2s var(--ease) infinite;
+}
+
+@keyframes live-pulse {
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@media (max-width: 520px) {
+  .section__head:has(.conditions__region) {
+    flex-wrap: wrap;
+  }
+}
+
 /* ---- news ------------------------------------------------------------------ */
 
 .news-list {
