@@ -19,6 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { CLIENT_TERMS } from './glossary.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://arcraiders.com';
@@ -256,14 +257,13 @@ function loadData() {
   return context.window.ARC_DATA || {};
 }
 
-// Official zh-CN names from the game data, plus a few setting words that recur in news.
+// The client's zh-CN terms (scripts/glossary-client.json: names, map locations,
+// systems), then the names in the game data, which include items and quests the
+// glossary doesn't list.
 function buildGlossary(data) {
-  const terms = new Map([
-    ['Raider', '奇袭者'], ['Raiders', '奇袭者'], ['Speranza', '斯佩兰扎'], ['Rust Belt', '锈带'],
-    ['Topside', '上层'], ['Raider Den', '奇袭者巢穴'], ['Hideout', '藏身处'], ['Expedition', '远征'],
-    ['Blueprint', '蓝图'], ['Workshop', '工作台'], ['Skill Tree', '技能树'],
-  ]);
+  const terms = new Map([['Raiders', '奇袭者']]);
   const add = (t) => t && t.en && t.zh && t.en.length > 2 && !terms.has(t.en) && terms.set(t.en, t.zh);
+  CLIENT_TERMS.forEach(([en, zh]) => add({ en, zh }));
   Object.values(data.itemIndex || {}).forEach(([en, zh]) => add({ en, zh }));
   (data.quests || []).forEach((q) => add(q.name));
   (data.skills || []).forEach((s) => add(s.name));
@@ -277,11 +277,11 @@ function buildGlossary(data) {
   return terms;
 }
 
-// Only the glossary entries that actually occur in this text.
+// Only the glossary entries that occur in this text as whole words.
 function glossaryFor(text, terms) {
-  const lower = text.toLowerCase();
+  const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return [...terms]
-    .filter(([en]) => lower.includes(en.toLowerCase()))
+    .filter(([en]) => new RegExp(`(^|[^A-Za-z])${escape(en)}(?![A-Za-z])`, 'i').test(text))
     .sort((a, b) => b[0].length - a[0].length)
     .map(([en, zh]) => `${en} = ${zh}`)
     .join('\n');
@@ -423,7 +423,7 @@ async function main() {
   console.log(`Wrote ${news.length} posts to content/news.js (${translated} with Chinese).`);
 }
 
-export { parseListing, parseArticle, sanitize, translatePost, buildGlossary, loadData };
+export { parseListing, parseArticle, sanitize, translatePost, buildGlossary, glossaryFor, loadData };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch((err) => {

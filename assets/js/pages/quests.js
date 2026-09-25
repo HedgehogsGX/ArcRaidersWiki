@@ -93,7 +93,7 @@
         (q.rewards || q.xp) &&
           html`${chipList(q.rewards)}${q.xp ? html`<p class="note quest-xp">${t('common.xp', { n: num(q.xp) })}</p>` : ''}`
       )}
-      ${block(t('quests.other'), q.other && html`<div class="tags">${q.other.map((o) => html`<span class="tag" lang="en">${o}</span>`)}</div>`)}
+      ${block(t('quests.other'), q.other && html`<div class="tags">${q.other.map((o) => html`<span class="tag">${L(o)}</span>`)}</div>`)}
       <div class="quest-links">
         ${block(t('quests.prev'), q.prev && html`<div class="link-list">${q.prev.map(questLink)}</div>`)}
         ${block(t('quests.next'), q.next && html`<div class="link-list">${q.next.map(questLink)}</div>`)}
