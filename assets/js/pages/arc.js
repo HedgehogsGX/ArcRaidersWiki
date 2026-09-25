@@ -13,7 +13,7 @@
       <span>${label('threats', threat)}</span></span>`;
   };
 
-  // Upstream has no Chinese for these descriptions yet; say so instead of guessing.
+  // Descriptions are translated in scripts/translations.mjs; a new unit shows its English with a note until then.
   const englishOnly = (text) =>
     ARC.lang === 'zh' && text && !text.zh ? html`<span class="note en-note">${t('common.enOnly')}</span>` : '';
 

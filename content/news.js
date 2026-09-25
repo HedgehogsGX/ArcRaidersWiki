@@ -7,7 +7,8 @@ window.ARC_NEWS = [
   "tags": [],
   "thumb": "https://assets.arcraiders.com/article-cards/4382ddb0-bfc3-pve-toggle-card-600x200-600x200.png",
   "title": {
-   "en": "We’re testing a PvE Toggle: here’s what it means for you"
+   "en": "We’re testing a PvE Toggle: here’s what it means for you",
+   "zh": "我们将测试 PvE 开关：这对你意味着什么"
   },
   "body": [
    {
@@ -16,35 +17,43 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>We’re excited to share that we will be testing a PvE matchmaking toggle in ARC Raiders, and it’s coming soon!</p>"
+    "en": "<p>We’re excited to share that we will be testing a PvE matchmaking toggle in ARC Raiders, and it’s coming soon!</p>",
+    "zh": "<p>很高兴告诉大家，我们即将在《ARC Raiders》中测试 PvE 匹配开关，很快就会上线！</p>"
    },
    {
     "type": "html",
-    "en": "<p>The test will run from <strong>October 13-20, 2026</strong>, giving players the option to choose between the classic ARC Raiders PvPvE experience or a PvE experience focused on co-op gameplay with other Raiders versus the ARC threat.</p>"
+    "en": "<p>The test will run from <strong>October 13-20, 2026</strong>, giving players the option to choose between the classic ARC Raiders PvPvE experience or a PvE experience focused on co-op gameplay with other Raiders versus the ARC threat.</p>",
+    "zh": "<p>测试将于 <strong>2026 年 10 月 13 日至 20 日</strong>进行。玩家可以在经典的《ARC Raiders》PvPvE 体验和 PvE 体验之间自由选择：后者专注于与其他奇袭者合作，共同对抗 ARC 的威胁。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Before we get into the details of the test, we want to take a step back and explain how we got here, and why we’re exploring this feature now.</p>"
+    "en": "<p>Before we get into the details of the test, we want to take a step back and explain how we got here, and why we’re exploring this feature now.</p>",
+    "zh": "<p>在介绍测试细节之前，我们想先回头聊聊一路走来的历程，以及为什么现在要尝试这项功能。</p>"
    },
    {
     "type": "html",
-    "en": "<h3>The Vision of ARC Raiders</h3>"
+    "en": "<h3>The Vision of ARC Raiders</h3>",
+    "zh": "<h3>《ARC Raiders》的愿景</h3>"
    },
    {
     "type": "html",
-    "en": "<p>When ARC Raiders was conceived seven years ago, the vision of the game was quite different. </p>"
+    "en": "<p>When ARC Raiders was conceived seven years ago, the vision of the game was quite different. </p>",
+    "zh": "<p>七年前构思《ARC Raiders》时，游戏的设想与现在大不相同。</p>"
    },
    {
     "type": "html",
-    "en": "<p>We originally envisioned a raid-based PvE Co-op game with looting mechanics. While the concept showed promise, we ran into significant challenges, and eventually decided to reset the game and build the high-tension PvPvE Extraction adventure that you know today. (For the full story, we recommend watching the <a href=\"https://www.youtube.com/watch?v=tdorU3sjt_0\" target=\"_blank\" rel=\"noopener\"><strong>The Evolution of ARC Raiders EP1 - Finding ARC Raiders</strong></a>)</p>"
+    "en": "<p>We originally envisioned a raid-based PvE Co-op game with looting mechanics. While the concept showed promise, we ran into significant challenges, and eventually decided to reset the game and build the high-tension PvPvE Extraction adventure that you know today. (For the full story, we recommend watching the <a href=\"https://www.youtube.com/watch?v=tdorU3sjt_0\" target=\"_blank\" rel=\"noopener\"><strong>The Evolution of ARC Raiders EP1 - Finding ARC Raiders</strong></a>)</p>",
+    "zh": "<p>我们最初设想的是一款以奇袭为核心、带有搜刮机制的 PvE 合作游戏。这个概念虽然有潜力，但我们遇到了重大困难，最终决定推倒重来，打造出大家如今熟悉的这款高度紧张的 PvPvE 撤离冒险。（完整故事推荐观看 <a href=\"https://www.youtube.com/watch?v=tdorU3sjt_0\" target=\"_blank\" rel=\"noopener\"><strong>The Evolution of ARC Raiders EP1 - Finding ARC Raiders</strong></a>）</p>"
    },
    {
     "type": "html",
-    "en": "<p>But when the game launched, we were pleasantly surprised; It wasn’t just extraction shooter fans who came to the Rust Belt, but a wide array of different players finding unique ways to enjoy the world. ARC Raiders became the “Extraction (Don’t) Shooter”, reaching a vibrant and diverse audience. This is something we’re very proud of here at Embark Studios.</p>"
+    "en": "<p>But when the game launched, we were pleasantly surprised; It wasn’t just extraction shooter fans who came to the Rust Belt, but a wide array of different players finding unique ways to enjoy the world. ARC Raiders became the “Extraction (Don’t) Shooter”, reaching a vibrant and diverse audience. This is something we’re very proud of here at Embark Studios.</p>",
+    "zh": "<p>但游戏发售后，情况让我们又惊又喜：来到锈带的不只是撤离射击游戏的爱好者，还有各式各样的玩家，用自己独特的方式享受这个世界。《ARC Raiders》成了“撤离（别）射击游戏”，吸引了一个充满活力、多元的玩家群体。这是 Embark Studios 全体成员都深感自豪的一点。</p>"
    },
    {
     "type": "html",
-    "en": "<p>As with all live games, the design should be an ongoing conversation with you, the players. Our goal is to stay true to the core principles on which ARC Raiders was built, but also respecting player choice and supporting different playstyles. </p>"
+    "en": "<p>As with all live games, the design should be an ongoing conversation with you, the players. Our goal is to stay true to the core principles on which ARC Raiders was built, but also respecting player choice and supporting different playstyles. </p>",
+    "zh": "<p>和所有长期运营的游戏一样，设计应该是与各位玩家持续不断的对话。我们的目标是坚守《ARC Raiders》赖以建立的核心原则，同时尊重玩家的选择，支持不同的玩法。</p>"
    },
    {
     "type": "image",
@@ -52,119 +61,148 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h3>What We’re Seeing</h3>"
+    "en": "<h3>What We’re Seeing</h3>",
+    "zh": "<h3>我们观察到的情况</h3>"
    },
    {
     "type": "html",
-    "en": "<p>At Embark we try to approach all key decisions from three different perspectives.<strong> What does the data indicate? What does the player feedback say? And what does our gut tell us?</strong> </p>"
+    "en": "<p>At Embark we try to approach all key decisions from three different perspectives.<strong> What does the data indicate? What does the player feedback say? And what does our gut tell us?</strong> </p>",
+    "zh": "<p>在 Embark，我们会从三个角度审视所有重要决定：<strong>数据说明了什么？玩家反馈说了什么？我们的直觉又告诉我们什么？</strong></p>"
    },
    {
     "type": "html",
-    "en": "<p>Sometimes one perspective is more important than the other, but we try to triangulate our decisions between all three. There is no exact science, but as gamers ourselves, we always try to make the best decisions for the game and players.</p>"
+    "en": "<p>Sometimes one perspective is more important than the other, but we try to triangulate our decisions between all three. There is no exact science, but as gamers ourselves, we always try to make the best decisions for the game and players.</p>",
+    "zh": "<p>有时某个角度更重要一些，但我们会尽量综合这三者来做决定。这没有精确的公式，但作为玩家，我们始终努力为游戏和玩家做出最好的选择。</p>"
    },
    {
     "type": "html",
-    "en": "<p>If we look at the overall population of players and split them by how they most like to play, it looks like this:</p>"
+    "en": "<p>If we look at the overall population of players and split them by how they most like to play, it looks like this:</p>",
+    "zh": "<p>如果把全部玩家按最喜欢的玩法划分，大致是这样的：</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li>37% Friendly co-op players (this player group has grown consistently since launch).</li><li>27% Mixed players.</li><li>34% Pure PvP players (this player group has remained stable since launch).</li><li>Over 70% of Friendly players and even 40% of PvP players express a desire for fewer hostile encounters and 51% of the surveyed playerbase has expressed an interest in a dedicated PvE option.</li><li>There are clear friction points, with friendly players often attempting to avoid PvP entirely, and we hear frustration from certain groups of players around ratting and camping.</li></ul>"
+    "en": "<ul><li>37% Friendly co-op players (this player group has grown consistently since launch).</li><li>27% Mixed players.</li><li>34% Pure PvP players (this player group has remained stable since launch).</li><li>Over 70% of Friendly players and even 40% of PvP players express a desire for fewer hostile encounters and 51% of the surveyed playerbase has expressed an interest in a dedicated PvE option.</li><li>There are clear friction points, with friendly players often attempting to avoid PvP entirely, and we hear frustration from certain groups of players around ratting and camping.</li></ul>",
+    "zh": "<ul><li>37% 为友好合作型玩家（这一群体自发售以来持续增长）。</li><li>27% 为混合型玩家。</li><li>34% 为纯 PvP 玩家（这一群体自发售以来保持稳定）。</li><li>超过 70% 的友好型玩家，甚至 40% 的 PvP 玩家，都希望减少敌对遭遇；在接受调查的玩家中，有 51% 对专门的 PvE 选项感兴趣。</li><li>摩擦点十分明显：友好型玩家常常想方设法完全避开 PvP，而部分玩家则对“鼠鼠”打法和蹲点感到不满。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<p>We’re seeing a large and growing group of Raiders who come to the Rust Belt for the co-op and the ARC, not fighting with other Raiders. That group has become a core part of our community, so it’s important we learn how to support them properly rather than leave them working around the game</p>"
+    "en": "<p>We’re seeing a large and growing group of Raiders who come to the Rust Belt for the co-op and the ARC, not fighting with other Raiders. That group has become a core part of our community, so it’s important we learn how to support them properly rather than leave them working around the game</p>",
+    "zh": "<p>我们看到，有一大批而且越来越多的奇袭者来到锈带，是为了合作和对抗 ARC，而不是和其他奇袭者交火。这个群体已经成为社区的核心部分，所以我们必须学会好好支持他们，而不是让他们只能绕着游戏机制走。</p>"
    },
    {
     "type": "html",
-    "en": "<h3>Introducing the PvE Matchmaking Toggle Beta test</h3>"
+    "en": "<h3>Introducing the PvE Matchmaking Toggle Beta test</h3>",
+    "zh": "<h3>PvE 匹配开关 Beta 测试</h3>"
    },
    {
     "type": "html",
-    "en": "<p>To make a long story short, we’re going to be running a test with a PvE matchmaking toggle. This is how it will work:</p>"
+    "en": "<p>To make a long story short, we’re going to be running a test with a PvE matchmaking toggle. This is how it will work:</p>",
+    "zh": "<p>长话短说，我们将针对 PvE 匹配开关进行一次测试。具体安排如下：</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The test will run from <strong>October 13-20, 2026.</strong></li><li>During the test, you will be able to toggle between the classic ARC Raiders PvPvE experience and the PvE experience. </li><li>In the PvE experience there will be <strong>zero player-to-player damage</strong>, and the session is <strong>purely focused on the ARC threat and co-op social dynamics.</strong></li><li>PvE sessions will include <strong>Solos, Duos and Trios in the same session.</strong></li><li>We’re designing the system for<strong> seamless switching</strong>, play PvE for a relaxed solo session then switch back to PvPvE for a high tension match.</li><li>Some <strong>major conditions, Night Raids, Hidden Bunker, Locked Gate and Frigate will be excluded</strong> from the PvE matchmaking test. These are designed with higher tension in mind and rely on the uncertainty of encountering a variety of players.</li><li>Your <strong>PvPvE matchmaking rating will not be affected</strong> while playing in PvE sessions.</li><li>It’s important to remember that <strong>this is, at least initially, a limited test.</strong> When the test ends, the toggle will be removed and matchmaking will return to normal. Your feedback and data will help to shape the future of this system.</li></ul>"
+    "en": "<ul><li>The test will run from <strong>October 13-20, 2026.</strong></li><li>During the test, you will be able to toggle between the classic ARC Raiders PvPvE experience and the PvE experience. </li><li>In the PvE experience there will be <strong>zero player-to-player damage</strong>, and the session is <strong>purely focused on the ARC threat and co-op social dynamics.</strong></li><li>PvE sessions will include <strong>Solos, Duos and Trios in the same session.</strong></li><li>We’re designing the system for<strong> seamless switching</strong>, play PvE for a relaxed solo session then switch back to PvPvE for a high tension match.</li><li>Some <strong>major conditions, Night Raids, Hidden Bunker, Locked Gate and Frigate will be excluded</strong> from the PvE matchmaking test. These are designed with higher tension in mind and rely on the uncertainty of encountering a variety of players.</li><li>Your <strong>PvPvE matchmaking rating will not be affected</strong> while playing in PvE sessions.</li><li>It’s important to remember that <strong>this is, at least initially, a limited test.</strong> When the test ends, the toggle will be removed and matchmaking will return to normal. Your feedback and data will help to shape the future of this system.</li></ul>",
+    "zh": "<ul><li>测试时间为 <strong>2026 年 10 月 13 日至 20 日。</strong></li><li>测试期间，你可以在经典的《ARC Raiders》PvPvE 体验和 PvE 体验之间切换。</li><li>在 PvE 体验中，<strong>玩家之间不会造成任何伤害</strong>，对局<strong>完全围绕 ARC 的威胁和合作社交展开。</strong></li><li>PvE 对局中，<strong>单人、双人和三人小队会进入同一局。</strong></li><li>我们正把这套系统设计成可以<strong>无缝切换</strong>：先玩一局轻松的单人 PvE，再切回 PvPvE 来一局紧张刺激的对局。</li><li>部分<strong>大型地图条件，即夜间奇袭、隐藏地堡、上锁的大门和护卫者，不会出现在</strong> PvE 匹配测试中。这些内容本就是为更紧张的体验设计的，依赖于遭遇各类玩家的不确定性。</li><li>在 PvE 对局中游玩<strong>不会影响你的 PvPvE 匹配评分</strong>。</li><li>请记住，<strong>这至少在初期只是一次限时测试。</strong>测试结束后，开关将被移除，匹配恢复正常。你的反馈和数据将帮助我们决定这套系统的未来。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>PvE Experience</h3>"
+    "en": "<h3>PvE Experience</h3>",
+    "zh": "<h3>PvE 体验</h3>"
    },
    {
     "type": "html",
-    "en": "<p>The PvE experience in this test is one where players can scavenge, complete quests and explore in relative safety from other hostile players. <strong>The intent here is not to test how we can make PvE more challenging or to try new PvE progression, rather it is an attempt to give players an alternative to PvP encounters </strong>- of course we will be listening to what you have to say after the test and what you want from the feature. </p>"
+    "en": "<p>The PvE experience in this test is one where players can scavenge, complete quests and explore in relative safety from other hostile players. <strong>The intent here is not to test how we can make PvE more challenging or to try new PvE progression, rather it is an attempt to give players an alternative to PvP encounters </strong>- of course we will be listening to what you have to say after the test and what you want from the feature. </p>",
+    "zh": "<p>本次测试中的 PvE 体验，是让玩家可以在相对安全、不受其他敌对玩家威胁的环境中搜刮、完成任务和探索。<strong>这次测试的目的不是研究如何让 PvE 更具挑战性，也不是尝试新的 PvE 成长系统，而是为玩家提供 PvP 遭遇之外的另一种选择</strong>。当然，测试结束后我们也会认真倾听大家的意见，以及你们对这项功能的期待。</p>"
    },
    {
     "type": "html",
-    "en": "<p>There are however a few differences in the PvE experience:</p>"
+    "en": "<p>There are however a few differences in the PvE experience:</p>",
+    "zh": "<p>不过，PvE 体验中有几处不同：</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The overall loot value is lowered to compensate for the relative safety of PvE.</li><li>If you are downed by ARC’s, be a bit careful when crawling, they might re-acquire you as a target even when you are moving when downed. They will ignore you if you stay still. We’re trying this to maintain some tension to compensate for the lack of a PvP threat.</li></ul>"
+    "en": "<ul><li>The overall loot value is lowered to compensate for the relative safety of PvE.</li><li>If you are downed by ARC’s, be a bit careful when crawling, they might re-acquire you as a target even when you are moving when downed. They will ignore you if you stay still. We’re trying this to maintain some tension to compensate for the lack of a PvP threat.</li></ul>",
+    "zh": "<ul><li>整体战利品价值会降低，以抵消 PvE 相对安全的环境。</li><li>如果你被 ARC 打到倒地，爬行时要小心一点：倒地后移动时，它们可能会重新把你锁定为目标；只要你保持不动，它们就会无视你。我们这样尝试，是为了在没有 PvP 威胁的情况下保留一些紧张感。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Risks and Balance</h3>"
+    "en": "<h3>Risks and Balance</h3>",
+    "zh": "<h3>风险与平衡</h3>"
    },
    {
     "type": "html",
-    "en": "<p>It’s important to mention that this is not a risk-free test. The first, unlaunched iteration of ARC Raiders was conceived as a PvE game, and we have been hesitant to return to that concept. There is a risk that introducing a PvE matchmaking toggle could reduce some of the tension that the game was built around. At the same time, we have to respect that some players want to enjoy the game in their own way, and we can’t ignore what the data is telling us. </p>"
+    "en": "<p>It’s important to mention that this is not a risk-free test. The first, unlaunched iteration of ARC Raiders was conceived as a PvE game, and we have been hesitant to return to that concept. There is a risk that introducing a PvE matchmaking toggle could reduce some of the tension that the game was built around. At the same time, we have to respect that some players want to enjoy the game in their own way, and we can’t ignore what the data is telling us. </p>",
+    "zh": "<p>需要说明的是，这次测试并非没有风险。《ARC Raiders》最初那个未发售的版本就是一款 PvE 游戏，我们对回到那个概念一直心存犹豫。加入 PvE 匹配开关，可能会削弱这款游戏赖以成立的部分紧张感。但与此同时，我们必须尊重一些玩家想用自己的方式享受游戏，也不能忽视数据告诉我们的事实。</p>"
    },
    {
     "type": "html",
-    "en": "<p>As creators, we design a game with an intention for how we think it should be played; but after launch, it becomes the players’ game. This is one of the unique and wonderful things about making games; we build something with a specific vision,  and then we get to see players finding their own ways to enjoy it.<br></p>"
+    "en": "<p>As creators, we design a game with an intention for how we think it should be played; but after launch, it becomes the players’ game. This is one of the unique and wonderful things about making games; we build something with a specific vision,  and then we get to see players finding their own ways to enjoy it.<br></p>",
+    "zh": "<p>作为创作者，我们在设计游戏时会设想它应该怎么玩；但游戏发售之后，它就属于玩家了。这正是做游戏独特而美妙的地方之一：我们怀着特定的愿景打造作品，然后看到玩家找到各自享受它的方式。<br></p>"
    },
    {
     "type": "html",
-    "en": "<p>Testing the PvE Matchmaking toggle is a way to respect that our players have different needs than what we first envisioned. </p>"
+    "en": "<p>Testing the PvE Matchmaking toggle is a way to respect that our players have different needs than what we first envisioned. </p>",
+    "zh": "<p>测试 PvE 匹配开关，是我们尊重玩家需求的一种方式，这些需求与我们最初的设想并不相同。</p>"
    },
    {
     "type": "html",
-    "en": "<p>There are a couple of things we will keep a close eye on:</p>"
+    "en": "<p>There are a couple of things we will keep a close eye on:</p>",
+    "zh": "<p>有几件事我们会密切关注：</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li><strong>Player economy</strong>: Friendly players, and by extension the PvE sessions, see higher rates of extraction and more value earned. To account for this during the test, PvPvE sessions will have slightly higher baseline loot values.</li><li><strong>Matchmaking and queue times:</strong> In low population regions or during off hours, there might be a small increase in matchmaking times. We will monitor this closely to make sure that we’re providing good sessions for everyone. Depending on how many players try the PvE toggle, it may also might affect the quality of some of the PvPvE sessions, which we will also watch closely and adjust as needed. </li></ul>"
+    "en": "<ul><li><strong>Player economy</strong>: Friendly players, and by extension the PvE sessions, see higher rates of extraction and more value earned. To account for this during the test, PvPvE sessions will have slightly higher baseline loot values.</li><li><strong>Matchmaking and queue times:</strong> In low population regions or during off hours, there might be a small increase in matchmaking times. We will monitor this closely to make sure that we’re providing good sessions for everyone. Depending on how many players try the PvE toggle, it may also might affect the quality of some of the PvPvE sessions, which we will also watch closely and adjust as needed. </li></ul>",
+    "zh": "<ul><li><strong>玩家经济</strong>：友好型玩家（以及由此延伸的 PvE 对局）撤离率更高，获得的价值也更多。为此，测试期间 PvPvE 对局的基础战利品价值会略微提高。</li><li><strong>匹配与排队时间：</strong>在玩家较少的地区或非高峰时段，匹配时间可能会略有增加。我们会密切监控，确保为每个人提供良好的对局。视尝试 PvE 开关的玩家数量而定，部分 PvPvE 对局的质量也可能受到影响，我们同样会密切关注并按需调整。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Looking Ahead</h3>"
+    "en": "<h3>Looking Ahead</h3>",
+    "zh": "<h3>展望未来</h3>"
    },
    {
     "type": "html",
-    "en": "<p>During the test and after its conclusion we will review the feedback and data we’ve collected to help determine how we move forward. Your feedback will be crucial to that process. <br></p>"
+    "en": "<p>During the test and after its conclusion we will review the feedback and data we’ve collected to help determine how we move forward. Your feedback will be crucial to that process. <br></p>",
+    "zh": "<p>在测试期间和结束之后，我们会审视收集到的反馈和数据，以决定下一步怎么走。你们的反馈对这个过程至关重要。<br></p>"
    },
    {
     "type": "html",
-    "en": "<p>We want to set a few expectations for what comes next:</p>"
+    "en": "<p>We want to set a few expectations for what comes next:</p>",
+    "zh": "<p>对于接下来的安排，我们想先说明几点：</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li><strong>It’s possible that this will not work. This test is not a promise that there will be a PvE mode in the future</strong>, but take this as an indication that we are seriously considering it.</li><li>We don’t yet know how the potential future version of this setting might look. It’s plausible that any future version could look very different from what you experience in the beta test. We believe this is something that should evolve over time, together with you the players.</li></ul>"
+    "en": "<ul><li><strong>It’s possible that this will not work. This test is not a promise that there will be a PvE mode in the future</strong>, but take this as an indication that we are seriously considering it.</li><li>We don’t yet know how the potential future version of this setting might look. It’s plausible that any future version could look very different from what you experience in the beta test. We believe this is something that should evolve over time, together with you the players.</li></ul>",
+    "zh": "<ul><li><strong>这项尝试有可能行不通。这次测试并不代表将来一定会有 PvE 模式</strong>，但请把它看作我们正在认真考虑的信号。</li><li>我们还不知道这项设置将来可能会是什么样子。未来的任何版本都可能与你在 Beta 测试中体验到的大不相同。我们相信，这应该与各位玩家一起，随着时间慢慢演进。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<p>Our goal is to keep the communication open with you, and we’ll share our findings and future plans sometime after the test. We hope that you participate and share with us what you liked (and disliked!) about the PvE matchmaking test, as well as all the content we have for you in the Frozen Trail update. </p>"
+    "en": "<p>Our goal is to keep the communication open with you, and we’ll share our findings and future plans sometime after the test. We hope that you participate and share with us what you liked (and disliked!) about the PvE matchmaking test, as well as all the content we have for you in the Frozen Trail update. </p>",
+    "zh": "<p>我们的目标是与大家保持沟通，测试结束后的某个时候，我们会分享得出的结论和未来计划。希望你参与进来，告诉我们你对 PvE 匹配测试喜欢（和不喜欢！）的地方，也欢迎体验 Frozen Trail 更新为你准备的全部内容。</p>"
    },
    {
     "type": "html",
-    "en": "<p>I’m very excited to meet you Topside and hear what you think!</p>"
+    "en": "<p>I’m very excited to meet you Topside and hear what you think!</p>",
+    "zh": "<p>非常期待在上层与你相见，听听你的想法！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Best,</p>"
+    "en": "<p>Best,</p>",
+    "zh": "<p>祝好，</p>"
    },
    {
     "type": "html",
-    "en": "<p>Aleks</p>"
+    "en": "<p>Aleks</p>",
+    "zh": "<p>Aleks</p>"
    },
    {
     "type": "html",
-    "en": "<p>Executive Producer, ARC Raiders</p>"
+    "en": "<p>Executive Producer, ARC Raiders</p>",
+    "zh": "<p>《ARC Raiders》执行制作人</p>"
    },
    {
     "type": "html",
-    "en": "<h3>FAQs</h3>What is the PvE toggle?When is the test happening?Is this a permanent PvE mode?How will PvE matchmaking work?Can I switch between PvE and PvPvE?Will PvE affect my PvPvE matchmaking rating?Will all maps and conditions be available in PvE?Why is Embark testing a PvE option?Does this mean ARC Raiders is becoming a PvE game?Could PvE reduce the tension of ARC Raiders?Will PvE affect the in-game economy?Will the toggle affect matchmaking or queue times?What happens after the test?What if the test doesn’t work?What does Embark want players to do?"
+    "en": "<h3>FAQs</h3>",
+    "zh": "<h3>常见问题</h3>"
    }
   ]
  },
@@ -175,24 +213,29 @@ window.ARC_NEWS = [
   "tags": [],
   "thumb": "https://assets.arcraiders.com/article-cards/2c0b3305-9d3d-first-look-card-600x200-600x200.png",
   "title": {
-   "en": "Frozen Trail First Look: Content highlights from October 8"
+   "en": "Frozen Trail First Look: Content highlights from October 8",
+   "zh": "Frozen Trail 抢先看：10 月 8 日更新内容一览"
   },
   "body": [
    {
     "type": "html",
-    "en": "<p>Raiders,</p>"
+    "en": "<p>Raiders,</p>",
+    "zh": "<p>奇袭者们：</p>"
    },
    {
     "type": "html",
-    "en": "<p>The Frozen Trail Update is just around the corner. Are you ready to gear up and face whatever is waiting for us beyond the Rust Belt? </p>"
+    "en": "<p>The Frozen Trail Update is just around the corner. Are you ready to gear up and face whatever is waiting for us beyond the Rust Belt? </p>",
+    "zh": "<p>Frozen Trail 更新即将到来。你准备好整装出发，直面锈带之外等待我们的一切了吗？</p>"
    },
    {
     "type": "html",
-    "en": "<p>Ahead of October 8, we wanted to give you a preview of what’s in store. Braving the new frontier will challenge you to your extremes, but you’ll also be offered opportunities to develop your capabilities so you’re prepared for the danger. </p>"
+    "en": "<p>Ahead of October 8, we wanted to give you a preview of what’s in store. Braving the new frontier will challenge you to your extremes, but you’ll also be offered opportunities to develop your capabilities so you’re prepared for the danger. </p>",
+    "zh": "<p>在 10 月 8 日之前，我们想先带大家看看这次更新的内容。闯荡新的边疆会让你经受极限考验，但你也会获得提升自身能力的机会，为迎接危险做好准备。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Here’s a glimpse of the content we have in store for Frozen Trail.</p>"
+    "en": "<p>Here’s a glimpse of the content we have in store for Frozen Trail.</p>",
+    "zh": "<p>下面就来一睹 Frozen Trail 为你准备的内容。</p>"
    },
    {
     "type": "video",
@@ -201,23 +244,28 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>New Map: Pendola Pass</h2>"
+    "en": "<h2>New Map: Pendola Pass</h2>",
+    "zh": "<h2>新地图：霜痕小径</h2>"
    },
    {
     "type": "html",
-    "en": "<p>With your help, Celeste and Shani have triangulated the source of the strange signal that’s been ringing across Toledo. All signs point toward an old Italian village and Exodus transport hub called Pendola Pass. </p>"
+    "en": "<p>With your help, Celeste and Shani have triangulated the source of the strange signal that’s been ringing across Toledo. All signs point toward an old Italian village and Exodus transport hub called Pendola Pass. </p>",
+    "zh": "<p>在你的帮助下，塞莱斯特和萨尼通过三角定位，找到了在托雷多上空回荡的奇怪信号的源头。所有线索都指向一座古老的意大利村庄，同时也是离巢计划的交通枢纽：霜痕小径。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Beyond the peaks that envelope the Rust Belt, icy air preserves Pendola Pass in its eerie grasp. Classic signs of an old-world civilization punctuate the narrow stretch: a supermarket, and a lifeless town square. Signs of the Exodus Project loom large: the observatory and buried train depot that once served as a major transit hub.</p>"
+    "en": "<p>Beyond the peaks that envelope the Rust Belt, icy air preserves Pendola Pass in its eerie grasp. Classic signs of an old-world civilization punctuate the narrow stretch: a supermarket, and a lifeless town square. Signs of the Exodus Project loom large: the observatory and buried train depot that once served as a major transit hub.</p>",
+    "zh": "<p>越过环抱锈带的群山，冰冷的空气将霜痕小径笼罩在诡异的寂静之中。这片狭长地带随处可见旧世界文明的典型痕迹：一家超市，一座了无生气的小镇广场。离巢计划的痕迹更是随处可见：天文台，以及曾是重要交通枢纽、如今被掩埋的火车站。</p>"
    },
    {
     "type": "html",
-    "en": "<p>But dominating everything else lies the reason Raiders are called to Pendola Pass - one of the Emperors has fallen. Rare technology lies within, and your job is simple - get there, and find a way inside. </p>"
+    "en": "<p>But dominating everything else lies the reason Raiders are called to Pendola Pass - one of the Emperors has fallen. Rare technology lies within, and your job is simple - get there, and find a way inside. </p>",
+    "zh": "<p>但最引人注目的，是奇袭者被召集到霜痕小径的原因：一台“帝王”坠落了。其中藏着稀有的技术，你的任务很简单：赶到那里，想办法进去。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Between a scrambled ARC response and brutal flash freezes that cut through the valley, the adventure will be dangerous. Are you sure you’re ready for what lies beyond the Rust Belt?</p>"
+    "en": "<p>Between a scrambled ARC response and brutal flash freezes that cut through the valley, the adventure will be dangerous. Are you sure you’re ready for what lies beyond the Rust Belt?</p>",
+    "zh": "<p>ARC 的反应乱作一团，山谷中还不时有刺骨的急冻袭来，这趟冒险注定危险重重。你确定已经准备好面对锈带之外的一切了吗？</p>"
    },
    {
     "type": "image",
@@ -225,27 +273,33 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Frigate</h2>"
+    "en": "<h2>Frigate</h2>",
+    "zh": "<h2>护卫者</h2>"
    },
    {
     "type": "html",
-    "en": "<p>A fallen Emperor is unprecedented, and ARC are quick to react. They’re sending one of their largest vessels to patrol the area - Raiders have started calling it the Frigate. </p>"
+    "en": "<p>A fallen Emperor is unprecedented, and ARC are quick to react. They’re sending one of their largest vessels to patrol the area - Raiders have started calling it the Frigate. </p>",
+    "zh": "<p>“帝王”坠落前所未有，ARC 迅速做出了反应。它们派出旗下最大的舰船之一在这片区域巡逻，奇袭者们开始称它为“护卫者”。</p>"
    },
    {
     "type": "html",
-    "en": "<p>The Frigate presents a substantial challenge to highly skilled Raiders who, despite the danger, see opportunity within. After finding a way to get on board, you’ll need to navigate its internal passageways, unlock paths, and defend yourself against ARC new and old. </p>"
+    "en": "<p>The Frigate presents a substantial challenge to highly skilled Raiders who, despite the danger, see opportunity within. After finding a way to get on board, you’ll need to navigate its internal passageways, unlock paths, and defend yourself against ARC new and old. </p>",
+    "zh": "<p>对技术高超的奇袭者来说，护卫者是一项艰巨的挑战，但他们在危险中看到了机遇。找到登舰的办法后，你需要穿行于舰内通道、打通路线，并抵御新旧 ARC 的攻击。</p>"
    },
    {
     "type": "html",
-    "en": "<p>But you won’t be alone. Other Raiders have their eyes on the prize, and you’ll be forced to collaborate or cut through them in order to pass. The scale of the challenge may demand a different approach to one you&#x27;re used to - when you’re caught in close quarters hundreds of feet in the air, you’ll have to find a suitable strategy, one way or the other. </p>"
+    "en": "<p>But you won’t be alone. Other Raiders have their eyes on the prize, and you’ll be forced to collaborate or cut through them in order to pass. The scale of the challenge may demand a different approach to one you&#x27;re used to - when you’re caught in close quarters hundreds of feet in the air, you’ll have to find a suitable strategy, one way or the other. </p>",
+    "zh": "<p>但你不会是孤身一人。其他奇袭者同样盯着这份宝藏，你将不得不与他们合作，或者杀出一条路。这项挑战的规模可能需要你换一种与平时不同的打法：当你被困在数百英尺高空的狭窄空间里时，无论如何都得找到合适的策略。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>New Enemy: Bully</h2>"
+    "en": "<h2>New Enemy: Bully</h2>",
+    "zh": "<h2>新敌人：恶霸</h2>"
    },
    {
     "type": "html",
-    "en": "<p>Bully by name, bully by nature: our new machine-learned enemy is an oppressive, aggressive beast that cedes no ground as it gallops upon your position and fights with a host of lethal attacks. Use cover, time your response, and hit your shots; the Bully is quick on its feet and unhinged in its quest.</p>"
+    "en": "<p>Bully by name, bully by nature: our new machine-learned enemy is an oppressive, aggressive beast that cedes no ground as it gallops upon your position and fights with a host of lethal attacks. Use cover, time your response, and hit your shots; the Bully is quick on its feet and unhinged in its quest.</p>",
+    "zh": "<p>人如其名，恶霸就是个恶霸：这个通过机器学习打造的新敌人凶悍又咄咄逼人，会一路狂奔冲向你的位置，寸步不让，用一连串致命攻击与你缠斗。善用掩体，把握反击时机，打准每一枪；恶霸脚步飞快，攻势疯狂。</p>"
    },
    {
     "type": "image",
@@ -253,11 +307,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>New Enemy: Skulker</h2>"
+    "en": "<h2>New Enemy: Skulker</h2>",
+    "zh": "<h2>新敌人：潜伏者</h2>"
    },
    {
     "type": "html",
-    "en": "<p>In contrast to the Bully, the Skulker is opportunistic, lying in wait and skirting the edges of your vision to get the drop and unleash a flurry of blows. This is one you’ll want to keep an eye on as a momentary distraction will see it retreat out of sight - the next time you see it, you’ll be feeling it too. </p>"
+    "en": "<p>In contrast to the Bully, the Skulker is opportunistic, lying in wait and skirting the edges of your vision to get the drop and unleash a flurry of blows. This is one you’ll want to keep an eye on as a momentary distraction will see it retreat out of sight - the next time you see it, you’ll be feeling it too. </p>",
+    "zh": "<p>与恶霸相反，潜伏者善于伺机而动：它会埋伏等待，在你的视野边缘游走，一有机会就抢先出手，发动一连串猛攻。你最好时刻盯紧它，只要稍一分神，它就会退出视线，而下次你看到它时，也会同时感受到它的攻击。</p>"
    },
    {
     "type": "image",
@@ -265,11 +321,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>New Enemy: Hydra</h2>"
+    "en": "<h2>New Enemy: Hydra</h2>",
+    "zh": "<h2>新敌人：九头蛇</h2>"
    },
    {
     "type": "html",
-    "en": "<p>This enemy may not traverse, but it sure does move. Split into three stacked and autonomous portions, the Hydra is a turret that can handle entire squads with its triple-threat of weaponry. Found upon the Frigate, the Hydra will require a tactical approach in which Raiders divert attention, find cover quickly, and attack rapidly when the moment arises. </p>"
+    "en": "<p>This enemy may not traverse, but it sure does move. Split into three stacked and autonomous portions, the Hydra is a turret that can handle entire squads with its triple-threat of weaponry. Found upon the Frigate, the Hydra will require a tactical approach in which Raiders divert attention, find cover quickly, and attack rapidly when the moment arises. </p>",
+    "zh": "<p>这个敌人也许不会四处移动，但绝不是一动不动。九头蛇是一座分为三段、层层叠起且各自独立运作的炮塔，凭借三重火力足以对付整支小队。九头蛇出现在护卫者上，奇袭者需要运用战术：分散它的注意力，迅速找到掩体，并在时机到来时快速出击。</p>"
    },
    {
     "type": "image",
@@ -277,19 +335,23 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Raider Den Extension: Outpost</h2>"
+    "en": "<h2>Raider Den Extension: Outpost</h2>",
+    "zh": "<h2>奇袭者巢穴扩展：哨站</h2>"
    },
    {
     "type": "html",
-    "en": "<p>Celeste is offering Raiders who heed her call to explore Pendola Pass a home away from home: the Outpost. Nestled between the Rust Belt and the perilous mountain range, the Outpost is the first step to reclaiming parts of the surface. </p>"
+    "en": "<p>Celeste is offering Raiders who heed her call to explore Pendola Pass a home away from home: the Outpost. Nestled between the Rust Belt and the perilous mountain range, the Outpost is the first step to reclaiming parts of the surface. </p>",
+    "zh": "<p>对于响应塞莱斯特号召、前往霜痕小径探索的奇袭者，她提供了一个远离家园的家：哨站。哨站坐落在锈带与险峻山脉之间，是重新夺回部分地表的第一步。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Customize your new home with different modules and embellish the interiors with furniture. Investigate new elements of the world using the Research Workstation which will allow you to access higher levels of weapon customization and modding, preparing you for the journey beyond the mountain. </p>"
+    "en": "<p>Customize your new home with different modules and embellish the interiors with furniture. Investigate new elements of the world using the Research Workstation which will allow you to access higher levels of weapon customization and modding, preparing you for the journey beyond the mountain. </p>",
+    "zh": "<p>你可以用不同的模块定制新家，并用家具装点室内。使用研究工作台调查这个世界的新元素，解锁更高等级的武器定制与改装，为翻越山脉的旅程做好准备。</p>"
    },
    {
     "type": "html",
-    "en": "<p>The Outpost is the start of a feature we hope to develop much further, eventually giving players a deeply personal space that allows them to become the Raider they want to be.</p>"
+    "en": "<p>The Outpost is the start of a feature we hope to develop much further, eventually giving players a deeply personal space that allows them to become the Raider they want to be.</p>",
+    "zh": "<p>哨站是一项我们希望持续深入开发的功能的起点，最终目标是为玩家提供一个真正属于自己的空间，让你成为自己想成为的奇袭者。</p>"
    },
    {
     "type": "image",
@@ -297,19 +359,23 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Amplified Weapons</h2>"
+    "en": "<h2>Amplified Weapons</h2>",
+    "zh": "<h2>强化武器</h2>"
    },
    {
     "type": "html",
-    "en": "<p>New weapons are great, and Frozen Trail certainly introduces fresh guns for your stash, but we wanted to systemically change how you interact with combat in the late game. We know that highly-skilled Raiders are loyal to their favorite weapons, but that means others barely get used - that’s why we’ve been building an upgrade system that totally reimagines some of the guns you’re already used to. </p>"
+    "en": "<p>New weapons are great, and Frozen Trail certainly introduces fresh guns for your stash, but we wanted to systemically change how you interact with combat in the late game. We know that highly-skilled Raiders are loyal to their favorite weapons, but that means others barely get used - that’s why we’ve been building an upgrade system that totally reimagines some of the guns you’re already used to. </p>",
+    "zh": "<p>新武器固然好，Frozen Trail 也确实会为你的储备箱带来新枪，但我们还想从系统层面改变你在后期的战斗方式。我们知道，高水平的奇袭者对自己最爱的武器非常忠诚，这也意味着其他武器几乎无人问津。因此我们一直在打造一套升级系统，彻底重新构想一些你早已用惯的枪械。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Using the fully-upgraded Research Workstation in your Outpost, Raiders will have the opportunity to access a fifth quality level for a range of guns. This level lets you unlock a branching path of abilities and enhancements to your weapons that can completely change their behavior; imagine a fully-automatic Burletta, a Renegade with a scope, or a Rattler with incendiary bullets and a 64 bullet magazine.</p>"
+    "en": "<p>Using the fully-upgraded Research Workstation in your Outpost, Raiders will have the opportunity to access a fifth quality level for a range of guns. This level lets you unlock a branching path of abilities and enhancements to your weapons that can completely change their behavior; imagine a fully-automatic Burletta, a Renegade with a scope, or a Rattler with incendiary bullets and a 64 bullet magazine.</p>",
+    "zh": "<p>在哨站中把研究工作台升到满级后，奇袭者就能为一系列枪械解锁第五个品质等级。这一等级会开启分支路线的能力与强化，可以彻底改变武器的表现：想象一下全自动的布尔莱塔、带瞄准镜的叛逆，或是使用燃烧弹、配备 64 发弹匣的响尾蛇。</p>"
    },
    {
     "type": "html",
-    "en": "<p>The hope is that this feature allows late-game players to reinvent their arsenal and personalize their weapons with high-tier upgrades that set them apart from the crowd. The feature is rolling out to 15 of our weapons, with more planned for the future.</p>"
+    "en": "<p>The hope is that this feature allows late-game players to reinvent their arsenal and personalize their weapons with high-tier upgrades that set them apart from the crowd. The feature is rolling out to 15 of our weapons, with more planned for the future.</p>",
+    "zh": "<p>我们希望这项功能能让后期玩家重塑自己的武器库，用高阶升级打造与众不同的个性化武器。首批将有 15 把武器支持这项功能，未来还会增加更多。</p>"
    },
    {
     "type": "image",
@@ -317,11 +383,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>New Weapon: Stiletto</h2>"
+    "en": "<h2>New Weapon: Stiletto</h2>",
+    "zh": "<h2>新武器：Stiletto</h2>"
    },
    {
     "type": "html",
-    "en": "<p>The Stiletto is a light-ammo battle rifle that fits in as an early-game alternative to the Renegade. Cheap to craft and easy to wield, it’s the perfect choice for Raiders with a steady shot looking to attack from distance. Fire rate can be fast, but button mashing will sacrifice accuracy - keep a cool head and hit your shots. </p>"
+    "en": "<p>The Stiletto is a light-ammo battle rifle that fits in as an early-game alternative to the Renegade. Cheap to craft and easy to wield, it’s the perfect choice for Raiders with a steady shot looking to attack from distance. Fire rate can be fast, but button mashing will sacrifice accuracy - keep a cool head and hit your shots. </p>",
+    "zh": "<p>Stiletto 是一把使用轻型弹药的战斗步枪，适合作为前期叛逆的替代选择。它制作便宜、容易上手，非常适合枪法稳健、喜欢远距离进攻的奇袭者。射速可以很快，但狂按扳机会牺牲精准度；保持冷静，打准每一枪。</p>"
    },
    {
     "type": "image",
@@ -329,11 +397,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>New Weapon: Bantam</h2>"
+    "en": "<h2>New Weapon: Bantam</h2>",
+    "zh": "<h2>新武器：Bantam</h2>"
    },
    {
     "type": "html",
-    "en": "<p>The Bantam is a snub-nosed revolver that uses heavy ammo to punch a hole straight through your adversaries. Effective against ARC and Raiders, the Bantam comes with a unique hip-fire capability to help you live out the cowboy fantasy… even if you’ve got frozen fingers. </p>"
+    "en": "<p>The Bantam is a snub-nosed revolver that uses heavy ammo to punch a hole straight through your adversaries. Effective against ARC and Raiders, the Bantam comes with a unique hip-fire capability to help you live out the cowboy fantasy… even if you’ve got frozen fingers. </p>",
+    "zh": "<p>Bantam 是一把短管左轮，使用重型弹药，一枪就能把对手打个对穿。它对 ARC 和奇袭者都很有效，还拥有独特的腰射能力，让你体验一把牛仔的感觉……就算手指冻僵了也没问题。</p>"
    },
    {
     "type": "image",
@@ -341,11 +411,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Grappling Hook</h2>"
+    "en": "<h2>Grappling Hook</h2>",
+    "zh": "<h2>抓钩</h2>"
    },
    {
     "type": "html",
-    "en": "<p>It’s important for us to focus on gadgets and items that offer new ways to play and fresh modes of traversal. That’s where the Grapple Hook comes in, letting you climb hard to reach spots, abseil off buildings, and swing over large gaps. Raiders who get creative will find themselves able to navigate the terrain in totally new ways. </p>"
+    "en": "<p>It’s important for us to focus on gadgets and items that offer new ways to play and fresh modes of traversal. That’s where the Grapple Hook comes in, letting you climb hard to reach spots, abseil off buildings, and swing over large gaps. Raiders who get creative will find themselves able to navigate the terrain in totally new ways. </p>",
+    "zh": "<p>对我们来说，专注于能带来新玩法和新移动方式的小道具与物品非常重要。抓钩正是为此而来：它能让你攀上难以到达的位置、从建筑上垂降，还能荡过大段空隙。富有创意的奇袭者会发现，自己能以全新的方式穿越地形。</p>"
    },
    {
     "type": "image",
@@ -353,11 +425,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Tethers</h2>"
+    "en": "<h2>Tethers</h2>",
+    "zh": "<h2>系索</h2>"
    },
    {
     "type": "html",
-    "en": "<p>As part of our larger system of tethers and constraints, we’ve built two new gadgets that let you trip up your enemies. The Tether Launcher allows you to connect two separate points with a wire, rooting them in place for easy pickings or even attaching Raiders to ARC and watching as they’re dragged away. The Yank Grenade works on the same principle, but when it explodes, it pulls a nearby target with a violent force. This is perfect for smashing flying ARC to the ground or pulling other Raiders out of cover. </p>"
+    "en": "<p>As part of our larger system of tethers and constraints, we’ve built two new gadgets that let you trip up your enemies. The Tether Launcher allows you to connect two separate points with a wire, rooting them in place for easy pickings or even attaching Raiders to ARC and watching as they’re dragged away. The Yank Grenade works on the same principle, but when it explodes, it pulls a nearby target with a violent force. This is perfect for smashing flying ARC to the ground or pulling other Raiders out of cover. </p>",
+    "zh": "<p>作为系索与束缚这一更大系统的一部分，我们打造了两款可以绊倒敌人的新小道具。系索发射器可以用一根线连接两个点，把目标固定在原地任你收拾，甚至能把奇袭者拴在 ARC 身上，看着他们被拖走。拉拽手雷的原理相同，但爆炸时会以猛烈的力量把附近的目标拉过来，非常适合把飞行 ARC 砸到地上，或者把其他奇袭者从掩体后拽出来。</p>"
    },
    {
     "type": "image",
@@ -365,11 +439,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Camera</h2>"
+    "en": "<h2>Camera</h2>",
+    "zh": "<h2>相机</h2>"
    },
    {
     "type": "html",
-    "en": "<p>The Rust Belt is home to many DIY photographers and Topside journalists. Using the humble Binoculars, we’ve seen beautiful pictures from your Raids - that’s why we’re introducing a fully-functioning camera gadget. This launches with a range of features including zoom, aperture, manual and automatic focus racking, and even a selfie mode with a range of custom emotes. Pictures will save to your Codex, letting you relive your most triumphant moments from the safety of your home. </p>"
+    "en": "<p>The Rust Belt is home to many DIY photographers and Topside journalists. Using the humble Binoculars, we’ve seen beautiful pictures from your Raids - that’s why we’re introducing a fully-functioning camera gadget. This launches with a range of features including zoom, aperture, manual and automatic focus racking, and even a selfie mode with a range of custom emotes. Pictures will save to your Codex, letting you relive your most triumphant moments from the safety of your home. </p>",
+    "zh": "<p>锈带上有许多业余摄影师和上层记者。大家用朴素的望远镜拍下了不少精彩的奇袭照片，所以我们将推出一款功能完整的相机小道具。它上线时就会具备变焦、光圈、手动与自动对焦等多项功能，甚至还有搭配多种表情动作的自拍模式。照片会保存在你的百科中，让你在家中安全地重温最辉煌的时刻。</p>"
    },
    {
     "type": "image",
@@ -377,11 +453,13 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Instruments</h2>"
+    "en": "<h2>Instruments</h2>",
+    "zh": "<h2>乐器</h2>"
    },
    {
     "type": "html",
-    "en": "<p>Two new instruments can be heard Topside this October, the Harmonica, and the Banjo (Blueprint offered in the Collector Set DLC). Bring the sounds of southern swamps to the Rust Belt this fall - It’s time to get the band back together!</p>"
+    "en": "<p>Two new instruments can be heard Topside this October, the Harmonica, and the Banjo (Blueprint offered in the Collector Set DLC). Bring the sounds of southern swamps to the Rust Belt this fall - It’s time to get the band back together!</p>",
+    "zh": "<p>今年 10 月，上层将响起两种新乐器的声音：口琴和班卓琴（蓝图随收藏家套装 DLC 提供）。这个秋天，把南方沼泽的乐声带到锈带吧，是时候重组乐队了！</p>"
    },
    {
     "type": "image",
@@ -389,51 +467,63 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2>Weapon Stencils</h2>"
+    "en": "<h2>Weapon Stencils</h2>",
+    "zh": "<h2>武器喷绘</h2>"
    },
    {
     "type": "html",
-    "en": "<p>Re-skin your weapon with a pinch of Raider flair using the new Weapon Stencils coming in the Frozen Trail update! Leave enemies in no doubt who shot them, but beware - Raiders who best you will be more than happy to take your personalized weapon for themselves. </p>"
+    "en": "<p>Re-skin your weapon with a pinch of Raider flair using the new Weapon Stencils coming in the Frozen Trail update! Leave enemies in no doubt who shot them, but beware - Raiders who best you will be more than happy to take your personalized weapon for themselves. </p>",
+    "zh": "<p>Frozen Trail 更新将推出全新的武器喷绘，为你的武器换上一身奇袭者风格的新涂装！让敌人清楚知道是谁开的枪，但要当心：打败你的奇袭者会非常乐意把你的个性化武器据为己有。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>Reward Pass</h2>"
+    "en": "<h2>Reward Pass</h2>",
+    "zh": "<h2>奖励通行证</h2>"
    },
    {
     "type": "html",
-    "en": "<p>The Frozen Trail update also launches with a new progression mechanic, the Reward Pass. These passes are an evolution of the Raider Decks, allowing you to try out all of the exciting new items and content from the update.</p>"
+    "en": "<p>The Frozen Trail update also launches with a new progression mechanic, the Reward Pass. These passes are an evolution of the Raider Decks, allowing you to try out all of the exciting new items and content from the update.</p>",
+    "zh": "<p>Frozen Trail 更新还将推出新的成长机制：奖励通行证。它由奇袭者套件演进而来，让你可以体验本次更新中所有令人兴奋的新物品和新内容。</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The Free Pass offers a series of rewards unlocked by completing Feats, such as 200 Raider Tokens, five new outfits, new gameplay items, as well as 20 cosmetic items including Scrappy Outfits, Furniture, Charms, Attachments, and Emotes. </li><li>The Premium Pass is designed for Raiders who want to get even more out of the update: this Pass includes premium toggles for all the outfits, exclusive colorways, weapon stencils, hairstyles, and 1,150 Raider Tokens. </li><li>The Legacy Pass is free for all Raiders and combines all our existing Raider Decks, so you won’t lose any existing progress and can still work your way through those rewards.</li></ul>"
+    "en": "<ul><li>The Free Pass offers a series of rewards unlocked by completing Feats, such as 200 Raider Tokens, five new outfits, new gameplay items, as well as 20 cosmetic items including Scrappy Outfits, Furniture, Charms, Attachments, and Emotes. </li><li>The Premium Pass is designed for Raiders who want to get even more out of the update: this Pass includes premium toggles for all the outfits, exclusive colorways, weapon stencils, hairstyles, and 1,150 Raider Tokens. </li><li>The Legacy Pass is free for all Raiders and combines all our existing Raider Decks, so you won’t lose any existing progress and can still work your way through those rewards.</li></ul>",
+    "zh": "<ul><li>免费通行证提供一系列通过完成功绩解锁的奖励，包括 200 奇袭者代币、五套新服装、新的玩法物品，以及 20 件外观物品，其中有废品仔服装、家具、挂件、背包配件和表情动作。</li><li>高级通行证面向想从这次更新中获得更多内容的奇袭者：包含所有服装的高级款式、专属配色、武器喷绘、发型，以及 1,150 奇袭者代币。</li><li>旧版通行证对所有奇袭者免费，整合了现有的全部奇袭者套件，因此你不会丢失任何已有进度，仍可继续领取那些奖励。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2>Collector Set DLC</h2>"
+    "en": "<h2>Collector Set DLC</h2>",
+    "zh": "<h2>收藏家套装 DLC</h2>"
    },
    {
     "type": "html",
-    "en": "<p>For those Raiders that want the full Frozen Trail experience, the Collector Set DLC offers all both the free and premium Reward Passes, as well as a new cosmetic set, the Renzo, Dragon’s Breath Weapon Stencil, Bob Hair Style, and 2,400 Raider Tokens.</p>"
+    "en": "<p>For those Raiders that want the full Frozen Trail experience, the Collector Set DLC offers all both the free and premium Reward Passes, as well as a new cosmetic set, the Renzo, Dragon’s Breath Weapon Stencil, Bob Hair Style, and 2,400 Raider Tokens.</p>",
+    "zh": "<p>对于想完整体验 Frozen Trail 的奇袭者，收藏家套装 DLC 包含免费与高级两种奖励通行证，以及全新外观套装 Renzo、“龙息”武器喷绘、波波头发型和 2,400 奇袭者代币。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>See you Topside</h2>"
+    "en": "<h2>See you Topside</h2>",
+    "zh": "<h2>上层见</h2>"
    },
    {
     "type": "html",
-    "en": "<p>Join us on October 8 for all this, and more, including new questlines and improvements, a Skill Tree rework including new and improved skills, and a new Map Condition - we’re excited to welcome you to the new frontier. </p>"
+    "en": "<p>Join us on October 8 for all this, and more, including new questlines and improvements, a Skill Tree rework including new and improved skills, and a new Map Condition - we’re excited to welcome you to the new frontier. </p>",
+    "zh": "<p>10 月 8 日，所有这些内容都将与大家见面，此外还有新的任务线和多项改进、包含新技能和改进技能的技能树重做，以及一个新的地图条件。我们非常期待在新的边疆迎接你。</p>"
    },
    {
     "type": "html",
-    "en": "<p>On Friday, September 25, 6pm CEST, we will host a dev Q&amp;A livestream event about the Frozen Trail update. Join us live and submit questions about the First Look event!</p>"
+    "en": "<p>On Friday, September 25, 6pm CEST, we will host a dev Q&amp;A livestream event about the Frozen Trail update. Join us live and submit questions about the First Look event!</p>",
+    "zh": "<p>9 月 25 日（周五）18:00 CEST，我们将举办一场关于 Frozen Trail 更新的开发者问答直播。欢迎前来观看，并就这次抢先看提出你的问题！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Gear up. Dress warm. See you Topside.</p>"
+    "en": "<p>Gear up. Dress warm. See you Topside.</p>",
+    "zh": "<p>整装出发，注意保暖。上层见。</p>"
    },
    {
     "type": "html",
-    "en": "<p>The ARC Raiders Team</p>"
+    "en": "<p>The ARC Raiders Team</p>",
+    "zh": "<p>《ARC Raiders》团队</p>"
    }
   ]
  },
@@ -447,7 +537,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/83d80ad9-8b0f-store-update-1.47-card-600x200-600x200.png",
   "title": {
-   "en": "Store Update 1.47.0"
+   "en": "Store Update 1.47.0",
+   "zh": "商店更新 1.47.0"
   },
   "body": [
    {
@@ -456,151 +547,188 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Hey there, Raiders! <br><br>Update 1.47.0 is underway, bringing two new color variants for the Riposta Set, an update on Fair Play &amp; a few more fixes &amp; improvements. A download is required, so make sure you do that before loading back in.</p>"
+    "en": "<p>Hey there, Raiders! <br><br>Update 1.47.0 is underway, bringing two new color variants for the Riposta Set, an update on Fair Play &amp; a few more fixes &amp; improvements. A download is required, so make sure you do that before loading back in.</p>",
+    "zh": "<p>奇袭者们好！<br><br>1.47.0 更新正在推送，带来 Riposta 套装的两种新配色、公平游戏工作进展，以及更多修复和改进。本次更新需要下载，请在重新进入游戏前完成下载。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>Highlights:</h2>"
+    "en": "<h2>Highlights:</h2>",
+    "zh": "<h2>重点内容：</h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Frozen Trail - First Look coming September 23rd!</li><li>New Camo &amp; White variants for the Riposta Set</li><li>An update on our ongoing Fair Play efforts</li><li>Fixes for the Rawhide Outfit, Keyboard Input issues and the occasional invisible door</li><li>Expedition 5 Sign-Up Reminder</li></ul>"
+    "en": "<ul><li>Frozen Trail - First Look coming September 23rd!</li><li>New Camo &amp; White variants for the Riposta Set</li><li>An update on our ongoing Fair Play efforts</li><li>Fixes for the Rawhide Outfit, Keyboard Input issues and the occasional invisible door</li><li>Expedition 5 Sign-Up Reminder</li></ul>",
+    "zh": "<ul><li>Frozen Trail 抢先看将于 9 月 23 日登场！</li><li>Riposta 套装新增迷彩和白色两种配色</li><li>公平游戏工作的最新进展</li><li>修复 Rawhide 服装、键盘输入问题以及门偶尔隐形的问题</li><li>第 5 次远征报名提醒</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2>Frozen Trail is coming - tune in for a First Look!</h2>"
+    "en": "<h2>Frozen Trail is coming - tune in for a First Look!</h2>",
+    "zh": "<h2>Frozen Trail 即将到来，敬请收看抢先看！</h2>"
    },
    {
     "type": "html",
-    "en": "<p><a href=\"https://x.com/ARCRaidersGame/status/2100978160364146717\" target=\"_blank\" rel=\"noopener\">In case you missed it</a>, we’ll be holding a First Look at Frozen Trail and what’s coming with the update <em>tomorrow!</em> <strong>On September 23rd, at 10am PDT (7pm CEST)</strong>, tune in for an extended peek at our biggest update yet.<br><br>Can’t wait to hear what you think! We’ve got more planned ahead of October 8th, stay tuned.</p>"
+    "en": "<p><a href=\"https://x.com/ARCRaidersGame/status/2100978160364146717\" target=\"_blank\" rel=\"noopener\">In case you missed it</a>, we’ll be holding a First Look at Frozen Trail and what’s coming with the update <em>tomorrow!</em> <strong>On September 23rd, at 10am PDT (7pm CEST)</strong>, tune in for an extended peek at our biggest update yet.<br><br>Can’t wait to hear what you think! We’ve got more planned ahead of October 8th, stay tuned.</p>",
+    "zh": "<p><a href=\"https://x.com/ARCRaidersGame/status/2100978160364146717\" target=\"_blank\" rel=\"noopener\">如果你还没看到</a>，我们将在<em>明天</em>举办 Frozen Trail 抢先看，介绍这次更新的内容！<strong>9 月 23 日 10:00 PDT（19:00 CEST）</strong>，欢迎收看，一起提前深入了解我们迄今规模最大的更新。<br><br>非常期待听到大家的想法！10 月 8 日之前我们还准备了更多内容，敬请期待。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>Content and Bug Fixes </h2>"
+    "en": "<h2>Content and Bug Fixes </h2>",
+    "zh": "<h2>内容与问题修复</h2>"
    },
    {
     "type": "html",
-    "en": "<h3>Cosmetic</h3>"
+    "en": "<h3>Cosmetic</h3>",
+    "zh": "<h3>外观</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed an issue where the Rawhide outfit’s headgear would remain on when toggled off in Customization.</li></ul>"
+    "en": "<ul><li>Fixed an issue where the Rawhide outfit’s headgear would remain on when toggled off in Customization.</li></ul>",
+    "zh": "<ul><li>修复了在自定义界面中关闭 Rawhide 服装的头饰后，头饰仍然显示的问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Gameplay</h3>"
+    "en": "<h3>Gameplay</h3>",
+    "zh": "<h3>玩法</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Door blockers will no longer create a copy of their mesh on the opposite side from the direction they are applied.</li><li>Fixed an issue where keyboard input could stop working after launching unfocused or returning from background, ensuring keyboard controls reliably respond when refocusing the window.</li><li>Fixed an issue where doors could become out of sync in some cases, making them appear open to the player whilst actually being closed.</li><li>Fixed an issue where swapping or splitting items could place them into incompatible containers (such as forcing non-quick-use items into the belt), and added safeguards against invalid inventory slot indexing in the inventory.</li></ul>"
+    "en": "<ul><li>Door blockers will no longer create a copy of their mesh on the opposite side from the direction they are applied.</li><li>Fixed an issue where keyboard input could stop working after launching unfocused or returning from background, ensuring keyboard controls reliably respond when refocusing the window.</li><li>Fixed an issue where doors could become out of sync in some cases, making them appear open to the player whilst actually being closed.</li><li>Fixed an issue where swapping or splitting items could place them into incompatible containers (such as forcing non-quick-use items into the belt), and added safeguards against invalid inventory slot indexing in the inventory.</li></ul>",
+    "zh": "<ul><li>阻门器不会再在安装方向的另一侧生成一个模型副本。</li><li>修复了在游戏未获得焦点时启动、或从后台切回后，键盘输入可能失灵的问题，确保窗口重新获得焦点时键盘操作能正常响应。</li><li>修复了门在某些情况下可能不同步的问题，该问题会导致门实际上是关着的，玩家看到的却是打开的。</li><li>修复了交换或拆分物品时，物品可能被放入不兼容容器的问题（例如把非快速使用物品强行放进腰带栏），并为物品栏中的无效栏位索引增加了保护措施。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Maps</h3>"
+    "en": "<h3>Maps</h3>",
+    "zh": "<h3>地图</h3>"
    },
    {
     "type": "html",
-    "en": "<h4>Buried City</h4>"
+    "en": "<h4>Buried City</h4>",
+    "zh": "<h4>掩埋废城</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed an issue where lighting in Buried City could appear overly dark or missing, improving overall visibility.</li></ul>"
+    "en": "<ul><li>Fixed an issue where lighting in Buried City could appear overly dark or missing, improving overall visibility.</li></ul>",
+    "zh": "<ul><li>修复了掩埋废城的光照可能过暗或缺失的问题，整体能见度有所提升。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h4>Riven Tides</h4>"
+    "en": "<h4>Riven Tides</h4>",
+    "zh": "<h4>裂潮镇</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed visual issues that could appear while traversing Riven Tides.</li></ul>"
+    "en": "<ul><li>Fixed visual issues that could appear while traversing Riven Tides.</li></ul>",
+    "zh": "<ul><li>修复了在裂潮镇中移动时可能出现的画面问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h4>General</h4>"
+    "en": "<h4>General</h4>",
+    "zh": "<h4>通用</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed an issue where objects in the world displayed incorrect colors, restoring items like red lockers, toolboxes, office chairs, cars, chests, and shipping containers to their intended appearance.</li></ul>"
+    "en": "<ul><li>Fixed an issue where objects in the world displayed incorrect colors, restoring items like red lockers, toolboxes, office chairs, cars, chests, and shipping containers to their intended appearance.</li></ul>",
+    "zh": "<ul><li>修复了场景中物体颜色显示错误的问题，红色储物柜、工具箱、办公椅、汽车、箱子和集装箱等物体已恢复应有的外观。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Performance</h3>"
+    "en": "<h3>Performance</h3>",
+    "zh": "<h3>性能</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed an issue where item tooltips in the inventory could keep data from previous screens, increasing memory use over time and affecting stability after long play sessions.</li></ul>"
+    "en": "<ul><li>Fixed an issue where item tooltips in the inventory could keep data from previous screens, increasing memory use over time and affecting stability after long play sessions.</li></ul>",
+    "zh": "<ul><li>修复了物品栏中的物品提示框可能保留之前界面数据的问题，该问题会随时间推移增加内存占用，影响长时间游玩后的稳定性。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Stability</h3>"
+    "en": "<h3>Stability</h3>",
+    "zh": "<h3>稳定性</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Improved crash detection &amp; diagnostics tools.</li><li>Fixed a rare crash that could occur during server shutdown, improving overall stability.</li><li>Fixed an Xbox issue that could cause resource conflicts.</li></ul>"
+    "en": "<ul><li>Improved crash detection &amp; diagnostics tools.</li><li>Fixed a rare crash that could occur during server shutdown, improving overall stability.</li><li>Fixed an Xbox issue that could cause resource conflicts.</li></ul>",
+    "zh": "<ul><li>改进了崩溃检测与诊断工具。</li><li>修复了服务器关闭时可能出现的一个罕见崩溃，提升了整体稳定性。</li><li>修复了 Xbox 上可能导致资源冲突的问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h4>PS5</h4>"
+    "en": "<h4>PS5</h4>",
+    "zh": "<h4>PS5</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Addressed a frequent crash on PS5 related to the physics engine.</li></ul>"
+    "en": "<ul><li>Addressed a frequent crash on PS5 related to the physics engine.</li></ul>",
+    "zh": "<ul><li>解决了 PS5 上与物理引擎相关的一个频繁崩溃问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h4>Inventory</h4>"
+    "en": "<h4>Inventory</h4>",
+    "zh": "<h4>物品栏</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Improved stability when opening the Inventory screen.</li></ul>"
+    "en": "<ul><li>Improved stability when opening the Inventory screen.</li></ul>",
+    "zh": "<ul><li>提升了打开物品栏界面时的稳定性。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>UI</h3>"
+    "en": "<h3>UI</h3>",
+    "zh": "<h3>界面</h3>"
    },
    {
     "type": "html",
-    "en": "<h4>Expedition</h4>"
+    "en": "<h4>Expedition</h4>",
+    "zh": "<h4>远征</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The Expedition Project button now indicates when an Expedition is paused after the cutoff date and prevents committing resources.</li></ul>"
+    "en": "<ul><li>The Expedition Project button now indicates when an Expedition is paused after the cutoff date and prevents committing resources.</li></ul>",
+    "zh": "<ul><li>截止日期过后远征暂停时，远征计划按钮现在会显示提示，并阻止提交资源。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h4>Skill Tree</h4>"
+    "en": "<h4>Skill Tree</h4>",
+    "zh": "<h4>技能树</h4>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Changed Skill Point assignment to hold-to-assign by default in the Skill Tree.</li></ul>"
+    "en": "<ul><li>Changed Skill Point assignment to hold-to-assign by default in the Skill Tree.</li></ul>",
+    "zh": "<ul><li>技能树中分配技能点的方式默认改为长按分配。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2>A Quick Update on Fair Play Efforts</h2>"
+    "en": "<h2>A Quick Update on Fair Play Efforts</h2>",
+    "zh": "<h2>公平游戏工作简报</h2>"
    },
    {
     "type": "html",
-    "en": "<p>While our dev team is hard at work putting the finishing touches on Frozen Trail, our Anti-Cheat team is making constant updates and improvements across the board to our Fair Play initiatives.</p>"
+    "en": "<p>While our dev team is hard at work putting the finishing touches on Frozen Trail, our Anti-Cheat team is making constant updates and improvements across the board to our Fair Play initiatives.</p>",
+    "zh": "<p>在开发团队全力为 Frozen Trail 做最后打磨的同时，我们的反作弊团队也在持续全面地更新和改进公平游戏相关措施。</p>"
    },
    {
     "type": "html",
-    "en": "<p>When it comes to economy-related manipulation, there have been several ban waves for accounts we detected exhibiting &quot;bot-like&quot; behavior. We’ll continue to track and refine our detection to cover broader types of suspect behavior (such as XP farming) in the future, as well. We also continue sanctioning abnormally high-value item transfers. Item duplication is also on our minds, and we’re seeing positive outcomes following this summer’s ongoing improvements on that front.</p>"
+    "en": "<p>When it comes to economy-related manipulation, there have been several ban waves for accounts we detected exhibiting &quot;bot-like&quot; behavior. We’ll continue to track and refine our detection to cover broader types of suspect behavior (such as XP farming) in the future, as well. We also continue sanctioning abnormally high-value item transfers. Item duplication is also on our minds, and we’re seeing positive outcomes following this summer’s ongoing improvements on that front.</p>",
+    "zh": "<p>针对操纵经济的行为，我们已对检测到有“类似机器人”行为的账号进行了多轮封禁。未来我们还会继续追踪并完善检测，覆盖更多类型的可疑行为（例如刷 XP）。我们也会继续处罚价值异常高的物品转移。物品复制问题同样在我们的关注之列，今年夏天在这方面持续改进之后，我们已经看到了积极的效果。</p>"
    },
    {
     "type": "html",
-    "en": "<p>We are constantly working on ways to prevent serial cheaters and discourage them from returning. Currently, we&#x27;re strengthening our policies when it comes to shared licenses and how those are restricted when an account is sanctioned. In practice, this will make it harder for cheaters who were detected on one account to purchase another. Keeping track of a cheater&#x27;s behavior before and after receiving a sanction helps us anticipate it and act faster in the future.</p>"
+    "en": "<p>We are constantly working on ways to prevent serial cheaters and discourage them from returning. Currently, we&#x27;re strengthening our policies when it comes to shared licenses and how those are restricted when an account is sanctioned. In practice, this will make it harder for cheaters who were detected on one account to purchase another. Keeping track of a cheater&#x27;s behavior before and after receiving a sanction helps us anticipate it and act faster in the future.</p>",
+    "zh": "<p>我们一直在想办法阻止惯犯作弊，让他们不再回来。目前，我们正在收紧与共享授权相关的政策，以及账号受到处罚后对这些授权的限制。实际上，这会让在一个账号上被抓到的作弊者更难再购买另一个账号。追踪作弊者受罚前后的行为，也有助于我们预判并更快采取行动。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Previously, we mentioned the speed of action against unfair play is important to us. To that end, we have been improving our detection systems and we are extending first-strike permanent bans. This allows us to catch offenders much quicker with a very high degree of confidence.</p>"
+    "en": "<p>Previously, we mentioned the speed of action against unfair play is important to us. To that end, we have been improving our detection systems and we are extending first-strike permanent bans. This allows us to catch offenders much quicker with a very high degree of confidence.</p>",
+    "zh": "<p>我们之前提到过，对不公平游戏行为的处理速度对我们很重要。为此，我们一直在改进检测系统，并扩大“初犯即永久封禁”的适用范围。这让我们能以非常高的准确度，更快地抓到违规者。</p>"
    },
    {
     "type": "html",
-    "en": "<p>While we keep improving and expanding the ways we keep Topside fair, we want to thank you for helping us do that by reporting players and sharing any illicit behavior with us.</p>"
+    "en": "<p>While we keep improving and expanding the ways we keep Topside fair, we want to thank you for helping us do that by reporting players and sharing any illicit behavior with us.</p>",
+    "zh": "<p>我们会继续改进和扩展维护上层公平的手段，也感谢大家举报玩家、向我们反馈任何违规行为，帮助我们做到这一点。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>Reminder - Claim your Rubber Ducks!</h2>"
+    "en": "<h2>Reminder - Claim your Rubber Ducks!</h2>",
+    "zh": "<h2>提醒：记得领取橡皮鸭！</h2>"
    },
    {
     "type": "image",
@@ -608,31 +736,38 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Heads up! After <strong>October 8th</strong>, the inbox message that contains the community-made Rubber Ducks will no longer be sent out. <strong>Make sure to log in and claim them before that deadline. </strong><br><br>Wouldn’t wanna miss out on those awesome ducks!</p>"
+    "en": "<p>Heads up! After <strong>October 8th</strong>, the inbox message that contains the community-made Rubber Ducks will no longer be sent out. <strong>Make sure to log in and claim them before that deadline. </strong><br><br>Wouldn’t wanna miss out on those awesome ducks!</p>",
+    "zh": "<p>注意！<strong>10 月 8 日</strong>之后，将不再发送包含社区制作橡皮鸭的收件箱消息。<strong>请务必在截止日期前登录领取。</strong><br><br>可别错过这些超棒的小鸭子！</p>"
    },
    {
     "type": "html",
-    "en": "<h2>Expedition 5 - Departure Window closes September 29th</h2>"
+    "en": "<h2>Expedition 5 - Departure Window closes September 29th</h2>",
+    "zh": "<h2>第 5 次远征：出发窗口将于 9 月 29 日关闭</h2>"
    },
    {
     "type": "html",
-    "en": "<p>Make sure to finish up your Expedition project <em>and</em> sign up for Departure before September 29th 10am CEST/8am UTC/1am PT. <br><br>There is <strong>no Last Call</strong> this time around, so be mindful of that!<br></p>"
+    "en": "<p>Make sure to finish up your Expedition project <em>and</em> sign up for Departure before September 29th 10am CEST/8am UTC/1am PT. <br><br>There is <strong>no Last Call</strong> this time around, so be mindful of that!<br></p>",
+    "zh": "<p>请务必在 9 月 29 日 10:00 CEST / 8:00 UTC / 1:00 PT 之前完成远征计划，<em>并且</em>报名出发。<br><br>这次<strong>没有最后召集（Last Call）</strong>，请务必留意！<br></p>"
    },
    {
     "type": "html",
-    "en": "<p>We know that a few of you are having issues with the Departure screen. If you are experiencing issues confirming your sign-up for departure, please reach out to support as soon as possible. You can do so <a href=\"https://id.embark.games/id/sign-in\" target=\"_blank\" rel=\"noopener\">here</a>.</p>"
+    "en": "<p>We know that a few of you are having issues with the Departure screen. If you are experiencing issues confirming your sign-up for departure, please reach out to support as soon as possible. You can do so <a href=\"https://id.embark.games/id/sign-in\" target=\"_blank\" rel=\"noopener\">here</a>.</p>",
+    "zh": "<p>我们了解到部分玩家在出发界面遇到了问题。如果你无法确认出发报名，请尽快联系客服。你可以<a href=\"https://id.embark.games/id/sign-in\" target=\"_blank\" rel=\"noopener\">点击这里</a>联系。</p>"
    },
    {
     "type": "html",
-    "en": "<h2>Known Issues</h2>"
+    "en": "<h2>Known Issues</h2>",
+    "zh": "<h2>已知问题</h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>We are deploying multiple stability improvements targeting Xbox Series X|S crashes. Please report any persistent issues to help guide further fixes. </li><li>There are future improvements in the works for the Quick Wheel’s behavior to prevent inaccurate switching or “jumping” from one item slot to the other.</li><li>The weapon swap animation may appear broken if weapon swapping right after vaulting.</li><li>Player animations may appear broken when interrupting a search of the Baron Husk.</li><li>Shredders float to the ceiling in some rooms of the Hidden Bunker.</li><li>Leapers can jump through the ARC Turbine.</li><li>Shots taken while riding ARC may not register correctly.</li><li>The player&#x27;s character may stutter / jitter after being revived.</li><li>The Matriarch may occasionally not use all of its ranged attacks.</li><li>The player&#x27;s footsteps are inaudible during constant shoulder swap while sprinting.</li><li>Players can sometimes get stuck on obstacles while sliding downhill.</li><li>When using keyboard layouts other than US English, custom keybindings reset after every raid.</li><li>In some instances, long lists of text can disappear when scrolling through them.</li></ul>"
+    "en": "<ul><li>We are deploying multiple stability improvements targeting Xbox Series X|S crashes. Please report any persistent issues to help guide further fixes. </li><li>There are future improvements in the works for the Quick Wheel’s behavior to prevent inaccurate switching or “jumping” from one item slot to the other.</li><li>The weapon swap animation may appear broken if weapon swapping right after vaulting.</li><li>Player animations may appear broken when interrupting a search of the Baron Husk.</li><li>Shredders float to the ceiling in some rooms of the Hidden Bunker.</li><li>Leapers can jump through the ARC Turbine.</li><li>Shots taken while riding ARC may not register correctly.</li><li>The player&#x27;s character may stutter / jitter after being revived.</li><li>The Matriarch may occasionally not use all of its ranged attacks.</li><li>The player&#x27;s footsteps are inaudible during constant shoulder swap while sprinting.</li><li>Players can sometimes get stuck on obstacles while sliding downhill.</li><li>When using keyboard layouts other than US English, custom keybindings reset after every raid.</li><li>In some instances, long lists of text can disappear when scrolling through them.</li></ul>",
+    "zh": "<ul><li>我们正在陆续推出多项针对 Xbox Series X|S 崩溃的稳定性改进。如果问题持续出现，请向我们反馈，以便进一步修复。</li><li>我们正在改进快速轮盘的行为，防止切换不准确或在物品栏位之间“跳动”。</li><li>翻越后立即切换武器，切枪动画可能显示异常。</li><li>中断搜索“男爵”残骸时，玩家动画可能显示异常。</li><li>在隐藏地堡的部分房间中，粉碎者会飘到天花板上。</li><li>跳跃者跳跃时可以穿过ARC涡轮。</li><li>骑乘 ARC 时开的枪可能无法正确判定命中。</li><li>玩家角色被救援后可能出现卡顿或抖动。</li><li>族母偶尔可能不会使用全部远程攻击。</li><li>冲刺时持续切换肩位，玩家的脚步声会听不见。</li><li>玩家下坡滑行时有时会被障碍物卡住。</li><li>使用美式英语以外的键盘布局时，自定义按键会在每局结束后重置。</li><li>在某些情况下，滚动较长的文字列表时，文字可能会消失。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<p><br>See you soon!<br>//Raz</p>"
+    "en": "<p><br>See you soon!<br>//Raz</p>",
+    "zh": "<p><br>回头见！<br>//Raz</p>"
    }
   ]
  },
@@ -645,7 +780,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/09ccc2ff-c2cb-store-update-1.46-card-600x200-600x200.png",
   "title": {
-   "en": "Store Update 1.46.0"
+   "en": "Store Update 1.46.0",
+   "zh": "商店更新 1.46.0"
   },
   "body": [
    {
@@ -654,39 +790,48 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Raiders!</p>"
+    "en": "<p>Raiders!</p>",
+    "zh": "<p>奇袭者们！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Store Update 1.46.0 is going live right now with two new colour variants for the Boonie Set (Black and Green Camo), if you already own the outfit they&#x27;ll be unlocked for you automatically. No restart needed!</p>"
+    "en": "<p>Store Update 1.46.0 is going live right now with two new colour variants for the Boonie Set (Black and Green Camo), if you already own the outfit they&#x27;ll be unlocked for you automatically. No restart needed!</p>",
+    "zh": "<p>商店更新 1.46.0 现已上线，为 Boonie 套装带来两种新配色（黑色和绿色迷彩）。如果你已拥有这套服装，新配色会自动解锁，无需重启游戏！</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Ascending the Mountain </strong></h2>"
+    "en": "<h2><strong>Ascending the Mountain </strong></h2>",
+    "zh": "<h2><strong>向山巅进发</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>Ferrovian engineers continue to work on Apollo&#x27;s ongoing experimental transportation project, supported by the invaluable supplies provided by the Raiders.</p>"
+    "en": "<p>Ferrovian engineers continue to work on Apollo&#x27;s ongoing experimental transportation project, supported by the invaluable supplies provided by the Raiders.</p>",
+    "zh": "<p>在奇袭者们提供的宝贵物资支持下，Ferrovian 的工程师们仍在推进阿波罗那项实验性运输计划。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Lance is making a killing selling medical supplies due to all the... misfires.</p>"
+    "en": "<p>Lance is making a killing selling medical supplies due to all the... misfires.</p>",
+    "zh": "<p>由于频频……失误，兰斯靠卖医疗用品赚得盆满钵满。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Keep an eye out for progress, we may be getting closer to a first look at the frigid peaks than you think!</p>"
+    "en": "<p>Keep an eye out for progress, we may be getting closer to a first look at the frigid peaks than you think!</p>",
+    "zh": "<p>请留意后续进展，我们离一睹那些冰封山峰的时刻，可能比你想象的更近！</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Trials Season 5: One Last Push</strong></h2>"
+    "en": "<h2><strong>Trials Season 5: One Last Push</strong></h2>",
+    "zh": "<h2><strong>试炼第 5 赛季：最后冲刺</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>This is your final week of Trials Season 5, you&#x27;ve got until September 22 to climb the ranks! Now’s the time to rally your crew, dust off your gear, and make one last push to earn yourself the Scorta Set.</p>"
+    "en": "<p>This is your final week of Trials Season 5, you&#x27;ve got until September 22 to climb the ranks! Now’s the time to rally your crew, dust off your gear, and make one last push to earn yourself the Scorta Set.</p>",
+    "zh": "<p>试炼第 5 赛季进入最后一周，你可以在 9 月 22 日前继续冲击排名！现在就召集队友、整理装备，最后冲刺一把，赢取 Scorta 套装。</p>"
    },
    {
     "type": "html",
-    "en": "<p>For your final week, the Trials are putting you up against some of the biggest threats you’ll find Topside: Queens and Matriarchs. They’re tough, they’re deadly, and they’re not known to hand out points freely.</p>"
+    "en": "<p>For your final week, the Trials are putting you up against some of the biggest threats you’ll find Topside: Queens and Matriarchs. They’re tough, they’re deadly, and they’re not known to hand out points freely.</p>",
+    "zh": "<p>最后这一周，试炼会让你直面上层最大的威胁：女王和族母。它们皮糙肉厚、致命凶险，可不会轻易把分数送给你。</p>"
    },
    {
     "type": "image",
@@ -694,7 +839,8 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>See you Topside,<br>//Ossen</p>"
+    "en": "<p>See you Topside,<br>//Ossen</p>",
+    "zh": "<p>上层见，<br>//Ossen</p>"
    }
   ]
  },
@@ -707,7 +853,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/708ee0b9-a1e2-store-update-1.45-card-600x200-600x200.png",
   "title": {
-   "en": "Live Update 1.45.0"
+   "en": "Live Update 1.45.0",
+   "zh": "版本更新 1.45.0"
   },
   "body": [
    {
@@ -716,31 +863,38 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Raiders!</p>"
+    "en": "<p>Raiders!</p>",
+    "zh": "<p>奇袭者们！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Update 1.45.0 is going live right now and with it a number of fixes, a new Raider Project, the start of the fifth Expedition, the Hornet Hunter Set and changes coming to Cred. Make sure to restart the game to get the download.</p>"
+    "en": "<p>Update 1.45.0 is going live right now and with it a number of fixes, a new Raider Project, the start of the fifth Expedition, the Hornet Hunter Set and changes coming to Cred. Make sure to restart the game to get the download.</p>",
+    "zh": "<p>1.45.0 更新现已上线，带来多项修复、一个新的奇袭者计划、第五次远征的开启、马蜂猎手套装，以及信用点的相关调整。请重启游戏以下载更新。</p>"
    },
    {
     "type": "html",
-    "en": "<p>This will be our last Live Update before October 8, but we won&#x27;t be going quiet in the meantime, a smaller update is still planned before then!</p>"
+    "en": "<p>This will be our last Live Update before October 8, but we won&#x27;t be going quiet in the meantime, a smaller update is still planned before then!</p>",
+    "zh": "<p>这是 10 月 8 日之前的最后一次版本更新，但在那之前我们不会沉寂，还计划推出一次较小的更新！</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>HIGHLIGHTS</strong></h2>"
+    "en": "<h2><strong>HIGHLIGHTS</strong></h2>",
+    "zh": "<h2><strong>重点内容</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Raider Project: Ascending the Mountain</li><li>The Hornet Hunter Set</li><li>Cred Expiration</li><li>Expedition 5</li><li>Community Rubber Ducks</li></ul>"
+    "en": "<ul><li>Raider Project: Ascending the Mountain</li><li>The Hornet Hunter Set</li><li>Cred Expiration</li><li>Expedition 5</li><li>Community Rubber Ducks</li></ul>",
+    "zh": "<ul><li>奇袭者计划：向山巅进发</li><li>马蜂猎手套装</li><li>信用点即将作废</li><li>第 5 次远征</li><li>社区橡皮鸭</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Forging the Way North</strong></h2>"
+    "en": "<h2><strong>Forging the Way North</strong></h2>",
+    "zh": "<h2><strong>开辟北上之路</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>Raider efforts have revealed clues to the mystery of phantom ARC signals that have Shani concerned. Unfortunately, these signals lead ARC to a place we can’t follow -  the mountain range just beyond the reach of our Tube system. Rumor has it Apollo’s working on an experimental solution, and he’s requested assistance from Raiders who understand schematics, and can keep their heads down.</p>"
+    "en": "<p>Raider efforts have revealed clues to the mystery of phantom ARC signals that have Shani concerned. Unfortunately, these signals lead ARC to a place we can’t follow -  the mountain range just beyond the reach of our Tube system. Rumor has it Apollo’s working on an experimental solution, and he’s requested assistance from Raiders who understand schematics, and can keep their heads down.</p>",
+    "zh": "<p>奇袭者们的努力揭开了幽灵般的 ARC 信号之谜的一些线索，这些信号一直让萨尼忧心忡忡。遗憾的是，这些信号把 ARC 引向了一个我们无法跟去的地方：就在暗道系统覆盖范围之外的山脉。据说阿波罗正在研究一个实验性的解决方案，他需要看得懂图纸、又能低调行事的奇袭者帮忙。</p>"
    },
    {
     "type": "image",
@@ -748,31 +902,38 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2><strong>Cred Expiration</strong></h2>"
+    "en": "<h2><strong>Cred Expiration</strong></h2>",
+    "zh": "<h2><strong>信用点即将作废</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>As we look ahead to Frozen Trail and a rework to Raider Decks, we’ll be making changes to the Cred currency. It will remain usable until October 8, so be sure to use any remaining Cred before then. </p>"
+    "en": "<p>As we look ahead to Frozen Trail and a rework to Raider Decks, we’ll be making changes to the Cred currency. It will remain usable until October 8, so be sure to use any remaining Cred before then. </p>",
+    "zh": "<p>随着 Frozen Trail 临近以及奇袭者套件的重做，我们将对信用点这种货币做出调整。信用点在 10 月 8 日之前仍可使用，请务必在此之前用完剩余的信用点。</p>"
    },
    {
     "type": "html",
-    "en": "<p>We are retiring Cred as a currency, as we’ll be introducing a more expansive reward system launching with the Frozen Trail Update. All existing Raider Deck rewards will also be available in the new system. You will keep any rewards you have already claimed at the time of the update.</p>"
+    "en": "<p>We are retiring Cred as a currency, as we’ll be introducing a more expansive reward system launching with the Frozen Trail Update. All existing Raider Deck rewards will also be available in the new system. You will keep any rewards you have already claimed at the time of the update.</p>",
+    "zh": "<p>我们将停用信用点这种货币，因为 Frozen Trail 更新将推出一套更丰富的奖励系统。现有的所有奇袭者套件奖励也都会出现在新系统中。更新时你已领取的奖励会全部保留。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Any Cred remaining on your account will expire with the Frozen Trail update, so please be sure to spend your Cred with Shani or on any remaining Raider Deck rewards.</p>"
+    "en": "<p>Any Cred remaining on your account will expire with the Frozen Trail update, so please be sure to spend your Cred with Shani or on any remaining Raider Deck rewards.</p>",
+    "zh": "<p>Frozen Trail 更新上线时，账号中剩余的信用点将全部作废，请务必在萨尼那里或剩余的奇袭者套件奖励上花掉你的信用点。</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Community Rubber Ducks</strong></h2>"
+    "en": "<h2><strong>Community Rubber Ducks</strong></h2>",
+    "zh": "<h2><strong>社区橡皮鸭</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>The community designed duckies that you have selected have finally made their way into the game! Head on over to Bird City and display them proudly in your Raider Den! </p>"
+    "en": "<p>The community designed duckies that you have selected have finally made their way into the game! Head on over to Bird City and display them proudly in your Raider Den! </p>",
+    "zh": "<p>大家选出的社区设计小鸭子终于进入游戏了！快去鸟城，把它们自豪地摆进你的奇袭者巢穴吧！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Again, huge congratulations to the designers: <em>gekko.rar, im_AshCheeks and nassguhl!</em></p>"
+    "en": "<p>Again, huge congratulations to the designers: <em>gekko.rar, im_AshCheeks and nassguhl!</em></p>",
+    "zh": "<p>再次热烈祝贺几位设计者：<em>gekko.rar、im_AshCheeks 和 nassguhl！</em></p>"
    },
    {
     "type": "image",
@@ -780,67 +941,83 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2></h2>"
+    "en": "<h2></h2>",
+    "zh": "<h2></h2>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Content and Bug Fixes</strong></h2>"
+    "en": "<h2><strong>Content and Bug Fixes</strong></h2>",
+    "zh": "<h2><strong>内容与问题修复</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<h3>ARC</h3>"
+    "en": "<h3>ARC</h3>",
+    "zh": "<h3>ARC</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Snitch Scanners will now spawn ARC similarly to the regular Snitch, but with a lower chance for stronger ARC.</li></ul>"
+    "en": "<ul><li>Snitch Scanners will now spawn ARC similarly to the regular Snitch, but with a lower chance for stronger ARC.</li></ul>",
+    "zh": "<ul><li>“告密者”扫描仪现在召唤 ARC 的方式与普通告密者类似，但召来较强 ARC 的几率更低。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Audio</h3>"
+    "en": "<h3>Audio</h3>",
+    "zh": "<h3>音频</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed an issue where the Equalizer could play its firing sound effect when holstering.</li><li>Fixed an issue where voice chat did not work when Raider Voice was enabled.<br></li></ul>"
+    "en": "<ul><li>Fixed an issue where the Equalizer could play its firing sound effect when holstering.</li><li>Fixed an issue where voice chat did not work when Raider Voice was enabled.<br></li></ul>",
+    "zh": "<ul><li>修复了制裁者收枪时可能播放开火音效的问题。</li><li>修复了启用奇袭者语音时语音聊天无法使用的问题。<br></li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Customization</h3>"
+    "en": "<h3>Customization</h3>",
+    "zh": "<h3>自定义</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The Boonie outfit will be available from September 15th.</li></ul>"
+    "en": "<ul><li>The Boonie outfit will be available from September 15th.</li></ul>",
+    "zh": "<ul><li>Boonie 服装将于 9 月 15 日起上架。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Gameplay</h3>"
+    "en": "<h3>Gameplay</h3>",
+    "zh": "<h3>玩法</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Landing on moving surfaces will now make you follow that surface when landing, not while still in the air.</li><li>You can now rebind quick item cycling separately from the quick-use wheel (or disable cycling), and you may bind both to the same key. This helps prevent unintended item swaps after closing the wheel.</li><li>Fixed an issue where ARC Turbine mines could not be pinged.</li><li>Reduced weapon sway for Aphelion to improve aiming stability.</li><li>Starting an Expedition no longer resets your quests by default; you can now choose whether to reset them when departing.</li><li>Fixed an issue where the Matriarch’s stomp could damage players through tall cover or when standing on top of the Matriarch.</li></ul>"
+    "en": "<ul><li>Landing on moving surfaces will now make you follow that surface when landing, not while still in the air.</li><li>You can now rebind quick item cycling separately from the quick-use wheel (or disable cycling), and you may bind both to the same key. This helps prevent unintended item swaps after closing the wheel.</li><li>Fixed an issue where ARC Turbine mines could not be pinged.</li><li>Reduced weapon sway for Aphelion to improve aiming stability.</li><li>Starting an Expedition no longer resets your quests by default; you can now choose whether to reset them when departing.</li><li>Fixed an issue where the Matriarch’s stomp could damage players through tall cover or when standing on top of the Matriarch.</li></ul>",
+    "zh": "<ul><li>落在移动的表面上时，现在会在着地时才跟随该表面移动，而不是仍在空中时就跟随。</li><li>现在可以把快速切换物品与快速使用轮盘分开绑定按键（或关闭快速切换），也可以把两者绑定到同一个按键。这有助于避免关闭轮盘后误切换物品。</li><li>修复了无法标记 ARC涡轮地雷的问题。</li><li>降低了远日点的武器晃动，提升瞄准稳定性。</li><li>开始远征时默认不再重置任务；现在可以在出发时自行选择是否重置。</li><li>修复了族母的践踏攻击可能隔着高大掩体伤害玩家、或伤害站在族母身上的玩家的问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Stability</h3>"
+    "en": "<h3>Stability</h3>",
+    "zh": "<h3>稳定性</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed a crash on PS5 that could occur shortly after starting a session.</li><li>Fixed a crash that could occur when rapidly pressing certain keys during gameplay.</li><li>Fixed cases where a squad could become stuck after a squadmate signed out and rejoined, blocking ready-up and preventing matchmaking from starting.</li></ul>"
+    "en": "<ul><li>Fixed a crash on PS5 that could occur shortly after starting a session.</li><li>Fixed a crash that could occur when rapidly pressing certain keys during gameplay.</li><li>Fixed cases where a squad could become stuck after a squadmate signed out and rejoined, blocking ready-up and preventing matchmaking from starting.</li></ul>",
+    "zh": "<ul><li>修复了 PS5 上开始游戏后不久可能发生的崩溃。</li><li>修复了游戏中快速按下某些按键时可能发生的崩溃。</li><li>修复了队友登出后重新加入时，小队可能卡住、无法准备并导致无法开始匹配的问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Performance</h3>"
+    "en": "<h3>Performance</h3>",
+    "zh": "<h3>性能</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Upgraded Unreal Engine from 5.3 to 5.7.</li></ul>"
+    "en": "<ul><li>Upgraded Unreal Engine from 5.3 to 5.7.</li></ul>",
+    "zh": "<ul><li>虚幻引擎从 5.3 升级到 5.7。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>UI</h3>"
+    "en": "<h3>UI</h3>",
+    "zh": "<h3>界面</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The UI indicator showing the current weight of your loadout is now updated directly when dropping parts of a stack.</li><li>Added visual tweaks to selected nodes in the Skill Tree.</li><li>Fixed an issue where some distance based map markers didn&#x27;t appear correctly.</li><li>The pick up prompt will now show “loadout full” while trying to pick up an item with a full inventory.</li><li>Improved matchmaking error messaging: you’ll now see clearer explanations if you go offline while queuing or if your crossplay settings are incompatible, helping diagnose failed matchmaking attempts.</li></ul>"
+    "en": "<ul><li>The UI indicator showing the current weight of your loadout is now updated directly when dropping parts of a stack.</li><li>Added visual tweaks to selected nodes in the Skill Tree.</li><li>Fixed an issue where some distance based map markers didn&#x27;t appear correctly.</li><li>The pick up prompt will now show “loadout full” while trying to pick up an item with a full inventory.</li><li>Improved matchmaking error messaging: you’ll now see clearer explanations if you go offline while queuing or if your crossplay settings are incompatible, helping diagnose failed matchmaking attempts.</li></ul>",
+    "zh": "<ul><li>丢弃部分堆叠物品时，显示当前配装重量的界面指示会立即更新。</li><li>调整了技能树中已选节点的视觉效果。</li><li>修复了部分基于距离的地图标记显示不正确的问题。</li><li>物品栏已满时尝试拾取物品，拾取提示现在会显示“配装已满”。</li><li>改进了匹配错误提示：排队时掉线或跨平台设置不兼容时，现在会显示更清楚的说明，帮助排查匹配失败的原因。</li></ul>"
    },
    {
     "type": "image",
@@ -848,15 +1025,18 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2><strong>KNOWN ISSUES</strong></h2>"
+    "en": "<h2><strong>KNOWN ISSUES</strong></h2>",
+    "zh": "<h2><strong>已知问题</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The second part of the Phantom Targets project could not be started for some players. We will be sending out compensation in a future update.</li><li>There are multiple stability improvements targeting Xbox Series S crashes. Please report any persistent issues to help guide further fixes. </li><li>We’re aware of issues with crashing on PC, related to Windows Update KB5121003. Please consult our <a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">workaround shared here</a> while we work on a fix.</li><li>Players on Epic may experience a sudden loss of keyboard input.</li><li><ul><li>While we look into this, we recommend disabling any Overlay you may have active. Additionally, you can try alt-tabbing out and back into the game.</li></ul></li><li>The Rawhide headgear stays on with the toggle set to off.</li><li>The throw animation may sometimes fail to play when attempting to detonate a Trigger ‘Nade immediately after throwing it.</li><li>The weapon swap animation may appear broken if weapon swapping right after vaulting.</li><li>Player animations may appear broken when interrupting a search of the Baron Husk.</li><li>Shredders float to the ceiling in some rooms of the Hidden Bunker.</li><li>Leapers can jump through the ARC Turbine.</li><li>Shots taken while riding ARC may not register correctly.</li><li>Some doors may allow player flashlights’ beams to pass through instead of blocking the emitted light.</li><li>We are aware of some clipping issues with the Triumph, Reaver and Azimuth outfits.</li></ul>"
+    "en": "<ul><li>The second part of the Phantom Targets project could not be started for some players. We will be sending out compensation in a future update.</li><li>There are multiple stability improvements targeting Xbox Series S crashes. Please report any persistent issues to help guide further fixes. </li><li>We’re aware of issues with crashing on PC, related to Windows Update KB5121003. Please consult our <a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">workaround shared here</a> while we work on a fix.</li><li>Players on Epic may experience a sudden loss of keyboard input.</li><li><ul><li>While we look into this, we recommend disabling any Overlay you may have active. Additionally, you can try alt-tabbing out and back into the game.</li></ul></li><li>The Rawhide headgear stays on with the toggle set to off.</li><li>The throw animation may sometimes fail to play when attempting to detonate a Trigger ‘Nade immediately after throwing it.</li><li>The weapon swap animation may appear broken if weapon swapping right after vaulting.</li><li>Player animations may appear broken when interrupting a search of the Baron Husk.</li><li>Shredders float to the ceiling in some rooms of the Hidden Bunker.</li><li>Leapers can jump through the ARC Turbine.</li><li>Shots taken while riding ARC may not register correctly.</li><li>Some doors may allow player flashlights’ beams to pass through instead of blocking the emitted light.</li><li>We are aware of some clipping issues with the Triumph, Reaver and Azimuth outfits.</li></ul>",
+    "zh": "<ul><li>部分玩家无法开始幻影目标计划的第二部分。我们会在之后的更新中发放补偿。</li><li>我们推出了多项针对 Xbox Series S 崩溃的稳定性改进。如果问题持续出现，请向我们反馈，以便进一步修复。</li><li>我们已知 PC 上与 Windows 更新 KB5121003 相关的崩溃问题。在修复期间，请参考<a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">这里分享的临时解决办法</a>。</li><li>Epic 平台的玩家可能会突然失去键盘输入。</li><li><ul><li>在我们调查期间，建议关闭所有正在使用的游戏内覆盖层。你也可以尝试按 Alt+Tab 切出再切回游戏。</li></ul></li><li>Rawhide 头饰在设置为关闭后仍会显示。</li><li>投出触发式手雷后立即引爆，投掷动画有时可能无法播放。</li><li>翻越后立即切换武器，切枪动画可能显示异常。</li><li>中断搜索“男爵”残骸时，玩家动画可能显示异常。</li><li>在隐藏地堡的部分房间中，粉碎者会飘到天花板上。</li><li>跳跃者跳跃时可以穿过ARC涡轮。</li><li>骑乘 ARC 时开的枪可能无法正确判定命中。</li><li>部分门会让玩家手电筒的光束穿过，而不是挡住光线。</li><li>我们已知 Triumph、Reaver 和 Azimuth 服装存在一些穿模问题。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<p>See you Topside,<br>//Ossen</p>"
+    "en": "<p>See you Topside,<br>//Ossen</p>",
+    "zh": "<p>上层见，<br>//Ossen</p>"
    }
   ]
  },
@@ -869,7 +1049,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/8719da3d-4da0-store-update-1.44-card-300x100-300x100.png",
   "title": {
-   "en": "Store Update 1.44.0"
+   "en": "Store Update 1.44.0",
+   "zh": "商店更新 1.44.0"
   },
   "body": [
    {
@@ -878,23 +1059,28 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Raiders!</p>"
+    "en": "<p>Raiders!</p>",
+    "zh": "<p>奇袭者们！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Store Update 1.44.0 is going live right now with the stunning Static Set. No restart needed!</p>"
+    "en": "<p>Store Update 1.44.0 is going live right now with the stunning Static Set. No restart needed!</p>",
+    "zh": "<p>商店更新 1.44.0 现已上线，带来惊艳的 Static 套装。无需重启游戏！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Gamescom is officially behind us, so Raz and I are settling back into our regular schedule. Meeting so many of you at the booth was honestly the highlight, thanks for coming by! </p>"
+    "en": "<p>Gamescom is officially behind us, so Raz and I are settling back into our regular schedule. Meeting so many of you at the booth was honestly the highlight, thanks for coming by! </p>",
+    "zh": "<p>科隆游戏展已经正式落幕，我和 Raz 也回到了平常的更新节奏。在展台见到那么多玩家，老实说是这次最开心的事，感谢大家前来！</p>"
    },
    {
     "type": "html",
-    "en": "<p>UPDATE: We&#x27;ve just deployed a hotfix to temporarily remove the Static and Cavalier sets from the store and customization screens while we adjust some minor visual elements. They will be re-added as soon as possible. Additionally, &quot;Shotgun Parts&quot; will no longer be available in Ermal&#x27;s shop.</p>"
+    "en": "<p>UPDATE: We&#x27;ve just deployed a hotfix to temporarily remove the Static and Cavalier sets from the store and customization screens while we adjust some minor visual elements. They will be re-added as soon as possible. Additionally, &quot;Shotgun Parts&quot; will no longer be available in Ermal&#x27;s shop.</p>",
+    "zh": "<p>更新：我们刚刚推送了一个热修复，暂时将 Static 和 Cavalier 套装从商店和自定义界面下架，以便调整一些细微的视觉元素。它们会尽快重新上架。此外，Ermal 的商店将不再出售“霰弹枪零件”。</p>"
    },
    {
     "type": "html",
-    "en": "<p>See you Topside,<br>//Ossen</p>"
+    "en": "<p>See you Topside,<br>//Ossen</p>",
+    "zh": "<p>上层见，<br>//Ossen</p>"
    }
   ]
  },
@@ -907,7 +1093,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/0b922c8b-8406-store-update-1.43-card-300x100-300x100.png",
   "title": {
-   "en": "Store Update 1.43.0"
+   "en": "Store Update 1.43.0",
+   "zh": "商店更新 1.43.0"
   },
   "body": [
    {
@@ -916,27 +1103,33 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>It’s Tuesday, Raiders!</p>"
+    "en": "<p>It’s Tuesday, Raiders!</p>",
+    "zh": "<p>奇袭者们，周二到啦！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Store Update 1.43.0 is rolling out now, introducing the heavy duty Roamer Set! Make sure to restart your game to get the latest version.</p>"
+    "en": "<p>Store Update 1.43.0 is rolling out now, introducing the heavy duty Roamer Set! Make sure to restart your game to get the latest version.</p>",
+    "zh": "<p>商店更新 1.43.0 正在推送，带来重装风格的 Roamer 套装！请重启游戏以获取最新版本。</p>"
    },
    {
     "type": "html",
-    "en": "<h4><strong>Phantom Targets Event - Earn the Anomalia Outfit</strong></h4>"
+    "en": "<h4><strong>Phantom Targets Event - Earn the Anomalia Outfit</strong></h4>",
+    "zh": "<h4><strong>幻影目标活动：赢取 Anomalia 服装</strong></h4>"
    },
    {
     "type": "html",
-    "en": "<p>Shani’s investigation into the strange ARC behavior is ongoing…</p>"
+    "en": "<p>Shani’s investigation into the strange ARC behavior is ongoing…</p>",
+    "zh": "<p>萨尼对 ARC 异常行为的调查仍在继续……</p>"
    },
    {
     "type": "html",
-    "en": "<p>The Phantom Targets Event is live till <strong>September 06</strong>, get out there and hunt down those erratic Wasps for their strange glitched tech.</p>"
+    "en": "<p>The Phantom Targets Event is live till <strong>September 06</strong>, get out there and hunt down those erratic Wasps for their strange glitched tech.</p>",
+    "zh": "<p>幻影目标活动将持续到 <strong>9 月 6 日</strong>，快出发去猎杀那些行为失常的黄蜂，收集它们身上奇怪的故障科技。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Knowledge is key to survival, we need to find out what they’re doing, and fast.<br>You’ll earn the Anomalia Outfit for your contribution to the research effort, alongside the Finger Guns Wave emote, Trashpile Bag, and Raider Tokens to get you appropriately dripped up for what’s on the horizon…</p>"
+    "en": "<p>Knowledge is key to survival, we need to find out what they’re doing, and fast.<br>You’ll earn the Anomalia Outfit for your contribution to the research effort, alongside the Finger Guns Wave emote, Trashpile Bag, and Raider Tokens to get you appropriately dripped up for what’s on the horizon…</p>",
+    "zh": "<p>知识是生存的关键，我们必须尽快弄清楚它们在干什么。<br>为了表彰你对研究工作的贡献，你将获得 Anomalia 服装，以及“手指枪挥手”表情、Trashpile 背包和奇袭者代币，让你以最潮的装扮迎接即将到来的一切……</p>"
    },
    {
     "type": "image",
@@ -944,51 +1137,63 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h4><strong>Anti-Cheat &amp; Linked Accounts</strong></h4>"
+    "en": "<h4><strong>Anti-Cheat &amp; Linked Accounts</strong></h4>",
+    "zh": "<h4><strong>反作弊与关联账号</strong></h4>"
    },
    {
     "type": "html",
-    "en": "<p>As we continue ramping up on our anti-cheat efforts, we are doubling down on linked accounts. If someone gets access to your account, either with your permission or not, and they&#x27;re caught cheating, your account can be banned even though you weren&#x27;t the one cheating.</p>"
+    "en": "<p>As we continue ramping up on our anti-cheat efforts, we are doubling down on linked accounts. If someone gets access to your account, either with your permission or not, and they&#x27;re caught cheating, your account can be banned even though you weren&#x27;t the one cheating.</p>",
+    "zh": "<p>随着反作弊工作不断加强，我们也在加大对关联账号的处理力度。如果有人登录了你的账号（无论是否经过你的允许）并被抓到作弊，即使作弊的不是你本人，你的账号也可能被封禁。</p>"
    },
    {
     "type": "html",
-    "en": "<p>In order to make sure this does not happen, now is a good time to make sure your account is properly secured via your login provider (Steam, Sony, Xbox, Epic, etc.):</p>"
+    "en": "<p>In order to make sure this does not happen, now is a good time to make sure your account is properly secured via your login provider (Steam, Sony, Xbox, Epic, etc.):</p>",
+    "zh": "<p>为避免这种情况，现在正是通过你的登录平台（Steam、Sony、Xbox、Epic 等）确保账号安全的好时机：</p>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Use a strong, unique password</li><li>Enable two-factor authentication</li><li>Never share your login details with anyone</li></ul>"
+    "en": "<ul><li>Use a strong, unique password</li><li>Enable two-factor authentication</li><li>Never share your login details with anyone</li></ul>",
+    "zh": "<ul><li>使用强度高且独一无二的密码</li><li>开启双重验证</li><li>永远不要把登录信息告诉任何人</li></ul>"
    },
    {
     "type": "html",
-    "en": "<p>Keeping your account secure helps protect your progress and keeps the game fair for everyone. Thanks for helping us in our fight to keep ARC Raiders a great experience for all Raiders.</p>"
+    "en": "<p>Keeping your account secure helps protect your progress and keeps the game fair for everyone. Thanks for helping us in our fight to keep ARC Raiders a great experience for all Raiders.</p>",
+    "zh": "<p>保护好账号，既能守护你的进度，也能让游戏对所有人保持公平。感谢大家与我们一起努力，让《ARC Raiders》继续为所有奇袭者带来美好的体验。</p>"
    },
    {
     "type": "html",
-    "en": "<h4><strong>Wasp Week Community Highlights</strong></h4>"
+    "en": "<h4><strong>Wasp Week Community Highlights</strong></h4>",
+    "zh": "<h4><strong>黄蜂周社区精彩集锦</strong></h4>"
    },
    {
     "type": "html",
-    "en": "<p>Submissions for the special Waspy Community Highlights episode are still open!<br>If you&#x27;ve caught a ride surfing a Wasp through the air, used a Snap Hook to pull one into the ground, or angered the swarm by spamming Snitch Scanners, send us your best videos!</p>"
+    "en": "<p>Submissions for the special Waspy Community Highlights episode are still open!<br>If you&#x27;ve caught a ride surfing a Wasp through the air, used a Snap Hook to pull one into the ground, or angered the swarm by spamming Snitch Scanners, send us your best videos!</p>",
+    "zh": "<p>黄蜂特辑社区精彩集锦仍在征集投稿！<br>无论你是踩着黄蜂在空中冲浪、用安全钩把一架黄蜂拽到地上，还是狂扔“告密者”扫描仪惹怒了蜂群，都欢迎把你最精彩的视频发给我们！</p>"
    },
    {
     "type": "html",
-    "en": "<p>We&#x27;ll pick the top 5 to feature in this Community Highlights episode, and win the Wasp Hunter DLC set! </p>"
+    "en": "<p>We&#x27;ll pick the top 5 to feature in this Community Highlights episode, and win the Wasp Hunter DLC set! </p>",
+    "zh": "<p>我们会选出前 5 名在这期社区精彩集锦中展示，入选者还将赢得黄蜂猎手 DLC 套装！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Send us your clips here: <a href=\"https://forms.gle/sZmpGBaPhbVAKYrX7\" target=\"_blank\" rel=\"noopener\">https://forms.gle/sZmpGBaPhbVAKYrX7</a> </p>"
+    "en": "<p>Send us your clips here: <a href=\"https://forms.gle/sZmpGBaPhbVAKYrX7\" target=\"_blank\" rel=\"noopener\">https://forms.gle/sZmpGBaPhbVAKYrX7</a> </p>",
+    "zh": "<p>在这里提交你的片段：<a href=\"https://forms.gle/sZmpGBaPhbVAKYrX7\" target=\"_blank\" rel=\"noopener\">https://forms.gle/sZmpGBaPhbVAKYrX7</a></p>"
    },
    {
     "type": "html",
-    "en": "<h4><strong>We&#x27;re at Gamescom! - August 26 - 30</strong></h4>"
+    "en": "<h4><strong>We&#x27;re at Gamescom! - August 26 - 30</strong></h4>",
+    "zh": "<h4><strong>我们在科隆游戏展！8 月 26 日至 30 日</strong></h4>"
    },
    {
     "type": "html",
-    "en": "<p>The ARC Raiders team is heading Topside to Gamescom this week. We’re loading the shuttles with merch and coaxing Scrappy into his travel carrier as we write this. Swing by the booth to say hi and scavenge some freebies!</p>"
+    "en": "<p>The ARC Raiders team is heading Topside to Gamescom this week. We’re loading the shuttles with merch and coaxing Scrappy into his travel carrier as we write this. Swing by the booth to say hi and scavenge some freebies!</p>",
+    "zh": "<p>本周，《ARC Raiders》团队将前往上层，参加科隆游戏展。写这篇公告时，我们正把周边装上运输车，还在哄废品仔钻进它的旅行箱。欢迎来展台打个招呼，顺便搜刮点免费赠品！</p>"
    },
    {
     "type": "html",
-    "en": "<p>See you at the booth or online!</p>"
+    "en": "<p>See you at the booth or online!</p>",
+    "zh": "<p>展台见，或者线上见！</p>"
    }
   ]
  },
@@ -999,44 +1204,54 @@ window.ARC_NEWS = [
   "tags": [],
   "thumb": "https://assets.arcraiders.com/article-cards/14d605cc-af1e-expedition-5-blog-card-300x100-300x100.png",
   "title": {
-   "en": "The 5th Expedition"
+   "en": "The 5th Expedition",
+   "zh": "第五次远征"
   },
   "body": [
    {
     "type": "html",
-    "en": "<p>The fifth Expedition window is fast approaching, and with it come a few changes. Based on your feedback, in upcoming Expeditions you’ll be able to opt out of resetting your quest progress, the departure window will be extended by one week, and there won’t be the last call feature this time around.<br>Additionally, we will be pausing Expeditions for a short while to dig deeper into the core systems and make them feel more rewarding and fun!</p>"
+    "en": "<p>The fifth Expedition window is fast approaching, and with it come a few changes. Based on your feedback, in upcoming Expeditions you’ll be able to opt out of resetting your quest progress, the departure window will be extended by one week, and there won’t be the last call feature this time around.<br>Additionally, we will be pausing Expeditions for a short while to dig deeper into the core systems and make them feel more rewarding and fun!</p>",
+    "zh": "<p>第五次远征的窗口期即将到来，并带来一些变化。根据大家的反馈，在接下来的远征中，你可以选择不重置任务进度，出发窗口期将延长一周，而且这次不会有最后召集功能。<br>此外，我们将短暂暂停远征，深入改进核心系统，让远征玩起来更有回报、更有趣！</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>TIMING</strong></h2>"
+    "en": "<h2><strong>TIMING</strong></h2>",
+    "zh": "<h2><strong>时间安排</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>Expedition Window<strong> </strong>opens on<strong> </strong>September 8, 1pm CEST/11am UTC/4am PT, and closes September 29 10am CEST/8am UTC/1am PT.</p>"
+    "en": "<p>Expedition Window<strong> </strong>opens on<strong> </strong>September 8, 1pm CEST/11am UTC/4am PT, and closes September 29 10am CEST/8am UTC/1am PT.</p>",
+    "zh": "<p>远征窗口期将于 9 月 8 日 13:00 CEST / 11:00 UTC / 4:00 PT 开启，9 月 29 日 10:00 CEST / 8:00 UTC / 1:00 PT 关闭。</p>"
    },
    {
     "type": "html",
-    "en": "<p>As with all previous Expeditions, completing your Caravan does not count as signing up for the Expedition, you still have to sign up during the window and this time around there is no ‘last call’ feature.</p>"
+    "en": "<p>As with all previous Expeditions, completing your Caravan does not count as signing up for the Expedition, you still have to sign up during the window and this time around there is no ‘last call’ feature.</p>",
+    "zh": "<p>和以往的远征一样，完成远征队并不等于报名参加远征，你仍需在窗口期内报名，而且这次没有“最后召集”功能。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Expeditions are a personal progression that players complete in order. The Caravan can be completed in between Expedition windows but finishing the Expedition can only be done during the scheduled Expedition window.</p>"
+    "en": "<p>Expeditions are a personal progression that players complete in order. The Caravan can be completed in between Expedition windows but finishing the Expedition can only be done during the scheduled Expedition window.</p>",
+    "zh": "<p>远征是玩家按顺序完成的个人成长内容。远征队可以在两个远征窗口期之间完成，但只有在排定的远征窗口期内才能完成远征。</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>HOW TO DO THE EXPEDITION</strong></h2>"
+    "en": "<h2><strong>HOW TO DO THE EXPEDITION</strong></h2>",
+    "zh": "<h2><strong>如何完成远征</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ol><li><strong>Complete the Caravan</strong><br>The option to contribute to the Caravan starts as soon as you complete the previous Expedition and if this is your first Expedition, you can start contributing right away.</li><li><strong>Wait for the Expedition Window</strong><br>The next window opens on September 8, 1pm CEST/11am UTC/4am PT, and closes on September 29, 10am CEST/8am UTC/1am PT.</li><li><strong>Sign Up</strong><br>Once the Expedition window opens, you need to sign up.</li><li><strong>Complete the Challenge</strong><br>In order to get the rewards, players will need to complete a challenge within the Expedition Window (more details below).</li><li><strong>Catch Up</strong><br>Catch up on missed skill points (max 5 per Expedition) for players on their second, third or fourth Expedition (more details below).</li><li><strong>Depart</strong><br>Everyone that signed up departs on September 29.</li><li><strong>No Last Call</strong><br>Make sure to sign up for departure during the window.</li></ol>"
+    "en": "<ol><li><strong>Complete the Caravan</strong><br>The option to contribute to the Caravan starts as soon as you complete the previous Expedition and if this is your first Expedition, you can start contributing right away.</li><li><strong>Wait for the Expedition Window</strong><br>The next window opens on September 8, 1pm CEST/11am UTC/4am PT, and closes on September 29, 10am CEST/8am UTC/1am PT.</li><li><strong>Sign Up</strong><br>Once the Expedition window opens, you need to sign up.</li><li><strong>Complete the Challenge</strong><br>In order to get the rewards, players will need to complete a challenge within the Expedition Window (more details below).</li><li><strong>Catch Up</strong><br>Catch up on missed skill points (max 5 per Expedition) for players on their second, third or fourth Expedition (more details below).</li><li><strong>Depart</strong><br>Everyone that signed up departs on September 29.</li><li><strong>No Last Call</strong><br>Make sure to sign up for departure during the window.</li></ol>",
+    "zh": "<ol><li><strong>完成远征队</strong><br>完成上一次远征后，你就可以开始为远征队提交物资；如果这是你的第一次远征，现在就可以开始。</li><li><strong>等待远征窗口期</strong><br>下一个窗口期将于 9 月 8 日 13:00 CEST / 11:00 UTC / 4:00 PT 开启，9 月 29 日 10:00 CEST / 8:00 UTC / 1:00 PT 关闭。</li><li><strong>报名</strong><br>远征窗口期开启后，你需要报名。</li><li><strong>完成挑战</strong><br>玩家需要在远征窗口期内完成一项挑战才能获得奖励（详见下文）。</li><li><strong>补领</strong><br>进行第二、第三或第四次远征的玩家，可以补领之前错过的技能点（每次远征最多 5 点，详见下文）。</li><li><strong>出发</strong><br>所有报名的玩家将于 9 月 29 日出发。</li><li><strong>没有最后召集</strong><br>请务必在窗口期内报名出发。</li></ol>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>WHAT’S NEW</strong></h2>"
+    "en": "<h2><strong>WHAT’S NEW</strong></h2>",
+    "zh": "<h2><strong>新变化</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li><strong>Opt-in Quest reset</strong></li><li><ul><li>We have seen your feedback about the quest line feeling repetitive after every Expedition. To address this, we want to give you the option not to reset your quests and keep your progress so you can continue from where you left off. Since the Hullcracker Blueprint can only be obtained through the quest line, we will give you other ways to get it.</li></ul></li><li><strong>No Last Call</strong></li><li><ul><li>Make sure to sign up during the departure window so you don’t miss out on the Expedition.</li></ul></li><li>The expedition window is <strong>extended</strong> from two to three weeks.</li></ul>"
+    "en": "<ul><li><strong>Opt-in Quest reset</strong></li><li><ul><li>We have seen your feedback about the quest line feeling repetitive after every Expedition. To address this, we want to give you the option not to reset your quests and keep your progress so you can continue from where you left off. Since the Hullcracker Blueprint can only be obtained through the quest line, we will give you other ways to get it.</li></ul></li><li><strong>No Last Call</strong></li><li><ul><li>Make sure to sign up during the departure window so you don’t miss out on the Expedition.</li></ul></li><li>The expedition window is <strong>extended</strong> from two to three weeks.</li></ul>",
+    "zh": "<ul><li><strong>可选择是否重置任务</strong></li><li><ul><li>我们注意到大家反馈每次远征后都要重走任务线，感觉很重复。为此，我们提供了不重置任务的选项，保留你的进度，让你从上次停下的地方继续。由于裂甲者蓝图只能通过任务线获得，我们会提供其他获取途径。</li></ul></li><li><strong>没有最后召集</strong></li><li><ul><li>请务必在出发窗口期内报名，以免错过这次远征。</li></ul></li><li>远征窗口期从两周<strong>延长</strong>到三周。</li></ul>"
    },
    {
     "type": "image",
@@ -1044,39 +1259,48 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2><strong>REWARDS</strong></h2>"
+    "en": "<h2><strong>REWARDS</strong></h2>",
+    "zh": "<h2><strong>奖励</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The complete Zenith Outfit</li><li><a href=\"https://arcraiders.com/news/the-fourth-expedition#mystery-rewards\" target=\"_blank\" rel=\"noopener\">Mystery Rewards</a></li><li>+12 stash space, maxed out at 60</li><li>Skill points:</li><li><ul><li>The bonus skill points from Expeditions cap at 15. Players can still catch-up on previously missed skill points and it’s still tied to stash value. Catch-up for skill points becomes available with your second Expedition and once you get all the maximum 15 skill points, the catch-up is no longer available.</li></ul></li><li>Consecutive buffs: </li><li><ul><li>The XP boost, Scrappy materials boost and repair value increase capped at three levels.</li></ul></li></ul>"
+    "en": "<ul><li>The complete Zenith Outfit</li><li><a href=\"https://arcraiders.com/news/the-fourth-expedition#mystery-rewards\" target=\"_blank\" rel=\"noopener\">Mystery Rewards</a></li><li>+12 stash space, maxed out at 60</li><li>Skill points:</li><li><ul><li>The bonus skill points from Expeditions cap at 15. Players can still catch-up on previously missed skill points and it’s still tied to stash value. Catch-up for skill points becomes available with your second Expedition and once you get all the maximum 15 skill points, the catch-up is no longer available.</li></ul></li><li>Consecutive buffs: </li><li><ul><li>The XP boost, Scrappy materials boost and repair value increase capped at three levels.</li></ul></li></ul>",
+    "zh": "<ul><li>完整的 Zenith 服装</li><li><a href=\"https://arcraiders.com/news/the-fourth-expedition#mystery-rewards\" target=\"_blank\" rel=\"noopener\">神秘奖励</a></li><li>储备箱空间 +12，上限为 60</li><li>技能点：</li><li><ul><li>远征带来的额外技能点上限为 15 点。玩家仍可补领之前错过的技能点，数量依然取决于储备箱的物品价值。从第二次远征开始可以补领技能点；拿满 15 点技能点后，就不再提供补领。</li></ul></li><li>连续远征增益：</li><li><ul><li>XP 加成、废品仔材料加成和修理价值提升，最高叠加三级。</li></ul></li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Trials</strong></h2>"
+    "en": "<h2><strong>Trials</strong></h2>",
+    "zh": "<h2><strong>试炼</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>The season currently ongoing will end on September 22, and after that Trials will be on pause for two weeks until October 8.</p>"
+    "en": "<p>The season currently ongoing will end on September 22, and after that Trials will be on pause for two weeks until October 8.</p>",
+    "zh": "<p>当前赛季将于 9 月 22 日结束，之后试炼将暂停两周，直到 10 月 8 日。</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>FUTURE EXPEDITIONS</strong></h2>"
+    "en": "<h2><strong>FUTURE EXPEDITIONS</strong></h2>",
+    "zh": "<h2><strong>未来的远征</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>We have been carefully reviewing your feedback on Expeditions, and while we&#x27;ve made ongoing improvements along the way, we&#x27;ve come to realize that some of the issues you&#x27;ve raised, like the tight departure windows, the reward structure, and accessibility for new players, need more than incremental fixes. They call for bigger changes.</p>"
+    "en": "<p>We have been carefully reviewing your feedback on Expeditions, and while we&#x27;ve made ongoing improvements along the way, we&#x27;ve come to realize that some of the issues you&#x27;ve raised, like the tight departure windows, the reward structure, and accessibility for new players, need more than incremental fixes. They call for bigger changes.</p>",
+    "zh": "<p>我们一直在认真查看大家对远征的反馈。虽然一路上我们持续做了改进，但我们意识到，大家提出的一些问题，比如出发窗口期太紧、奖励结构以及对新玩家不够友好，不是小修小补能解决的，需要更大的改动。</p>"
    },
    {
     "type": "html",
-    "en": "<p>In order to address those concerns, we need to pause the Expeditions for a while. The fifth Expedition will be the last one until early 2027, when Expeditions will return with major improvements, tackling some of the biggest player pain points. So, if you’ve been on the fence about departing - now is the time! We will share more details on what those changes will look like in September.</p>"
+    "en": "<p>In order to address those concerns, we need to pause the Expeditions for a while. The fifth Expedition will be the last one until early 2027, when Expeditions will return with major improvements, tackling some of the biggest player pain points. So, if you’ve been on the fence about departing - now is the time! We will share more details on what those changes will look like in September.</p>",
+    "zh": "<p>为了解决这些问题，我们需要暂停远征一段时间。第五次远征将是 2027 年初之前的最后一次；届时远征将带着重大改进回归，着手解决玩家最头疼的一些问题。所以，如果你还在犹豫要不要出发，现在就是时候！我们会在 9 月分享这些改动的更多细节。</p>"
    },
    {
     "type": "html",
-    "en": "<p>During the pause period, any of the consecutive buffs you have earned will persist so no progress is lost. If you have completed all five Expeditions, the Zenith Outfit will be fully unlocked. Also, since Caravans will be reset, any partially completed Caravans will be replaced with Ermal Vouchers of equal value which can be used to purchase Ermal offers together with ARC Parts and firearms trade, or sold for Coin.<br><br>As always, keep the feedback coming. Let us know what you think, and we will continue to make improvements.</p>"
+    "en": "<p>During the pause period, any of the consecutive buffs you have earned will persist so no progress is lost. If you have completed all five Expeditions, the Zenith Outfit will be fully unlocked. Also, since Caravans will be reset, any partially completed Caravans will be replaced with Ermal Vouchers of equal value which can be used to purchase Ermal offers together with ARC Parts and firearms trade, or sold for Coin.<br><br>As always, keep the feedback coming. Let us know what you think, and we will continue to make improvements.</p>",
+    "zh": "<p>暂停期间，你已获得的连续远征增益都会保留，不会损失任何进度。如果你已完成全部五次远征，Zenith 服装将完全解锁。此外，由于远征队将被重置，任何尚未完成的远征队都会折算为等值的 Ermal 代金券，可以连同 ARC 零件和枪械交易一起用于购买 Ermal 的商品，也可以卖掉换钱币。<br><br>一如既往，欢迎继续反馈。告诉我们你的想法，我们会不断改进。</p>"
    },
    {
     "type": "html",
-    "en": "<p>The ARC Raiders Team</p>"
+    "en": "<p>The ARC Raiders Team</p>",
+    "zh": "<p>《ARC Raiders》团队</p>"
    }
   ]
  },
@@ -1087,7 +1311,8 @@ window.ARC_NEWS = [
   "tags": [],
   "thumb": "https://assets.arcraiders.com/article-cards/8f78db08-9682-subway-card-300x100-300x100.png",
   "title": {
-   "en": "ARC Raiders x Subway: Exclusive Subterranean outfit"
+   "en": "ARC Raiders x Subway: Exclusive Subterranean outfit",
+   "zh": "《ARC Raiders》× 赛百味：独家 Subterranean 服装"
   },
   "body": [
    {
@@ -1096,19 +1321,23 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h3>Never Raid Hungry</h3>"
+    "en": "<h3>Never Raid Hungry</h3>",
+    "zh": "<h3>奇袭不饿肚子</h3>"
    },
    {
     "type": "html",
-    "en": "<p>Has this ever happened to you? You load into a map sporting your best gear. You pack plenty of ammo. You’re about to check the map… then you hear it. A deep, sinister growl. Your body trembles. Is a Matriarch on patrol? Did Lance sell you expired stims again? </p>"
+    "en": "<p>Has this ever happened to you? You load into a map sporting your best gear. You pack plenty of ammo. You’re about to check the map… then you hear it. A deep, sinister growl. Your body trembles. Is a Matriarch on patrol? Did Lance sell you expired stims again? </p>",
+    "zh": "<p>你是不是也遇到过这种情况？穿着最好的装备进图，带足了弹药，正准备看一眼地图……这时你听到了：一声低沉而阴森的咆哮。你浑身发抖。是族母在巡逻吗？还是兰斯又卖给你过期的兴奋剂了？</p>"
    },
    {
     "type": "html",
-    "en": "<p>No. You forgot the Raider’s golden rule: <em>“Never go Topside on an empty stomach!”</em></p>"
+    "en": "<p>No. You forgot the Raider’s golden rule: <em>“Never go Topside on an empty stomach!”</em></p>",
+    "zh": "<p>都不是。你忘了奇袭者的黄金法则：<em>“千万别饿着肚子上去！”</em></p>"
    },
    {
     "type": "html",
-    "en": "<p>ARC Raiders has teamed up with Subway® for a limited time chance to unlock exclusive in-game rewards!</p>"
+    "en": "<p>ARC Raiders has teamed up with Subway® for a limited time chance to unlock exclusive in-game rewards!</p>",
+    "zh": "<p>《ARC Raiders》与赛百味（Subway®）限时联动，带来解锁游戏内独家奖励的机会！</p>"
    },
    {
     "type": "image",
@@ -1116,15 +1345,18 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h3>How to participate</h3>"
+    "en": "<h3>How to participate</h3>",
+    "zh": "<h3>参与方式</h3>"
    },
    {
     "type": "html",
-    "en": "<p>From Aug 20 through Oct 26, raiders can earn in-game rewards by purchasing any qualifying Subway® meal*. This offer is available only at participating US Subway locations, through the Subway app, or <a href=\"http://subway.com/\" target=\"_blank\" rel=\"noopener\">Subway.com</a>. </p>"
+    "en": "<p>From Aug 20 through Oct 26, raiders can earn in-game rewards by purchasing any qualifying Subway® meal*. This offer is available only at participating US Subway locations, through the Subway app, or <a href=\"http://subway.com/\" target=\"_blank\" rel=\"noopener\">Subway.com</a>. </p>",
+    "zh": "<p>8 月 20 日至 10 月 26 日期间，奇袭者购买任意符合条件的赛百味套餐*即可获得游戏内奖励。本活动仅限美国参与活动的赛百味门店、赛百味 App 或 <a href=\"http://subway.com/\" target=\"_blank\" rel=\"noopener\">Subway.com</a>。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Participants will receive a unique single-use code to unlock the exclusive Subterranean outfit, one of three potential Subway-themed outfit variants, plus two bonus in-game items which rotate weekly throughout the promotion. Codes can be redeemed on PlayStation, Xbox, or PC.</p>"
+    "en": "<p>Participants will receive a unique single-use code to unlock the exclusive Subterranean outfit, one of three potential Subway-themed outfit variants, plus two bonus in-game items which rotate weekly throughout the promotion. Codes can be redeemed on PlayStation, Xbox, or PC.</p>",
+    "zh": "<p>参与者将获得一个一次性兑换码，可解锁独家 Subterranean 服装（三种赛百味主题服装款式之一），以及两件在活动期间每周轮换的游戏内赠品。兑换码可在 PlayStation、Xbox 或 PC 上兑换。</p>"
    },
    {
     "type": "image",
@@ -1132,15 +1364,18 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>To see full details, each week&#x27;s new rewards bundle, and redeem codes, visit the official program site at <a href=\"http://arcraiders.com/subway\" target=\"_blank\" rel=\"noopener\">arcraiders.com/subway</a> or the Subway app.</p>"
+    "en": "<p>To see full details, each week&#x27;s new rewards bundle, and redeem codes, visit the official program site at <a href=\"http://arcraiders.com/subway\" target=\"_blank\" rel=\"noopener\">arcraiders.com/subway</a> or the Subway app.</p>",
+    "zh": "<p>如需查看完整详情、每周的新奖励组合并兑换代码，请访问官方活动页面 <a href=\"http://arcraiders.com/subway\" target=\"_blank\" rel=\"noopener\">arcraiders.com/subway</a> 或赛百味 App。</p>"
    },
    {
     "type": "html",
-    "en": "<hr>"
+    "en": "<hr>",
+    "zh": "<hr>"
    },
    {
     "type": "html",
-    "en": "<p><em>At participating U.S. restaurants. Offer opt-in required. One (1) ARC Raiders Code (the “Code(s)”) with qualifying Subway® meal purchase (excludes Kids Meals). Limit: one (1) Code per order. Valid 8/20/26 – 10/26/26 or while supplies last. Code(s) redeemable on </em><a href=\"https://id.embark.games/\" target=\"_blank\" rel=\"noopener\"><em>https://id.embark.games</em></a><em> until 11/10/26. Age 13+ only. For full Terms, see </em><a href=\"http://subway.com/en-us/arcraiders\" target=\"_blank\" rel=\"noopener\"><em>Subway.com/en-us/arcraiders.</em></a></p>"
+    "en": "<p><em>At participating U.S. restaurants. Offer opt-in required. One (1) ARC Raiders Code (the “Code(s)”) with qualifying Subway® meal purchase (excludes Kids Meals). Limit: one (1) Code per order. Valid 8/20/26 – 10/26/26 or while supplies last. Code(s) redeemable on </em><a href=\"https://id.embark.games/\" target=\"_blank\" rel=\"noopener\"><em>https://id.embark.games</em></a><em> until 11/10/26. Age 13+ only. For full Terms, see </em><a href=\"http://subway.com/en-us/arcraiders\" target=\"_blank\" rel=\"noopener\"><em>Subway.com/en-us/arcraiders.</em></a></p>",
+    "zh": "<p><em>限美国参与活动的餐厅，需选择参加本优惠。购买符合条件的赛百味套餐（儿童套餐除外）可获得一 (1) 个《ARC Raiders》兑换码（“兑换码”）。每笔订单限一 (1) 个兑换码。有效期为 2026 年 8 月 20 日至 10 月 26 日，送完即止。兑换码可于 2026 年 11 月 10 日前在 </em><a href=\"https://id.embark.games/\" target=\"_blank\" rel=\"noopener\"><em>https://id.embark.games</em></a><em> 兑换。仅限 13 岁及以上用户。完整条款请见 </em><a href=\"http://subway.com/en-us/arcraiders\" target=\"_blank\" rel=\"noopener\"><em>Subway.com/en-us/arcraiders。</em></a></p>"
    }
   ]
  },
@@ -1153,7 +1388,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/17866e04-91ae-store-update-1.42-card-300x100-300x100.png",
   "title": {
-   "en": "Live Update 1.42.0"
+   "en": "Live Update 1.42.0",
+   "zh": "版本更新 1.42.0"
   },
   "body": [
    {
@@ -1162,27 +1398,33 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Raiders!</p>"
+    "en": "<p>Raiders!</p>",
+    "zh": "<p>奇袭者们！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Update 1.42.0 is going live right now and with it a number of fixes, a second part of the Phantom Targets event with the Anomalia Outfit, a new Player Project, improved map condition scheduling, and new Twitch drops.</p>"
+    "en": "<p>Update 1.42.0 is going live right now and with it a number of fixes, a second part of the Phantom Targets event with the Anomalia Outfit, a new Player Project, improved map condition scheduling, and new Twitch drops.</p>",
+    "zh": "<p>1.42.0 更新现已上线，带来多项修复、幻影目标活动第二部分及 Anomalia 服装、一个新的玩家计划、改进后的地图条件排期，以及新的 Twitch 掉宝奖励。</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>HIGHLIGHTS</strong></h2>"
+    "en": "<h2><strong>HIGHLIGHTS</strong></h2>",
+    "zh": "<h2><strong>重点内容</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Phantom Targets Event &amp; Phantom Targets Part 2 Raider Project</li><li>The Tick Hunter Set is now available</li><li>Improved Regional Map Condition Schedule</li><li>An Update on Anti-Cheat and Fair Play</li><li>New Twitch Drops (Car Freshener &amp; Ceramic Vase)</li><li>Rubber Duck Competition Winners</li></ul>"
+    "en": "<ul><li>Phantom Targets Event &amp; Phantom Targets Part 2 Raider Project</li><li>The Tick Hunter Set is now available</li><li>Improved Regional Map Condition Schedule</li><li>An Update on Anti-Cheat and Fair Play</li><li>New Twitch Drops (Car Freshener &amp; Ceramic Vase)</li><li>Rubber Duck Competition Winners</li></ul>",
+    "zh": "<ul><li>幻影目标活动与幻影目标第二部分奇袭者计划</li><li>跳蚤猎手套装现已推出</li><li>改进后的分区域地图条件排期</li><li>反作弊与公平游戏进展</li><li>新的 Twitch 掉宝奖励（汽车香薰和陶瓷花瓶）</li><li>橡皮鸭设计大赛获奖者</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Phantom Targets Revealed</strong></h2>"
+    "en": "<h2><strong>Phantom Targets Revealed</strong></h2>",
+    "zh": "<h2><strong>幻影目标真相大白</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>Thanks to the assistance of many Raiders, Shani finally pinpointed the source of the phantom targets: erratic Wasps. These ARC units are exhibiting behavior she’s never seen before: emitting strange noises, flying in irregular patterns, and carrying unidentifiable tech. They’re all swarming towards one location. She needs further assistance to understand what’s waiting for them there.</p>"
+    "en": "<p>Thanks to the assistance of many Raiders, Shani finally pinpointed the source of the phantom targets: erratic Wasps. These ARC units are exhibiting behavior she’s never seen before: emitting strange noises, flying in irregular patterns, and carrying unidentifiable tech. They’re all swarming towards one location. She needs further assistance to understand what’s waiting for them there.</p>",
+    "zh": "<p>在众多奇袭者的协助下，萨尼终于找到了幻影目标的源头：行为失常的黄蜂。这些 ARC 单位表现出她从未见过的行为：发出奇怪的噪音，以不规则的路线飞行，还携带着无法辨认的科技。它们全都朝同一个地点聚集。她需要更多帮助，弄清楚那里有什么在等着它们。</p>"
    },
    {
     "type": "image",
@@ -1190,75 +1432,93 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2><strong>Improvements to Map Condition Scheduling </strong></h2>"
+    "en": "<h2><strong>Improvements to Map Condition Scheduling </strong></h2>",
+    "zh": "<h2><strong>地图条件排期改进</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>We have been working to make sure that the way we schedule Map Conditions is aligned with your playing habits. To that end, we’re introducing <em>Regional Map Condition Scheduling</em>. Starting with 1.42.0, Map Conditions will have their schedule offset based on regions, instead of a single, global schedule.</p>"
+    "en": "<p>We have been working to make sure that the way we schedule Map Conditions is aligned with your playing habits. To that end, we’re introducing <em>Regional Map Condition Scheduling</em>. Starting with 1.42.0, Map Conditions will have their schedule offset based on regions, instead of a single, global schedule.</p>",
+    "zh": "<p>我们一直在努力让地图条件的排期更贴合大家的游玩习惯。为此，我们推出了<em>分区域地图条件排期</em>。从 1.42.0 开始，地图条件的排期会按区域错开，不再使用单一的全球排期。</p>"
    },
    {
     "type": "html",
-    "en": "<p>This means that the schedule will shift to fit specific regions&#x27; peak hours to better match your experience. This way, it’ll be less likely to miss out on a map condition regardless of where you are.</p>"
+    "en": "<p>This means that the schedule will shift to fit specific regions&#x27; peak hours to better match your experience. This way, it’ll be less likely to miss out on a map condition regardless of where you are.</p>",
+    "zh": "<p>这意味着排期会根据各区域的高峰时段调整，更好地匹配你的游戏体验。这样一来，无论你身在何处，都更不容易错过某个地图条件。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Don’t hesitate to tell us how Regional Map Condition schedules are working by chatting with us on our Discord! We’re eager to see what everyone’s experience is like and make adjustments accordingly.</p>"
+    "en": "<p>Don’t hesitate to tell us how Regional Map Condition schedules are working by chatting with us on our Discord! We’re eager to see what everyone’s experience is like and make adjustments accordingly.</p>",
+    "zh": "<p>欢迎在我们的 Discord 上聊聊分区域地图条件排期的使用感受！我们很想知道大家的体验如何，并据此做出调整。</p>"
    },
    {
     "type": "html",
-    "en": "<p><em>Note: the </em><a href=\"https://arcraiders.com/map-conditions\" target=\"_blank\" rel=\"noopener\"><em>Map Condition tracker</em></a><em> on the website now reflects this change.</em></p>"
+    "en": "<p><em>Note: the </em><a href=\"https://arcraiders.com/map-conditions\" target=\"_blank\" rel=\"noopener\"><em>Map Condition tracker</em></a><em> on the website now reflects this change.</em></p>",
+    "zh": "<p><em>注：官网上的</em><a href=\"https://arcraiders.com/map-conditions\" target=\"_blank\" rel=\"noopener\"><em>地图条件追踪页面</em></a><em>已同步这项变更。</em></p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Following up about Fair Play </strong></h2>"
+    "en": "<h2><strong>Following up about Fair Play </strong></h2>",
+    "zh": "<h2><strong>公平游戏后续进展</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>It’s time to look at what’s been going on in the realm of Fair Play since our last chat <a href=\"https://arcraiders.com/news/live-update-1-36-0#maintaining-fair-play\" target=\"_blank\" rel=\"noopener\">a few weeks back</a>. Some new (and some recurring) topics have crossed our path since then, and we wanted to reassure you that keeping Topside safe against cheaters and exploits is a top priority for us, and will continue to be so.</p>"
+    "en": "<p>It’s time to look at what’s been going on in the realm of Fair Play since our last chat <a href=\"https://arcraiders.com/news/live-update-1-36-0#maintaining-fair-play\" target=\"_blank\" rel=\"noopener\">a few weeks back</a>. Some new (and some recurring) topics have crossed our path since then, and we wanted to reassure you that keeping Topside safe against cheaters and exploits is a top priority for us, and will continue to be so.</p>",
+    "zh": "<p>距离我们<a href=\"https://arcraiders.com/news/live-update-1-36-0#maintaining-fair-play\" target=\"_blank\" rel=\"noopener\">几周前</a>上一次谈公平游戏以来，又发生了不少事，是时候回顾一下了。这段时间出现了一些新的（也有一些老生常谈的）问题，我们想向大家保证：保护上层免受作弊和漏洞利用的侵害，一直是、也将继续是我们的头等大事。</p>"
    },
    {
     "type": "html",
-    "en": "<h3><strong>A Note on Third Party Software</strong></h3>"
+    "en": "<h3><strong>A Note on Third Party Software</strong></h3>",
+    "zh": "<h3><strong>关于第三方软件</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>When we see reports of third party software being used to gain an advantage of any kind, in-game or at account level, we investigate. The first and most important step is to verify the validity of the report and whether or not the software actually does what it claims to do. A lot of the time, claims are just that, and interacting with this kind of software carries a large amount of risk.<br> <br>Be aware that downloading unverified and unofficial software can put more than just your account at risk. Beyond getting banned and losing access to the game, your data and personal information could be exposed.</p>"
+    "en": "<p>When we see reports of third party software being used to gain an advantage of any kind, in-game or at account level, we investigate. The first and most important step is to verify the validity of the report and whether or not the software actually does what it claims to do. A lot of the time, claims are just that, and interacting with this kind of software carries a large amount of risk.<br> <br>Be aware that downloading unverified and unofficial software can put more than just your account at risk. Beyond getting banned and losing access to the game, your data and personal information could be exposed.</p>",
+    "zh": "<p>每当收到有人使用第三方软件获取任何形式优势（无论是游戏内还是账号层面）的举报，我们都会展开调查。第一步也是最重要的一步，是核实举报是否属实，以及该软件是否真的能做到它声称的事。很多时候，这些说法只是说说而已，而接触这类软件本身就有很大风险。<br> <br>请注意，下载未经验证的非官方软件，危及的可能不只是你的账号。除了被封禁、无法再玩游戏之外，你的数据和个人信息也可能因此泄露。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Remember that your account is only as secure as its weakest link. In order to protect your account, your purchases and progression, we strongly recommend making sure 2FA or passkeys are enabled on all external accounts connected to your Embark ID. Oh, and never share your credentials with anyone. No matter how many ducks they offer.</p>"
+    "en": "<p>Remember that your account is only as secure as its weakest link. In order to protect your account, your purchases and progression, we strongly recommend making sure 2FA or passkeys are enabled on all external accounts connected to your Embark ID. Oh, and never share your credentials with anyone. No matter how many ducks they offer.</p>",
+    "zh": "<p>请记住，账号的安全程度取决于最薄弱的一环。为了保护你的账号、购买内容和进度，我们强烈建议你为关联到 Embark ID 的所有外部账号开启双重验证或通行密钥。哦，还有，永远不要把登录凭证告诉任何人，不管对方开出多少只鸭子的价码。</p>"
    },
    {
     "type": "html",
-    "en": "<h3><strong>Recent Actions &amp; Future Plans</strong></h3>"
+    "en": "<h3><strong>Recent Actions &amp; Future Plans</strong></h3>",
+    "zh": "<h3><strong>近期行动与未来计划</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>Over the past few weeks, we have been making several improvements alongside Anybrain and Denuvo Anti-Cheat. This has resulted in swift action being taken against a large number of accounts that were using recently popularized cheating software.</p>"
+    "en": "<p>Over the past few weeks, we have been making several improvements alongside Anybrain and Denuvo Anti-Cheat. This has resulted in swift action being taken against a large number of accounts that were using recently popularized cheating software.</p>",
+    "zh": "<p>过去几周，我们与 Anybrain 和 Denuvo 反作弊合作做了多项改进，迅速处理了大量使用近期流行作弊软件的账号。</p>"
    },
    {
     "type": "html",
-    "en": "<p>There is also the matter of ensuring permanent sanctions for serial, blatant cheaters. We continue working on methods that make it more difficult for new accounts to be obtained and that discourage cheaters from returning.</p>"
+    "en": "<p>There is also the matter of ensuring permanent sanctions for serial, blatant cheaters. We continue working on methods that make it more difficult for new accounts to be obtained and that discourage cheaters from returning.</p>",
+    "zh": "<p>另一个问题是确保对屡教不改、明目张胆的作弊者实施永久处罚。我们会继续研究办法，让作弊者更难获取新账号，打消他们卷土重来的念头。</p>"
    },
    {
     "type": "html",
-    "en": "<p>There have been compounding improvements in our ability to also detect accounts that participated in what we classify as “economy exploits”, which means we can more quickly sanction offenders. These types of sanctions have been ongoing.</p>"
+    "en": "<p>There have been compounding improvements in our ability to also detect accounts that participated in what we classify as “economy exploits”, which means we can more quickly sanction offenders. These types of sanctions have been ongoing.</p>",
+    "zh": "<p>我们识别参与“经济漏洞利用”账号的能力也在不断提升，这意味着我们能更快地处罚违规者。这类处罚一直在持续进行。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Additionally, we have several simultaneous initiatives that are meant to address teaming and general matchmaking abuse. We know how important having a consistently good experience is, and that in certain regions or at certain times, it’s easier to run into groups of players that try to force their way into lobbies and engage in griefing. We’ll share more when all of these are ready.</p>"
+    "en": "<p>Additionally, we have several simultaneous initiatives that are meant to address teaming and general matchmaking abuse. We know how important having a consistently good experience is, and that in certain regions or at certain times, it’s easier to run into groups of players that try to force their way into lobbies and engage in griefing. We’ll share more when all of these are ready.</p>",
+    "zh": "<p>此外，我们还同时推进多项措施，以解决组队作弊和各种滥用匹配的行为。我们知道稳定良好的体验有多重要，也知道在某些地区或某些时段，更容易遇到强行挤进同一对局、恶意搞破坏的玩家团伙。等这些措施准备就绪，我们会分享更多信息。</p>"
    },
    {
     "type": "html",
-    "en": "<p>And that’s, of course, not all. We’ll keep building up all of the initiatives we mentioned and we’ll do our best to make sure that your experiences across the Rust Belt are fun, thrilling, and most importantly <em>fair</em>.</p>"
+    "en": "<p>And that’s, of course, not all. We’ll keep building up all of the initiatives we mentioned and we’ll do our best to make sure that your experiences across the Rust Belt are fun, thrilling, and most importantly <em>fair</em>.</p>",
+    "zh": "<p>当然，这还不是全部。我们会继续推进上面提到的所有措施，尽最大努力让大家在锈带的每一次冒险都有趣、刺激，最重要的是<em>公平</em>。</p>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Congratulations to the Winners of the Rubber Duck Design Contest!</strong></h2>"
+    "en": "<h2><strong>Congratulations to the Winners of the Rubber Duck Design Contest!</strong></h2>",
+    "zh": "<h2><strong>恭喜橡皮鸭设计大赛获奖者！</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<p>Last Thursday, the 3 finalists of the Rubber Duck Design Contest were selected via popular vote on our <a href=\"https://discord.gg/ekG4VTdg7R\" target=\"_blank\" rel=\"noopener\">Discord</a>. We have since begun working on bringing the ducks into the game, and we will add them in a future update! <br><br>Soon enough, you’ll be able to fill your Raider Den with ducks made by the super-talented <em>gekko.rar, im_AshCheeks and nassguhl. </em></p>"
+    "en": "<p>Last Thursday, the 3 finalists of the Rubber Duck Design Contest were selected via popular vote on our <a href=\"https://discord.gg/ekG4VTdg7R\" target=\"_blank\" rel=\"noopener\">Discord</a>. We have since begun working on bringing the ducks into the game, and we will add them in a future update! <br><br>Soon enough, you’ll be able to fill your Raider Den with ducks made by the super-talented <em>gekko.rar, im_AshCheeks and nassguhl. </em></p>",
+    "zh": "<p>上周四，橡皮鸭设计大赛的 3 位决赛获奖者已通过我们 <a href=\"https://discord.gg/ekG4VTdg7R\" target=\"_blank\" rel=\"noopener\">Discord</a> 上的大众投票选出。我们已经开始着手把这些小鸭子做进游戏，会在之后的更新中加入！<br><br>很快，你就能在奇袭者巢穴里摆满由才华横溢的 <em>gekko.rar、im_AshCheeks 和 nassguhl </em>设计的小鸭子了。</p>"
    },
    {
     "type": "image",
@@ -1266,71 +1526,88 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h2></h2>"
+    "en": "<h2></h2>",
+    "zh": "<h2></h2>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>Content and Bug Fixes</strong></h2>"
+    "en": "<h2><strong>Content and Bug Fixes</strong></h2>",
+    "zh": "<h2><strong>内容与问题修复</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<h3>Audio</h3>"
+    "en": "<h3>Audio</h3>",
+    "zh": "<h3>音频</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Refined footstep and movement sounds indoors: removed scuff sounds, improved audibility at distance, and updated occlusion and concrete surface cues.</li><li>Improved footstep audio when moving through foliage for clearer, more natural sound.</li><li>Added unique footstep sounds when moving over plastic cloth and tarp surfaces.</li><li>Added different audio for all Tier 3 magazine upgrades firing sounds.<br></li></ul>"
+    "en": "<ul><li>Refined footstep and movement sounds indoors: removed scuff sounds, improved audibility at distance, and updated occlusion and concrete surface cues.</li><li>Improved footstep audio when moving through foliage for clearer, more natural sound.</li><li>Added unique footstep sounds when moving over plastic cloth and tarp surfaces.</li><li>Added different audio for all Tier 3 magazine upgrades firing sounds.<br></li></ul>",
+    "zh": "<ul><li>优化了室内的脚步声和移动音效：移除了摩擦声，提升了远距离的可听度，并更新了遮挡效果和混凝土地面的声音提示。</li><li>改进了穿过植被时的脚步声，听起来更清晰自然。</li><li>在塑料布和防水布表面移动时，新增了专属的脚步声。</li><li>所有三级弹匣升级现在都有不同的开火音效。<br></li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Gameplay</h3>"
+    "en": "<h3>Gameplay</h3>",
+    "zh": "<h3>玩法</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>The Snitch can now call in a Rocketeer. Additionally, it can also call in a Firefly and Hornet duo. Snitch Scanners should not be affected by this change.</li><li>Fixed stomp attacks from the Queen and Matriarch sometimes hitting through walls or from much farther away than intended.</li><li>The Photoelectric Cloak now works against Turbine lightning attacks and Matriarch missiles.</li><li>Added spawn protection to the Surge Coil Trap to avoid affecting players as they spawn in.</li><li>Added the ability to rebind Quick Wheel slots.</li><li>The Dolabra, Hullcracker and Rascal now deal damage correctly in the Practice Range.</li></ul>"
+    "en": "<ul><li>The Snitch can now call in a Rocketeer. Additionally, it can also call in a Firefly and Hornet duo. Snitch Scanners should not be affected by this change.</li><li>Fixed stomp attacks from the Queen and Matriarch sometimes hitting through walls or from much farther away than intended.</li><li>The Photoelectric Cloak now works against Turbine lightning attacks and Matriarch missiles.</li><li>Added spawn protection to the Surge Coil Trap to avoid affecting players as they spawn in.</li><li>Added the ability to rebind Quick Wheel slots.</li><li>The Dolabra, Hullcracker and Rascal now deal damage correctly in the Practice Range.</li></ul>",
+    "zh": "<ul><li>告密者现在可以呼叫火箭手，也可以呼叫萤火虫和马蜂的双机组合。“告密者”扫描仪不受这项改动影响。</li><li>修复了女王和族母的践踏攻击有时会穿墙命中、或在远超预期的距离命中的问题。</li><li>光电斗篷现在对涡轮的闪电攻击和族母的导弹也有效。</li><li>为涌能线圈陷阱加入了出生保护，避免影响刚出生的玩家。</li><li>新增了重新绑定快速轮盘栏位按键的功能。</li><li>錾斧、裂甲者和无赖在练习靶场中现在能正确造成伤害。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Map</h3>"
+    "en": "<h3>Map</h3>",
+    "zh": "<h3>地图</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed an issue where a zip line in Buried City couldn’t be interacted with by repositioning it to ensure it can be used.</li></ul>"
+    "en": "<ul><li>Fixed an issue where a zip line in Buried City couldn’t be interacted with by repositioning it to ensure it can be used.</li></ul>",
+    "zh": "<ul><li>修复了掩埋废城中一条滑索无法互动的问题，已调整其位置，确保可以正常使用。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Performance</h3>"
+    "en": "<h3>Performance</h3>",
+    "zh": "<h3>性能</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Improved UI texture streaming cache for better memory efficiency and reliability.  </li></ul>"
+    "en": "<ul><li>Improved UI texture streaming cache for better memory efficiency and reliability.  </li></ul>",
+    "zh": "<ul><li>改进了界面贴图流送缓存，提升内存效率和可靠性。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>Stability</h3>"
+    "en": "<h3>Stability</h3>",
+    "zh": "<h3>稳定性</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed several crashes and made various improvements to stability.</li></ul>"
+    "en": "<ul><li>Fixed several crashes and made various improvements to stability.</li></ul>",
+    "zh": "<ul><li>修复了多个崩溃问题，并对稳定性做了多项改进。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h3>UI</h3>"
+    "en": "<h3>UI</h3>",
+    "zh": "<h3>界面</h3>"
    },
    {
     "type": "html",
-    "en": "<ul><li>Fixed project tiles incorrectly showing “Part X completed” on projects without parts.</li><li>Corrected spelling errors and updated localized text across multiple languages.</li><li>Polished matchmaking error messages for clarity.</li><li>Completed project quests now correctly bring you to the associated project page when pressing the “Claim” shortcut button in the logbook.</li><li>Added a Region label on the Map selection screen, which displays your current Matchmaking region.</li></ul>"
+    "en": "<ul><li>Fixed project tiles incorrectly showing “Part X completed” on projects without parts.</li><li>Corrected spelling errors and updated localized text across multiple languages.</li><li>Polished matchmaking error messages for clarity.</li><li>Completed project quests now correctly bring you to the associated project page when pressing the “Claim” shortcut button in the logbook.</li><li>Added a Region label on the Map selection screen, which displays your current Matchmaking region.</li></ul>",
+    "zh": "<ul><li>修复了没有分部的计划卡片错误显示“第 X 部分已完成”的问题。</li><li>修正了多种语言中的拼写错误，并更新了本地化文本。</li><li>优化了匹配错误提示，使其更清楚。</li><li>在日志中按下“领取”快捷按钮时，已完成的计划任务现在会正确跳转到对应的计划页面。</li><li>在地图选择界面新增了区域标签，显示你当前的匹配区域。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<h2><strong>KNOWN ISSUES</strong></h2>"
+    "en": "<h2><strong>KNOWN ISSUES</strong></h2>",
+    "zh": "<h2><strong>已知问题</strong></h2>"
    },
    {
     "type": "html",
-    "en": "<ul><li>We’re continuing to investigate reports of crashes on XBOX Series S. We apologize for the inconvenience and thank you for your reports. As soon as we know more, we’ll let you know. </li><li>We’re aware of issues with crashing on PC, related to Windows Update KB5121003. Please consult our <a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">workaround shared here</a> while we work on a fix.</li><li>Players on Epic may experience a sudden loss of keyboard input.</li><li><ul><li>While we look into this, we recommend disabling any Overlay you may have active. Additionally, you can try alt-tabbing out and back into the game.</li></ul></li><li>The Projects tab has a sticky notification dot.</li><li>The throw animation may sometimes fail to play when attempting to detonate a Trigger ‘Nade immediately after throwing it.</li><li>The weapon swap animation may appear broken if weapon swapping right after vaulting.</li><li>Player animations may appear broken when interrupting a search of the Baron Husk.</li><li>Shredders float to the ceiling in some rooms of the Hidden Bunker.</li><li>Leapers can jump through the ARC Turbine.</li><li>When bringing items that give Merits with you into a Raid, the items will wrongfully display a Merits icon.</li><li>Shots taken while riding ARC may not register correctly.</li><li>Some doors may allow player flashlights’ beams to pass through instead of blocking the emitted light.</li><li>We are aware of some clipping issues with the Triumph, Reaver and Azimuth outfits.</li><li>Old Ermal offers may appear to be available in the &#x27;Acquire and Craft&#x27; menu (visual only).</li></ul>"
+    "en": "<ul><li>We’re continuing to investigate reports of crashes on XBOX Series S. We apologize for the inconvenience and thank you for your reports. As soon as we know more, we’ll let you know. </li><li>We’re aware of issues with crashing on PC, related to Windows Update KB5121003. Please consult our <a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">workaround shared here</a> while we work on a fix.</li><li>Players on Epic may experience a sudden loss of keyboard input.</li><li><ul><li>While we look into this, we recommend disabling any Overlay you may have active. Additionally, you can try alt-tabbing out and back into the game.</li></ul></li><li>The Projects tab has a sticky notification dot.</li><li>The throw animation may sometimes fail to play when attempting to detonate a Trigger ‘Nade immediately after throwing it.</li><li>The weapon swap animation may appear broken if weapon swapping right after vaulting.</li><li>Player animations may appear broken when interrupting a search of the Baron Husk.</li><li>Shredders float to the ceiling in some rooms of the Hidden Bunker.</li><li>Leapers can jump through the ARC Turbine.</li><li>When bringing items that give Merits with you into a Raid, the items will wrongfully display a Merits icon.</li><li>Shots taken while riding ARC may not register correctly.</li><li>Some doors may allow player flashlights’ beams to pass through instead of blocking the emitted light.</li><li>We are aware of some clipping issues with the Triumph, Reaver and Azimuth outfits.</li><li>Old Ermal offers may appear to be available in the &#x27;Acquire and Craft&#x27; menu (visual only).</li></ul>",
+    "zh": "<ul><li>我们仍在调查 Xbox Series S 上的崩溃报告。给大家带来不便，我们深表歉意，也感谢大家的反馈。一有进展，我们会第一时间告知。</li><li>我们已知 PC 上与 Windows 更新 KB5121003 相关的崩溃问题。在修复期间，请参考<a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">这里分享的临时解决办法</a>。</li><li>Epic 平台的玩家可能会突然失去键盘输入。</li><li><ul><li>在我们调查期间，建议关闭所有正在使用的游戏内覆盖层。你也可以尝试按 Alt+Tab 切出再切回游戏。</li></ul></li><li>计划标签页上的通知红点无法消除。</li><li>投出触发式手雷后立即引爆，投掷动画有时可能无法播放。</li><li>翻越后立即切换武器，切枪动画可能显示异常。</li><li>中断搜索“男爵”残骸时，玩家动画可能显示异常。</li><li>在隐藏地堡的部分房间中，粉碎者会飘到天花板上。</li><li>跳跃者跳跃时可以穿过ARC涡轮。</li><li>把能获得功勋的物品带进一局时，这些物品会错误地显示功勋图标。</li><li>骑乘 ARC 时开的枪可能无法正确判定命中。</li><li>部分门会让玩家手电筒的光束穿过，而不是挡住光线。</li><li>我们已知 Triumph、Reaver 和 Azimuth 服装存在一些穿模问题。</li><li>旧的 Ermal 商品可能会显示在“获取与制作”菜单中（仅显示问题）。</li></ul>"
    },
    {
     "type": "html",
-    "en": "<p>See you Topside,<br>//Ossen &amp; Raz</p>"
+    "en": "<p>See you Topside,<br>//Ossen &amp; Raz</p>",
+    "zh": "<p>上层见，<br>//Ossen &amp; Raz</p>"
    }
   ]
  },
@@ -1341,7 +1618,8 @@ window.ARC_NEWS = [
   "tags": [],
   "thumb": "https://assets.arcraiders.com/article-cards/7ba2a90c-db37-ArcRaiders_Blogs_GeneralAsset_PatchNotes_300x100-300x100.png",
   "title": {
-   "en": "Frozen Trail is coming October 8!"
+   "en": "Frozen Trail is coming October 8!",
+   "zh": "Frozen Trail 将于 10 月 8 日到来！"
   },
   "body": [
    {
@@ -1350,27 +1628,33 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p><strong>Greetings from Embark, Raiders!</strong></p>"
+    "en": "<p><strong>Greetings from Embark, Raiders!</strong></p>",
+    "zh": "<p><strong>奇袭者们，Embark 向大家问好！</strong></p>"
    },
    {
     "type": "html",
-    "en": "<p>As we head toward October, the Frozen Trail update draws closer. We wanted to take a moment to share what we’ve been working on since we communicated <a href=\"https://arcraiders.com/news/development-update\" target=\"_blank\" rel=\"noopener\">how we’re changing updates</a>.</p>"
+    "en": "<p>As we head toward October, the Frozen Trail update draws closer. We wanted to take a moment to share what we’ve been working on since we communicated <a href=\"https://arcraiders.com/news/development-update\" target=\"_blank\" rel=\"noopener\">how we’re changing updates</a>.</p>",
+    "zh": "<p>随着 10 月临近，Frozen Trail 更新也越来越近。自从我们说明<a href=\"https://arcraiders.com/news/development-update\" target=\"_blank\" rel=\"noopener\">更新方式的调整</a>以来，我们想花点时间和大家分享这段时间在做些什么。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Back in May, we shared that we’d be moving to fewer, larger updates. We know that means longer stretches between major releases, and we appreciate everyone who has stuck with us while we’ve continued to ship new content like projects, events, a new Trader, and ongoing improvements based on your feedback!</p>"
+    "en": "<p>Back in May, we shared that we’d be moving to fewer, larger updates. We know that means longer stretches between major releases, and we appreciate everyone who has stuck with us while we’ve continued to ship new content like projects, events, a new Trader, and ongoing improvements based on your feedback!</p>",
+    "zh": "<p>早在 5 月，我们就说过将改为次数更少、规模更大的更新。我们知道这意味着大版本之间的间隔会更长，也非常感谢一直陪伴我们的每一位玩家；这段时间我们也在持续推出计划、活动、一位新商人等新内容，以及根据大家反馈做出的各项改进！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Behind the scenes, our focus has been firmly on Frozen Trail. It’s going to be our biggest update since launch, and it’s been designed to address some of the broader questions that the community has been asking. Nearly every part of the game has benefited from what we’ve learned over the past few months. Here’s a look at some of what we’ve been working on.</p>"
+    "en": "<p>Behind the scenes, our focus has been firmly on Frozen Trail. It’s going to be our biggest update since launch, and it’s been designed to address some of the broader questions that the community has been asking. Nearly every part of the game has benefited from what we’ve learned over the past few months. Here’s a look at some of what we’ve been working on.</p>",
+    "zh": "<p>在幕后，我们的重心一直牢牢放在 Frozen Trail 上。这将是游戏发售以来规模最大的一次更新，也专门针对社区一直在关心的一些更宏观的问题而设计。过去几个月积累的经验，几乎让游戏的每个部分都有所受益。下面就来看看我们正在做的部分内容。</p>"
    },
    {
     "type": "html",
-    "en": "<h3><strong>The Next Frontier</strong></h3>"
+    "en": "<h3><strong>The Next Frontier</strong></h3>",
+    "zh": "<h3><strong>下一片边疆</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>At the heart of Frozen Trail is our newest map. Shani will call upon Raiders to investigate an unprecedented signal emanating from beyond the mountains. Something big has happened here – could anyone resist being a part of the initial scouting party? </p>"
+    "en": "<p>At the heart of Frozen Trail is our newest map. Shani will call upon Raiders to investigate an unprecedented signal emanating from beyond the mountains. Something big has happened here – could anyone resist being a part of the initial scouting party? </p>",
+    "zh": "<p>Frozen Trail 的核心是我们的最新地图。萨尼将召集奇袭者，调查从群山之外传来的前所未有的信号。那里发生了大事，谁能忍住不加入首支侦察队呢？</p>"
    },
    {
     "type": "image",
@@ -1378,71 +1662,88 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Explore a harsh, frozen settlement nestled beneath towering mountains at the edge of the Rust Belt. Once home to thriving villages, factories, research facilities, and an observatory, long since abandoned.</p>"
+    "en": "<p>Explore a harsh, frozen settlement nestled beneath towering mountains at the edge of the Rust Belt. Once home to thriving villages, factories, research facilities, and an observatory, long since abandoned.</p>",
+    "zh": "<p>探索一处坐落在锈带边缘巍峨群山之下、严酷冰冷的聚居地。这里曾有繁荣的村庄、工厂、研究设施和一座天文台，如今早已荒废。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Building the new map has challenged our level design team in exciting new ways. We’ve focused on creating an ambitious environment with greater verticality, exploration, and opportunities for discovery. You’ll encounter threats above and below ground, and navigate environments that no Raiders have seen before. </p>"
+    "en": "<p>Building the new map has challenged our level design team in exciting new ways. We’ve focused on creating an ambitious environment with greater verticality, exploration, and opportunities for discovery. You’ll encounter threats above and below ground, and navigate environments that no Raiders have seen before. </p>",
+    "zh": "<p>打造这张新地图，以令人兴奋的新方式考验着我们的关卡设计团队。我们致力于打造一个雄心勃勃的环境，拥有更强的垂直感、更多探索空间和发现机会。你将在地上和地下都遭遇威胁，穿越从未有奇袭者见过的环境。</p>"
    },
    {
     "type": "html",
-    "en": "<p>We’ve recently completed a round of user experience research testing, and our team is currently iterating to ensure the new map is as exciting as possible.</p>"
+    "en": "<p>We’ve recently completed a round of user experience research testing, and our team is currently iterating to ensure the new map is as exciting as possible.</p>",
+    "zh": "<p>我们最近完成了一轮用户体验研究测试，团队目前正在反复打磨，确保新地图尽可能精彩。</p>"
    },
    {
     "type": "html",
-    "en": "<h3><strong>New High-level Challenge</strong></h3>"
+    "en": "<h3><strong>New High-level Challenge</strong></h3>",
+    "zh": "<h3><strong>全新高难度挑战</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>The Frozen Trail update will also introduce an enormous new ARC Operation designed for experienced Raiders looking to push themselves even further.</p>"
+    "en": "<p>The Frozen Trail update will also introduce an enormous new ARC Operation designed for experienced Raiders looking to push themselves even further.</p>",
+    "zh": "<p>Frozen Trail 更新还将推出一项规模庞大的全新 ARC行动，专为想要进一步挑战自我的资深奇袭者设计。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Without giving too much away, this new activity is built around many of the ideas that have become increasingly important to us throughout development: meaningful decisions, dynamic encounters, and moments that demand cooperation and careful judgment.</p>"
+    "en": "<p>Without giving too much away, this new activity is built around many of the ideas that have become increasingly important to us throughout development: meaningful decisions, dynamic encounters, and moments that demand cooperation and careful judgment.</p>",
+    "zh": "<p>先不剧透太多，这项新活动围绕着开发过程中对我们越来越重要的几个理念打造：有分量的抉择、充满变数的遭遇，以及需要协作与审慎判断的关键时刻。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Success won’t come easily. You’ll need to balance combat, teamwork, risk, and survival in what we believe will be one of the most intense experiences ARC Raiders has offered to date – one that rewards those willing to rise to the challenge.</p>"
+    "en": "<p>Success won’t come easily. You’ll need to balance combat, teamwork, risk, and survival in what we believe will be one of the most intense experiences ARC Raiders has offered to date – one that rewards those willing to rise to the challenge.</p>",
+    "zh": "<p>成功不会轻易到手。你需要在战斗、团队配合、风险与生存之间取得平衡；我们相信，这将是《ARC Raiders》迄今为止最紧张刺激的体验之一，也会回报那些敢于迎接挑战的人。</p>"
    },
    {
     "type": "html",
-    "en": "<p>We’ll save more details for the full reveal later – but we’re excited for you to experience it for yourselves.</p>"
+    "en": "<p>We’ll save more details for the full reveal later – but we’re excited for you to experience it for yourselves.</p>",
+    "zh": "<p>更多细节我们留到之后的完整揭晓，但我们已经迫不及待想让你亲自体验了。</p>"
    },
    {
     "type": "html",
-    "en": "<h3><strong>New ARC, New Threats</strong></h3>"
+    "en": "<h3><strong>New ARC, New Threats</strong></h3>",
+    "zh": "<h3><strong>新的 ARC，新的威胁</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>Our team has been hard at work developing new ARC threats that will arrive alongside the new map, each designed to challenge the ways you’ve learned to move, fight, and adapt. These new ARC enemies range from a small and nifty problem-maker to an enormous machine that will halt you in your tracks. </p>"
+    "en": "<p>Our team has been hard at work developing new ARC threats that will arrive alongside the new map, each designed to challenge the ways you’ve learned to move, fight, and adapt. These new ARC enemies range from a small and nifty problem-maker to an enormous machine that will halt you in your tracks. </p>",
+    "zh": "<p>团队一直在全力开发将随新地图一同登场的新 ARC 威胁，每一种都旨在挑战你已经熟悉的移动、战斗和应变方式。这些新 ARC 敌人既有小巧灵活的捣蛋鬼，也有能让你寸步难行的庞然巨物。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Creating new ARC is one of the more involved parts of development. From early concepts and animation to behavior and machine learning systems that give them their distinctive “spark of life”, every enemy goes through months of iteration to get right. We think it’ll be worth the wait, and we can’t wait to see what you think.</p>"
+    "en": "<p>Creating new ARC is one of the more involved parts of development. From early concepts and animation to behavior and machine learning systems that give them their distinctive “spark of life”, every enemy goes through months of iteration to get right. We think it’ll be worth the wait, and we can’t wait to see what you think.</p>",
+    "zh": "<p>制作新的 ARC 是开发中最费工夫的环节之一。从早期概念、动画，到赋予它们独特“生命火花”的行为与机器学习系统，每个敌人都要经过数月的反复打磨才能成型。我们相信这值得等待，也非常期待听到大家的看法。</p>"
    },
    {
     "type": "html",
-    "en": "<h3><strong>Deepening Progression</strong></h3>"
+    "en": "<h3><strong>Deepening Progression</strong></h3>",
+    "zh": "<h3><strong>更有深度的成长</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>Frozen Trail is also evolving what it means to be a Raider.</p>"
+    "en": "<p>Frozen Trail is also evolving what it means to be a Raider.</p>",
+    "zh": "<p>Frozen Trail 也将重新诠释“奇袭者”的意义。</p>"
    },
    {
     "type": "html",
-    "en": "<p>One lesson that’s continued to shape our thinking is that the most rewarding raids are driven by meaningful choices. That’s influenced how we’re approaching progression throughout Frozen Trail, allowing you to build a deeper identity in the Rust Belt. </p>"
+    "en": "<p>One lesson that’s continued to shape our thinking is that the most rewarding raids are driven by meaningful choices. That’s influenced how we’re approaching progression throughout Frozen Trail, allowing you to build a deeper identity in the Rust Belt. </p>",
+    "zh": "<p>有一条经验一直影响着我们的思路：最有回报感的奇袭，源自有分量的选择。这也影响了我们在 Frozen Trail 中设计成长系统的方式，让你能在锈带塑造更有深度的身份。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Your Raider Den has served you well, but it’s time to expand. We&#x27;re building deeper progression systems, giving players more ways to craft their own journey and build toward long-term goals. </p>"
+    "en": "<p>Your Raider Den has served you well, but it’s time to expand. We&#x27;re building deeper progression systems, giving players more ways to craft their own journey and build toward long-term goals. </p>",
+    "zh": "<p>你的奇袭者巢穴一直很称职，但是时候扩建了。我们正在打造更有深度的成长系统，让玩家有更多方式规划自己的旅程，朝长期目标努力。</p>"
    },
    {
     "type": "html",
-    "en": "<p>That’s why your Raider will have the opportunity to inhabit a new space; the Outpost. After spending months on the back foot, hiding underground, it’s time to start taking the fight to ARC. Decorate your Outpost, research new elements of the world, and take your first steps to reclaiming the surface.</p>"
+    "en": "<p>That’s why your Raider will have the opportunity to inhabit a new space; the Outpost. After spending months on the back foot, hiding underground, it’s time to start taking the fight to ARC. Decorate your Outpost, research new elements of the world, and take your first steps to reclaiming the surface.</p>",
+    "zh": "<p>正因如此，你的奇袭者将有机会入驻一个新空间：哨站。在地下躲藏、处处被动了好几个月之后，是时候主动向 ARC 发起反击了。装点你的哨站，研究这个世界的新元素，迈出夺回地表的第一步。</p>"
    },
    {
     "type": "html",
-    "en": "<p>On top of Outposts, we’re also adjusting the Skill Tree to give you more agency over the kind of Raider you want to become. Raider Decks have also been on our radar, with the focus on making them more engaging and rewarding for players. </p>"
+    "en": "<p>On top of Outposts, we’re also adjusting the Skill Tree to give you more agency over the kind of Raider you want to become. Raider Decks have also been on our radar, with the focus on making them more engaging and rewarding for players. </p>",
+    "zh": "<p>除了哨站，我们还在调整技能树，让你对想成为怎样的奇袭者有更多自主权。奇袭者套件也在我们的改进计划之中，重点是让它对玩家更有吸引力、更有回报。</p>"
    },
    {
     "type": "image",
@@ -1450,39 +1751,48 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<h3><strong>And More…</strong></h3>"
+    "en": "<h3><strong>And More…</strong></h3>",
+    "zh": "<h3><strong>还有更多……</strong></h3>"
    },
    {
     "type": "html",
-    "en": "<p>These are just a few of the additions coming in Frozen Trail.</p>"
+    "en": "<p>These are just a few of the additions coming in Frozen Trail.</p>",
+    "zh": "<p>以上只是 Frozen Trail 新增内容的一小部分。</p>"
    },
    {
     "type": "html",
-    "en": "<p>The team is continuing to work on new content that will enhance your experience, as well as new weapons (and ways to personalize them!), gadgets, cosmetics, instruments, and plenty of other surprises we’ll talk about closer to launch. </p>"
+    "en": "<p>The team is continuing to work on new content that will enhance your experience, as well as new weapons (and ways to personalize them!), gadgets, cosmetics, instruments, and plenty of other surprises we’ll talk about closer to launch. </p>",
+    "zh": "<p>团队仍在继续开发能提升游戏体验的新内容，以及新武器（还有个性化武器的新方式！）、小道具、外观、乐器和许多其他惊喜，我们会在临近上线时再详细介绍。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Alongside all of that, we&#x27;ll continue improving the core ARC Raiders experience through ongoing work on matchmaking, anti-cheat, stability, and quality-of-life updates. While these improvements may not always be the headline features, they remain a critical part of making every raid feel balanced and enjoyable. </p>"
+    "en": "<p>Alongside all of that, we&#x27;ll continue improving the core ARC Raiders experience through ongoing work on matchmaking, anti-cheat, stability, and quality-of-life updates. While these improvements may not always be the headline features, they remain a critical part of making every raid feel balanced and enjoyable. </p>",
+    "zh": "<p>与此同时，我们也会继续在匹配、反作弊、稳定性和便利性更新等方面持续投入，改进《ARC Raiders》的核心体验。这些改进未必总是头条功能，却是让每一局都保持平衡、好玩的关键。</p>"
    },
    {
     "type": "html",
-    "en": "<p>You’ll be able to experience Frozen Trail for yourself on October 8, and we will be sharing more details with you in September. </p>"
+    "en": "<p>You’ll be able to experience Frozen Trail for yourself on October 8, and we will be sharing more details with you in September. </p>",
+    "zh": "<p>10 月 8 日，你就能亲自体验 Frozen Trail 了，我们也会在 9 月与大家分享更多细节。</p>"
    },
    {
     "type": "html",
-    "en": "<p>Until then, if you’re heading to gamescom in Cologne, come say hello! We’d love to meet you and see you experience ARC Raiders in person.</p>"
+    "en": "<p>Until then, if you’re heading to gamescom in Cologne, come say hello! We’d love to meet you and see you experience ARC Raiders in person.</p>",
+    "zh": "<p>在那之前，如果你要去科隆参加科隆游戏展，欢迎来打个招呼！我们很想见见你，看你亲身体验《ARC Raiders》。</p>"
    },
    {
     "type": "html",
-    "en": "<p>See you topside,</p>"
+    "en": "<p>See you topside,</p>",
+    "zh": "<p>上层见，</p>"
    },
    {
     "type": "html",
-    "en": "<p>Aleksander Grøndal</p>"
+    "en": "<p>Aleksander Grøndal</p>",
+    "zh": "<p>Aleksander Grøndal</p>"
    },
    {
     "type": "html",
-    "en": "<p>Executive Producer</p>"
+    "en": "<p>Executive Producer</p>",
+    "zh": "<p>执行制作人</p>"
    }
   ]
  },
@@ -1495,7 +1805,8 @@ window.ARC_NEWS = [
   ],
   "thumb": "https://assets.arcraiders.com/article-cards/9f1dc4b5-342d-store-update-1.41-card-300x100-300x100.png",
   "title": {
-   "en": "Store Update 1.41.0"
+   "en": "Store Update 1.41.0",
+   "zh": "商店更新 1.41.0"
   },
   "body": [
    {
@@ -1504,19 +1815,23 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Raiders!</p>"
+    "en": "<p>Raiders!</p>",
+    "zh": "<p>奇袭者们！</p>"
    },
    {
     "type": "html",
-    "en": "<p>Store Update 1.41.0 is going live right now and brings two new colour variants for the Vulpine outfit (green/camo and black). If you already own the outfit, you will get the colour variants automatically. No restart required.</p>"
+    "en": "<p>Store Update 1.41.0 is going live right now and brings two new colour variants for the Vulpine outfit (green/camo and black). If you already own the outfit, you will get the colour variants automatically. No restart required.</p>",
+    "zh": "<p>商店更新 1.41.0 现已上线，为 Vulpine 服装带来两种新配色（绿色迷彩和黑色）。如果你已拥有这套服装，将自动获得新配色，无需重启游戏。</p>"
    },
    {
     "type": "html",
-    "en": "<p>We’re also deploying a small hotfix for Steam players, aimed at fixing a variety of crashes and errors that occur when launching the game. Thank you for the reports around these issues.</p>"
+    "en": "<p>We’re also deploying a small hotfix for Steam players, aimed at fixing a variety of crashes and errors that occur when launching the game. Thank you for the reports around these issues.</p>",
+    "zh": "<p>我们还为 Steam 玩家推送了一个小型热修复，用于修复启动游戏时出现的多种崩溃和错误。感谢大家对这些问题的反馈。</p>"
    },
    {
     "type": "html",
-    "en": "<p>See you Topside,<br>//Ossen</p>"
+    "en": "<p>See you Topside,<br>//Ossen</p>",
+    "zh": "<p>上层见，<br>//Ossen</p>"
    }
   ]
  }

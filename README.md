@@ -1,6 +1,6 @@
 # ARC Raiders 维基
 
-非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、藏身处、ARC、地图、商人与计划，以及同步自官网的公告和地图条件排期。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，中文使用游戏官方译名。
+非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、工坊（Hideout）、ARC、地图、商人与计划，以及同步自官网的公告和地图条件排期。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，中文使用简中客户端的官方译名。
 
 纯静态站点，浏览不需要安装或构建。npm 依赖只用于公告翻译脚本。
 
@@ -36,7 +36,10 @@ data/                   由构建脚本生成的数据包，不要手动修改
 vendor/arcraiders-data  上游数据（git 子模块）
 scripts/
   build-data.mjs        从上游生成 data/ 与 assets/img/game/
-  glossary.mjs          上游缺少中文的术语（商人、ARC 名称等），注明来源
+  glossary-client.json  客户端官方中文译名（由 import-glossary.mjs 从字幕术语表导入，不要手动修改）
+  import-glossary.mjs   更新 glossary-client.json
+  glossary.mjs          读取客户端译名，并补充术语表没有的名称与标签，注明来源
+  translations.mjs      本站自译的文字（ARC 介绍、物品描述等），以英文原文为键
   fetch-news.mjs        同步官网公告并翻译
   fetch-map-conditions.mjs  同步官网的地图条件排期
   build-site.mjs        把待发布的文件复制到 dist/
@@ -75,7 +78,7 @@ npm install
 ANTHROPIC_API_KEY=你的密钥 npm run news
 ```
 
-官网只有英文。设置了 `ANTHROPIC_API_KEY` 时，新文章或有改动的文章会用 Claude（`claude-opus-5`）翻译成简体中文，并按游戏数据中的官方译名处理物品、任务、地图等名词；译文缓存在 `content/news-zh.json`，同一篇文章不会重复翻译。没有密钥时只更新英文，中文界面会注明"尚未翻译"。
+官网只有英文。设置了 `ANTHROPIC_API_KEY` 时，新文章或有改动的文章会用 Claude（`claude-opus-5`）翻译成简体中文，并按客户端术语表和游戏数据中的译名处理物品、任务、地图、地点等名词；译文缓存在 `content/news-zh.json`，同一篇文章不会重复翻译。没有密钥时只更新英文，中文界面会注明"尚未翻译"。
 
 **自动同步**：`.github/workflows/news-sync.yml` 每天 03:17 UTC 运行一次，有新内容时开启或更新名为 "Sync official news" 的 PR，合并后网站即更新。启用前需要：
 
@@ -111,7 +114,7 @@ node scripts/fetch-map-conditions.mjs --force   # 总是写入
 ## 约定
 
 - **语言**：界面文字写在 `assets/js/strings.js`；数据中的文字是 `{ en, zh }`，用 `ARC.L()` 取当前语言，缺中文时回退英文。语言选择保存在浏览器本地，默认中文。
-- **译名**：优先使用上游数据中的官方中文（如 奇袭者、斯佩兰扎、藏身处）。上游没有的术语补在 `scripts/glossary.mjs`，并标明是游戏原文（game）还是本站译法（site）。ARC 的介绍目前只有英文，页面上会注明。
+- **译名**：以 video-chinese-subtitles 技能里的 ARC Raiders 术语表为准，它取自简中客户端（1.47.0）的语言文件，如 奇袭者、上层、工坊、地图条件、信用点、钱币。上游 zh-CN 混有 arctracker 自己的译法（如 快捷使用物品、背包强化、地表材料、硬币），构建时一律让位给客户端译名。术语表更新后运行 `node scripts/import-glossary.mjs` 再重新构建。术语表没有的名称补在 `scripts/glossary.mjs` 的 `NAMES`；上游缺中文或译得不好的句子写在 `scripts/translations.mjs` 的 `TEXT`，以英文原文为键，上游改写英文后自动回退。上游中文里与术语表冲突的零散用词在 `TERM_FIXES` 中统一替换。
 - **配色**：色板取自游戏标志。四条色带各代表一个分区：青色为世界、绿色为装备、黄色为成长、红色为斯佩兰扎；物品稀有度沿用游戏内颜色。
 - **链接**：每条资料都能用 `#id` 直接定位，例如 `pages/items.html#anvil_i`、`pages/quests.html#a_bad_feeling`。物品页的筛选条件保存在网址参数中，如 `?category=weapons&rarity=Epic`。
 
