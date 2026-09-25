@@ -1,12 +1,14 @@
-/* Map conditions on the home page: what is on now and what comes next per
-   condition, with live countdowns in the reader's server region. The schedule
-   comes from content/map-conditions.js (scripts/fetch-map-conditions.mjs). */
+/* Map conditions on the home page: a live panel in the hero, so they show
+   without scrolling, and the full section with what is on now and what comes
+   next per condition. Countdowns tick in the reader's server region. The
+   schedule comes from content/map-conditions.js (scripts/fetch-map-conditions.mjs). */
 
 (function () {
   const { html, mount, t, L, url, link } = ARC;
   const REGION_KEY = 'arc-wiki-region';
   const REGIONS = ['europe', 'north-america', 'brazil', 'east-asia', 'oceania'];
   let root = null;
+  let hero = null;
   let region = null;
   let nextChange = Infinity;
 
@@ -105,16 +107,55 @@
     </li>`;
   }
 
+  // Compact version for the hero: what is on, then the next start and what it brings.
+  // Conditions usually rotate together on the hour; then one countdown in the head does.
+  function heroBody(active, next) {
+    const data = schedule();
+    const soonest = next.length ? Math.min(...next.map((g) => g.start)) : null;
+    const coming = next.filter((g) => g.start === soonest);
+    const shared = active.length && active.every((g) => g.end === active[0].end) ? active[0].end : null;
+    mount(
+      hero.querySelector('.now__count'),
+      shared ? html`<span class="num" data-at="${shared}" data-kind="end">${countdown(shared, 'end')}</span>` : ''
+    );
+    return html`${active.length
+      ? html`<ul class="now__list">${active.map((g) => {
+          const c = data.conditions[g.id];
+          return html`<li class="now__item">
+            ${c.icon ? html`<img class="now__icon" src="${ARC.asset(c.icon)}" alt="" data-fallback>` : html`<span class="now__icon"></span>`}
+            <span class="now__text"><span class="now__name">${L(c.name)}</span>
+              <span class="now__meta">${g.maps.map((m) => L(data.maps[m])).join(' · ')}${
+                shared ? '' : html` · <span class="num" data-at="${g.end}" data-kind="end">${countdown(g.end, 'end')}</span>`
+              }</span></span>
+          </li>`;
+        })}</ul>`
+      : html`<p class="note">${t('cond.none')}</p>`}
+    <a class="now__next" href="#conditions">
+      ${coming.length
+        ? html`<span class="now__next-names">${t('cond.next')} · <span class="num" data-at="${soonest}" data-kind="start">${countdown(soonest, 'start')}</span>${
+            ARC.lang === 'zh' ? '：' : ': '
+          }${coming.map((g) => L(data.conditions[g.id].name)).join(ARC.lang === 'zh' ? '、' : ', ')}</span>`
+        : html`<span class="now__next-names"></span>`}
+      <span class="now__next-all">${t('cond.all')}</span></a>`;
+  }
+
   function renderLists() {
     const data = schedule();
     const lists = root.querySelector('.conditions');
+    const heroList = hero && hero.querySelector('.now__body');
     if (now() >= data.until) {
       nextChange = Infinity;
-      mount(lists, html`<p class="empty">${t('cond.stale')} <a href="${data.source}" target="_blank" rel="noopener">${t('cond.source')}</a></p>`);
+      const stale = html`<p class="empty">${t('cond.stale')} <a href="${data.source}" target="_blank" rel="noopener">${t('cond.source')}</a></p>`;
+      mount(lists, stale);
+      if (heroList) {
+        mount(hero.querySelector('.now__count'), '');
+        mount(heroList, stale);
+      }
       return;
     }
     const { active, next } = groups();
     nextChange = Math.min(data.until, ...active.map((g) => g.end), ...next.map((g) => g.start));
+    if (heroList) mount(heroList, heroBody(active, next));
     mount(
       lists,
       html`<div class="conditions__group">
@@ -135,14 +176,23 @@
     if (!root || !data) return;
     const available = REGIONS.filter((r) => data.regions.includes(r)).concat(data.regions.filter((r) => !REGIONS.includes(r)));
     if (!available.includes(region)) region = pickRegion(available);
+    const options = available.map((r) => html`<option value="${r}"${r === region ? ' selected' : ''}>${regionName(r)}</option>`);
+    if (hero)
+      mount(
+        hero,
+        html`<div class="now__head">
+          <span class="now__title"><span class="live-dot" aria-hidden="true"></span>${t('home.conditions')} · ${t('cond.active')}</span>
+          <span class="now__count"></span>
+          <select class="select now__region" data-region aria-label="${t('cond.region')}">${options}</select>
+        </div>
+        <div class="now__body"></div>`
+      );
     mount(
       root,
       html`<div class="section__head">
         <h2>${t('home.conditions')}</h2>
         <label class="conditions__region"><span class="note">${t('cond.region')}</span>
-          <select class="select" data-region>${available.map(
-            (r) => html`<option value="${r}"${r === region ? ' selected' : ''}>${regionName(r)}</option>`
-          )}</select></label>
+          <select class="select" data-region>${options}</select></label>
       </div>
       <div class="conditions"></div>
       <p class="note conditions__note">${t('cond.note')}
@@ -154,9 +204,11 @@
   function tick() {
     if (!root || !schedule()) return;
     if (now() >= nextChange) return renderLists();
-    root.querySelectorAll('[data-at]').forEach((el) => {
-      el.textContent = countdown(Number(el.dataset.at), el.dataset.kind);
-    });
+    [root, hero].forEach((scope) =>
+      scope?.querySelectorAll('[data-at]').forEach((el) => {
+        el.textContent = countdown(Number(el.dataset.at), el.dataset.kind);
+      })
+    );
   }
 
   // Tabs left open pick up the newest published schedule once an hour.
@@ -170,14 +222,18 @@
     document.head.append(script);
   }
 
-  function start(el) {
+  // `el` holds the full section; `heroEl`, if given, the live panel in the hero.
+  function start(el, heroEl) {
     root = el;
+    hero = heroEl || null;
     if (!root || !schedule()) {
       if (root) root.hidden = true;
       return;
     }
+    if (hero) hero.hidden = false;
     render();
-    root.addEventListener('change', (e) => {
+    // Both panels have a region picker; changing either one moves both.
+    document.addEventListener('change', (e) => {
       if (!e.target.matches('[data-region]')) return;
       region = e.target.value;
       try {
@@ -185,6 +241,7 @@
       } catch (err) {
         /* not saved; still switch for this visit */
       }
+      document.querySelectorAll('[data-region]').forEach((select) => (select.value = region));
       renderLists();
     });
     setInterval(tick, 1000);

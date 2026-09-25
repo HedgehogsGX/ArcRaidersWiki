@@ -210,6 +210,155 @@
   }
 }
 
+/* The live panel in the hero, so conditions show without scrolling. */
+.now {
+  margin-top: 24px;
+  max-width: 480px;
+  padding: 12px 14px;
+  border: 1px solid rgba(235, 230, 215, 0.3);
+  border-radius: var(--radius);
+  background: rgba(19, 9, 24, 0.8);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.now[hidden] {
+  display: none;
+}
+
+.now__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.now__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--bone-2);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.now__count {
+  flex: 1;
+  color: var(--tone);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.now__region.select {
+  height: 28px;
+  padding-left: 10px;
+  padding-right: 28px;
+  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
+  font-size: 0.8125rem;
+}
+
+.now__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.now__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.now__icon {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.now__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.now__name,
+.now__meta {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.now__name {
+  font-weight: 500;
+}
+
+.now__meta {
+  color: var(--dust);
+  font-size: var(--step--1);
+}
+
+.now__meta .num {
+  color: var(--tone);
+}
+
+.now__next {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  color: var(--bone-2);
+  font-size: var(--step--1);
+  text-decoration: none;
+}
+
+.now__next-names {
+  flex: 1;
+  min-width: 0;
+}
+
+.now__next-all {
+  color: var(--tone);
+  white-space: nowrap;
+}
+
+.now__next:hover .now__next-all {
+  text-decoration: underline;
+}
+
+/* Phones: straight under the title, so it is on screen before any scrolling. */
+@media (max-width: 859px) {
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__content > * {
+    order: 2;
+  }
+
+  .hero__content > .hero__title {
+    order: 0;
+  }
+
+  .now {
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 359px) {
+  .now__list {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 520px) {
   .section__head:has(.conditions__region) {
     flex-wrap: wrap;

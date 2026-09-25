@@ -81,7 +81,7 @@
   }
 
   render();
-  ARC.conditions.start(document.getElementById('conditions'));
+  ARC.conditions.start(document.getElementById('conditions'), document.getElementById('now'));
   ARC.setupSearch(document.querySelector('.search--hero'));
   document.addEventListener('arc:lang', render);
 })();

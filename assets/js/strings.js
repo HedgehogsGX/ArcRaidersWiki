@@ -91,6 +91,8 @@ window.ARC_STRINGS = {
   'cond.endsIn': { zh: '剩余 {t}', en: '{t} left' },
   'cond.startsIn': { zh: '{t} 后开始', en: 'in {t}' },
   'cond.tomorrow': { zh: '明天', en: 'Tomorrow' },
+  'cond.next': { zh: '接下来', en: 'Next' },
+  'cond.all': { zh: '全部排期', en: 'Full schedule' },
   'cond.note': {
     zh: '时间按你的本地时区显示。排期取自官网，每小时核对一次。',
     en: 'Times are in your local time zone. The schedule comes from the official site and is checked every hour.',
