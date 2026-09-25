@@ -36,8 +36,11 @@ scripts/
   build-data.mjs        从上游生成 data/ 与 assets/img/game/
   glossary.mjs          上游缺少中文的术语（商人、ARC 名称等），注明来源
   fetch-news.mjs        同步官网公告并翻译
+  build-site.mjs        把待发布的文件复制到 dist/
   serve.py              本地预览服务器
 .github/workflows/      每日同步公告的 GitHub Actions
+wrangler.jsonc          Cloudflare 海外站配置
+worker.js               Cloudflare 海外站：把首页 / 指向 index.html
 ```
 
 ## 更新游戏数据
@@ -76,6 +79,16 @@ ANTHROPIC_API_KEY=你的密钥 npm run news
 1. 在仓库 Settings → Secrets and variables → Actions 中添加 `ANTHROPIC_API_KEY`；
 2. 在 Settings → Actions → General 中勾选 "Allow GitHub Actions to create and approve pull requests"；
 3. 将工作流合并到 `main`（定时任务只在默认分支上运行）。也可以在 Actions 页面手动运行。
+
+## 部署
+
+站点没有真正的构建步骤。`npm run build` 只是把浏览器会加载的文件（`index.html`、`pages/`、`assets/`、`data/`、`content/news.js`）复制到 `dist/`，托管平台只发布这个目录，子模块、脚本和译文缓存不会公开。两个平台都连接本仓库，`main` 有新提交时自动重新部署，所以合并公告同步 PR 后两边会一起更新。
+
+**海外：Cloudflare Workers**，配置在 `wrangler.jsonc` 和 `worker.js`。在 Cloudflare 控制台 Workers & Pages → Create → Import a repository 中选择本仓库，Worker 名称填 `arc-raiders-wiki`（须与 `wrangler.jsonc` 一致），构建命令填 `npm run build`，部署命令保持默认的 `npx wrangler deploy`。其他分支和 PR 会生成预览链接，并以评论贴到 PR 上。
+
+`html_handling` 设为 `none` 是有意的：默认设置会把 `items.html` 重定向到 `items`，`core.js` 比较路径时就对不上，同页的 `#id` 链接会整页刷新并丢掉筛选条件。关闭后，首页 `/` 由 `worker.js` 指向 `index.html`。
+
+**中国大陆及全球：腾讯云 EdgeOne Pages**。导入本仓库，构建命令 `npm run build`，输出目录 `dist`。加速区域选「全球可用区（含中国大陆）」时，自定义域名必须已完成 ICP 备案；首次备案期间该域名不能对外访问。备案通过后，页脚要显示备案号并链接到 https://beian.miit.gov.cn/ 。
 
 ## 约定
 

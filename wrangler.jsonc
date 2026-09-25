@@ -1,0 +1,15 @@
+// Cloudflare Workers hosting for the overseas copy of the site. Workers Builds
+// runs `npm run build`, then `npx wrangler deploy` uploads dist/ as static
+// assets. The Worker in the dashboard must be named the same as `name`.
+{
+  "name": "arc-raiders-wiki",
+  "compatibility_date": "2026-09-24",
+  "main": "worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Serve pages/items.html as is. The default strips .html with a redirect,
+    // which breaks same-page #id links (core.js compares pathnames).
+    "html_handling": "none"
+  }
+}
