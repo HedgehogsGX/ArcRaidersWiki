@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARC Raiders 维基</title>
+  <meta name="description" content="ARC Raiders 中文资料站：物品、任务、技能树、藏身处与 ARC 资料，直接取自游戏数据。">
+  <meta name="theme-color" content="#130918">
+  <link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="is-home" data-page="home">
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__stripes" aria-hidden="true">
+        <span style="--c: var(--cyan); --i: 0"></span>
+        <span style="--c: var(--green); --i: 1"></span>
+        <span style="--c: var(--yellow); --i: 2"></span>
+        <span style="--c: var(--red); --i: 3"></span>
+      </div>
+      <img class="hero__raider" src="assets/img/brand/raider-cutout.webp" alt="" width="924" height="1522">
+      <div class="hero__content wrap">
+        <h1 class="hero__title">ARC Raiders<span data-i18n="site.name.short">维基</span></h1>
+        <p class="hero__lede" id="hero-lede"></p>
+        <div class="search search--hero" role="search">
+          <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.9 12.1l4.8 4.8-1.3 1.3-4.8-4.8A7.5 7.5 0 1 1 10.5 3zm0 1.8a5.7 5.7 0 1 0 0 11.4 5.7 5.7 0 0 0 0-11.4z" fill="currentColor"/></svg>
+          <input class="search__input" type="search" autocomplete="off" spellcheck="false">
+          <div class="search__results" hidden></div>
+        </div>
+        <p class="hero__meta" data-meta></p>
+      </div>
+    </section>
+
+    <div class="wrap page-body">
+      <section class="section" id="directory"></section>
+      <section class="section" id="recent"></section>
+      <section class="section" id="news"></section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="data/meta.js" defer></script>
+  <script src="data/labels.js" defer></script>
+  <script src="data/itemIndex.js" defer></script>
+  <script src="content/news.js" defer></script>
+  <script src="assets/js/core.js" defer></script>
+  <script src="assets/js/strings.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/news.js" defer></script>
+  <script src="assets/js/pages/home.js" defer></script>
+</body>
+</html>

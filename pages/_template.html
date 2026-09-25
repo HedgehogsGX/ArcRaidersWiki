@@ -1,0 +1,46 @@
+<!doctype html>
+<!--
+  Starting point for a new page. To add one:
+  1. Copy this file to pages/<name>.html and set data-page / data-title.
+  2. Add page.<name> and desc.<name> to assets/js/strings.js.
+  3. Add the page to a section in SECTIONS (assets/js/site.js) to list it in the nav,
+     footer and home directory.
+  4. Load only the data bundles the page needs, then its own script from assets/js/pages/.
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARC Raiders 维基</title>
+  <meta name="theme-color" content="#130918">
+  <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-page="example" data-title="site.name">
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <!-- data-tone: cyan (world), green (gear), yellow (progression), red (Speranza) -->
+    <header class="page-head wrap" data-tone="green">
+      <h1>页面标题</h1>
+      <p class="page-head__lede" id="lede">一句话说明这个页面能查到什么。</p>
+      <p class="page-head__meta" data-meta></p>
+    </header>
+    <div class="page-body wrap" id="app"></div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="../data/meta.js" defer></script>
+  <script src="../data/labels.js" defer></script>
+  <script src="../assets/js/core.js" defer></script>
+  <script src="../assets/js/strings.js" defer></script>
+  <script src="../assets/js/site.js" defer></script>
+</body>
+</html>
