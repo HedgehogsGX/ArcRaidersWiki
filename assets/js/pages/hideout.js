@@ -36,7 +36,7 @@
               (l) => html`<li class="level">
                 <span class="level__n">${t('common.level', { n: l.level })}</span>
                 <div class="level__body">
-                  ${l.desc ? html`<p lang="en">${l.desc}</p>` : ''}
+                  ${l.desc ? html`<p>${L(l.desc)}</p>` : ''}
                   ${l.items ? chipList(l.items) : ''}
                   ${l.other ? html`<div class="chip-list">${l.other.map(other)}</div>` : ''}
                   ${!l.items && !l.other ? html`<p class="note">${t('hideout.free')}</p>` : ''}

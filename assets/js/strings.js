@@ -1,5 +1,5 @@
-/* Interface text in both languages. Game terms follow the official zh-CN
-   wording used in the upstream data (奇袭者, 藏身处, 制作配方, 限购 …). */
+/* Interface text in both languages. Game terms follow the client's zh-CN
+   names in scripts/glossary-client.json (奇袭者, 工坊, 地图条件, 局 …). */
 
 window.ARC_STRINGS = {
   // Site shell
@@ -17,17 +17,17 @@ window.ARC_STRINGS = {
   'nav.progress': { zh: '成长', en: 'Progression' },
   'nav.speranza': { zh: '斯佩兰扎', en: 'Speranza' },
 
-  'page.arc': { zh: 'ARC 机械', en: 'ARC' },
-  'page.maps': { zh: '地图与事件', en: 'Maps & events' },
+  'page.arc': { zh: 'ARC 机器', en: 'ARC' },
+  'page.maps': { zh: '地图与地图条件', en: 'Maps & events' },
   'page.items': { zh: '物品', en: 'Items' },
   'page.quests': { zh: '任务', en: 'Quests' },
   'page.skills': { zh: '技能树', en: 'Skill tree' },
   'page.projects': { zh: '计划', en: 'Projects' },
-  'page.hideout': { zh: '藏身处', en: 'Hideout' },
+  'page.hideout': { zh: '工坊', en: 'Hideout' },
   'page.traders': { zh: '商人', en: 'Traders' },
 
   'desc.arc': { zh: '威胁等级、弱点与掉落', en: 'Threat, weak points, drops' },
-  'desc.maps': { zh: '地图总览与地图事件', en: 'Map overview and events' },
+  'desc.maps': { zh: '地图总览与地图条件', en: 'Map overview and events' },
   'desc.items': { zh: '制作、回收与获取途径', en: 'Crafting, recycling, sources' },
   'desc.quests': { zh: '按任务链排列的目标与奖励', en: 'Objectives and rewards in chain order' },
   'desc.skills': { zh: '三条分支的全部节点', en: 'Every node in all three branches' },
@@ -41,7 +41,7 @@ window.ARC_STRINGS = {
   'search.kind.item': { zh: '物品', en: 'Item' },
   'search.kind.quest': { zh: '任务', en: 'Quest' },
   'search.kind.skill': { zh: '技能', en: 'Skill' },
-  'search.kind.station': { zh: '藏身处', en: 'Hideout' },
+  'search.kind.station': { zh: '工坊', en: 'Hideout' },
   'search.kind.arc': { zh: 'ARC', en: 'ARC' },
   'search.kind.map': { zh: '地图', en: 'Map' },
   'search.kind.trader': { zh: '商人', en: 'Trader' },
@@ -64,12 +64,12 @@ window.ARC_STRINGS = {
   'common.clear': { zh: '清除筛选', en: 'Clear filters' },
   'common.count': { zh: '{n} 项', en: '{n} entries' },
   'common.level': { zh: '{n} 级', en: 'Level {n}' },
-  'common.xp': { zh: '{n} 经验', en: '{n} XP' },
+  'common.xp': { zh: '{n} XP', en: '{n} XP' },
   'common.enOnly': { zh: '官方暂无中文，以下为英文原文。', en: '' },
 
   // Home
   'home.lede': {
-    zh: '物品、任务、技能树、藏身处和 ARC 资料，直接取自游戏数据，中英双语，随版本更新。',
+    zh: '物品、任务、技能树、工坊和 ARC 资料，直接取自游戏数据，中英双语，使用游戏官方译名，随版本更新。',
     en: 'Items, quests, skills, hideout upgrades and ARC, taken straight from game data and updated with each patch.',
   },
   'home.directory': { zh: '资料目录', en: 'Browse the wiki' },
@@ -138,7 +138,7 @@ window.ARC_STRINGS = {
   'items.station': { zh: '{bench} {level} 级', en: '{bench} level {level}' },
   'items.makes': { zh: '每次制作 {n} 个', en: 'Makes {n}' },
   'items.recycles': { zh: '回收产出', en: 'Recycles into' },
-  'items.salvages': { zh: '拆解', en: 'Salvages into' },
+  'items.salvages': { zh: '拆解回收', en: 'Salvages into' },
   'items.upgradesTo': { zh: '升级为', en: 'Upgrades to' },
   'items.upgradeCost': { zh: '升级花费', en: 'Upgrade cost' },
   'items.repairCost': { zh: '修理花费', en: 'Repair cost' },
@@ -149,7 +149,7 @@ window.ARC_STRINGS = {
   'items.foundIn': { zh: '常见位置', en: 'Found in' },
   'items.uses': { zh: '用途', en: 'Used for' },
   'items.usedCraft': { zh: '用于制作', en: 'Crafting' },
-  'items.usedHideout': { zh: '藏身处升级', en: 'Hideout upgrades' },
+  'items.usedHideout': { zh: '工坊升级', en: 'Hideout upgrades' },
   'items.usedQuest': { zh: '任务提交', en: 'Quest hand-ins' },
   'items.usedProject': { zh: '计划提交', en: 'Project hand-ins' },
   'items.compatible': { zh: '兼容武器', en: 'Fits' },
@@ -158,7 +158,7 @@ window.ARC_STRINGS = {
   'items.questItem': { zh: '任务物品', en: 'Quest item' },
   'items.added': { zh: '{version} 版本加入', en: 'Added in {version}' },
   'items.limit': { zh: '限购 {n}', en: 'Limit {n}' },
-  'items.tip': { zh: '提示（英文原文）', en: 'Tip' },
+  'items.tip': { zh: '提示', en: 'Tip' },
   'items.close': { zh: '关闭详情', en: 'Close details' },
   'items.notFound': { zh: '找不到这件物品。', en: 'That item does not exist.' },
 
@@ -204,26 +204,26 @@ window.ARC_STRINGS = {
 
   // ARC
   'arc.lede': {
-    zh: '{count} 种 ARC 机械的威胁等级、弱点、出没地图和掉落物，按威胁从高到低排列。',
+    zh: '{count} 种 ARC 机器的威胁等级、弱点、出没地图和掉落物，按威胁从高到低排列。',
     en: 'Threat level, weak points, maps and drops for {count} ARC units, most dangerous first.',
   },
   'arc.threat': { zh: '威胁', en: 'Threat' },
   'arc.weakness': { zh: '弱点', en: 'Weak point' },
   'arc.maps': { zh: '出没地图', en: 'Found on' },
   'arc.drops': { zh: '掉落', en: 'Drops' },
-  'arc.destroyXp': { zh: '摧毁经验', en: 'Destroy XP' },
-  'arc.lootXp': { zh: '搜刮经验', en: 'Loot XP' },
+  'arc.destroyXp': { zh: '摧毁 XP', en: 'Destroy XP' },
+  'arc.lootXp': { zh: '搜刮 XP', en: 'Loot XP' },
 
   // Maps
   'maps.lede': {
-    zh: '{count} 张地图，以及当前的 {events} 种地图事件。',
+    zh: '{count} 张地图，以及当前轮换中的 {events} 种地图条件。',
     en: '{count} maps and the {events} map events currently in rotation.',
   },
   'maps.arc': { zh: '出没 ARC', en: 'ARC here' },
   'maps.quests': { zh: '相关任务', en: 'Quests here' },
-  'maps.events': { zh: '地图事件', en: 'Map events' },
-  'maps.major': { zh: '大型事件', en: 'Major events' },
-  'maps.minor': { zh: '小型事件', en: 'Minor events' },
+  'maps.events': { zh: '地图条件', en: 'Map events' },
+  'maps.major': { zh: '大型地图条件', en: 'Major events' },
+  'maps.minor': { zh: '小型地图条件', en: 'Minor events' },
 
   // Traders
   'traders.lede': {
