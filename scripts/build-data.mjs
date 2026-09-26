@@ -358,7 +358,9 @@ const benchNames = { in_raid: withZh('In-raid', clientName('In-Round Crafting'))
 
 // ---- maps & events -----------------------------------------------------------
 
-// Upstream uses different ids for the tile folders than for maps.json.
+// Upstream uses different ids for the tile folders than for maps.json. Its tiles
+// are 512px WebP on a 1000-unit grid, zoom z being 1000·2^z px across. The site
+// keeps zooms 0–2: the renders behind them are 4096px, so zoom 3 only upscales.
 const MAP_TILES = {
   dam_battlegrounds: 'dam-battleground',
   the_spaceport: 'the-spaceport',
@@ -366,16 +368,23 @@ const MAP_TILES = {
   the_blue_gate: 'blue-gate',
   riven_tides: 'riven-tides',
 };
-// maps.json lists each Stella Montis level as its own map; the site shows one map with both
-// levels, under the id quests already use. Level ids stay as image names.
+const TILE_ZOOMS = [['low', 0], ['low', 1], ['high', 2]];
+
+// maps.json lists each Stella Montis floor as its own map; the site shows one map
+// with both, under the id quests already use. Upstream's file names have the floors
+// the wrong way round: "upper" is the floor with the Seed Vault and the Sandbox,
+// which lies below the Lobby. `at` places each image on one grid shared by both
+// floors, in which the top floor spans x 0–1000 and both images have the same
+// scale. It comes from matching both images to MetaForge's map, which has one
+// grid for both floors; scripts/fetch-map-markers.mjs puts the markers on it too.
 const MAP_LEVELS = {
   stella_montis: [
-    { id: 'stella_montis_upper', en: 'Upper', zh: '上层' },
-    { id: 'stella_montis_lower', en: 'Lower', zh: '下层' },
+    { id: 'top', file: 'stella_montis_lower', en: 'Top floor', zh: '顶层', size: [5120, 3072], at: [0, 0] },
+    { id: 'bottom', file: 'stella_montis_upper', en: 'Bottom floor', zh: '底层', size: [4096, 3072], at: [172.27, 64.04] },
   ],
 };
 const levelOf = Object.fromEntries(
-  Object.entries(MAP_LEVELS).flatMap(([map, levels]) => levels.map((l) => [l.id, map]))
+  Object.entries(MAP_LEVELS).flatMap(([map, levels]) => levels.map((l) => [l.file, map]))
 );
 const mapId = (id) => levelOf[id] || id;
 
@@ -383,11 +392,24 @@ const maps = readJson('maps.json')
   .filter((m, i, all) => all.findIndex((x) => mapId(x.id) === mapId(m.id)) === i)
   .map((m) => {
     const id = mapId(m.id);
+    const dir = `assets/img/game/maps/${id}`;
     return compact({
       id,
       name: gameName(m.name),
-      tiles: MAP_TILES[id] && [0, 1, 2, 3].map((n) => `assets/img/game/maps/${id}/${n}.webp`),
-      levels: MAP_LEVELS[id]?.map((l) => ({ name: { en: l.en, zh: l.zh }, img: `assets/img/game/maps/${l.id}.jpg` })),
+      // {dir}/{z}/{x}/{y}.webp for z 0 to `zoom`
+      tiles: MAP_TILES[id] && dir,
+      zoom: MAP_TILES[id] && TILE_ZOOMS.length - 1,
+      levels: MAP_LEVELS[id]?.map((l) => {
+        const units = 1000 / MAP_LEVELS[id][0].size[0];
+        const [x, y] = l.at;
+        return {
+          id: l.id,
+          name: { en: l.en, zh: l.zh },
+          img: `${dir}/${l.id}.jpg`,
+          full: `${dir}/${l.id}-full.jpg`,
+          bounds: [[x, y], [x + l.size[0] * units, y + l.size[1] * units]].map((p) => p.map((v) => Math.round(v * 100) / 100)),
+        };
+      }),
     });
   });
 
@@ -659,15 +681,22 @@ function buildImages() {
   for (const [id, file] of Object.entries(STATION_IMAGES))
     sips(extract(`images/workshop/${file}.png`), path.join(IMG_OUT, `stations/${id}.png`), 320, false);
   for (const [id, dir] of Object.entries(MAP_TILES)) {
-    // Zoom level 0 is a 2×2 grid stored as {x}/{y}; write it in reading order.
-    [[0, 0], [1, 0], [0, 1], [1, 1]].forEach(([x, y], n) => {
-      const out = path.join(IMG_OUT, `maps/${id}/${n}.webp`);
-      fs.mkdirSync(path.dirname(out), { recursive: true });
-      fs.copyFileSync(extract(`images/maps/${dir}/v2/low/0/${x}/${y}.webp`), out);
-    });
+    const out = path.join(IMG_OUT, 'maps', id);
+    fs.rmSync(out, { recursive: true, force: true });
+    for (const [set, z] of TILE_ZOOMS)
+      for (let x = 0; x < 2 ** (z + 1); x++)
+        for (let y = 0; y < 2 ** (z + 1); y++) {
+          fs.mkdirSync(path.join(out, `${z}/${x}`), { recursive: true });
+          fs.copyFileSync(extract(`images/maps/${dir}/v2/${set}/${z}/${x}/${y}.webp`), path.join(out, `${z}/${x}/${y}.webp`));
+        }
   }
-  for (const { id } of Object.values(MAP_LEVELS).flat())
-    sips(extract(`images/maps/${id}.png`), path.join(IMG_OUT, `maps/${id}.jpg`), 1024, true);
+  // A small image that loads first, and the full one the map swaps in on top.
+  for (const [id, levels] of Object.entries(MAP_LEVELS))
+    for (const l of levels) {
+      const src = extract(`images/maps/${l.file}.png`);
+      sips(src, path.join(IMG_OUT, `maps/${id}/${l.id}.jpg`), 1024, true);
+      sips(src, path.join(IMG_OUT, `maps/${id}/${l.id}-full.jpg`), 3072, true);
+    }
 
   fs.rmSync(tmp, { recursive: true, force: true });
   console.log('Images written to assets/img/game/');

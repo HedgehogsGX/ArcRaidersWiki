@@ -249,5 +249,17 @@
     document.addEventListener('arc:lang', render);
   }
 
-  ARC.conditions = { start };
+  // What is on a map right now in the reader's region, for the interactive map:
+  // [{ id, end }], or null when there is no current schedule.
+  function activeOn(map) {
+    const data = schedule();
+    if (!data || now() >= data.until) return null;
+    const r = data.regions.indexOf(region || pickRegion(data.regions));
+    const at = now();
+    return data.entries
+      .filter(([, m, duration, starts]) => m === map && starts[r] <= at && at < starts[r] + duration)
+      .map(([id, , duration, starts]) => ({ id, end: starts[r] + duration }));
+  }
+
+  ARC.conditions = { start, activeOn };
 })();

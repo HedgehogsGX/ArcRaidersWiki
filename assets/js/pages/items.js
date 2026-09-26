@@ -54,10 +54,10 @@
         <input class="input items-filter" id="item-q" type="search" value="${state.q}" autocomplete="off"
           placeholder="${t('items.filter')}" aria-label="${t('items.filter')}">
         <div class="toolbar__group" role="group" aria-label="${t('items.rarity')}">
-          <button class="pill" type="button" data-set-rarity="all" aria-pressed="${state.rarity === 'all'}">${t('common.all')}</button>
+          <button class="pill" type="button" data-set-rarity="all" aria-pressed="${String(state.rarity === 'all')}">${t('common.all')}</button>
           ${RARITIES.map(
             (r) => html`<button class="pill" type="button" data-set-rarity="${r}" data-rarity="${r}"
-              aria-pressed="${state.rarity === r}"><span class="pill__dot"></span>${label('rarities', r)}</button>`
+              aria-pressed="${String(state.rarity === r)}"><span class="pill__dot"></span>${label('rarities', r)}</button>`
           )}
         </div>
         <span class="toolbar__spacer"></span>
@@ -68,10 +68,10 @@
         </label>
       </div>
       <div class="toolbar__group items-cats" role="group" aria-label="${t('items.category')}">
-        <button class="pill" type="button" data-set-category="all" aria-pressed="${state.category === 'all'}">
+        <button class="pill" type="button" data-set-category="all" aria-pressed="${String(state.category === 'all')}">
           ${t('common.all')}<span class="num">${items.length}</span></button>
         ${categories.map(
-          (c) => html`<button class="pill" type="button" data-set-category="${c.id}" aria-pressed="${state.category === c.id}">
+          (c) => html`<button class="pill" type="button" data-set-category="${c.id}" aria-pressed="${String(state.category === c.id)}">
             ${L(c.name)}<span class="num">${c.count}</span></button>`
         )}
       </div>`
@@ -174,6 +174,11 @@
     if (drops)
       parts.push(html`<h4>${t('items.droppedBy')}</h4><div class="tags">${drops.map(
         (b) => html`<a class="tag" href="${link('arc', b.id)}">${L(b.name)}</a>`
+      )}</div>`);
+    const spots = ARC.mapSpots(i.id);
+    if (spots.length)
+      parts.push(html`<h4>${t('map.onMap')}</h4><div class="tags">${spots.map(
+        (s) => html`<a class="tag" href="${s.href}">${label('maps', s.map)} <span class="num">${num(s.count)}</span></a>`
       )}</div>`);
     if (i.foundIn)
       parts.push(html`<h4>${t('items.foundIn')}</h4><div class="tags">${i.foundIn.map((f) => html`<span class="tag">${label('locations', f)}</span>`)}</div>`);

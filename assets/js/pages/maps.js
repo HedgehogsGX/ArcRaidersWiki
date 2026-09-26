@@ -7,13 +7,18 @@
   const bots = data.arc || [];
   const quests = data.quests || [];
 
-  // Multi-level maps (Stella Montis) stack their levels, top level first.
+  const mapUrl = (m) => url(`pages/map.html?map=${m.id}`);
+
+  // The first zoom level of the map's tiles, in reading order. Multi-level maps
+  // (Stella Montis) stack their levels, top level first. Both open the interactive map.
   const picture = (m) =>
     m.tiles
-      ? html`<div class="map-card__img map-card__img--tiles">${m.tiles.map((src) => html`<img src="${asset(src)}" alt="" loading="lazy" data-fallback>`)}</div>`
-      : html`<div class="map-card__img map-card__img--levels">${(m.levels || []).map(
+      ? html`<a class="map-card__img map-card__img--tiles" href="${mapUrl(m)}" tabindex="-1">${[[0, 0], [1, 0], [0, 1], [1, 1]].map(
+          ([x, y]) => html`<img src="${asset(`${m.tiles}/0/${x}/${y}.webp`)}" alt="" loading="lazy" data-fallback>`
+        )}</a>`
+      : html`<a class="map-card__img map-card__img--levels" href="${mapUrl(m)}" tabindex="-1">${(m.levels || []).map(
           (l) => html`<figure><img src="${asset(l.img)}" alt="" loading="lazy" data-fallback><figcaption>${L(l.name)}</figcaption></figure>`
-        )}</div>`;
+        )}</a>`;
 
   function card(m) {
     const here = bots.filter((b) => (b.maps || []).includes(m.id));
@@ -30,6 +35,7 @@
               (b) => html`<a class="tag" href="${link('arc', b.id)}">${L(b.name)}</a>`
             )}</div></div>`
           : ''}
+        <a class="button map-card__open" href="${mapUrl(m)}">${t('maps.open')}</a>
         ${count
           ? html`<p class="map-card__quests"><a href="${url(`pages/quests.html?map=${m.id}`)}">${t('maps.quests')}</a>
               <span class="note">${t('common.count', { n: count })}</span></p>`

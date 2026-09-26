@@ -44,17 +44,17 @@
         <input class="input" id="quest-q" type="search" autocomplete="off" value="${state.q}"
           placeholder="${t('items.filter')}" aria-label="${t('items.filter')}">
         <div class="toolbar__group" role="group" aria-label="${t('page.traders')}">
-          <button class="pill" type="button" data-trader="all" aria-pressed="${state.trader === 'all'}">${t('quests.allTraders')}</button>
+          <button class="pill" type="button" data-trader="all" aria-pressed="${String(state.trader === 'all')}">${t('quests.allTraders')}</button>
           ${traders.map(
-            (name) => html`<button class="pill" type="button" data-trader="${name}" aria-pressed="${state.trader === name}">
+            (name) => html`<button class="pill" type="button" data-trader="${name}" aria-pressed="${String(state.trader === name)}">
               ${label('traders', name)}<span class="num">${count(name)}</span></button>`
           )}
         </div>
       </div>
       <div class="toolbar__group quests-maps" role="group" aria-label="${t('page.maps')}">
-        <button class="pill" type="button" data-map="all" aria-pressed="${state.map === 'all'}">${t('common.all')}</button>
+        <button class="pill" type="button" data-map="all" aria-pressed="${String(state.map === 'all')}">${t('common.all')}</button>
         ${usedMaps.map(
-          (id) => html`<button class="pill" type="button" data-map="${id}" aria-pressed="${state.map === id}">${mapName(id)}</button>`
+          (id) => html`<button class="pill" type="button" data-map="${id}" aria-pressed="${String(state.map === id)}">${mapName(id)}</button>`
         )}
       </div>`
     );
@@ -75,6 +75,16 @@
     </details>`;
   }
 
+  // Where the interactive map has this quest's objectives.
+  function questSpots(q) {
+    const spots = ARC.mapSpots(null, q.id);
+    return spots.length
+      ? html`<div class="tags">${spots.map(
+          (s) => html`<a class="tag" href="${s.href}">${label('maps', s.map)} <span class="num">${num(s.count)}</span></a>`
+        )}</div>`
+      : '';
+  }
+
   function body(q) {
     const block = (title, content) => (content ? html`<div><h3>${title}</h3>${content}</div>` : '');
     return html`<div class="row__body">
@@ -86,6 +96,7 @@
           html`<ul class="objectives">${q.objectives.map((o) => html`<li>${L(o)}</li>`)}</ul>
             ${q.oneRound ? html`<p class="note">${t('quests.oneRound')}</p>` : ''}`
       )}
+      ${block(t('map.onMap'), questSpots(q))}
       ${block(t('quests.required'), chipList(q.required))}
       ${block(t('quests.granted'), chipList(q.granted))}
       ${block(

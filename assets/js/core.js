@@ -173,6 +173,23 @@
     return found ? L(found.name || found) : key;
   }
 
+  // Maps where the interactive map has markers of a type, or of a quest's objectives,
+  // as [{ map, count, href }]. Needs content/map-markers/index.js on the page.
+  function mapSpots(type, quest) {
+    const index = window.ARC_MARKER_INDEX;
+    if (!index) return [];
+    const counts = quest
+      ? index.quests[quest] || {}
+      : Object.fromEntries(Object.entries(index.counts).map(([map, c]) => [map, c[type] || 0]));
+    return Object.entries(counts)
+      .filter(([, count]) => count)
+      .map(([map, count]) => ({
+        map,
+        count,
+        href: url(`pages/map.html?map=${map}&${quest ? `quest=${encodeURIComponent(quest)}` : `show=${encodeURIComponent(type)}`}`),
+      }));
+  }
+
   const pageTitle = () => {
     const key = document.body.dataset.title;
     return key ? `${t(key)} | ${t('site.name')}` : t('site.name');
@@ -284,6 +301,7 @@
     itemChip,
     chipList,
     label,
+    mapSpots,
     pageTitle,
     closeButton,
     hashDrawer,

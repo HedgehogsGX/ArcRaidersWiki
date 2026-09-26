@@ -1,6 +1,6 @@
 # ARC Raiders 维基
 
-非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、工坊（Hideout）、ARC、地图、商人与计划，以及同步自官网的公告和地图条件排期。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，中文使用简中客户端的官方译名。
+非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、工坊（Hideout）、ARC、地图、互动地图、商人与计划，以及同步自官网的公告和地图条件排期。游戏数据来自社区项目 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data) 与 [arctracker.io](https://arctracker.io)，互动地图的标记来自 [MetaForge](https://metaforge.app/arc-raiders)，中文使用简中客户端的官方译名。
 
 纯静态站点，浏览不需要安装或构建。npm 依赖只用于公告翻译脚本。
 
@@ -16,7 +16,7 @@ npm run serve
 
 ```
 index.html              首页
-pages/                  各资料页（news、items、quests、skills、hideout、arc、maps、traders、projects）
+pages/                  各资料页（news、items、quests、skills、hideout、arc、maps、map、traders、projects）
   _template.html        新页面模板，内有步骤说明
 assets/
   css/                  base（色板、字体、质感）→ layout（页头页脚）→ components（通用组件）→ pages（各页专属）
@@ -24,16 +24,18 @@ assets/
   js/strings.js         界面文字（中 / 英）
   js/site.js            页头、导航、搜索、页脚，导航结构在 SECTIONS 中统一配置
   js/news.js            公告列表与展开动画，首页和公告页共用
-  js/conditions.js      首页的地图条件：主视觉里的进行中面板，以及完整排期与倒计时
+  js/conditions.js      首页的地图条件：主视觉里的进行中面板，以及完整排期与倒计时；互动地图用它标出进行中的条件
   js/pages/             每个页面一个脚本
   img/brand/            标志、主视觉
   img/game/             由构建脚本生成的 ARC、商人、设施、地图图片与物品图标；conditions/ 是官网的地图条件图标
   fonts/                Jost 字体（SIL OFL 协议，见 OFL.txt）
+  vendor/leaflet/       Leaflet 1.9.4（BSD-2 协议，见 LICENSE），互动地图用
 content/
   news.js               由 fetch-news.mjs 生成的公告，不要手动修改
   news-zh.json          公告中文译文缓存，每篇只翻译一次
   news-img/             公告图片的 WebP 副本，由 fetch-news.mjs 维护
   map-conditions.js     由 fetch-map-conditions.mjs 生成的地图条件排期，不要手动修改
+  map-markers/          由 fetch-map-markers.mjs 生成的互动地图标记，每张地图一个文件，不要手动修改
 data/                   由构建脚本生成的数据包，不要手动修改
 vendor/arcraiders-data  上游数据（git 子模块）
 scripts/
@@ -44,9 +46,10 @@ scripts/
   translations.mjs      本站自译的文字（ARC 介绍、物品描述等），以英文原文为键
   fetch-news.mjs        同步官网公告并翻译
   fetch-map-conditions.mjs  同步官网的地图条件排期
+  fetch-map-markers.mjs 同步 MetaForge 的地图标记，并换算到本站地图的坐标
   build-site.mjs        把待发布的文件复制到 dist/
   serve.py              本地预览服务器
-.github/workflows/      每日同步公告、每小时核对地图条件的 GitHub Actions
+.github/workflows/      每日同步公告、每小时核对地图条件、每周同步地图标记的 GitHub Actions
 wrangler.jsonc          Cloudflare 海外站配置
 worker.js               Cloudflare 海外站：把首页 / 指向 index.html
 ```
@@ -60,7 +63,7 @@ git submodule update --remote vendor/arcraiders-data
 node scripts/build-data.mjs
 ```
 
-需要 Node 20.9 以上。脚本只保留英文和简体中文，会列出引用了却不存在的物品 id，并在上游出现新物品类型时提醒更新 `ITEM_CATEGORIES`。物品图标每次都从上游复制到 `assets/img/game/items/`，不依赖 arctracker 的 CDN（在中国大陆很慢）；上游还没有图标的新物品暂时沿用 CDN 地址，脚本会列出这些物品。ARC、商人、设施或地图图片有变化时，改用 `node scripts/build-data.mjs --images`（需要 macOS 自带的 `sips`）。
+需要 Node 20.9 以上。脚本只保留英文和简体中文，会列出引用了却不存在的物品 id，并在上游出现新物品类型时提醒更新 `ITEM_CATEGORIES`。物品图标每次都从上游复制到 `assets/img/game/items/`，不依赖 arctracker 的 CDN（在中国大陆很慢）；上游还没有图标的新物品暂时沿用 CDN 地址，脚本会列出这些物品。ARC、商人、设施或地图图片有变化时，改用 `node scripts/build-data.mjs --images`（需要 macOS 自带的 `sips`）。地图瓦片保留上游的 0–2 级缩放（上游源图 4096 像素，第 3 级只是放大），星辰山两层各出一张 1024 像素小图和一张 3072 像素大图。上游把星辰山两层的文件名弄反了（`stella_montis_upper` 其实是有种子库和沙盘的底层），`MAP_LEVELS` 已按实际楼层命名为顶层、底层。
 
 上游仓库包含两百多 MB 图片，本站不需要它们。首次克隆时可以跳过：
 
@@ -70,6 +73,20 @@ git -C vendor/arcraiders-data sparse-checkout set --no-cone '/*' '!/images/'
 ```
 
 构建脚本需要图片时会直接从 git 对象中读取。
+
+## 互动地图
+
+`pages/map.html` 在每张地图的瓦片上画出 ARC 出没点、容器、可采集资源、撤离点、地图条件相关的点位和任务地点，可以按类型、地图条件和楼层（星辰山的顶层与底层，太空港和蓝门的地表与地下）筛选；选中的地图条件在官网排期中正在进行时，下拉框里会标出。ARC、物品和任务页会链接到只显示对应标记的地图，例如 `pages/map.html?map=dam_battlegrounds&show=arc_tick`、`?quest=paving_the_way`。
+
+标记来自 MetaForge 社区。它的 API 可以用于公开项目，条件是注明来源并链接到 https://metaforge.app/arc-raiders ；互动地图页和页脚都有这个链接，删改时请保留。如果网站要以任何方式盈利，需要先联系 MetaForge。
+
+```bash
+node scripts/fetch-map-markers.mjs
+```
+
+脚本下载六张地图的全部标记，写入 `content/map-markers/`（每张地图一个文件，另有 `index.js` 记录类型、条件名和各图数量）。只需要 Node 18 以上，不用 `npm install`。MetaForge 的坐标是它自己地图图片上的位置，脚本里每张地图的 `affine` 把它换算到本站瓦片的 1000 单位网格上：这组系数是把两边的地图图片做特征点匹配（OpenCV SIFT，每张图上千组匹配点，误差约半个单位）得到的。MetaForge 的坐标是世界坐标，他们重绘图片不影响换算；只有本站的地图瓦片换了，才需要重新校准。上游出现新的标记类型时，脚本会提示把它加进 `TYPES`；中文名先查客户端术语表，再查本站的 ARC、物品和任务数据，最后才是 `TYPES` 里本站自译的名称。
+
+**自动同步**：`.github/workflows/map-markers-sync.yml` 每周一运行一次，标记有变化时开启或更新名为 "Sync map markers" 的 PR，合并后网站即更新。和公告同步一样，需要在 Settings → Actions → General 中允许 GitHub Actions 创建 PR，定时任务只在默认分支上运行。
 
 ## 同步官方公告
 
@@ -105,7 +122,7 @@ node scripts/fetch-map-conditions.mjs --force   # 总是写入
 
 ## 部署
 
-站点没有真正的构建步骤。`npm run build` 只是把浏览器会加载的文件（`index.html`、`pages/`、`assets/`、`data/`、`content/news.js` 与 `content/news-img/`、`content/map-conditions.js`）复制到 `dist/`，托管平台只发布这个目录，子模块、脚本和译文缓存不会公开。两个平台都连接本仓库，`main` 有新提交时自动重新部署，所以合并公告同步 PR、或地图条件同步提交后，两边会一起更新。
+站点没有真正的构建步骤。`npm run build` 只是把浏览器会加载的文件（`index.html`、`pages/`、`assets/`、`data/`、`content/news.js` 与 `content/news-img/`、`content/map-conditions.js`、`content/map-markers/`）复制到 `dist/`，托管平台只发布这个目录，子模块、脚本和译文缓存不会公开。两个平台都连接本仓库，`main` 有新提交时自动重新部署，所以合并公告同步 PR、或地图条件同步提交后，两边会一起更新。
 
 **海外：Cloudflare Workers**，配置在 `wrangler.jsonc` 和 `worker.js`。在 Cloudflare 控制台 Workers & Pages → Create → Import a repository 中选择本仓库，Worker 名称填 `arc-raiders-wiki`（须与 `wrangler.jsonc` 一致），构建命令填 `npm run build`，部署命令保持默认的 `npx wrangler deploy`。其他分支和 PR 会生成预览链接，并以评论贴到 PR 上。
 
@@ -122,4 +139,4 @@ node scripts/fetch-map-conditions.mjs --force   # 总是写入
 
 ## 版权
 
-ARC Raiders 及相关商标归 Embark Studios AB 所有。本站为玩家制作的非官方项目，与 Embark Studios、Nexon 无关。游戏数据以 MIT 协议由 RaidTheory/arcraiders-data 提供；本站文字内容遵循 CC BY-NC-SA 4.0 协议。Jost 字体以 SIL Open Font License 1.1 授权。
+ARC Raiders 及相关商标归 Embark Studios AB 所有。本站为玩家制作的非官方项目，与 Embark Studios、Nexon 无关。游戏数据以 MIT 协议由 RaidTheory/arcraiders-data 提供；本站文字内容遵循 CC BY-NC-SA 4.0 协议。Jost 字体以 SIL Open Font License 1.1 授权。互动地图的标记由 [MetaForge](https://metaforge.app/arc-raiders) 社区标注，按其 API 条款注明来源使用；地图组件为 [Leaflet](https://leafletjs.com)（BSD-2 协议）。

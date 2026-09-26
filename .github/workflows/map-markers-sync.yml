@@ -1,0 +1,63 @@
+# Pulls the community map markers from MetaForge once a week and, when they
+# changed, opens (or updates) a "Sync map markers" pull request for review. See
+# scripts/fetch-map-markers.mjs for how positions are converted onto our tiles.
+#
+# Scheduled runs only start once this file is on the default branch. The PR step
+# needs Settings → Actions → General → "Allow GitHub Actions to create and approve
+# pull requests", the same as the news sync.
+
+name: Map markers sync
+
+on:
+  schedule:
+    - cron: '41 4 * * 1' # Mondays 04:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: map-markers-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Uses only Node's standard library, so no npm install.
+      - name: Fetch markers
+        run: node scripts/fetch-map-markers.mjs
+
+      # Every run stamps a new fetch time; only open a PR when a marker changed.
+      - name: Check for marker changes
+        id: diff
+        run: |
+          if git diff --quiet -I '"fetched": [0-9]*' -- content/map-markers; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Markers unchanged."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open pull request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: map-markers-sync
+          delete-branch: true
+          add-paths: content/map-markers
+          commit-message: Sync map markers from MetaForge
+          author: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
+          committer: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
+          title: Sync map markers
+          body: |
+            New or moved markers from the MetaForge community (https://metaforge.app/arc-raiders), fetched by the weekly Map markers sync workflow.
+            Positions are converted onto this site's map tiles by scripts/fetch-map-markers.mjs.
