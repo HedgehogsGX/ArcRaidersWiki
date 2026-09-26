@@ -175,6 +175,11 @@
       parts.push(html`<h4>${t('items.droppedBy')}</h4><div class="tags">${drops.map(
         (b) => html`<a class="tag" href="${link('arc', b.id)}">${L(b.name)}</a>`
       )}</div>`);
+    const spots = ARC.mapSpots(i.id);
+    if (spots.length)
+      parts.push(html`<h4>${t('map.onMap')}</h4><div class="tags">${spots.map(
+        (s) => html`<a class="tag" href="${s.href}">${label('maps', s.map)} <span class="num">${num(s.count)}</span></a>`
+      )}</div>`);
     if (i.foundIn)
       parts.push(html`<h4>${t('items.foundIn')}</h4><div class="tags">${i.foundIn.map((f) => html`<span class="tag">${label('locations', f)}</span>`)}</div>`);
     return parts.length ? parts : '';

@@ -9,7 +9,7 @@
 
   // One tone per section, matching the four stripes of the logo.
   const SECTIONS = [
-    { key: 'world', tone: 'cyan', pages: [['arc', meta.counts.arc], ['maps', meta.counts.maps]] },
+    { key: 'world', tone: 'cyan', pages: [['arc', meta.counts.arc], ['maps', meta.counts.maps], ['map', meta.counts.maps]] },
     {
       key: 'gear',
       tone: 'green',
@@ -312,6 +312,7 @@
           <ul>
             ${external('RaidTheory/arcraiders-data', 'https://github.com/RaidTheory/arcraiders-data')}
             ${external('arctracker.io', 'https://arctracker.io')}
+            ${external('MetaForge', 'https://metaforge.app/arc-raiders')}
           </ul>
         </div>
       </div>

@@ -38,9 +38,12 @@
           <div><dt>${t('arc.lootXp')}</dt><dd class="num">${num(b.xp.loot)}</dd></div>
         </dl>
         ${b.maps
-          ? html`<div class="arc-card__block"><h3>${t('arc.maps')}</h3><div class="tags">${b.maps.map(
-              (id) => html`<a class="tag" href="${link('map', id)}">${label('maps', id)}</a>`
-            )}</div></div>`
+          ? html`<div class="arc-card__block"><h3>${t('arc.maps')}</h3><div class="tags">${b.maps.map((id) => {
+              const spot = ARC.mapSpots(b.id).find((s) => s.map === id);
+              return spot
+                ? html`<a class="tag" href="${spot.href}" title="${t('maps.open')}">${label('maps', id)} <span class="num">${num(spot.count)}</span></a>`
+                : html`<a class="tag" href="${link('map', id)}">${label('maps', id)}</a>`;
+            })}</div></div>`
           : ''}
         ${b.drops ? html`<div class="arc-card__block"><h3>${t('arc.drops')}</h3>${chipList(b.drops.map((id) => [id]))}</div>` : ''}
       </div>

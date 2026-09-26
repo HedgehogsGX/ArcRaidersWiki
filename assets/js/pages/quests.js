@@ -75,6 +75,16 @@
     </details>`;
   }
 
+  // Where the interactive map has this quest's objectives.
+  function questSpots(q) {
+    const spots = ARC.mapSpots(null, q.id);
+    return spots.length
+      ? html`<div class="tags">${spots.map(
+          (s) => html`<a class="tag" href="${s.href}">${label('maps', s.map)} <span class="num">${num(s.count)}</span></a>`
+        )}</div>`
+      : '';
+  }
+
   function body(q) {
     const block = (title, content) => (content ? html`<div><h3>${title}</h3>${content}</div>` : '');
     return html`<div class="row__body">
@@ -86,6 +96,7 @@
           html`<ul class="objectives">${q.objectives.map((o) => html`<li>${L(o)}</li>`)}</ul>
             ${q.oneRound ? html`<p class="note">${t('quests.oneRound')}</p>` : ''}`
       )}
+      ${block(t('map.onMap'), questSpots(q))}
       ${block(t('quests.required'), chipList(q.required))}
       ${block(t('quests.granted'), chipList(q.granted))}
       ${block(
