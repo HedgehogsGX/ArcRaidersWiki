@@ -7,19 +7,17 @@
   const bots = data.arc || [];
   const quests = data.quests || [];
 
-  // Quests name Stella Montis as a whole; count them for both of its levels.
-  const questCount = (id) =>
-    quests.filter((q) => (q.maps || []).some((m) => m === id || (id.startsWith('stella_montis') && m === 'stella_montis'))).length;
-
+  // Multi-level maps (Stella Montis) stack their levels, top level first.
   const picture = (m) =>
     m.tiles
       ? html`<div class="map-card__img map-card__img--tiles">${m.tiles.map((src) => html`<img src="${asset(src)}" alt="" loading="lazy" data-fallback>`)}</div>`
-      : html`<div class="map-card__img">${m.img ? html`<img src="${asset(m.img)}" alt="" loading="lazy" data-fallback>` : ''}</div>`;
+      : html`<div class="map-card__img map-card__img--levels">${(m.levels || []).map(
+          (l) => html`<figure><img src="${asset(l.img)}" alt="" loading="lazy" data-fallback><figcaption>${L(l.name)}</figcaption></figure>`
+        )}</div>`;
 
   function card(m) {
     const here = bots.filter((b) => (b.maps || []).includes(m.id));
-    const count = questCount(m.id);
-    const questMap = m.id.startsWith('stella_montis') ? 'stella_montis' : m.id;
+    const count = quests.filter((q) => (q.maps || []).includes(m.id)).length;
     return html`<article class="map-card" id="${m.id}">
       ${picture(m)}
       <div class="map-card__body">
@@ -33,7 +31,7 @@
             )}</div></div>`
           : ''}
         ${count
-          ? html`<p class="map-card__quests"><a href="${url(`pages/quests.html?map=${questMap}`)}">${t('maps.quests')}</a>
+          ? html`<p class="map-card__quests"><a href="${url(`pages/quests.html?map=${m.id}`)}">${t('maps.quests')}</a>
               <span class="note">${t('common.count', { n: count })}</span></p>`
           : ''}
       </div>

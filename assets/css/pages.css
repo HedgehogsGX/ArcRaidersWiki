@@ -1176,6 +1176,33 @@
   aspect-ratio: 1;
 }
 
+.map-card__img--levels {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.map-card__img--levels figure {
+  position: relative;
+  min-height: 0;
+  margin: 0;
+}
+
+.map-card__img--levels figure + figure {
+  border-top: 1px solid var(--rule-2);
+}
+
+.map-card__img--levels figcaption {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--night) 80%, transparent);
+  color: var(--bone);
+  font-size: var(--step--1);
+  line-height: 1.5;
+}
+
 .map-card__body h2 {
   font-size: var(--step-1);
 }

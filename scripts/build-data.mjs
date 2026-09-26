@@ -8,13 +8,30 @@
 // Output goes to data/*.js. Each bundle assigns into window.ARC_DATA so pages can
 // load it with a plain <script> tag and still work when opened from disk.
 // Upstream ships 20 locales; only en and zh-CN are kept.
+//
+// Chinese comes from three places, in this order: the client's own names
+// (glossary-client.json via glossary.mjs), this site's translations keyed by the
+// English source text (translations.mjs), then upstream zh-CN with the glossary's
+// wording swapped in (TERM_FIXES).
 
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BOTS, BOT_TYPES, EFFECT_VALUES, MOD_SLOTS, THREATS, TRADERS } from './glossary.mjs';
+import {
+  BOT_ALIASES,
+  BOT_TYPES,
+  CLIENT,
+  EFFECT_LABELS,
+  EFFECT_VALUES,
+  LOCATIONS,
+  MOD_SLOTS,
+  NAMES,
+  THREATS,
+  TRADERS,
+} from './glossary.mjs';
+import { PATTERNS, TERM_FIXES, TEXT } from './translations.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'vendor/arcraiders-data');
@@ -74,22 +91,118 @@ function compact(obj) {
   return obj;
 }
 
+// ---- Chinese -----------------------------------------------------------------
+
+// Upstream zh-CN with the glossary's wording swapped in.
+const fixTerms = (zh) => (zh ? TERM_FIXES.reduce((s, [from, to]) => s.replaceAll(from, to), zh) : zh);
+
+// The game's own Chinese for an English name. Also resolves "<name> Blueprint"
+// and weapon tiers ("Kettle II"), which the glossary lists once.
+function clientName(en) {
+  if (!en) return undefined;
+  const zh = CLIENT.get(en.toLowerCase()) || NAMES[en];
+  if (zh) return zh;
+  const blueprint = /^(.+) Blueprint$/.exec(en);
+  if (blueprint) {
+    const base = clientName(blueprint[1]);
+    // "直角握把 II 蓝图", "烟雾手雷蓝图"
+    return base && `${base}${/[\w.]$/.test(base) ? ' ' : ''}蓝图`;
+  }
+  const tier = /^(.+) (I|II|III|IV)$/.exec(en);
+  const base = tier && clientName(tier[1]);
+  return base ? `${base} ${tier[2]}` : undefined;
+}
+
+const gameName = (v) => {
+  const t = text(v);
+  return t && withZh(t.en, clientName(t.en) ?? fixTerms(t.zh));
+};
+
+// Site translation for an English sentence or short pattern ("64 slots").
+function translate(en) {
+  if (!en) return undefined;
+  if (Object.hasOwn(TEXT, en)) return TEXT[en];
+  for (const [re, fn] of PATTERNS) {
+    const m = re.exec(en);
+    if (m) return fn(m);
+  }
+  return undefined;
+}
+
+const zhFor = (en, zh) => translate(en) ?? fixTerms(zh);
+const localize = (v) => {
+  const t = text(v);
+  return t && withZh(t.en, zhFor(t.en, t.zh));
+};
+
+// English names that lists and effects mention but that have no Chinese; reported at the end.
+const unnamed = new Set();
+const itemZh = new Map();
+function zhName(en) {
+  const zh = clientName(en) ?? itemZh.get(en);
+  if (!zh) unnamed.add(en);
+  return zh;
+}
+
 // ---- items -----------------------------------------------------------------
 
 const rawItems = readDir('items');
-const itemNameByEn = new Map(rawItems.map((i) => [i.name.en, i.name['zh-CN']]));
+const itemNames = new Map(rawItems.map((i) => [i.id, gameName(i.name)]));
+for (const name of itemNames.values()) if (name.zh) itemZh.set(name.en, name.zh);
+
+// arctracker appends generated lists to some descriptions ("… Compatible with:
+// Kettle, Ferro"). Their Chinese copies are inconsistent and often keep the English
+// names, so the list is rebuilt from the names.
+const DESC_LISTS = { 'Compatible with': '兼容武器', 'Used to craft': '可用于制作' };
+function itemDesc(v) {
+  const t = text(v);
+  const list = t && !Object.hasOwn(TEXT, t.en) && /^(.*?)\s*(Compatible with|Used to craft):\s*(.+)$/s.exec(t.en);
+  if (!list) return t && withZh(t.en, zhFor(t.en, t.zh));
+  const [, base, kind, rest] = list;
+  // A sentence can follow the list ("Used to craft: Shield Recharger. Can be used to …");
+  // "Mk. 3" inside a name is not a sentence end.
+  const [, names, after] = /^(.*?)(?:\.\s+([A-Z][^]*)|\.?)$/.exec(rest);
+  const upstream = t.zh?.split(/\s*(?:兼容武器|适配|用于制作|可用于制作|可制作)\s*[:：]/)[0];
+  const zhNames = names.split(/,\s*/).map((n) => zhName(n.trim()) || n.trim());
+  const tail = after ? `。${translate(after) ?? after}` : '';
+  return withZh(t.en, `${(base && zhFor(base, upstream)) || ''}${DESC_LISTS[kind]}：${zhNames.join('、')}${tail}`);
+}
+
+// Stat labels and values: "26% Reduced Reload Time" and "+8 Magazine Size" reuse the labels.
+function statZh(s) {
+  const own = EFFECT_LABELS[s] ?? EFFECT_VALUES[s];
+  if (own) return own;
+  const m = /^([+-]?[\d.]+%?) (.+)$/.exec(s);
+  const label = m && (EFFECT_LABELS[m[2]] ?? CLIENT.get(m[2].toLowerCase()));
+  return label ? `${label} ${m[1]}` : undefined;
+}
+
+function effectValue(value) {
+  if (Array.isArray(value)) value = value.join(', ');
+  if (typeof value !== 'string') return value;
+  if (!value) return undefined;
+  const zh =
+    translate(value) ??
+    statZh(value) ??
+    value
+      .split(', ')
+      .map((part) => statZh(part) ?? (/[a-z]{3}/i.test(part) ? zhName(part) : undefined) ?? part)
+      .join('、');
+  return withZh(value, zh);
+}
 
 function effects(raw) {
   if (!raw) return undefined;
   const out = [];
   for (const [key, e] of Object.entries(raw)) {
     if (!e || typeof e !== 'object') continue;
-    let value = e.value;
-    if (typeof value === 'string') {
-      const zh = value.split(', ').map((part) => EFFECT_VALUES[part] || itemNameByEn.get(part) || part).join('、');
-      value = withZh(value, zh === value ? undefined : zh);
-    }
-    out.push(compact({ label: withZh(e.en || key, e['zh-CN']), value }));
+    const label = e.en || key;
+    out.push(
+      compact({
+        label: withZh(label, statZh(label) ?? clientName(label) ?? fixTerms(e['zh-CN'])),
+        value: effectValue(e.value),
+      })
+    );
   }
   return out.length ? out : undefined;
 }
@@ -113,8 +226,8 @@ function icon(src) {
 const items = rawItems.map((i) =>
   compact({
     id: i.id,
-    name: text(i.name),
-    desc: text(i.description),
+    name: itemNames.get(i.id),
+    desc: itemDesc(i.description),
     type: i.type,
     rarity: i.rarity,
     value: i.value,
@@ -132,14 +245,14 @@ const items = rawItems.map((i) =>
     upgradesTo: i.upgradesTo,
     effects: effects(i.effects),
     foundIn: i.foundIn ? i.foundIn.split(',').map((s) => s.trim()).filter(Boolean) : undefined,
-    compatible: i.compatibleWith,
+    compatible: i.compatibleWith?.map((w) => withZh(w, zhName(w))),
     mods: i.modSlots,
     vendors: i.vendors?.map((v) =>
       compact({ trader: v.trader, cost: pairs(v.cost), limit: v.limit, level: v.requiredLevel })
     ),
     blueprint: i.blueprintLocked,
     questItem: i.questItem,
-    tip: text(i.tip),
+    tip: localize(i.tip),
     added: i.addedIn,
   })
 );
@@ -151,16 +264,16 @@ const rawQuests = readDir('quests');
 const quests = rawQuests.map((q) =>
   compact({
     id: q.id,
-    name: text(q.name),
-    desc: text(q.description),
+    name: localize(q.name),
+    desc: localize(q.description),
     trader: q.trader,
     maps: q.map,
-    objectives: q.objectives?.map(text),
+    objectives: q.objectives?.map(localize),
     oneRound: q.objectivesOneRound,
     required: pairs(q.requiredItemIds),
     rewards: pairs(q.rewardItemIds),
     granted: pairs(q.grantedItemIds),
-    other: q.otherRequirements,
+    other: q.otherRequirements?.map(localize),
     xp: q.xp || undefined,
     prev: q.previousQuestIds,
     next: q.nextQuestIds,
@@ -188,13 +301,13 @@ const skillCats = ui.SkillTreePage.categories;
 const skills = readJson('skillNodes.json').map((s) =>
   compact({
     id: s.id,
-    name: text(s.name),
-    desc: text(s.description),
+    name: gameName(s.name),
+    desc: localize(s.description),
     category: s.category,
     major: s.isMajor,
     max: s.maxPoints,
-    impact: text(s.impactedSkill),
-    known: s.knownValue,
+    impact: localize(s.impactedSkill),
+    known: s.knownValue?.map(localize),
     x: s.position.x,
     y: s.position.y,
     prereq: s.prerequisiteNodeIds,
@@ -221,11 +334,11 @@ const hideout = readDir('hideout')
   .map((h) =>
     compact({
       id: h.id,
-      name: text(h.name),
+      name: gameName(h.name),
       img: STATION_IMAGES[h.id] && `assets/img/game/stations/${h.id}.png`,
       maxLevel: h.maxLevel,
       levels: h.levels.map((l) =>
-        compact({ level: l.level, items: pairs(l.requirementItemIds), desc: l.description, other: l.otherRequirements })
+        compact({ level: l.level, items: pairs(l.requirementItemIds), desc: localize(l.description), other: l.otherRequirements })
       ),
     })
   )
@@ -241,28 +354,7 @@ for (const station of hideout) {
   if (Object.keys(byLevel).length) station.crafts = byLevel;
 }
 // Crafting in the field, not at a station.
-const benchNames = { in_raid: { en: 'In-raid', zh: ui.ItemDetailPage.inRaidCrafting } };
-
-// ---- ARC -------------------------------------------------------------------
-
-const THREAT_RANK = Object.keys(THREATS);
-const bots = readJson('bots.json')
-  .map((b) =>
-    compact({
-      id: b.id,
-      name: withZh(titleCase(b.name), BOTS[b.id]),
-      type: withZh(b.type, BOT_TYPES[b.type]),
-      threat: b.threat,
-      desc: text(b.description),
-      weakness: text(b.weakness),
-      maps: b.maps,
-      xp: { destroy: b.destroyXp, loot: b.lootXp },
-      drops: b.drops,
-      img: `assets/img/game/arc/${b.id}.jpg`,
-    })
-  )
-  .sort((a, b) => THREAT_RANK.indexOf(b.threat) - THREAT_RANK.indexOf(a.threat) || a.name.en.localeCompare(b.name.en));
-const threats = THREAT_RANK.map((id) => ({ id, name: withZh(id, THREATS[id]) }));
+const benchNames = { in_raid: withZh('In-raid', clientName('In-Round Crafting')) };
 
 // ---- maps & events -----------------------------------------------------------
 
@@ -274,29 +366,30 @@ const MAP_TILES = {
   the_blue_gate: 'blue-gate',
   riven_tides: 'riven-tides',
 };
-const MAP_SINGLE = {
-  stella_montis_upper: 'images/maps/stella_montis_upper.png',
-  stella_montis_lower: 'images/maps/stella_montis_lower.png',
+// maps.json lists each Stella Montis level as its own map; the site shows one map with both
+// levels, under the id quests already use. Level ids stay as image names.
+const MAP_LEVELS = {
+  stella_montis: [
+    { id: 'stella_montis_upper', en: 'Upper', zh: '上层' },
+    { id: 'stella_montis_lower', en: 'Lower', zh: '下层' },
+  ],
 };
-const LEVEL_SUFFIX = {
-  stella_montis_upper: { en: 'Upper', zh: '上层' },
-  stella_montis_lower: { en: 'Lower', zh: '下层' },
-};
+const levelOf = Object.fromEntries(
+  Object.entries(MAP_LEVELS).flatMap(([map, levels]) => levels.map((l) => [l.id, map]))
+);
+const mapId = (id) => levelOf[id] || id;
 
-const maps = readJson('maps.json').map((m) => {
-  const suffix = LEVEL_SUFFIX[m.id];
-  const name = text(m.name);
-  if (suffix) {
-    name.en = `${name.en} (${suffix.en})`;
-    if (name.zh) name.zh = `${name.zh}（${suffix.zh}）`;
-  }
-  return compact({
-    id: m.id,
-    name,
-    tiles: MAP_TILES[m.id] && [0, 1, 2, 3].map((n) => `assets/img/game/maps/${m.id}/${n}.webp`),
-    img: MAP_SINGLE[m.id] && `assets/img/game/maps/${m.id}.jpg`,
+const maps = readJson('maps.json')
+  .filter((m, i, all) => all.findIndex((x) => mapId(x.id) === mapId(m.id)) === i)
+  .map((m) => {
+    const id = mapId(m.id);
+    return compact({
+      id,
+      name: gameName(m.name),
+      tiles: MAP_TILES[id] && [0, 1, 2, 3].map((n) => `assets/img/game/maps/${id}/${n}.webp`),
+      levels: MAP_LEVELS[id]?.map((l) => ({ name: { en: l.en, zh: l.zh }, img: `assets/img/game/maps/${l.id}.jpg` })),
+    });
   });
-});
 
 const rawEvents = readJson('map-events/map-events.json').eventTypes;
 const events = Object.entries(rawEvents)
@@ -304,11 +397,32 @@ const events = Object.entries(rawEvents)
   .map(([id, e]) =>
     compact({
       id,
-      name: withZh(e.displayName, e.localizations?.['zh-CN']),
+      name: withZh(e.displayName, clientName(e.displayName) ?? fixTerms(e.localizations?.['zh-CN'])),
       category: e.category,
       icon: e.icon,
     })
   );
+
+// ---- ARC -------------------------------------------------------------------
+
+const THREAT_RANK = Object.keys(THREATS);
+const bots = readJson('bots.json')
+  .map((b) =>
+    compact({
+      id: b.id,
+      name: withZh(titleCase(b.name), clientName(BOT_ALIASES[titleCase(b.name)] || titleCase(b.name))),
+      type: withZh(b.type, BOT_TYPES[b.type]),
+      threat: b.threat,
+      desc: localize(b.description),
+      weakness: localize(b.weakness),
+      maps: b.maps && [...new Set(b.maps.map(mapId))],
+      xp: { destroy: b.destroyXp, loot: b.lootXp },
+      drops: b.drops,
+      img: `assets/img/game/arc/${b.id}.jpg`,
+    })
+  )
+  .sort((a, b) => THREAT_RANK.indexOf(b.threat) - THREAT_RANK.indexOf(a.threat) || a.name.en.localeCompare(b.name.en));
+const threats = THREAT_RANK.map((id) => ({ id, name: withZh(id, THREATS[id]) }));
 
 // ---- traders -----------------------------------------------------------------
 
@@ -338,25 +452,25 @@ const traders = Object.keys(TRADERS).map((name) => {
 
 const CATEGORY_LABELS = {
   ArcDamage: { en: 'Damage dealt to ARC', zh: '对 ARC 造成伤害' },
-  InteractTask: { en: 'Complete the task in raid', zh: '在战局中完成任务' },
+  InteractTask: { en: 'Complete the task in raid', zh: '在局内完成任务' },
 };
 
 const projects = readJson('projects.json').map((p) =>
   compact({
     id: p.id,
-    name: text(p.name),
-    desc: text(p.description),
+    name: gameName(p.name),
+    desc: localize(p.description),
     active: !p.disabled,
     start: p.startDate,
     end: p.endDate,
     phases: p.phases.map((ph) =>
       compact({
         n: ph.phase,
-        name: text(ph.name),
-        desc: text(ph.description),
+        name: localize(ph.name),
+        desc: localize(ph.description),
         items: ph.requirementItemIds?.map((r) => compact({ id: r.itemId, qty: r.quantity, rewards: pairs(r.rewardItemIds) })),
         categories: ph.requirementCategories?.map((c) =>
-          compact({ label: text(c.localizations) || CATEGORY_LABELS[c.category] || { en: c.category }, value: c.valueRequired })
+          compact({ label: localize(c.localizations) || CATEGORY_LABELS[c.category] || { en: c.category }, value: c.valueRequired })
         ),
       })
     ),
@@ -365,25 +479,26 @@ const projects = readJson('projects.json').map((p) =>
 
 // ---- labels shared by several pages ---------------------------------------------
 
-const labelsFrom = (section, keys) =>
-  Object.fromEntries(keys.map((k) => [k, withZh(k, section[k])]));
+// Client names first, then upstream arctracker text (whose wording differs from
+// the game for several of these: 快捷使用物品, 背包强化, 地表材料, 硬币 …).
+const labelsFrom = (section, keys) => Object.fromEntries(keys.map((k) => [k, withZh(k, clientName(k) ?? section[k])]));
 
 const itemTypes = [...new Set(items.map((i) => i.type))].sort();
+const typeZh = (type) => clientName(type) ?? ui.ItemTypes[type];
 
 // Browsing groups for the Items page and the navigation. zh names are the
 // official type names, combined where a group spans several types.
-const T = ui.ItemTypes;
 const ITEM_CATEGORIES = [
-  ['weapons', 'Weapons', T.Weapon, ['Assault Rifle', 'Battle Rifle', 'SMG', 'Pistol', 'Shotgun', 'LMG', 'Sniper Rifle', 'Hand Cannon', 'Special']],
-  ['ammo', 'Ammo', T.Ammunition, ['Ammunition']],
-  ['mods', 'Mods', T.Modification, ['Modification']],
-  ['quick-use', 'Quick use', T['Quick Use'], ['Quick Use']],
-  ['shields', 'Shields & augments', `${T.Shield}与${T.Augment}`, ['Shield', 'Augment']],
-  ['keys', 'Keys', T.Key, ['Key']],
-  ['blueprints', 'Blueprints', T.Blueprint, ['Blueprint']],
-  ['materials', 'Materials', T.Material, ['Basic Material', 'Topside Material', 'Refined Material', 'Nature', 'Misc']],
-  ['recyclables', 'Recyclables', T.Recyclable, ['Recyclable']],
-  ['trinkets', 'Trinkets', T.Trinket, ['Trinket']],
+  ['weapons', 'Weapons', ui.ItemTypes.Weapon, ['Assault Rifle', 'Battle Rifle', 'SMG', 'Pistol', 'Shotgun', 'LMG', 'Sniper Rifle', 'Hand Cannon', 'Special']],
+  ['ammo', 'Ammo', typeZh('Ammunition'), ['Ammunition']],
+  ['mods', 'Mods', typeZh('Modification'), ['Modification']],
+  ['quick-use', 'Quick use', typeZh('Quick Use'), ['Quick Use']],
+  ['shields', 'Shields & augments', `${typeZh('Shield')}与${typeZh('Augment')}`, ['Shield', 'Augment']],
+  ['keys', 'Keys', typeZh('Key'), ['Key']],
+  ['blueprints', 'Blueprints', typeZh('Blueprint'), ['Blueprint']],
+  ['materials', 'Materials', ui.ItemTypes.Material, ['Basic Material', 'Topside Material', 'Refined Material', 'Nature', 'Misc']],
+  ['recyclables', 'Recyclables', typeZh('Recyclable'), ['Recyclable']],
+  ['trinkets', 'Trinkets', typeZh('Trinket'), ['Trinket']],
 ].map(([id, en, zh, types]) => ({
   id,
   name: withZh(en, zh),
@@ -397,23 +512,22 @@ const labels = {
   itemCategories: ITEM_CATEGORIES,
   itemTypes: labelsFrom(ui.ItemTypes, itemTypes),
   rarities: labelsFrom(ui.Rarity, ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary']),
-  locations: labelsFrom(ui.Locations, [...new Set(items.flatMap((i) => i.foundIn || []))].sort()),
+  // Loot area types; client names here would be map locations ("Security" = 安保区).
+  locations: Object.fromEntries(
+    [...new Set(items.flatMap((i) => i.foundIn || []))].sort().map((k) => [k, withZh(k, LOCATIONS[k] ?? ui.Locations[k])])
+  ),
   benches: {
     ...Object.fromEntries(hideout.map((h) => [h.id, h.name])),
     ...benchNames,
   },
   // Referenced like items (costs, rewards) but have no item file upstream.
   currencies: {
-    coins: withZh('Coins', ui.TraderPage.coins),
-    creds: withZh('Creds', ui.StashPage.currencies.cred),
-    raider_tokens: withZh('Raider Tokens', ui.StashPage.currencies.raiderTokens),
+    coins: withZh('Coins', clientName('Coins')),
+    creds: withZh('Creds', clientName('Cred')),
+    raider_tokens: withZh('Raider Tokens', clientName('Raider Tokens')),
   },
   traders: Object.fromEntries(Object.entries(TRADERS).map(([en, zh]) => [en, withZh(en, zh)])),
-  // Quests refer to Stella Montis as a whole; maps.json lists its two levels.
-  maps: {
-    ...Object.fromEntries(maps.map((m) => [m.id, m.name])),
-    stella_montis: text(readJson('maps.json').find((m) => m.id === 'stella_montis_upper').name),
-  },
+  maps: Object.fromEntries(maps.map((m) => [m.id, m.name])),
   modSlots: MOD_SLOTS,
   skillCategories,
   threats,
@@ -515,6 +629,7 @@ const cdnIcons = items.filter((i) => /^https?:/.test(i.img || '')).map((i) => i.
 console.log(`  ${icons.size} item icons in assets/img/game/items/; still on the CDN: ${cdnIcons.join(', ') || 'none'}`);
 console.log(`Game ${meta.gameVersion}, upstream ${meta.commit} (${meta.updated})`);
 if (missing.length) console.log(`Referenced ids without an item file: ${missing.join(', ')}`);
+if (unnamed.size) console.log(`Names without Chinese (add to NAMES in scripts/glossary.mjs): ${[...unnamed].sort().join(', ')}`);
 
 // ---- images (optional) --------------------------------------------------------------
 
@@ -551,7 +666,8 @@ function buildImages() {
       fs.copyFileSync(extract(`images/maps/${dir}/v2/low/0/${x}/${y}.webp`), out);
     });
   }
-  for (const [id, rel] of Object.entries(MAP_SINGLE)) sips(extract(rel), path.join(IMG_OUT, `maps/${id}.jpg`), 1024, true);
+  for (const { id } of Object.values(MAP_LEVELS).flat())
+    sips(extract(`images/maps/${id}.png`), path.join(IMG_OUT, `maps/${id}.jpg`), 1024, true);
 
   fs.rmSync(tmp, { recursive: true, force: true });
   console.log('Images written to assets/img/game/');

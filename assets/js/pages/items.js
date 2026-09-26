@@ -260,8 +260,8 @@
             ([slot, ids]) => html`<h4>${label('modSlots', slot)}</h4>${chipList(ids.map((id) => [id]))}`
           )
       )}
-      ${section(t('items.compatible'), i.compatible && html`<div class="tags">${i.compatible.map((w) => html`<span class="tag">${w}</span>`)}</div>`)}
-      ${i.tip ? section(t('items.tip'), html`<p class="prose" lang="en">${L(i.tip)}</p>`) : ''}`;
+      ${section(t('items.compatible'), i.compatible && html`<div class="tags">${i.compatible.map((w) => html`<span class="tag">${L(w)}</span>`)}</div>`)}
+      ${i.tip ? section(t('items.tip'), html`<p class="prose" lang="${i.tip.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(i.tip)}</p>`) : ''}`;
   }
 
   // ---- drawer ------------------------------------------------------------------------

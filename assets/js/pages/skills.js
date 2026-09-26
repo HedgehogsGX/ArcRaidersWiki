@@ -77,7 +77,7 @@
       </div>
       ${s.desc ? html`<div class="detail__desc prose">${ARC.paragraphs(L(s.desc))}</div>` : ''}
       ${section(t('skills.impact'), s.impact && html`<p>${L(s.impact)}</p>`)}
-      ${section(t('skills.known'), s.known && s.known.length && html`<div class="tags">${s.known.map((k) => html`<span class="tag" lang="en">${k}</span>`)}</div>`)}
+      ${section(t('skills.known'), s.known && s.known.length && html`<div class="tags">${s.known.map((k) => html`<span class="tag">${L(k)}</span>`)}</div>`)}
       ${section(t('skills.prereq'), s.prereq && s.prereq.length && nodeLinks(s.prereq))}
       ${section(t('skills.unlocks'), unlocks.has(id) && nodeLinks(unlocks.get(id)))}`;
   }
