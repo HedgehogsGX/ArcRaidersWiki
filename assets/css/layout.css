@@ -571,14 +571,19 @@
   }
 }
 
+/* The newest store skin, cut out of its Store Update banner by
+   scripts/fetch-store-skin.py. The banners show one or two figures from the
+   waist up, so whatever the shape, the image fits a fixed box standing on the
+   hero's bottom edge. */
 .hero__raider {
   position: absolute;
   z-index: -1;
   right: max(var(--gutter), calc((100vw - var(--page)) / 2 - 40px));
-  bottom: -18%;
-  height: 118%;
-  width: auto;
-  max-width: none;
+  bottom: 0;
+  width: min(46vw, 640px);
+  height: 88%;
+  object-fit: contain;
+  object-position: right bottom;
   filter: drop-shadow(-24px 0 48px rgba(19, 9, 24, 0.7));
   pointer-events: none;
 }
@@ -646,10 +651,13 @@
   }
 
   .hero__raider {
-    right: -24px;
+    right: 0;
     bottom: auto;
-    top: 0;
-    height: 340px;
+    top: 16px;
+    width: min(64vw, 360px);
+    height: auto;
+    max-height: 320px;
+    object-position: right top;
     -webkit-mask-image: linear-gradient(#000 55%, transparent 92%);
     mask-image: linear-gradient(#000 55%, transparent 92%);
   }

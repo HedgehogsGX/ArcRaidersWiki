@@ -26,7 +26,7 @@ assets/
   js/news.js            公告列表与展开动画，首页和公告页共用
   js/conditions.js      地图条件：首页主视觉里的进行中面板，地图页的完整排期与倒计时；互动地图用它标出进行中的条件
   js/pages/             每个页面一个脚本
-  img/brand/            标志、主视觉
+  img/brand/            标志、主视觉；store-skin.webp 是首页的最新商店外观，由 fetch-store-skin.py 生成
   img/game/             由构建脚本生成的 ARC、商人、设施、地图图片与物品图标；conditions/ 是官网的地图条件图标
   fonts/                Jost 字体（SIL OFL 协议，见 OFL.txt）
   vendor/leaflet/       Leaflet 1.9.4（BSD-2 协议，见 LICENSE），互动地图用
@@ -35,6 +35,7 @@ content/
   news-zh.json          公告中文译文缓存，每篇只翻译一次
   news-img/             公告图片的 WebP 副本，由 fetch-news.mjs 维护
   map-conditions.js     由 fetch-map-conditions.mjs 生成的地图条件排期，不要手动修改
+  store-skin.json       首页外观取自哪篇商店更新，由 fetch-store-skin.py 维护
   map-markers/          由 fetch-map-markers.mjs 生成的互动地图标记，每张地图一个文件，不要手动修改
 data/                   由构建脚本生成的数据包，不要手动修改
 vendor/arcraiders-data  上游数据（git 子模块）
@@ -45,6 +46,7 @@ scripts/
   glossary.mjs          读取客户端译名，并补充术语表没有的名称与标签，注明来源
   translations.mjs      本站自译的文字（ARC 介绍、物品描述等），以英文原文为键
   fetch-news.mjs        同步官网公告并翻译
+  fetch-store-skin.py   从最新的商店更新公告抠出外观，换到首页主视觉
   fetch-map-conditions.mjs  同步官网的地图条件排期
   fetch-map-markers.mjs 同步 MetaForge 的地图标记，并换算到本站地图的坐标
   build-site.mjs        把待发布的文件复制到 dist/
@@ -104,6 +106,20 @@ ANTHROPIC_API_KEY=你的密钥 npm run news
 1. 在仓库 Settings → Secrets and variables → Actions 中添加 `ANTHROPIC_API_KEY`；
 2. 在 Settings → Actions → General 中勾选 "Allow GitHub Actions to create and approve pull requests"；
 3. 将工作流合并到 `main`（定时任务只在默认分支上运行）。也可以在 Actions 页面手动运行。
+
+## 首页的最新商店外观
+
+首页主视觉里的人物是商店最新上架的外观。官网每篇「Store Update」公告开头都有一张 1920×622 的横幅：左边是标志和色带，右边是这次上架的外观。脚本在 `content/news.js` 里找最新的一篇，从文章页取横幅原图，裁掉左侧标志，用 BiRefNet 模型（MIT 协议，即 rembg 的 birefnet-general）抠出人物，存为 `assets/img/brand/store-skin.webp`，并在 `content/store-skin.json` 记下出处：
+
+```bash
+pip install onnxruntime numpy pillow
+python3 scripts/fetch-store-skin.py           # 有新的商店更新时才处理
+python3 scripts/fetch-store-skin.py --force   # 重新处理最新一篇
+```
+
+先运行 `npm run news` 更新公告。模型 928 MB，第一次用时下载到 `~/.cache/arc-raiders-wiki/` 并校验 MD5，在 CPU 上处理一张不到一分钟。横幅不是常见的比例、或抠出的面积明显不像人物时，脚本保留现有的图片。横幅里的人物都只到腰部，有时是两个人，所以样式里给图片一个固定的框，贴着主视觉底边，按比例缩放。
+
+**自动同步**：公告同步工作流在抓取公告后运行这个脚本，新图片和公告一起进入 "Sync official news" PR，合并前可以先检查抠图效果。这一步失败时不影响公告同步，首页保持原来的图片。
 
 ## 同步地图条件
 
