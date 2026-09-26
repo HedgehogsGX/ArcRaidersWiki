@@ -11,7 +11,7 @@
   const matches = (p) => tag === 'all' || (tag === 'other' ? !p.tags.length : p.tags.includes(tag));
 
   function pill(id, label, count) {
-    return html`<button class="pill" type="button" data-tag="${id}" aria-pressed="${tag === id}">${label}<span class="num">${count}</span></button>`;
+    return html`<button class="pill" type="button" data-tag="${id}" aria-pressed="${String(tag === id)}">${label}<span class="num">${count}</span></button>`;
   }
 
   function render() {
