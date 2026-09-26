@@ -44,17 +44,17 @@
         <input class="input" id="quest-q" type="search" autocomplete="off" value="${state.q}"
           placeholder="${t('items.filter')}" aria-label="${t('items.filter')}">
         <div class="toolbar__group" role="group" aria-label="${t('page.traders')}">
-          <button class="pill" type="button" data-trader="all" aria-pressed="${state.trader === 'all'}">${t('quests.allTraders')}</button>
+          <button class="pill" type="button" data-trader="all" aria-pressed="${String(state.trader === 'all')}">${t('quests.allTraders')}</button>
           ${traders.map(
-            (name) => html`<button class="pill" type="button" data-trader="${name}" aria-pressed="${state.trader === name}">
+            (name) => html`<button class="pill" type="button" data-trader="${name}" aria-pressed="${String(state.trader === name)}">
               ${label('traders', name)}<span class="num">${count(name)}</span></button>`
           )}
         </div>
       </div>
       <div class="toolbar__group quests-maps" role="group" aria-label="${t('page.maps')}">
-        <button class="pill" type="button" data-map="all" aria-pressed="${state.map === 'all'}">${t('common.all')}</button>
+        <button class="pill" type="button" data-map="all" aria-pressed="${String(state.map === 'all')}">${t('common.all')}</button>
         ${usedMaps.map(
-          (id) => html`<button class="pill" type="button" data-map="${id}" aria-pressed="${state.map === id}">${mapName(id)}</button>`
+          (id) => html`<button class="pill" type="button" data-map="${id}" aria-pressed="${String(state.map === id)}">${mapName(id)}</button>`
         )}
       </div>`
     );

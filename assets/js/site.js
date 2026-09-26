@@ -71,8 +71,8 @@
           </ul>
         </nav>
         <div class="lang-switch" role="group" aria-label="${t('site.langLabel')}">
-          <button type="button" data-lang="zh" aria-pressed="${ARC.lang === 'zh'}" lang="zh-CN">中</button>
-          <button type="button" data-lang="en" aria-pressed="${ARC.lang === 'en'}" lang="en">EN</button>
+          <button type="button" data-lang="zh" aria-pressed="${String(ARC.lang === 'zh')}" lang="zh-CN">中</button>
+          <button type="button" data-lang="en" aria-pressed="${String(ARC.lang === 'en')}" lang="en">EN</button>
         </div>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
           <span class="menu-btn__bars" aria-hidden="true"></span><span class="visually-hidden">${t('site.menu')}</span>

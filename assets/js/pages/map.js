@@ -444,7 +444,7 @@
     mount(
       root.querySelector('.mapper__maps'),
       maps.map(
-        (x) => html`<button class="pill" type="button" data-map="${x.id}" aria-pressed="${x.id === state.map}">${L(x.name)}</button>`
+        (x) => html`<button class="pill" type="button" data-map="${x.id}" aria-pressed="${String(x.id === state.map)}">${L(x.name)}</button>`
       )
     );
     mount(
@@ -452,7 +452,7 @@
       html`<div class="mapper__opts">
         ${layers.length
           ? html`<div class="mapper__layers" role="group" aria-label="${t('map.layer')}">${layers.map(
-              (l) => html`<button class="pill" type="button" data-layer="${l.id}" aria-pressed="${l.id === state.layer}">${L(l.name)}</button>`
+              (l) => html`<button class="pill" type="button" data-layer="${l.id}" aria-pressed="${String(l.id === state.layer)}">${L(l.name)}</button>`
             )}</div>`
           : ''}
         <label class="mapper__cond"><span class="note">${t('map.cond')}</span>
@@ -474,8 +474,8 @@
               <button type="button" class="link-button" data-group="${g}">${on ? t('map.hideGroup') : t('map.showGroup')}</button>
             </header>
             <ul class="pin-group__list">${list.map(
-              (id) => html`<li><button type="button" class="pin-row" data-type="${id}" aria-pressed="${!state.hidden.has(id)}">
-                ${swatch(types[id])}<span class="pin-row__name">${L(types[id].name)}</span><span class="pin-row__count num"></span></button></li>`
+              (id) => html`<li><button type="button" class="pin-row" data-type="${id}" aria-pressed="${String(!state.hidden.has(id))}">
+                <span class="pin-row__check" aria-hidden="true"></span>${swatch(types[id])}<span class="pin-row__name">${L(types[id].name)}</span><span class="pin-row__count num"></span></button></li>`
             )}</ul>
           </section>`;
         })}
@@ -495,12 +495,23 @@
     if (set) renderCounts();
   }
 
+  // Update the checkboxes and group buttons in place, so focus and scroll stay put.
+  function syncToggles() {
+    panel.querySelectorAll('[data-type]').forEach((b) => b.setAttribute('aria-pressed', String(!state.hidden.has(b.dataset.type))));
+    panel.querySelectorAll('[data-group]').forEach((b) => {
+      const on = [...panel.querySelectorAll(`.pin-group [data-type]`)].some(
+        (row) => types[row.dataset.type].group === b.dataset.group && !state.hidden.has(row.dataset.type)
+      );
+      b.textContent = on ? t('map.hideGroup') : t('map.showGroup');
+    });
+  }
+
   function setHidden(ids, hidden) {
     state.linked = false;
     ids.forEach((id) => (hidden ? state.hidden.add(id) : state.hidden.delete(id)));
     save();
     refresh();
-    renderPanel();
+    syncToggles();
   }
 
   function onPanelClick(e) {
