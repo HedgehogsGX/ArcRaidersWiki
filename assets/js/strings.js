@@ -79,7 +79,8 @@ window.ARC_STRINGS = {
   'home.news': { zh: '官方公告', en: 'Announcements' },
   'home.conditions': { zh: '地图条件', en: 'Map conditions' },
 
-  // Map conditions (home page)
+  // Map conditions (home hero, maps page)
+  'cond.schedule': { zh: '地图条件排期', en: 'Map condition schedule' },
   'cond.region': { zh: '服务器区域', en: 'Server region' },
   'cond.region.europe': { zh: '欧洲', en: 'Europe' },
   'cond.region.north-america': { zh: '北美', en: 'North America' },

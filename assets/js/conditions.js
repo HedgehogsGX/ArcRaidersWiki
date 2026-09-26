@@ -1,7 +1,8 @@
-/* Map conditions on the home page: a live panel in the hero, so they show
-   without scrolling, and the full section with what is on now and what comes
-   next per condition. Countdowns tick in the reader's server region. The
-   schedule comes from content/map-conditions.js (scripts/fetch-map-conditions.mjs). */
+/* Map conditions: a live panel in the home hero, so they show without scrolling,
+   and the full schedule on the maps page, with what is on now and what comes next
+   per condition. A page can have either or both. Countdowns tick in the reader's
+   server region. The schedule comes from content/map-conditions.js
+   (scripts/fetch-map-conditions.mjs). */
 
 (function () {
   const { html, mount, t, L, url, link } = ARC;
@@ -130,7 +131,7 @@
           </li>`;
         })}</ul>`
       : html`<p class="note">${t('cond.none')}</p>`}
-    <a class="now__next" href="#conditions">
+    <a class="now__next" href="${url('pages/maps.html#conditions')}">
       ${coming.length
         ? html`<span class="now__next-names">${t('cond.next')} · <span class="num" data-at="${soonest}" data-kind="start">${countdown(soonest, 'start')}</span>${
             ARC.lang === 'zh' ? '：' : ': '
@@ -141,12 +142,12 @@
 
   function renderLists() {
     const data = schedule();
-    const lists = root.querySelector('.conditions');
+    const lists = root && root.querySelector('.conditions');
     const heroList = hero && hero.querySelector('.now__body');
     if (now() >= data.until) {
       nextChange = Infinity;
       const stale = html`<p class="empty">${t('cond.stale')} <a href="${data.source}" target="_blank" rel="noopener">${t('cond.source')}</a></p>`;
-      mount(lists, stale);
+      if (lists) mount(lists, stale);
       if (heroList) {
         mount(hero.querySelector('.now__count'), '');
         mount(heroList, stale);
@@ -156,6 +157,7 @@
     const { active, next } = groups();
     nextChange = Math.min(data.until, ...active.map((g) => g.end), ...next.map((g) => g.start));
     if (heroList) mount(heroList, heroBody(active, next));
+    if (!lists) return;
     mount(
       lists,
       html`<div class="conditions__group">
@@ -173,7 +175,7 @@
 
   function render() {
     const data = schedule();
-    if (!root || !data) return;
+    if ((!root && !hero) || !data) return;
     const available = REGIONS.filter((r) => data.regions.includes(r)).concat(data.regions.filter((r) => !REGIONS.includes(r)));
     if (!available.includes(region)) region = pickRegion(available);
     const options = available.map((r) => html`<option value="${r}"${r === region ? ' selected' : ''}>${regionName(r)}</option>`);
@@ -187,22 +189,23 @@
         </div>
         <div class="now__body"></div>`
       );
-    mount(
-      root,
-      html`<div class="section__head">
-        <h2>${t('home.conditions')}</h2>
-        <label class="conditions__region"><span class="note">${t('cond.region')}</span>
-          <select class="select" data-region>${options}</select></label>
-      </div>
-      <div class="conditions"></div>
-      <p class="note conditions__note">${t('cond.note')}
-        <a href="${data.source}" target="_blank" rel="noopener">${t('cond.source')}</a></p>`
-    );
+    if (root)
+      mount(
+        root,
+        html`<div class="section__head">
+          <h2>${t('cond.schedule')}</h2>
+          <label class="conditions__region"><span class="note">${t('cond.region')}</span>
+            <select class="select" data-region>${options}</select></label>
+        </div>
+        <div class="conditions"></div>
+        <p class="note conditions__note">${t('cond.note')}
+          <a href="${data.source}" target="_blank" rel="noopener">${t('cond.source')}</a></p>`
+      );
     renderLists();
   }
 
   function tick() {
-    if (!root || !schedule()) return;
+    if ((!root && !hero) || !schedule()) return;
     if (now() >= nextChange) return renderLists();
     [root, hero].forEach((scope) =>
       scope?.querySelectorAll('[data-at]').forEach((el) => {
@@ -222,11 +225,11 @@
     document.head.append(script);
   }
 
-  // `el` holds the full section; `heroEl`, if given, the live panel in the hero.
+  // `el` holds the full schedule, `heroEl` the live panel in the hero; either can be null.
   function start(el, heroEl) {
-    root = el;
+    root = el || null;
     hero = heroEl || null;
-    if (!root || !schedule()) {
+    if (!schedule()) {
       if (root) root.hidden = true;
       return;
     }
