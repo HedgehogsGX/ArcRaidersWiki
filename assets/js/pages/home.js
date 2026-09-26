@@ -1,4 +1,4 @@
-/* Home: hero search, map conditions, section directory, newest items, latest official news. */
+/* Home: hero search and live map conditions, section directory, newest items, latest official news. */
 
 (function () {
   const { html, mount, t, L, url, link, asset, data, num, item, label } = ARC;
@@ -81,7 +81,7 @@
   }
 
   render();
-  ARC.conditions.start(document.getElementById('conditions'), document.getElementById('now'));
+  ARC.conditions.start(null, document.getElementById('now'));
   ARC.setupSearch(document.querySelector('.search--hero'));
   document.addEventListener('arc:lang', render);
 })();

@@ -1,4 +1,4 @@
-/* Maps: overview images, the ARC and quests on each map, and map events. */
+/* Maps: the live map condition schedule, overview images, the ARC and quests on each map, and map events. */
 
 (function () {
   const { html, mount, t, L, alt, asset, link, url, data, num } = ARC;
@@ -71,6 +71,7 @@
   }
 
   render();
+  ARC.conditions.start(document.getElementById('conditions'));
   document.addEventListener('arc:lang', render);
   if (location.hash) {
     const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));

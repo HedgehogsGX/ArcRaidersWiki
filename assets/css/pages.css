@@ -76,7 +76,7 @@
   }
 }
 
-/* ---- home: map conditions ---------------------------------------------------- */
+/* ---- map conditions: home hero panel, full schedule on the maps page ---------- */
 
 .conditions__region {
   display: flex;
@@ -87,6 +87,11 @@
 .conditions__region .select {
   height: 32px;
   font-size: 0.875rem;
+}
+
+/* The schedule sits above the map cards, which are not in a .section of their own. */
+#conditions + .maps-body {
+  margin-top: 64px;
 }
 
 .conditions {
