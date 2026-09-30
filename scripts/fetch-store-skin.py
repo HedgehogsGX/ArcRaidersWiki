@@ -40,6 +40,10 @@ MODEL_DIR = os.path.join(os.environ.get("XDG_CACHE_HOME") or os.path.expanduser(
 # The left part of the banner holds the logo and stripes. The model drops any
 # lettering the figures overlap, as long as the logo itself is cropped off.
 LOGO_WIDTH = 0.46
+# An arm or rifle that reaches under the logo is cut off straight at the crop,
+# with notches where the lettering covered it. When the figure touches the crop,
+# it fades out over this share of the width instead.
+EDGE_FADE = 0.16
 # Share of the cropped banner the figure should cover; outside it, something went wrong.
 COVERAGE = (0.08, 0.85)
 
@@ -106,10 +110,14 @@ def cut_out(image):
     pred = 1 / (1 + np.exp(-pred))
     pred = (pred - pred.min()) / (pred.max() - pred.min())
     mask = Image.fromarray((pred * 255).astype(np.uint8), "L").resize(image.size, Image.Resampling.LANCZOS)
-    mask = mask.point(lambda v: 0 if v < 8 else v)
+    alpha = np.asarray(mask, dtype=np.float32)
+    alpha[alpha < 8] = 0
+    if alpha[:, :3].max() > 128:
+        t = np.linspace(0, 1, round(alpha.shape[1] * EDGE_FADE))
+        alpha[:, : t.size] *= t * t * (3 - 2 * t)
     cutout = image.convert("RGBA")
-    cutout.putalpha(mask)
-    return cutout, np.asarray(mask).mean() / 255
+    cutout.putalpha(Image.fromarray(alpha.astype(np.uint8), "L"))
+    return cutout, alpha.mean() / 255
 
 
 def main():
