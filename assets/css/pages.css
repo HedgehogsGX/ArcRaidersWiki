@@ -1291,8 +1291,11 @@
   min-height: 520px;
 }
 
+/* Leaflet stacks its panes and controls at z-index 200–1000. Isolating the stage
+   keeps them inside it, so the map scrolls under the sticky header (50). */
 .mapper__stage {
   position: relative;
+  isolation: isolate;
   min-width: 0;
   border: 1px solid var(--rule);
   border-radius: var(--radius);

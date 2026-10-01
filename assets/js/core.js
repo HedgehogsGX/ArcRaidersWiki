@@ -226,12 +226,15 @@
       show(id);
     }
 
+    // Links say items.html, but hosts like Cloudflare Pages serve it at /items.
+    const page = (path) => path.replace(/\.html$/, '').replace(/\/index$/, '/');
+
     document.addEventListener('click', (e) => {
       const a = e.target.closest('a[href]');
       if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
       const target = new URL(a.href, location.href);
       const id = decodeURIComponent(target.hash.slice(1));
-      if (target.pathname !== location.pathname || !id || !has(id)) return;
+      if (page(target.pathname) !== page(location.pathname) || !id || !has(id)) return;
       e.preventDefault();
       open(id);
     });
