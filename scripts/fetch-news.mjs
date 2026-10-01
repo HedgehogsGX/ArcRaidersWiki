@@ -22,7 +22,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
-import { CLIENT_TERMS } from './glossary.mjs';
+import { CLIENT_TERMS, NEWS_TERMS } from './glossary.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://arcraiders.com';
@@ -267,12 +267,13 @@ function loadData() {
 }
 
 // The client's zh-CN terms (scripts/glossary-client.json: names, map locations,
-// systems), then the names in the game data, which include items and quests the
-// glossary doesn't list.
+// systems), names from the news that are newer than the client (NEWS_TERMS), then
+// the names in the game data, which include items and quests the glossary doesn't list.
 function buildGlossary(data) {
   const terms = new Map([['Raiders', '奇袭者']]);
   const add = (t) => t && t.en && t.zh && t.en.length > 2 && !terms.has(t.en) && terms.set(t.en, t.zh);
   CLIENT_TERMS.forEach(([en, zh]) => add({ en, zh }));
+  Object.entries(NEWS_TERMS).forEach(([en, zh]) => add({ en, zh }));
   Object.values(data.itemIndex || {}).forEach(([en, zh]) => add({ en, zh }));
   (data.quests || []).forEach((q) => add(q.name));
   (data.skills || []).forEach((s) => add(s.name));

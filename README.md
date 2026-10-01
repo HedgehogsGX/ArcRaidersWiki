@@ -101,7 +101,7 @@ TRANSLATE_API_KEY=你的密钥 npm run news
 
 官网只有英文。设置了 `TRANSLATE_API_KEY` 时，新文章或有改动的文章会翻译成简体中文，并按客户端术语表和游戏数据中的译名处理物品、任务、地图、地点等名词；译文缓存在 `content/news-zh.json`，同一篇文章不会重复翻译。没有密钥时只更新英文，中文界面会注明"尚未翻译"。
 
-翻译默认用 DeepSeek（`deepseek-v4-pro`，关闭思考模式）。脚本走 OpenAI 兼容的 chat completions 接口，换成其他服务商只需设置 `TRANSLATE_BASE_URL`（如 `https://api.example.com/v1`）和 `TRANSLATE_MODEL`。每次请求的系统提示词是 `fetch-news.mjs` 里的 `SYSTEM`，用户消息先列出这篇文章用到的术语（`英文 = 中文`，只取正文里出现的词），再附上按 `<block id="N">` 编号的 HTML 段落。
+翻译默认用 DeepSeek（`deepseek-v4-pro`，关闭思考模式）。脚本走 OpenAI 兼容的 chat completions 接口，换成其他服务商只需设置 `TRANSLATE_BASE_URL`（如 `https://api.example.com/v1`）和 `TRANSLATE_MODEL`。每次请求的系统提示词是 `fetch-news.mjs` 里的 `SYSTEM`，用户消息先列出这篇文章用到的术语（`英文 = 中文`，只取正文里出现的词），再附上按 `<block id="N">` 编号的 HTML 段落。客户端术语表还没有的新名称（如 Frozen Trail = 冰封之径）写在 `scripts/glossary.mjs` 的 `NEWS_TERMS`，客户端更新后改用官方译名。
 
 **自动同步**：`.github/workflows/news-sync.yml` 每天 03:17 UTC 运行一次，有新内容时开启或更新名为 "Sync official news" 的 PR，合并后网站即更新。启用前需要：
 
