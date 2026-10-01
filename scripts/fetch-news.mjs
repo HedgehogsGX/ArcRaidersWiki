@@ -5,11 +5,13 @@
 //   node scripts/fetch-news.mjs            fetch English; reuse cached Chinese
 //   node scripts/fetch-news.mjs --limit 20 how many recent posts to keep (default 12)
 //
-// The official site is English only. When ANTHROPIC_API_KEY is set (or an
-// `ant auth login` profile exists), new or changed posts are translated into
-// Simplified Chinese with Claude, using the game's official zh-CN terms from
-// data/. Translations are cached in content/news-zh.json, so each post is
-// translated once. Without credentials the Chinese side falls back to English.
+// The official site is English only. When TRANSLATE_API_KEY is set, new or
+// changed posts are translated into Simplified Chinese through an
+// OpenAI-compatible chat API, using the game's official zh-CN terms from
+// scripts/glossary-client.json and data/. The default is DeepSeek
+// (deepseek-v4-pro); TRANSLATE_BASE_URL and TRANSLATE_MODEL point it at another
+// provider. Translations are cached in content/news-zh.json, so each post is
+// translated once. Without a key the Chinese side falls back to English.
 //
 // Article HTML is reduced to a small whitelist of tags before it is stored,
 // and translated HTML goes through the same filter. Images are copied into
@@ -20,13 +22,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
-import { CLIENT_TERMS } from './glossary.mjs';
+import { CLIENT_TERMS, NEWS_TERMS } from './glossary.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://arcraiders.com';
 const OUT = path.join(ROOT, 'content/news.js');
 const CACHE = path.join(ROOT, 'content/news-zh.json');
 const IMG_DIR = path.join(ROOT, 'content/news-img');
+const TRANSLATE = {
+  key: process.env.TRANSLATE_API_KEY,
+  base: (process.env.TRANSLATE_BASE_URL || 'https://api.deepseek.com').replace(/\/+$/, ''),
+  model: process.env.TRANSLATE_MODEL || 'deepseek-v4-pro',
+};
 const limitArg = process.argv.indexOf('--limit');
 const LIMIT = limitArg > 0 ? Number(process.argv[limitArg + 1]) : 12;
 
@@ -260,12 +267,13 @@ function loadData() {
 }
 
 // The client's zh-CN terms (scripts/glossary-client.json: names, map locations,
-// systems), then the names in the game data, which include items and quests the
-// glossary doesn't list.
+// systems), names from the news that are newer than the client (NEWS_TERMS), then
+// the names in the game data, which include items and quests the glossary doesn't list.
 function buildGlossary(data) {
   const terms = new Map([['Raiders', '奇袭者']]);
   const add = (t) => t && t.en && t.zh && t.en.length > 2 && !terms.has(t.en) && terms.set(t.en, t.zh);
   CLIENT_TERMS.forEach(([en, zh]) => add({ en, zh }));
+  Object.entries(NEWS_TERMS).forEach(([en, zh]) => add({ en, zh }));
   Object.values(data.itemIndex || {}).forEach(([en, zh]) => add({ en, zh }));
   (data.quests || []).forEach((q) => add(q.name));
   (data.skills || []).forEach((s) => add(s.name));
@@ -312,45 +320,60 @@ function chunks(blocks, budget = 12000) {
   return out;
 }
 
-// `client` is an Anthropic SDK client (or a stand-in with the same method).
-async function translateBlocks(client, items, terms) {
+// One chat completion. DeepSeek's thinking mode is turned off: translation
+// doesn't need it, and it would multiply the tokens.
+async function complete(system, user, tries = 3) {
+  const body = {
+    model: TRANSLATE.model,
+    max_tokens: 16000,
+    messages: [
+      { role: 'system', content: system },
+      { role: 'user', content: user },
+    ],
+  };
+  if (new URL(TRANSLATE.base).hostname === 'api.deepseek.com') body.thinking = { type: 'disabled' };
+  for (let i = 1; ; i++) {
+    let retry = true;
+    try {
+      const res = await fetch(`${TRANSLATE.base}/chat/completions`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', authorization: `Bearer ${TRANSLATE.key}` },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        // Rate limits and server errors are worth another try; a bad key or request isn't.
+        retry = res.status === 429 || res.status >= 500;
+        throw new Error(`${res.status} ${(await res.text()).slice(0, 200)}`);
+      }
+      const choice = (await res.json()).choices?.[0];
+      retry = false;
+      if (choice?.finish_reason === 'length') throw new Error('translation truncated');
+      if (choice?.finish_reason === 'content_filter') throw new Error('translation declined');
+      return choice?.message?.content || '';
+    } catch (err) {
+      if (!retry || i >= tries) throw err;
+      await new Promise((r) => setTimeout(r, 3000 * i));
+    }
+  }
+}
+
+async function translateBlocks(items, terms) {
   const input = items.map((b) => `<block id="${b.i}">${b.html}</block>`).join('\n');
   const glossary = glossaryFor(textOf(input), terms);
-  const response = await client.beta.messages.create({
-    model: 'claude-opus-5',
-    max_tokens: 16000,
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
-    system: SYSTEM,
-    messages: [{ role: 'user', content: `Glossary:\n${glossary || '(none)'}\n\nBlocks:\n${input}` }],
-  });
-  if (response.stop_reason === 'refusal') throw new Error('translation declined');
-  if (response.stop_reason === 'max_tokens') throw new Error('translation truncated');
-  const text = response.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
+  const text = await complete(SYSTEM, `Glossary:\n${glossary || '(none)'}\n\nBlocks:\n${input}`);
   const found = new Map([...text.matchAll(/<block id="(\d+)">([\s\S]*?)<\/block>/g)].map((m) => [Number(m[1]), sanitize(m[2])]));
   return items.map((b) => found.get(b.i) || null);
 }
 
-async function translatePost(client, post, terms) {
+async function translatePost(post, terms) {
   const items = post.blocks.map((b, i) => ({ ...b, i })).filter((b) => b.type === 'html');
   const out = new Array(post.blocks.length).fill(null);
-  const [title] = await translateBlocks(client, [{ i: 0, html: post.title }], terms);
+  const [title] = await translateBlocks([{ i: 0, html: post.title }], terms);
   for (const group of chunks(items)) {
-    const done = await translateBlocks(client, group, terms);
+    const done = await translateBlocks(group, terms);
     group.forEach((b, n) => (out[b.i] = done[n]));
   }
   return { title: title && textOf(title), blocks: out };
-}
-
-async function makeClient() {
-  try {
-    const { default: Anthropic } = await import('@anthropic-ai/sdk');
-    const client = new Anthropic();
-    return client;
-  } catch (err) {
-    console.log(`Translation skipped: ${err.message.split('\n')[0]}`);
-    return null;
-  }
 }
 
 // ---- images -----------------------------------------------------------------------
@@ -436,17 +459,13 @@ async function main() {
 
   const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) : {};
   const stale = posts.filter((p) => cache[p.id]?.source !== hash(p));
-  let client = null;
-  if (stale.length) {
-    const hasCredentials = process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN || process.env.ANTHROPIC_PROFILE;
-    client = hasCredentials ? await makeClient() : null;
-    if (!client) console.log(`${stale.length} post(s) need Chinese; set ANTHROPIC_API_KEY to translate them.`);
-  }
-  if (client) {
+  if (stale.length && !TRANSLATE.key) console.log(`${stale.length} post(s) need Chinese; set TRANSLATE_API_KEY to translate them.`);
+  if (stale.length && TRANSLATE.key) {
+    console.log(`Translating ${stale.length} post(s) with ${TRANSLATE.model} at ${TRANSLATE.base}`);
     const terms = buildGlossary(loadData());
     for (const post of stale) {
       try {
-        const zh = await translatePost(client, post, terms);
+        const zh = await translatePost(post, terms);
         cache[post.id] = { source: hash(post), ...zh };
         console.log(`  translated ${post.id}`);
       } catch (err) {

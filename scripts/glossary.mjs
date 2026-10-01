@@ -61,6 +61,14 @@ export const NAMES = {
   'Ruined Parachute': '损毁的降落伞',
 };
 
+// source: site — names from the official news that are newer than the client
+// glossary. fetch-news.mjs gives them to the translator like client terms;
+// replace one with the client's own name once a client update has it.
+export const NEWS_TERMS = {
+  'Frozen Trail': '冰封之径',
+  'Reward Pass': '奖励通行证',
+};
+
 // source: site
 export const BOT_TYPES = {
   'Heavy Assault': '重型突击',
