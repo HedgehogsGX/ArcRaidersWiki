@@ -30,7 +30,6 @@ vendor/arcraiders-data   上游游戏数据（git 子模块）
 |---|---|---|---|
 | 地图条件 | arcraiders.com 地图条件页 | 每小时 | 直接提交到 `main` |
 | 官方公告与中文翻译 | arcraiders.com 公告页 | 每天 | 开 "Sync official news" PR，合并后上线 |
-| 首页的最新商店外观 | 最新一篇「Store Update」公告的横幅 | 随公告 | 和公告在同一个 PR 里 |
 | 互动地图标记 | MetaForge | 每周一 | 开 "Sync map markers" PR |
 
 需要两项仓库设置：
@@ -45,7 +44,7 @@ vendor/arcraiders-data   上游游戏数据（git 子模块）
 ```bash
 node scripts/build-data.mjs              # 游戏数据，先 git submodule update --remote
 TRANSLATE_API_KEY=… npm run news         # 公告，先 npm install
-python3 scripts/fetch-store-skin.py      # 首页外观，先 pip install onnxruntime numpy pillow
+python3 scripts/fetch-store-skin.py      # 首页外观（只手动更新），先 pip install onnxruntime numpy pillow
 node scripts/fetch-map-conditions.mjs    # 地图条件
 node scripts/fetch-map-markers.mjs       # 互动地图标记
 ```

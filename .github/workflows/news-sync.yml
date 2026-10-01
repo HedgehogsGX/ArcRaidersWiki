@@ -1,7 +1,6 @@
 # Checks arcraiders.com once a day and, when there are new or changed posts,
-# opens (or updates) a "Sync official news" pull request for review. When one of
-# them is a new Store Update, the home page figure is cut out of its banner and
-# replaced in the same PR (scripts/fetch-store-skin.py).
+# opens (or updates) a "Sync official news" pull request for review. The home
+# page figure is not part of it: scripts/fetch-store-skin.py is run by hand.
 #
 # Needs the repository secret DEEPSEEK_API_KEY for Chinese translations; without
 # it the PR still brings in the English posts. To translate with another
@@ -49,17 +48,6 @@ jobs:
           TRANSLATE_BASE_URL: ${{ vars.TRANSLATE_BASE_URL }}
           TRANSLATE_MODEL: ${{ vars.TRANSLATE_MODEL }}
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      # A failure here leaves the current figure and doesn't hold up the news.
-      - name: Cut out the newest store skin
-        continue-on-error: true
-        run: |
-          pip install --quiet onnxruntime numpy pillow
-          python scripts/fetch-store-skin.py
-
       - name: Upload the result of a test run
         if: github.ref != 'refs/heads/main'
         uses: actions/upload-artifact@v4
@@ -68,8 +56,6 @@ jobs:
           path: |
             content/news.js
             content/news-zh.json
-            content/store-skin.json
-            assets/img/brand/store-skin.webp
 
       - name: Open pull request
         if: github.ref == 'refs/heads/main'
@@ -81,8 +67,6 @@ jobs:
             content/news.js
             content/news-zh.json
             content/news-img
-            content/store-skin.json
-            assets/img/brand/store-skin.webp
           commit-message: Sync official news from arcraiders.com
           author: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
           committer: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
@@ -90,4 +74,3 @@ jobs:
           body: |
             New or updated posts from https://arcraiders.com/news, fetched by the daily News sync workflow.
             Chinese is translated with the official in-game terms; posts show English until a translation exists.
-            If assets/img/brand/store-skin.webp changed, a new Store Update came out: check the cutout of its banner before merging, since it becomes the home page figure.
