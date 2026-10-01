@@ -112,6 +112,7 @@ window.ARC_STRINGS = {
   },
   'news.all': { zh: '全部公告（{n}）', en: 'All news ({n})' },
   'news.source': { zh: '在官网阅读原文', en: 'Read on arcraiders.com' },
+  'news.collapse': { zh: '收起公告', en: 'Collapse post' },
   'news.enOnly': { zh: '本文尚未翻译，以下为官网英文原文。', en: '' },
   'news.empty': { zh: '暂时没有公告。', en: 'No posts yet.' },
   'news.other': { zh: '其他', en: 'Other' },
