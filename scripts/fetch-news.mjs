@@ -15,7 +15,8 @@
 //
 // Article HTML is reduced to a small whitelist of tags before it is stored,
 // and translated HTML goes through the same filter. Images are copied into
-// content/news-img/ as WebP (needs sharp from npm install).
+// content/news-img/ as WebP (needs sharp from npm install); each keeps the URL
+// of its full-size original in data-full, for the image viewer.
 
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
@@ -255,6 +256,20 @@ function parseArticle(html) {
   return blocks;
 }
 
+// The article shows 1024px copies; the page's React payload pairs each with the
+// uploaded original (up to 3840px), as tabletUrl and originalUrl. Keyed by the
+// copy's URL as sanitize() writes it.
+function parseOriginals(html) {
+  const found = new Map();
+  const re = /tabletUrl\\?"\s*:\s*\\?"([^"\\]+)\\?"[\s\S]{0,200}?originalUrl\\?"\s*:\s*\\?"([^"\\]+)/g;
+  for (const [, shown, original] of html.matchAll(re)) {
+    const from = safeUrl(shown, { image: true });
+    const to = safeUrl(original, { image: true });
+    if (from && to) found.set(from, to);
+  }
+  return found;
+}
+
 // ---- translation ------------------------------------------------------------------
 
 function loadData() {
@@ -383,7 +398,11 @@ async function translatePost(post, terms) {
 // and linked relative to the site root. Existing copies are reused and copies
 // no longer linked are deleted. An image that can't be fetched or converted
 // keeps its original URL.
-async function localizeImages(news) {
+//
+// Article images also get data-full: the full-size original from `originals`
+// (see parseOriginals), else the image the article links. The originals stay on
+// assets.arcraiders.com; the site serves them through /news-full/ (worker.js).
+async function localizeImages(news, originals = new Map()) {
   let sharp = null;
   try {
     ({ default: sharp } = await import('sharp'));
@@ -425,7 +444,11 @@ async function localizeImages(news) {
     const srcs = [...html.matchAll(IMG_SRC)].map((m) => m[2]);
     const to = new Map();
     for (const src of srcs) to.set(src, await local(src.replace(/&amp;/g, '&')));
-    return html.replace(IMG_SRC, (m, before, src) => `${before}${escAttr(to.get(src))}"`);
+    return html.replace(IMG_SRC, (m, before, src) => {
+      const remote = src.replace(/&amp;/g, '&');
+      const full = /^https?:/.test(remote) ? originals.get(remote) || remote : null;
+      return `${before}${escAttr(to.get(src))}"${full ? ` data-full="${escAttr(full)}"` : ''}`;
+    });
   }
 
   for (const post of news) {
@@ -450,10 +473,12 @@ async function main() {
   if (!listing.length) throw new Error('No articles found on the news page; the site layout may have changed.');
 
   const posts = [];
+  const originals = new Map();
   for (const row of listing) {
     const html = await get(`${SITE}/news/${row.id}`);
     const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
     posts.push({ ...row, title: h1 ? textOf(h1[1]) : row.title, url: `${SITE}/news/${row.id}`, blocks: parseArticle(html) });
+    parseOriginals(html).forEach((to, from) => originals.set(from, to));
     console.log(`  fetched ${row.date}  ${row.id}`);
   }
 
@@ -498,7 +523,7 @@ async function main() {
       ),
     };
   });
-  await localizeImages(news);
+  await localizeImages(news, originals);
 
   fs.writeFileSync(CACHE, `${JSON.stringify(cache, null, 2)}\n`);
   fs.writeFileSync(
@@ -510,7 +535,7 @@ async function main() {
   console.log(`Wrote ${news.length} posts to content/news.js (${translated} with Chinese).`);
 }
 
-export { parseListing, parseArticle, sanitize, translatePost, buildGlossary, glossaryFor, loadData, localizeImages };
+export { parseListing, parseArticle, parseOriginals, sanitize, translatePost, buildGlossary, glossaryFor, loadData, localizeImages };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch((err) => {

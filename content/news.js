@@ -198,7 +198,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/6df511c3-b3de-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-20-8--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/6df511c3-b3de-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-20-8--1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/6df511c3-b3de-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622%20(8).jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -290,7 +290,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/43bab826-e1fc-ARCRaiders_RewardPass-Infographic_Premium_Legal_SHARE-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/43bab826-e1fc-ARCRaiders_RewardPass-Infographic_Premium_Legal_SHARE-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/43bab826-e1fc-ARCRaiders_RewardPass-Infographic_Premium_Legal_SHARE.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -319,7 +319,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/dbb4a224-5818-collector_set-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/dbb4a224-5818-collector_set-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/dbb4a224-5818-collector_set.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -351,7 +351,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/2fcfcc36-537c-ARC-Raiders__Header-PvEToggle_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/2fcfcc36-537c-ARC-Raiders__Header-PvEToggle_1920x622-1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/2fcfcc36-537c-ARC-Raiders__Header-PvEToggle_1920x622.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -395,7 +395,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/0bd8819b-7dec-PvE_toggle_blog-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/0bd8819b-7dec-PvE_toggle_blog-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/0bd8819b-7dec-PvE_toggle_blog.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -607,7 +607,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/2-1-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2-1-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/2-1.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -641,7 +641,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/2d6c93ef-e277-AR_Bumper_ARC_Bully_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2d6c93ef-e277-AR_Bumper_ARC_Bully_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/2d6c93ef-e277-AR_Bumper_ARC_Bully_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -655,7 +655,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/c83fa8f9-0b7d-AR_Bumper_ARC_Skulker_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/c83fa8f9-0b7d-AR_Bumper_ARC_Skulker_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/c83fa8f9-0b7d-AR_Bumper_ARC_Skulker_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -669,7 +669,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/a6a68676-3b59-AR_Bumper_ARC_Hydra_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/a6a68676-3b59-AR_Bumper_ARC_Hydra_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/a6a68676-3b59-AR_Bumper_ARC_Hydra_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -693,7 +693,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/7a701a7d-8df3-AR_Bumper_Location_Outposts_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/7a701a7d-8df3-AR_Bumper_Location_Outposts_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/7a701a7d-8df3-AR_Bumper_Location_Outposts_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -717,7 +717,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/3591bdaa-b6f0-AR_Bumper_Amplified-Weapons_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/3591bdaa-b6f0-AR_Bumper_Amplified-Weapons_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/3591bdaa-b6f0-AR_Bumper_Amplified-Weapons_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -731,7 +731,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/8d30b481-cc19-AR_Bumper_Weapon_Stiletto_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/8d30b481-cc19-AR_Bumper_Weapon_Stiletto_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/8d30b481-cc19-AR_Bumper_Weapon_Stiletto_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -745,7 +745,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/840002ea-b0ea-AR_Bumper_Weapon_Bantam_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/840002ea-b0ea-AR_Bumper_Weapon_Bantam_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/840002ea-b0ea-AR_Bumper_Weapon_Bantam_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -759,7 +759,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/d77a737d-0e92-AR_Bumper_Gadgets_GrapplingHook_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/d77a737d-0e92-AR_Bumper_Gadgets_GrapplingHook_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/d77a737d-0e92-AR_Bumper_Gadgets_GrapplingHook_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -773,7 +773,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/aa0aa1dc-2c28-AR_Bumper_Gadgets_TetherLauncher_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/aa0aa1dc-2c28-AR_Bumper_Gadgets_TetherLauncher_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/aa0aa1dc-2c28-AR_Bumper_Gadgets_TetherLauncher_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -787,7 +787,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/9e76df9b-694a-Screenshot-202026-09-16-20173735-1024x456.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"456\">"
+    "html": "<img src=\"content/news-img/9e76df9b-694a-Screenshot-202026-09-16-20173735-1024x456.webp\" data-full=\"https://assets.arcraiders.com/media/9e76df9b-694a-Screenshot%202026-09-16%20173735.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"456\">"
    },
    {
     "type": "html",
@@ -801,7 +801,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/9e904fd5-01b4-AR_Bumper_Instrument_Harmonica_16_9-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/9e904fd5-01b4-AR_Bumper_Instrument_Harmonica_16_9-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/9e904fd5-01b4-AR_Bumper_Instrument_Harmonica_16_9.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -881,7 +881,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/ed2c29dc-6dce-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-20-2--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/ed2c29dc-6dce-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-20-2--1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/ed2c29dc-6dce-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622%20(2).jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1070,7 +1070,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/270045c6-e0ab-duck2-1024x251.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"251\">"
+    "html": "<img src=\"content/news-img/270045c6-e0ab-duck2-1024x251.webp\" data-full=\"https://assets.arcraiders.com/media/270045c6-e0ab-duck2.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"251\">"
    },
    {
     "type": "html",
@@ -1124,7 +1124,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/92dab6d2-6f6c-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-4--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/92dab6d2-6f6c-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-4--1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/92dab6d2-6f6c-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622%20(4).jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1173,7 +1173,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/6e33f558-68ca-ArcRaiders_ScreenShot_16x9_TrialsSeason05-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/6e33f558-68ca-ArcRaiders_ScreenShot_16x9_TrialsSeason05-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/6e33f558-68ca-ArcRaiders_ScreenShot_16x9_TrialsSeason05.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1197,7 +1197,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/ab1dc116-b67b-ARC-Raiders_Blog_EventHeader_LiveUpdate_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/ab1dc116-b67b-ARC-Raiders_Blog_EventHeader_LiveUpdate_1920x622-1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/ab1dc116-b67b-ARC-Raiders_Blog_EventHeader_LiveUpdate_1920x622.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1236,7 +1236,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/c0d3f2f8-6b9e-ArcRaiders_ScreenShot_16x9_Narrative_01-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/c0d3f2f8-6b9e-ArcRaiders_ScreenShot_16x9_Narrative_01-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/c0d3f2f8-6b9e-ArcRaiders_ScreenShot_16x9_Narrative_01.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1275,7 +1275,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/2cf42228-8c79-ArcRaiders_ScreenShot_Master_16_9_Duckies-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/2cf42228-8c79-ArcRaiders_ScreenShot_Master_16_9_Duckies-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/2cf42228-8c79-ArcRaiders_ScreenShot_Master_16_9_Duckies.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1359,7 +1359,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/a4b678dd-0879-ArcRaiders_ScreenShot_16x9_Project-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/a4b678dd-0879-ArcRaiders_ScreenShot_16x9_Project-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/a4b678dd-0879-ArcRaiders_ScreenShot_16x9_Project.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1393,7 +1393,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/2c21c7cf-f8ef-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-3--1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/2c21c7cf-f8ef-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622-20-3--1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/2c21c7cf-f8ef-ARC-Raiders_Blog_EventHeader_StoreUpdate_1920x622%20(3).jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1437,7 +1437,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/5e256021-afd6-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/5e256021-afd6-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622-1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/5e256021-afd6-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1471,7 +1471,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/cf8183a7-6685-unnamed-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/cf8183a7-6685-unnamed-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/cf8183a7-6685-unnamed.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1593,7 +1593,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/a635bda4-86ba-ARCRaiders_Expeditions-20Infographic_05-Approved-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/a635bda4-86ba-ARCRaiders_Expeditions-20Infographic_05-Approved-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/a635bda4-86ba-ARCRaiders_Expeditions%20Infographic_05-Approved.png\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1655,7 +1655,7 @@ window.ARC_NEWS = [
   "body": [
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/8c69d591-d5f8-ARC-Raiders_Steam_EventHeader_1920x622-1024x332.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
+    "html": "<img src=\"content/news-img/8c69d591-d5f8-ARC-Raiders_Steam_EventHeader_1920x622-1024x332.webp\" data-full=\"https://assets.arcraiders.com/media/8c69d591-d5f8-ARC-Raiders_Steam_EventHeader_1920x622.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"332\">"
    },
    {
     "type": "html",
@@ -1679,7 +1679,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/04c5c270-3021-ArcRaiders_ScreenShot_Subway_16x9_02-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/04c5c270-3021-ArcRaiders_ScreenShot_Subway_16x9_02-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/04c5c270-3021-ArcRaiders_ScreenShot_Subway_16x9_02.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
@@ -1698,7 +1698,7 @@ window.ARC_NEWS = [
    },
    {
     "type": "image",
-    "html": "<img src=\"content/news-img/627f108c-4078-ArcRaiders_ScreenShot_Subway_16x9_04-1024x576.webp\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
+    "html": "<img src=\"content/news-img/627f108c-4078-ArcRaiders_ScreenShot_Subway_16x9_04-1024x576.webp\" data-full=\"https://assets.arcraiders.com/media/627f108c-4078-ArcRaiders_ScreenShot_Subway_16x9_04.jpg\" alt=\"\" loading=\"lazy\" width=\"1024\" height=\"576\">"
    },
    {
     "type": "html",
