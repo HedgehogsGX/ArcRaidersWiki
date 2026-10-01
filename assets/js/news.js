@@ -51,22 +51,39 @@
         </span>
         <span class="news__toggle" aria-hidden="true"><i></i><i></i></span>
       </button>
+      <div class="news__dock"><button class="news__toggle news__close" type="button" aria-controls="news-panel-${post.id}"
+        aria-label="${t('news.collapse')}"><i></i><i></i></button></div>
       <div class="news__panel" id="news-panel-${post.id}" role="region" aria-labelledby="news-title-${post.id}">
         <div class="news__panel-inner">${open ? body(post) : ''}</div>
       </div>
     </article>`;
   }
 
+  const headerHeight = () => parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 64;
+
+  // A post whose minus has slid under the site header gets .is-past, which
+  // shows the floating minus (.news__dock) while the post is open.
+  const past = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        const line = e.rootBounds ? e.rootBounds.top : headerHeight();
+        e.target.closest('.news').classList.toggle('is-past', e.intersectionRatio < 1 && e.boundingClientRect.top < line);
+      }),
+    { rootMargin: `-${headerHeight()}px 0px 0px 0px`, threshold: [0, 1] }
+  );
+
   // Renders a list into `el`. Options: limit (number of posts), tags (filter).
   function renderNews(el, { limit, filter } = {}) {
     const list = posts.filter((p) => !filter || filter(p)).slice(0, limit || posts.length);
+    el.querySelectorAll('.news__head .news__toggle').forEach((x) => past.unobserve(x));
     el.classList.add('news-list');
     mount(el, list.length ? list.map(article) : html`<p class="empty">${t('news.empty')}</p>`);
+    el.querySelectorAll('.news__head .news__toggle').forEach((x) => past.observe(x));
   }
 
-  function toggle(button) {
-    const node = button.closest('.news');
-    const id = button.dataset.news;
+  function toggle(node, fromDock) {
+    const head = node.querySelector('.news__head');
+    const id = head.dataset.news;
     const post = posts.find((p) => p.id === id);
     const inner = node.querySelector('.news__panel-inner');
     const open = !opened.has(id);
@@ -75,14 +92,17 @@
       // Body is built on first open so video iframes only load when read.
       if (!inner.firstElementChild) mount(inner, body(post));
     } else opened.delete(id);
-    button.setAttribute('aria-expanded', String(open));
+    head.setAttribute('aria-expanded', String(open));
+    // Bring the head back under the site header. Closing jumps there before the
+    // panel shrinks, so a long post folds up below its title instead of
+    // dropping the reader somewhere further down the list.
+    const top = node.getBoundingClientRect().top;
+    const header = headerHeight();
+    if (top < header) window.scrollTo({ top: window.scrollY + top - header - 12, behavior: open ? 'smooth' : 'instant' });
+    // The floating minus disappears with the panel, so keep focus on the post.
+    if (fromDock) head.focus({ preventScroll: true });
     // Next frame, so the closed layout is committed before the transition starts.
     requestAnimationFrame(() => node.classList.toggle('is-open', open));
-    if (open) {
-      const top = node.getBoundingClientRect().top;
-      const header = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 64;
-      if (top < header) window.scrollTo({ top: window.scrollY + top - header - 12, behavior: 'smooth' });
-    }
   }
 
   // Collapsing clears the body after the panel has closed, so closed articles stay light.
@@ -93,8 +113,8 @@
   });
 
   document.addEventListener('click', (e) => {
-    const button = e.target.closest('.news__head[data-news]');
-    if (button) toggle(button);
+    const button = e.target.closest('.news__head[data-news], .news__close');
+    if (button) toggle(button.closest('.news'), button.classList.contains('news__close'));
   });
 
   // #news-<id> in the address opens that post and brings it into view.
@@ -102,7 +122,7 @@
     const m = /^#news-(.+)$/.exec(decodeURIComponent(location.hash));
     const button = m && document.querySelector(`.news__head[data-news="${CSS.escape(m[1])}"]`);
     if (!button) return;
-    if (!opened.has(m[1])) toggle(button);
+    if (!opened.has(m[1])) toggle(button.closest('.news'));
     button.scrollIntoView({ block: 'start' });
   }
 

@@ -382,6 +382,7 @@
 }
 
 .news {
+  --toggle: 34px;
   position: relative;
   border-bottom: 1px solid var(--rule);
 }
@@ -407,7 +408,7 @@
 .news__head {
   width: 100%;
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr) 34px;
+  grid-template-columns: 180px minmax(0, 1fr) var(--toggle);
   align-items: center;
   gap: 24px;
   padding: 16px 0;
@@ -419,7 +420,7 @@
 
 /* The thumbnail widens as the post opens. */
 .news.is-open .news__head {
-  grid-template-columns: 360px minmax(0, 1fr) 34px;
+  grid-template-columns: 360px minmax(0, 1fr) var(--toggle);
   padding: 28px 0 24px;
 }
 
@@ -481,8 +482,8 @@
 /* Plus that turns into a minus. */
 .news__toggle {
   position: relative;
-  width: 34px;
-  height: 34px;
+  width: var(--toggle);
+  height: var(--toggle);
   border: 1px solid var(--rule-2);
   border-radius: 50%;
   transition: transform 0.5s var(--ease), background 0.25s, border-color 0.25s;
@@ -519,6 +520,43 @@
 
 .news.is-open .news__toggle i + i {
   transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Once the head's minus slides under the site header, a second one follows the
+   reader down the open post, so a long post closes without scrolling back up.
+   The dock is a zero-height sticky line and the button hangs above it, so it
+   stops at the post's bottom edge instead of covering the next post. */
+.news__dock {
+  position: sticky;
+  top: calc(var(--header-h) + 16px + var(--toggle));
+  z-index: 2;
+  height: 0;
+}
+
+/* Appears with a short pop; vanishes at once, when it closes the post or merges
+   back into the head's minus. */
+.news__close {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  scale: 0.6;
+  visibility: hidden;
+  transition: none;
+}
+
+.news.is-open.is-past .news__close {
+  opacity: 1;
+  scale: 1;
+  visibility: visible;
+  transition: opacity 0.2s, scale 0.35s var(--ease), background 0.25s, border-color 0.25s;
+}
+
+.news.is-open .news__close:hover {
+  background: var(--bone-2);
+  border-color: var(--bone-2);
 }
 
 /* Height animates through a 0fr → 1fr grid row. */
@@ -671,12 +709,12 @@
 
 @media (max-width: 720px) {
   .news__head {
-    grid-template-columns: 96px minmax(0, 1fr) 30px;
+    grid-template-columns: 96px minmax(0, 1fr) var(--toggle);
     gap: 14px;
   }
 
   .news.is-open .news__head {
-    grid-template-columns: 140px minmax(0, 1fr) 30px;
+    grid-template-columns: 140px minmax(0, 1fr) var(--toggle);
     padding: 20px 0 16px;
   }
 
@@ -684,9 +722,8 @@
     font-size: var(--step-0);
   }
 
-  .news__toggle {
-    width: 30px;
-    height: 30px;
+  .news {
+    --toggle: 30px;
   }
 }
 
