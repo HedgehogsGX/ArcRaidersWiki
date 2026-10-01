@@ -119,6 +119,16 @@ window.ARC_STRINGS = {
   'news.tag.patch-notes': { zh: '更新说明', en: 'Patch notes' },
   'news.tag.store-update': { zh: '商店更新', en: 'Store update' },
   'news.tag.hotfix': { zh: '热修复', en: 'Hotfix' },
+  'news.image.open': { zh: '查看大图', en: 'View full size' },
+  'news.image.viewer': { zh: '公告图片', en: 'News image' },
+  'news.image.prev': { zh: '上一张', en: 'Previous image' },
+  'news.image.next': { zh: '下一张', en: 'Next image' },
+  'news.image.download': { zh: '下载原图', en: 'Download' },
+  'news.image.save': { zh: '存到相册', en: 'Save to Photos' },
+  'news.image.share': { zh: '分享', en: 'Share' },
+  'news.image.loading': { zh: '正在载入原图…', en: 'Loading the original…' },
+  'news.image.size': { zh: '原图 {w} × {h}', en: 'Original, {w} × {h}' },
+  'news.image.failed': { zh: '原图载入失败，当前为预览图', en: "Couldn't load the original; this is the preview" },
 
   // Items
   'items.lede': {

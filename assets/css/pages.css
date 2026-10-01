@@ -727,6 +727,248 @@
   }
 }
 
+/* ---- news image viewer ------------------------------------------------------- */
+
+.news__body img[role='button'] {
+  cursor: zoom-in;
+}
+
+.news__body img[role='button']:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+html:has(.viewer[open]) {
+  overflow: hidden;
+}
+
+/* Covers the screen itself, so the backdrop stays clear. */
+.viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #0a040e;
+  color: var(--bone);
+  overflow: hidden;
+}
+
+.viewer[open] {
+  animation: viewer-in 0.2s ease-out;
+}
+
+.viewer:focus {
+  outline: none;
+}
+
+.viewer::backdrop {
+  background: transparent;
+}
+
+@keyframes viewer-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* The image centers with auto margins rather than place-items, so a zoomed
+   image can still be scrolled to its top and left edges. */
+.viewer__stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  padding: 64px 76px 32px;
+}
+
+.viewer__img {
+  flex: none;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 2px;
+  cursor: zoom-in;
+}
+
+.viewer.is-zoomed .viewer__stage {
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0;
+}
+
+.viewer.is-zoomed .viewer__img {
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  cursor: zoom-out;
+}
+
+.viewer__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) 10px max(18px, env(safe-area-inset-left));
+  background: linear-gradient(rgba(10, 4, 14, 0.9), rgba(10, 4, 14, 0));
+  pointer-events: none;
+}
+
+.viewer__bar > * {
+  pointer-events: auto;
+}
+
+.viewer__count {
+  color: var(--bone-2);
+  font-size: var(--step--1);
+}
+
+.viewer__status {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--dust);
+  font-size: var(--step--1);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.viewer.is-loading .viewer__status {
+  animation: viewer-pulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes viewer-pulse {
+  to {
+    opacity: 0.4;
+  }
+}
+
+.viewer__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.viewer__action,
+.viewer__icon,
+.viewer__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule-2);
+  background: rgba(27, 18, 37, 0.85);
+  color: var(--bone);
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.viewer__action {
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px 0 11px;
+  border-radius: 18px;
+  font-size: var(--step--1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.viewer__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.viewer__action svg {
+  width: 18px;
+  height: 18px;
+}
+
+.viewer__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.viewer__action:hover,
+.viewer__icon:hover,
+.viewer__nav:hover {
+  border-color: var(--bone-2);
+}
+
+.viewer__action:disabled {
+  opacity: 0.4;
+}
+
+.viewer__action[hidden] {
+  display: none;
+}
+
+.viewer__nav {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  border-radius: 50%;
+}
+
+.viewer__nav--next {
+  left: auto;
+  right: 16px;
+}
+
+.viewer__nav svg {
+  width: 22px;
+  height: 22px;
+}
+
+.viewer.is-single .viewer__nav,
+.viewer.is-zoomed .viewer__nav {
+  display: none;
+}
+
+/* Phones: the image takes the full width, the arrows move to the bottom
+   corners and the status line sits between them. */
+@media (max-width: 720px) {
+  .viewer__stage {
+    padding: 60px 0 76px;
+  }
+
+  .viewer__bar {
+    gap: 10px;
+    padding-left: max(14px, env(safe-area-inset-left));
+  }
+
+  .viewer__count {
+    flex: 1;
+  }
+
+  .viewer__status {
+    position: fixed;
+    left: 76px;
+    right: 76px;
+    bottom: max(28px, calc(env(safe-area-inset-bottom) + 12px));
+    text-align: center;
+  }
+
+  .viewer__action {
+    padding: 0 12px 0 9px;
+  }
+
+  .viewer__nav {
+    top: auto;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    margin: 0;
+  }
+}
+
 /* ---- items ------------------------------------------------------------------ */
 
 .items-filter {

@@ -20,6 +20,7 @@ assets/                  样式、脚本、图片、字体；界面文字在 js/
 data/                    游戏数据（build-data.mjs 生成，不要手动修改）
 content/                 公告、地图条件、地图标记（同步脚本生成，不要手动修改）
 scripts/                 构建与同步脚本，每个脚本开头有详细说明
+worker.js, functions/    公告原图的 /news-full/ 路由（Workers 与 Pages 各一个入口）
 vendor/arcraiders-data   上游游戏数据（git 子模块）
 ```
 
@@ -55,6 +56,8 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 - **Cloudflare Pages**（当前网站）：构建命令 `npm run build`，输出目录 `dist`。
 - **腾讯云 EdgeOne Pages**（中国大陆）：设置相同；自定义域名要先完成 ICP 备案，页脚需显示备案号。
+
+公告图片点开后显示官网原图（最大 3840 像素），可下载，手机上可存到相册。原图不进仓库，由 `/news-full/<文件名>` 从 assets.arcraiders.com 取来再从本站发出（`worker.js`，Cloudflare Pages 通过 `functions/` 自动启用；`npm run serve` 本地也有）。没有这个路由的托管平台上，原图直接从官网载入，"下载原图"改为在新标签页打开官网原图。
 
 ## 译名
 
