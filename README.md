@@ -96,16 +96,18 @@ node scripts/fetch-map-markers.mjs
 
 ```bash
 npm install
-ANTHROPIC_API_KEY=你的密钥 npm run news
+TRANSLATE_API_KEY=你的密钥 npm run news
 ```
 
-官网只有英文。设置了 `ANTHROPIC_API_KEY` 时，新文章或有改动的文章会用 Claude（`claude-opus-5`）翻译成简体中文，并按客户端术语表和游戏数据中的译名处理物品、任务、地图、地点等名词；译文缓存在 `content/news-zh.json`，同一篇文章不会重复翻译。没有密钥时只更新英文，中文界面会注明"尚未翻译"。
+官网只有英文。设置了 `TRANSLATE_API_KEY` 时，新文章或有改动的文章会翻译成简体中文，并按客户端术语表和游戏数据中的译名处理物品、任务、地图、地点等名词；译文缓存在 `content/news-zh.json`，同一篇文章不会重复翻译。没有密钥时只更新英文，中文界面会注明"尚未翻译"。
+
+翻译默认用 DeepSeek（`deepseek-v4-pro`，关闭思考模式）。脚本走 OpenAI 兼容的 chat completions 接口，换成其他服务商只需设置 `TRANSLATE_BASE_URL`（如 `https://api.example.com/v1`）和 `TRANSLATE_MODEL`。每次请求的系统提示词是 `fetch-news.mjs` 里的 `SYSTEM`，用户消息先列出这篇文章用到的术语（`英文 = 中文`，只取正文里出现的词），再附上按 `<block id="N">` 编号的 HTML 段落。
 
 **自动同步**：`.github/workflows/news-sync.yml` 每天 03:17 UTC 运行一次，有新内容时开启或更新名为 "Sync official news" 的 PR，合并后网站即更新。启用前需要：
 
-1. 在仓库 Settings → Secrets and variables → Actions 中添加 `ANTHROPIC_API_KEY`；
+1. 在仓库 Settings → Secrets and variables → Actions 中添加 `DEEPSEEK_API_KEY`（换服务商时，在同一页的 Variables 中设置 `TRANSLATE_BASE_URL` 和 `TRANSLATE_MODEL`，并把工作流里的密钥换成对应的 secret）；
 2. 在 Settings → Actions → General 中勾选 "Allow GitHub Actions to create and approve pull requests"；
-3. 将工作流合并到 `main`（定时任务只在默认分支上运行）。也可以在 Actions 页面手动运行。
+3. 将工作流合并到 `main`（定时任务只在默认分支上运行）。也可以在 Actions 页面手动运行。在其他分支上手动运行算作测试：不开 PR，而是把改动的文件作为 "news-sync" 构件上传，可在运行页面下载检查。
 
 ## 首页的最新商店外观
 

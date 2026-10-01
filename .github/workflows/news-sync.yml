@@ -3,10 +3,15 @@
 # them is a new Store Update, the home page figure is cut out of its banner and
 # replaced in the same PR (scripts/fetch-store-skin.py).
 #
-# Needs the repository secret ANTHROPIC_API_KEY for Chinese translations; without
-# it the PR still brings in the English posts. Scheduled runs only start once this
+# Needs the repository secret DEEPSEEK_API_KEY for Chinese translations; without
+# it the PR still brings in the English posts. To translate with another
+# OpenAI-compatible provider, set the repository variables TRANSLATE_BASE_URL and
+# TRANSLATE_MODEL and pass its key instead. Scheduled runs only start once this
 # file is on the default branch. The PR step also needs Settings → Actions →
 # General → "Allow GitHub Actions to create and approve pull requests".
+#
+# A manual run on any other branch is a test: instead of opening the PR, it
+# uploads the files it would have changed as the "news-sync" artifact.
 
 name: News sync
 
@@ -40,7 +45,9 @@ jobs:
       - name: Fetch and translate
         run: node scripts/fetch-news.mjs
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TRANSLATE_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TRANSLATE_BASE_URL: ${{ vars.TRANSLATE_BASE_URL }}
+          TRANSLATE_MODEL: ${{ vars.TRANSLATE_MODEL }}
 
       - uses: actions/setup-python@v5
         with:
@@ -53,7 +60,19 @@ jobs:
           pip install --quiet onnxruntime numpy pillow
           python scripts/fetch-store-skin.py
 
+      - name: Upload the result of a test run
+        if: github.ref != 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: news-sync
+          path: |
+            content/news.js
+            content/news-zh.json
+            content/store-skin.json
+            assets/img/brand/store-skin.webp
+
       - name: Open pull request
+        if: github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v7
         with:
           branch: news-sync
