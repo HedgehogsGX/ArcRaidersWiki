@@ -189,6 +189,7 @@
   function build() {
     const d = document.createElement('dialog');
     d.className = 'viewer';
+    d.tabIndex = -1;
     d.innerHTML = `<div class="viewer__stage"><img class="viewer__img" alt=""></div>
       <div class="viewer__bar">
         <span class="viewer__count num"></span>
@@ -196,7 +197,7 @@
         <span class="viewer__actions">
           <button class="viewer__action" type="button" data-viewer="save" hidden>${icon.save}<span></span></button>
           <a class="viewer__action" data-viewer="download">${icon.download}<span></span></a>
-          <button class="viewer__icon" type="button" data-viewer="close" autofocus>${icon.close}</button>
+          <button class="viewer__icon" type="button" data-viewer="close">${icon.close}</button>
         </span>
       </div>
       <button class="viewer__nav viewer__nav--prev" type="button" data-viewer="prev">${icon.prev}</button>
@@ -355,6 +356,8 @@
     viewer.dialog.classList.toggle('is-single', imgs.length < 2);
     labels();
     viewer.dialog.showModal();
+    // Focus the viewer itself: a focused button would show its ring after a tap.
+    viewer.dialog.focus();
     show(imgs.indexOf(img));
   }
 

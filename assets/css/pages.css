@@ -762,6 +762,10 @@ html:has(.viewer[open]) {
   animation: viewer-in 0.2s ease-out;
 }
 
+.viewer:focus {
+  outline: none;
+}
+
 .viewer::backdrop {
   background: transparent;
 }
