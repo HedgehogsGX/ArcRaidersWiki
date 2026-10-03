@@ -80,25 +80,6 @@
       "<p>《ARC Raiders》团队</p>"
     ]
   },
-  "subway-arc-raiders-partnership": {
-    "source": "cdf1297da64a2a5e",
-    "title": "《ARC Raiders》× 赛百味：独家 Subterranean 服装",
-    "blocks": [
-      null,
-      "<h3>奇袭不饿肚子</h3>",
-      "<p>你是不是也遇到过这种情况？穿着最好的装备进图，带足了弹药，正准备看一眼地图……这时你听到了：一声低沉而阴森的咆哮。你浑身发抖。是族母在巡逻吗？还是兰斯又卖给你过期的兴奋剂了？</p>",
-      "<p>都不是。你忘了奇袭者的黄金法则：<em>“千万别饿着肚子上去！”</em></p>",
-      "<p>《ARC Raiders》与赛百味（Subway®）限时联动，带来解锁游戏内独家奖励的机会！</p>",
-      null,
-      "<h3>参与方式</h3>",
-      "<p>8 月 20 日至 10 月 26 日期间，奇袭者购买任意符合条件的赛百味套餐*即可获得游戏内奖励。本活动仅限美国参与活动的赛百味门店、赛百味 App 或 <a href=\"http://subway.com/\" target=\"_blank\" rel=\"noopener\">Subway.com</a>。</p>",
-      "<p>参与者将获得一个一次性兑换码，可解锁独家 Subterranean 服装（三种赛百味主题服装款式之一），以及两件在活动期间每周轮换的游戏内赠品。兑换码可在 PlayStation、Xbox 或 PC 上兑换。</p>",
-      null,
-      "<p>如需查看完整详情、每周的新奖励组合并兑换代码，请访问官方活动页面 <a href=\"http://arcraiders.com/subway\" target=\"_blank\" rel=\"noopener\">arcraiders.com/subway</a> 或赛百味 App。</p>",
-      "<hr>",
-      "<p><em>限美国参与活动的餐厅，需选择参加本优惠。购买符合条件的赛百味套餐（儿童套餐除外）可获得一 (1) 个《ARC Raiders》兑换码（“兑换码”）。每笔订单限一 (1) 个兑换码。有效期为 2026 年 8 月 20 日至 10 月 26 日，送完即止。兑换码可于 2026 年 11 月 10 日前在 </em><a href=\"https://id.embark.games/\" target=\"_blank\" rel=\"noopener\"><em>https://id.embark.games</em></a><em> 兑换。仅限 13 岁及以上用户。完整条款请见 </em><a href=\"http://subway.com/en-us/arcraiders\" target=\"_blank\" rel=\"noopener\"><em>Subway.com/en-us/arcraiders。</em></a></p>"
-    ]
-  },
   "update-on-anti-cheat": {
     "source": "dca05631eb5bf4c1",
     "title": "反作弊更新说明",
@@ -385,6 +366,23 @@
       "<h2><strong>已知问题</strong></h2>",
       "<ul><li>部分玩家无法开始幻影目标项目的第二部分。我们将在未来的更新中发放补偿。</li><li>有多项针对Xbox Series S崩溃的稳定性改进。请持续报告任何问题，以帮助指导进一步修复。</li><li>我们已知晓PC端与Windows更新KB5121003相关的崩溃问题。请在我们修复期间查阅<a href=\"https://discord.com/channels/1107589599045361695/1107613897357275188/1537853764193624105\" target=\"_blank\" rel=\"noopener\">此处分享的临时解决方法</a>。</li><li>Epic平台玩家可能会遇到键盘输入突然失灵的情况。</li><li><ul><li>在我们调查此问题期间，建议禁用你可能已启用的任何覆盖层。此外，你可以尝试按Alt+Tab切出再切回游戏。</li></ul></li><li>生皮头饰在开关设为关闭时仍会保留。</li><li>在投掷触发式手雷后立即尝试引爆时，投掷动画有时可能无法播放。</li><li>翻越后立即切换武器时，武器切换动画可能显示异常。</li><li>打断搜索“男爵”残骸时，玩家动画可能显示异常。</li><li>在隐藏地堡的某些房间中，粉碎者会漂浮到天花板上。</li><li>跳跃者可以穿过ARC涡轮。</li><li>骑乘ARC时开火可能无法正确命中。</li><li>某些门可能会让玩家的手电筒光束穿过，而不是阻挡发出的光。</li><li>我们已知晓凯旋、掠夺者和方位角套装存在一些穿模问题。</li></ul>",
       "<p>上层见，<br>//Ossen</p>"
+    ]
+  },
+  "play-for-free-weekend": {
+    "source": "e22b89d3a00d0210",
+    "title": "免费畅玩《ARC Raiders》：10月8日至12日",
+    "blocks": [
+      "<p>奇袭者们（以及未来的奇袭者们！），</p>",
+      "<p>倒地的帝王，以及ARC必然做出的回应，对锈带构成了生存威胁。无论你是想与ARC正面交锋，还是为了财富和新科技探索新边域，我们都需要你到场。</p>",
+      null,
+      "<h2>免费游玩</h2>",
+      "<p>从<strong>2026年10月8日（09:00 UTC）至10月12日（08:00 UTC）</strong>，ARC Raiders将在<strong>Steam、Xbox和PlayStation平台免费游玩。</strong></p>",
+      "<p>免费游玩期间可完整体验ARC Raiders游戏，让你在购买前试玩这款获奖的撤离冒险！这是邀请朋友一起对抗ARC、搜刮物资并安全撤离的绝佳机会。</p>",
+      "<p>是时候迈出你踏足上层的第一步了吗？</p>",
+      "<h2>冰封之径</h2>",
+      "<p>免费游玩期恰逢冰封之径上线——这是我们自发布以来最大的一次更新！新玩家如果与已经解锁新地图的玩家组队，即可立即进入Pendola Pass。</p>",
+      "<p>整装待发，加入我们为期四天的ARC Raiders免费游玩——上层见！</p>",
+      "<p>ARC Raiders团队</p>"
     ]
   }
 }
