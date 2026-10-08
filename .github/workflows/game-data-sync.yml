@@ -1,0 +1,74 @@
+# Pulls items, quests, workshop stations and projects from arctracker.io once a
+# day, rebuilds data/, and when arctracker's data changed, opens (or updates) a
+# "Sync game data" pull request for review. See scripts/fetch-arctracker.mjs.
+#
+# Scheduled runs only start once this file is on the default branch. The PR step
+# needs Settings → Actions → General → "Allow GitHub Actions to create and approve
+# pull requests", the same as the news sync.
+
+name: Game data sync
+
+on:
+  schedule:
+    - cron: '23 5 * * *' # 05:23 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: game-data-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # build-data.mjs reads the RaidTheory submodule for the rest of the data and its icons.
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Both scripts use only Node's standard library, so no npm install.
+      - name: Fetch arctracker.io data
+        run: node scripts/fetch-arctracker.mjs
+
+      # source.json holds the fetch date, which changes every day; only open a PR
+      # when the data itself changed.
+      - name: Check for data changes
+        id: diff
+        run: |
+          if [ -z "$(git status --porcelain -- vendor/arctracker ':!vendor/arctracker/source.json')" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "arctracker data unchanged."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild data
+        if: steps.diff.outputs.changed == 'true'
+        run: node scripts/build-data.mjs
+
+      - name: Open pull request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: game-data-sync
+          delete-branch: true
+          add-paths: |
+            vendor/arctracker
+            data
+            assets/img/game/items
+          commit-message: Sync game data from arctracker.io
+          author: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
+          committer: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
+          title: Sync game data
+          body: |
+            New or changed items, quests, workshop stations and projects from arctracker.io, fetched by the daily Game data sync workflow and rebuilt into data/ by scripts/build-data.mjs.
+            Check the build's log for names without Chinese, and remove entries from scripts/additions.mjs that the data now has.

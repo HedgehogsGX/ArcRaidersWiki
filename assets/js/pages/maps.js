@@ -10,9 +10,13 @@
   const mapUrl = (m) => url(`pages/map.html?map=${m.id}`);
 
   // The first zoom level of the map's tiles, in reading order. Multi-level maps
-  // (Stella Montis) stack their levels, top level first. Both open the interactive map.
+  // (Stella Montis) stack their levels, top level first. Both open the interactive
+  // map. A map without either (new ones, before a map image exists) shows artwork.
+  const interactive = (m) => m.tiles || m.levels;
   const picture = (m) =>
-    m.tiles
+    !interactive(m)
+      ? html`<div class="map-card__img"><img src="${asset(m.img)}" alt="" loading="lazy" data-fallback></div>`
+      : m.tiles
       ? html`<a class="map-card__img map-card__img--tiles" href="${mapUrl(m)}" tabindex="-1">${[[0, 0], [1, 0], [0, 1], [1, 1]].map(
           ([x, y]) => html`<img src="${asset(`${m.tiles}/0/${x}/${y}.webp`)}" alt="" loading="lazy" data-fallback>`
         )}</a>`
@@ -35,7 +39,10 @@
               (b) => html`<a class="tag" href="${link('arc', b.id)}">${L(b.name)}</a>`
             )}</div></div>`
           : ''}
-        <a class="button map-card__open" href="${mapUrl(m)}">${t('maps.open')}</a>
+        ${m.desc ? html`<p lang="${m.desc.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(m.desc)}</p>` : ''}
+        ${interactive(m)
+          ? html`<a class="button map-card__open" href="${mapUrl(m)}">${t('maps.open')}</a>`
+          : html`<p class="note">${t('maps.noMap')}</p>`}
         ${count
           ? html`<p class="map-card__quests"><a href="${url(`pages/quests.html?map=${m.id}`)}">${t('maps.quests')}</a>
               <span class="note">${t('common.count', { n: count })}</span></p>`

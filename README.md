@@ -21,7 +21,8 @@ data/                    游戏数据（build-data.mjs 生成，不要手动修�
 content/                 公告、地图条件、地图标记（同步脚本生成，不要手动修改）
 scripts/                 构建与同步脚本，每个脚本开头有详细说明
 worker.js, functions/    公告原图的 /news-full/ 路由（Workers 与 Pages 各一个入口）
-vendor/arcraiders-data   上游游戏数据（git 子模块）
+vendor/arctracker        arctracker.io 的物品、任务、工坊、计划（fetch-arctracker.mjs 生成）
+vendor/arcraiders-data   上游游戏数据（git 子模块，停在 1.42；技能树、ARC、商人、地图仍取自这里）
 ```
 
 ## 自动更新
@@ -31,6 +32,7 @@ vendor/arcraiders-data   上游游戏数据（git 子模块）
 | 地图条件 | arcraiders.com 地图条件页 | 每小时 | 直接提交到 `main` |
 | 官方公告与中文翻译 | arcraiders.com 公告页 | 每天 | 开 "Sync official news" PR，合并后上线 |
 | 互动地图标记 | MetaForge | 每周一 | 开 "Sync map markers" PR |
+| 物品、任务、工坊、计划 | arctracker.io API | 每天 | 开 "Sync game data" PR |
 
 需要两项仓库设置：
 
@@ -42,7 +44,8 @@ vendor/arcraiders-data   上游游戏数据（git 子模块）
 ## 手动更新
 
 ```bash
-node scripts/build-data.mjs              # 游戏数据，先 git submodule update --remote
+node scripts/fetch-arctracker.mjs        # 物品、任务、工坊、计划的原始数据
+node scripts/build-data.mjs              # 游戏数据，先 git submodule update --init
 TRANSLATE_API_KEY=… npm run news         # 公告，先 npm install
 python3 scripts/fetch-store-skin.py      # 首页外观（只手动更新），先 pip install onnxruntime numpy pillow
 node scripts/fetch-map-conditions.mjs    # 地图条件
@@ -64,7 +67,7 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 ## 致谢
 
-- **游戏数据**：[RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)（MIT）与 [arctracker.io](https://arctracker.io)
+- **游戏数据**：[arctracker.io](https://arctracker.io) 与 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)（MIT）。2.0 新增的 ARC 和地图在两者更新前取自官方公告（`scripts/additions.mjs`）
 - **互动地图标记**：[MetaForge](https://metaforge.app/arc-raiders) 社区。按其 API 条款注明来源并链接，互动地图页和页脚的链接请保留；网站如要盈利，需先联系 MetaForge。
 - **官方公告、地图条件与商店横幅**：[arcraiders.com](https://arcraiders.com)
 - **中文译名**：ARC Raiders 简中客户端
