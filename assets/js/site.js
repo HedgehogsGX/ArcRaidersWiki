@@ -2,7 +2,7 @@
    Every page gets the same chrome from the SECTIONS config below. */
 
 (function () {
-  const { html, mount, t, L, url, link, asset, data } = ARC;
+  const { html, mount, t, L, url, fresh, link, asset, data } = ARC;
   const meta = data.meta;
   const categories = (data.labels && data.labels.itemCategories) || [];
   const current = document.body.dataset.page;
@@ -144,7 +144,7 @@
     if (!indexPromise)
       indexPromise = new Promise((resolve) => {
         const s = document.createElement('script');
-        s.src = url('data/search.js');
+        s.src = fresh('data/search.js');
         s.onload = () => resolve(data.search || []);
         s.onerror = () => resolve([]);
         document.head.appendChild(s);

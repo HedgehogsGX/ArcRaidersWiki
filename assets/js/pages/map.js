@@ -8,7 +8,7 @@
    or group ids, comma-separated), cond=, layer= and quest= for links from other pages. */
 
 (function () {
-  const { html, mount, t, L, alt, asset, link, url, data, num, label } = ARC;
+  const { html, mount, t, L, alt, asset, link, url, fresh, data, num, label } = ARC;
   const leaflet = window.L;
   // Maps without an image yet (see maps.js) have nothing to show here.
   const maps = data.maps.filter((m) => m.tiles || m.levels);
@@ -200,7 +200,7 @@
     if (!loading[id])
       loading[id] = new Promise((resolve, reject) => {
         const s = document.createElement('script');
-        s.src = url(`content/map-markers/${id}.js`);
+        s.src = fresh(`content/map-markers/${id}.js`);
         s.onload = () => (window.ARC_MARKERS && window.ARC_MARKERS[id] ? resolve(window.ARC_MARKERS[id]) : reject());
         s.onerror = () => {
           delete loading[id];
