@@ -114,6 +114,10 @@
   // ---- links & lookups ----------------------------------------------------------
 
   const url = (path) => root + path;
+  // Scripts loaded on demand carry the build's version (<html data-build>, set by
+  // scripts/build-site.mjs), so a browser's cached copy can't outlive a deploy.
+  const build = document.documentElement.dataset.build;
+  const fresh = (path) => url(path) + (build ? `?v=${build}` : '');
 
   const PAGE_OF = {
     item: 'items',
@@ -297,6 +301,7 @@
     date,
     paragraphs,
     url,
+    fresh,
     link,
     asset,
     humanize,
