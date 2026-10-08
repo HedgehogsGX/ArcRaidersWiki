@@ -61,12 +61,54 @@ export const NAMES = {
   'Ruined Parachute': '损毁的降落伞',
 };
 
-// source: site — names from the official news that are newer than the client
-// glossary. fetch-news.mjs gives them to the translator like client terms;
-// replace one with the client's own name once a client update has it.
+// Names from the official news that are newer than the client glossary.
+// fetch-news.mjs gives them to the translator like client terms; replace one
+// with the client's own name once a client update has it.
 export const NEWS_TERMS = {
-  'Frozen Trail': '冰封之径',
+  // source: Embark — the Simplified Chinese announcements of the 2.0 update
+  // (霜痕小径) on Steam, 2026-10-08.
+  'Frozen Trail': '霜痕小径',
+  'Pendola Pass': '彭多拉山口',
+  Toledo: '托雷多',
+  Emperor: '帝王',
+  'ARC Frigate': 'ARC护卫者',
+  Frigate: '护卫者',
+  Bully: '恶霸',
+  Skulker: '潜伏者',
+  Hydra: '九头蛇',
+  'Flash Freeze': '极寒冰爆',
+  Redirection: '航向重定向',
+  'Research Workstation': '研究工作站',
+  'Research Bench': '研究工作站',
+  'Amplified Weapons': '增强型武器',
+  Bantam: '小钢炮',
+  'Grappling Hook': '钩爪',
+  'Grapple Hook': '钩爪',
+  Tethers: '系索',
+  'Tether Launcher': '系索发射器',
+  'Yank Grenade': '系索弹',
+  Camera: '相机',
+  Harmonica: '口琴',
+  Banjo: '班卓琴',
+  'Weapon Stencils': '武器贴花',
+  'Weapon Stencil': '武器贴花',
   'Reward Pass': '奖励通行证',
+  'Free Pass': '免费通行证',
+  'Premium Pass': '高级通行证',
+  'Legacy Pass': '传承奖励通行证',
+  'Collector Set': '收藏套装',
+  Renzo: '伦佐',
+  "Dragon's Breath": '龙息',
+  // source: site — 2.0 names the announcements leave out.
+  Stiletto: '短剑',
+  "Mountaineer's Detector": '登山者探测器',
+  'Furniture Designs': '家具设计图',
+  'Stencil Parts': '贴花零件',
+  'Amplified Fragments': '增强碎片',
+  'Reward Points': '奖励点数',
+  'Nomadic Envoys': '游牧使节',
+  Cassio: '卡西奥',
+  Ermal: '埃尔马尔',
 };
 
 // source: site
