@@ -63,7 +63,7 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 ## 译名
 
-以简中客户端（1.47.0）的术语表为准，导入在 `scripts/glossary-client.json`。术语表没有的名称写在 `scripts/glossary.mjs`：游戏数据用 `NAMES`，公告里的新名称用 `NEWS_TERMS`（如 Frozen Trail = 冰封之径）。本站自译的句子在 `scripts/translations.mjs`。
+以简中客户端（1.47.0）的术语表为准，导入在 `scripts/glossary-client.json`。术语表没有的名称写在 `scripts/glossary.mjs`：游戏数据用 `NAMES`，公告里的新名称用 `NEWS_TERMS`，优先取 Embark 在 Steam 发布的简中公告（如 Frozen Trail = 霜痕小径）。本站自译的句子在 `scripts/translations.mjs`。
 
 ## 致谢
 

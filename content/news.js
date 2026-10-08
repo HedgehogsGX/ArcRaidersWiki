@@ -8,7 +8,7 @@ window.ARC_NEWS = [
   "thumb": "content/news-img/66a8f674-c3d7-collector-set-card-600x200-600x200.webp",
   "title": {
    "en": "Collector Set DLC: Gear up for Frozen Trail",
-   "zh": "收集者套装DLC：为冰封之径整装待发"
+   "zh": "收藏套装DLC：为霜痕小径整装待发"
   },
   "body": [
    {
@@ -19,7 +19,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Frozen Trail is here - log in now to experience all of the new content: New map, massive ARC Operation, enemies, weapon upgrades, items, Outposts, and much more!</p>",
-    "zh": "<p>冰封之径现已上线 - 立即登录体验所有新内容：新地图、大规模ARC行动、敌人、武器升级、物品、哨站，以及更多！</p>"
+    "zh": "<p>霜痕小径已经上线——立即登录，体验全部新内容：新地图、大规模 ARC 行动、新敌人、武器升级、新物品、哨站等等！</p>"
    },
    {
     "type": "video",
@@ -29,17 +29,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Collector Set DLC</h2>",
-    "zh": "<h2>收藏家套装DLC</h2>"
+    "zh": "<h2>收藏套装DLC</h2>"
    },
    {
     "type": "html",
     "en": "<p>For those Raiders who want to fully gear up for the new frontier, the Collector Set DLC offers access to a new cosmetic set, the Renzo, Dragon’s Breath Weapon Stencil, Bob Hair Style, and 2,400 Raider Tokens. It also comes with an exclusive Retro Sofa for your Raider Outpost and is the only way to get a blueprint for the new Banjo musical instrument. </p>",
-    "zh": "<p>对于那些想为新边境全副武装的奇袭者，收藏家套装DLC提供了获取全新装饰套装、Renzo、龙息武器模板、Bob发型和2,400奇袭者代币的机会。它还包括一张专属的复古沙发，用于你的奇袭者哨站，并且是获得新班卓琴乐器蓝图的唯一途径。</p>"
+    "zh": "<p>想为新边境做好万全准备的奇袭者可以选择收藏套装DLC，其中包含全新外观套装伦佐套装、龙息武器贴花、波波头发型，以及 2,400 枚奇袭者代币。它还附赠一款可摆放在奇袭者哨站的独家复古沙发，并且是获得新乐器班卓琴蓝图的唯一途径。</p>"
    },
    {
     "type": "html",
     "en": "<p>The Collector Set DLC also grants access to the Frozen Trail Premium Reward Pass! The Premium Reward Pass unlocks all the premium toggles, modifications, and colorways for the new outfits. It also contains exclusive legendary weapon stencils, hairstyles, and a total of up to 1,150 Raider Tokens.</p>",
-    "zh": "<p>收藏家套装DLC还授予冰封之径高级奖励通行证的使用权！高级奖励通行证解锁新服装的所有高级切换、改装和配色。它还包含专属传奇武器模板、发型，以及总计最多1,150奇袭者代币。</p>"
+    "zh": "<p>收藏套装DLC 还包含霜痕小径高级奖励通行证！高级奖励通行证会解锁新服装的全部高级切换、修改和配色，还包含独家传奇武器贴花、发型，以及总计最多 1,150 枚奇袭者代币。</p>"
    },
    {
     "type": "image",
@@ -48,7 +48,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Check out the Collector Set DLC, and see the available cosmetics and rewards for yourself, available now on <a href=\"https://www.microsoft.com/store/productid/9p76gm1x63vk\" target=\"_blank\" rel=\"noopener\">Xbox</a>, <a href=\"https://store.playstation.com/en-us/product/EP6848-PPSA04998_00-0970183989801781\" target=\"_blank\" rel=\"noopener\">Playstation</a>, <a href=\"https://store.epicgames.com/p/arc-raiders-arc-raiders-frozen-trail-collector-set-e8cd45\" target=\"_blank\" rel=\"noopener\">Epic</a>, and <a href=\"https://store.steampowered.com/app/5201760/ARC_Raiders__Frozen_Trail_Collector_Set/\" target=\"_blank\" rel=\"noopener\">Steam</a>. </p>",
-    "zh": "<p>查看收藏家套装DLC，亲自了解可用的装饰和奖励，现已在<a href=\"https://www.microsoft.com/store/productid/9p76gm1x63vk\" target=\"_blank\" rel=\"noopener\">Xbox</a>、<a href=\"https://store.playstation.com/en-us/product/EP6848-PPSA04998_00-0970183989801781\" target=\"_blank\" rel=\"noopener\">Playstation</a>、<a href=\"https://store.epicgames.com/p/arc-raiders-arc-raiders-frozen-trail-collector-set-e8cd45\" target=\"_blank\" rel=\"noopener\">Epic</a>和<a href=\"https://store.steampowered.com/app/5201760/ARC_Raiders__Frozen_Trail_Collector_Set/\" target=\"_blank\" rel=\"noopener\">Steam</a>上架。</p>"
+    "zh": "<p>收藏套装DLC 现已在 <a href=\"https://www.microsoft.com/store/productid/9p76gm1x63vk\" target=\"_blank\" rel=\"noopener\">Xbox</a>、<a href=\"https://store.playstation.com/en-us/product/EP6848-PPSA04998_00-0970183989801781\" target=\"_blank\" rel=\"noopener\">Playstation</a>、<a href=\"https://store.epicgames.com/p/arc-raiders-arc-raiders-frozen-trail-collector-set-e8cd45\" target=\"_blank\" rel=\"noopener\">Epic</a> 和 <a href=\"https://store.steampowered.com/app/5201760/ARC_Raiders__Frozen_Trail_Collector_Set/\" target=\"_blank\" rel=\"noopener\">Steam</a> 上推出，快去亲自看看其中的外观和奖励吧。</p>"
    },
    {
     "type": "html",
@@ -70,7 +70,7 @@ window.ARC_NEWS = [
   "thumb": "content/news-img/65d4b9e3-925a-live-update-2-0-card-600x200-600x200.webp",
   "title": {
    "en": "Frozen Trail is live! Play for free October 8-12",
-   "zh": "冰封之径现已上线！10月8日至12日免费畅玩"
+   "zh": "霜痕小径现已上线！10 月 8 日至 12 日免费游玩"
   },
   "body": [
    {
@@ -81,12 +81,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Frozen Trail update is now live! Update your game and take your first frosted steps upon Pendola Pass. </p>",
-    "zh": "<p>冰封之径更新现已上线！更新你的游戏，踏上彭多拉山口的首次霜冻之旅。</p>"
+    "zh": "<p>霜痕小径更新现已上线！更新游戏，在彭多拉山口踏出冰天雪地里的第一步吧。</p>"
    },
    {
     "type": "html",
     "en": "<p>Get all the details of the update in our <a href=\"https://arcraiders.com/news/frozen-trail-2-0-update\" target=\"_blank\" rel=\"noopener\">Patch Notes!</a></p>",
-    "zh": "<p>在<a href=\"https://arcraiders.com/news/frozen-trail-2-0-update\" target=\"_blank\" rel=\"noopener\">补丁说明</a>中获取本次更新的所有详情！</p>"
+    "zh": "<p>更新的全部细节请查看我们的<a href=\"https://arcraiders.com/news/frozen-trail-2-0-update\" target=\"_blank\" rel=\"noopener\">更新说明！</a></p>"
    },
    {
     "type": "video",
@@ -101,12 +101,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Ballistic Gondolas are up and running. Shani has given the go ahead. It’s time for Raiders to ascend the mountain and start making tracks through Pendola Pass. </p>",
-    "zh": "<p>弹道缆车已启动。萨尼已下达许可。是时候让奇袭者们登上山峰，在彭多拉山口开辟道路了。</p>"
+    "zh": "<p>弹道吊舱已经开始运行，萨尼也已放行。是时候让奇袭者登上山峰，踏上穿越彭多拉山口的旅程了。</p>"
    },
    {
     "type": "html",
     "en": "<p>You are part of a pioneering group of Raiders, the first to go beyond the Rust Belt and explore the region of Pendola Pass. Hard facts about what lies beyond the mountain ridge are hard to come by. All you know is one of the Emperors is down, and ARC are responding. </p>",
-    "zh": "<p>你们是一群开拓先锋奇袭者，是首批跨越锈带、探索彭多拉山口地区的队伍。关于山脊另一侧的确切情况难以得知。你所知道的只是其中一位皇帝已倒下，而ARC正在做出回应。</p>"
+    "zh": "<p>你是先驱奇袭者中的一员，是第一批越过锈带、探索彭多拉山口地区的人。山脊另一侧究竟有什么，几乎没有确切的消息。你只知道，一台“帝王”倒下了，而 ARC 正在作出反应。</p>"
    },
    {
     "type": "image",
@@ -115,17 +115,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>The ARC response</h2>",
-    "zh": "<h2>ARC的回应</h2>"
+    "zh": "<h2>ARC 的反应</h2>"
    },
    {
     "type": "html",
     "en": "<p>Rare tech lies within the collapsed husk, as it does inside the Frigate, which has arrived to patrol the Rust Belt. Enter into the mechanical world of ARC and seek prizes Speranza has never seen before. </p>",
-    "zh": "<p>稀有科技蕴藏在倒塌的残骸之中，正如已抵达锈带巡逻的护卫舰内部一样。进入ARC的机械世界，寻找斯佩兰扎从未见过的战利品。</p>"
+    "zh": "<p>倒下的残骸中藏着稀有科技，前来巡逻锈带的“护卫者”内部同样如此。进入 ARC 的机械世界，寻找斯佩兰扎从未见过的宝物吧。</p>"
    },
    {
     "type": "html",
     "en": "<p>New threats await Raiders at Pendola Pass; the Bully will oppress your position and unleash unrelenting hell. The Skulker seeks to outsmart you, stalking from the shadows and popping up where you least expect. The Hydra is a multi-tasking squad killer that protects the Emperor and Frigate with a vengeance. </p>",
-    "zh": "<p>新的威胁在彭多拉山口等待着奇袭者；恶霸会压制你的位置并释放无情的地狱。潜行者试图智胜于你，从阴影中跟踪并在你最意想不到的地方突然出现。九头蛇是一个多任务小队杀手，以复仇之心保护皇帝和护卫舰。</p>"
+    "zh": "<p>新的威胁正在彭多拉山口等待着奇袭者：“恶霸”会压制你的阵地，发动无休止的猛攻；“潜伏者”会设法智取你，从暗处尾随，在你意想不到的地方突然现身；“九头蛇”是能同时应对多个目标的小队杀手，誓死守护“帝王”和“护卫者”。</p>"
    },
    {
     "type": "image",
@@ -139,7 +139,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>We don’t expect you to face the new frontier without the required gear. Establish your Outpost to amplify your weapons to a fifth tier and unlock special abilities. Make use of new skills, stock up on items like the Tethers and the Grapple Hook, and add two all-new weapons to your growing arsenal.  </p>",
-    "zh": "<p>我们并不指望你在没有所需装备的情况下面对新的边疆。建立你的哨站，将你的武器强化至第五层并解锁特殊能力。利用新技能，储备系绳和抓钩等物品，并将两件全新武器加入你不断扩充的军械库。</p>"
+    "zh": "<p>我们不会让你两手空空地面对新边境。建立你的哨站，将武器增强到第五级并解锁特殊能力。善用新技能，备好系索和钩爪等物品，再把两款全新武器加入你日益壮大的武器库。</p>"
    },
    {
     "type": "image",
@@ -148,12 +148,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Play for free: October 8-12</h2>",
-    "zh": "<h2>免费畅玩：10月8日至12日</h2>"
+    "zh": "<h2>免费游玩：10 月 8 日至 12 日</h2>"
    },
    {
     "type": "html",
     "en": "<p>Don’t forget, from October 8-12, ARC Raiders is completely free-to-play! Enter the Rust Belt for the very first time or call your friends and invite them to your squad. </p>",
-    "zh": "<p>别忘了，从10月8日至12日，ARC Raiders完全免费畅玩！首次踏入锈带，或呼叫你的朋友并邀请他们加入你的小队。</p>"
+    "zh": "<p>别忘了，10 月 8 日至 12 日期间，ARC Raiders 完全免费！第一次踏入锈带，或者叫上朋友加入你的小队吧。</p>"
    },
    {
     "type": "image",
@@ -162,17 +162,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>ARC Raiders is also currently 50% off on all platforms, so try it out and decide if you’re ready to be the Rust Belt’s newest Raider!</p>",
-    "zh": "<p>ARC Raiders目前在所有平台还享有50%折扣，所以快来试玩，决定你是否准备好成为锈带最新的奇袭者！</p>"
+    "zh": "<p>ARC Raiders 目前在所有平台上还享受五折优惠，快来试试，看看你是否准备好成为锈带最新的奇袭者！</p>"
    },
    {
     "type": "html",
     "en": "<h2>Collector set DLC </h2>",
-    "zh": "<h2>典藏版DLC</h2>"
+    "zh": "<h2>收藏套装DLC</h2>"
    },
    {
     "type": "html",
     "en": "<p>For those who want the full Frozen Trail experience, the Collector Set DLC will prepare you for the icy peaks. The set includes a new cosmetic set, the Renzo, Dragon’s Breath Weapon Stencil, Bob Hair Style, and 2,400 Raider Tokens. It also grants access to the Frozen Trail Premium Reward Pass! </p>",
-    "zh": "<p>对于那些想要完整体验冰封之径的玩家，典藏版DLC将为你应对冰封山峰做好准备。该套装包含一套新的外观套装、Renzo、龙息武器模板、短发发型和2,400奇袭者代币。它还将授予冰封之径高级奖励通行证的访问权限！</p>"
+    "zh": "<p>想要完整体验霜痕小径的奇袭者，可以通过收藏套装DLC为冰峰之旅做好准备。套装包含全新外观套装伦佐套装、龙息武器贴花、波波头发型，以及 2,400 枚奇袭者代币，还附带霜痕小径高级奖励通行证！</p>"
    },
    {
     "type": "image",
@@ -181,17 +181,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Check out the Collector Set DLC, and see the available cosmetics and rewards for yourself!</p>",
-    "zh": "<p>查看典藏版DLC，亲自看看可用的外观和奖励吧！</p>"
+    "zh": "<p>快去看看收藏套装DLC，亲自看看其中的外观和奖励吧！</p>"
    },
    {
     "type": "html",
     "en": "<h2>Patch notes</h2>",
-    "zh": "<h2>补丁说明</h2>"
+    "zh": "<h2>更新说明</h2>"
    },
    {
     "type": "html",
     "en": "<p>For a detailed run down of all the new content, features, fixes, and more, check out the Patch Notes! </p>",
-    "zh": "<p>如需了解所有新内容、功能、修复及更多详情，请查看补丁说明！</p>"
+    "zh": "<p>想了解全部新内容、新功能、修复等详细信息，请查看更新说明！</p>"
    },
    {
     "type": "html",
@@ -220,7 +220,7 @@ window.ARC_NEWS = [
   "thumb": "content/news-img/65d4b9e3-925a-live-update-2-0-card-600x200-600x200.webp",
   "title": {
    "en": "FROZEN TRAIL - 2.0 Update",
-   "zh": "冰封之径 - 2.0 Update"
+   "zh": "霜痕小径 - 2.0 版本更新"
   },
   "body": [
    {
@@ -235,17 +235,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The cold has arrived, and it&#x27;s brought a lot with it. Frozen Trail is our biggest update since launch, packed with new features, fresh challenges, and a long list of fixes and improvements.</p>",
-    "zh": "<p>寒冬已至，随之而来的内容也相当丰富。“冰封之径”是我们自发布以来规模最大的一次更新，包含大量新功能、全新挑战，以及一长串修复与改进。</p>"
+    "zh": "<p>寒冬已至，也带来了大量新内容。霜痕小径是我们自发售以来规模最大的更新，包含许多新功能、新挑战，以及一长串修复和改进。</p>"
    },
    {
     "type": "html",
     "en": "<p>We&#x27;ve been working on this one for a while, and we couldn&#x27;t be more excited to finally put it in your hands. Whether you&#x27;re here for the new content or just want to know what we&#x27;ve fixed, there&#x27;s something for everyone. Grab something warm, settle in, and read on for the full breakdown.</p>",
-    "zh": "<p>这次更新我们已经筹备了很长时间，终于能把它交到你们手中，我们无比激动。无论你是冲着新内容来的，还是只想了解我们修复了什么，每个人都能找到感兴趣的部分。找个暖和的地方，坐好，继续阅读完整内容吧。</p>"
+    "zh": "<p>这次更新我们准备了很久，终于能交到大家手中，我们无比兴奋。无论你是为新内容而来，还是只想知道我们修复了什么，这里都有你想看的。找点暖和的东西，坐下来，继续往下读完整的更新内容吧。</p>"
    },
    {
     "type": "html",
     "en": "<p>Thank you for playing, for reporting bugs, and for sticking with us.</p>",
-    "zh": "<p>感谢各位的游玩、Bug反馈，以及一路的陪伴。</p>"
+    "zh": "<p>感谢大家的游玩、对漏洞的反馈，以及一路以来的支持。</p>"
    },
    {
     "type": "html",
@@ -255,17 +255,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>New Map - Pendola Pass</li><li>New Map Conditions - Frigate &amp; Redirection</li><li>New Enemies - Bully, Skulker, Hydra</li><li>New Weapons - Bantam &amp; Stiletto </li><li>Amplified Weapons</li><li>Revamped Skill Tree</li><li>New Items - Grappling Hook, Basic &amp; Advanced Cameras, Tether Launcher, Yank Grenade, Mountaineer’s Detector, Banjo &amp; Harmonica</li><li>The Outpost, including a new Research Bench</li><li>Lootable “Design” items that unlock craftable Outpost furniture</li><li>Quest System improvements, 22 new quests added</li><li>New Reward Pass system</li><li>Weapon Stencils</li><li>Updated default gamepad mapping</li><li>Reworked Map Selection screen, including visual and usability improvements</li><li>Collector DLC is available now</li><li>Max Stash Size increased by 2 new levels (328 Max without Expedition bonuses)</li></ul>",
-    "zh": "<ul><li>新地图——潘多拉山口</li><li>新地图状态——护卫舰与改道</li><li>新敌人——恶霸、潜行者、九头蛇</li><li>新武器——矮脚鸡与细剑</li><li>增幅武器</li><li>技能树全面改版</li><li>新物品——抓钩、基础与高级摄像头、系绳发射器、猛拽手雷、登山者探测器、班卓琴与口琴</li><li>哨站，包括全新的研究所工作台</li><li>可搜刮的“设计图”物品，用于解锁可制作的哨站家具</li><li>任务系统改进，新增22个任务</li><li>新奖励通行证系统</li><li>武器模板</li><li>更新默认手柄键位</li><li>重做地图选择界面，包括视觉与易用性改进</li><li>收藏家DLC现已推出</li><li>储备箱最大容量提升2个新等级（不含远征加成时最高328）</li></ul>"
+    "zh": "<ul><li>新地图：彭多拉山口</li><li>新地图条件：ARC护卫者与航向重定向</li><li>新敌人：恶霸、潜伏者、九头蛇</li><li>新武器：小钢炮与短剑</li><li>增强型武器</li><li>技能树重做</li><li>新物品：钩爪、基础相机与高级相机、系索发射器、系索弹、登山者探测器、班卓琴与口琴</li><li>哨站，以及全新的研究工作站</li><li>可搜刮的“设计图”物品，用于解锁可制作的哨站家具</li><li>任务系统改进，新增 22 个任务</li><li>全新奖励通行证系统</li><li>武器贴花</li><li>更新默认手柄按键配置</li><li>重做地图选择界面，改进视觉效果与易用性</li><li>收藏套装DLC 现已推出</li><li>储备箱上限新增 2 个等级（不计远征奖励时最多 328 格）</li></ul>"
    },
    {
     "type": "html",
     "en": "<a href=\"https://arcraiders.com/news/frozen-trail-content-preview\" target=\"_blank\" rel=\"noopener\">Frozen Trail First Look: Content highlights from October 8September 23, 2026<img src=\"content/news-img/2c0b3305-9d3d-first-look-card-600x200-300x100.webp\" data-full=\"https://assets.arcraiders.com/article-cards/2c0b3305-9d3d-first-look-card-600x200-300x100.png\" alt=\"\" loading=\"lazy\" width=\"240\" height=\"80\"></a>",
-    "zh": "<a href=\"https://arcraiders.com/news/frozen-trail-content-preview\" target=\"_blank\" rel=\"noopener\">冰封之径抢先看：2026年9月23日的内容亮点<img src=\"content/news-img/2c0b3305-9d3d-first-look-card-600x200-300x100.webp\" data-full=\"https://assets.arcraiders.com/article-cards/2c0b3305-9d3d-first-look-card-600x200-300x100.png\" alt=\"\" loading=\"lazy\" width=\"240\" height=\"80\"></a>"
+    "zh": "<a href=\"https://arcraiders.com/news/frozen-trail-content-preview\" target=\"_blank\" rel=\"noopener\">霜痕小径抢先看：10月8日内容亮点 2026 年 9 月 23 日<img src=\"content/news-img/2c0b3305-9d3d-first-look-card-600x200-300x100.webp\" data-full=\"https://assets.arcraiders.com/article-cards/2c0b3305-9d3d-first-look-card-600x200-300x100.png\" alt=\"\" loading=\"lazy\" width=\"240\" height=\"80\"></a>"
    },
    {
     "type": "html",
     "en": "<a href=\"https://arcraiders.com/news/frozen-trail-is-live\" target=\"_blank\" rel=\"noopener\">Frozen Trail is live! Play for free October 8-12October 8, 2026<img src=\"content/news-img/65d4b9e3-925a-live-update-2-0-card-600x200-300x100.webp\" data-full=\"https://assets.arcraiders.com/article-cards/65d4b9e3-925a-live-update-2,0-card-600x200-300x100.png\" alt=\"\" loading=\"lazy\" width=\"240\" height=\"80\"></a>",
-    "zh": "<a href=\"https://arcraiders.com/news/frozen-trail-is-live\" target=\"_blank\" rel=\"noopener\">冰封之径现已上线！10月8日至12日免费畅玩，2026年10月8日<img src=\"content/news-img/65d4b9e3-925a-live-update-2-0-card-600x200-300x100.webp\" data-full=\"https://assets.arcraiders.com/article-cards/65d4b9e3-925a-live-update-2,0-card-600x200-300x100.png\" alt=\"\" loading=\"lazy\" width=\"240\" height=\"80\"></a>"
+    "zh": "<a href=\"https://arcraiders.com/news/frozen-trail-is-live\" target=\"_blank\" rel=\"noopener\">霜痕小径现已上线！10 月 8 日至 12 日免费游玩 2026 年 10 月 8 日<img src=\"content/news-img/65d4b9e3-925a-live-update-2-0-card-600x200-300x100.webp\" data-full=\"https://assets.arcraiders.com/article-cards/65d4b9e3-925a-live-update-2,0-card-600x200-300x100.png\" alt=\"\" loading=\"lazy\" width=\"240\" height=\"80\"></a>"
    },
    {
     "type": "image",
@@ -274,27 +274,27 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Skill Tree Revamp</h2>",
-    "zh": "<h2>技能树改版</h2>"
+    "zh": "<h2>技能树重做</h2>"
    },
    {
     "type": "html",
     "en": "<p>Changes to the Raider Skill Tree include new skills and improvements to existing skills, enabling players to better embellish their playstyle with more impactful skill choices.</p>",
-    "zh": "<p>奇袭者技能树的改动包括新增技能和对现有技能的改进，让玩家能够通过更具影响力的技能选择来更好地塑造自己的游玩风格。</p>"
+    "zh": "<p>奇袭者技能树的改动包括新技能和对现有技能的改进，让玩家能做出更有影响力的技能选择，更好地打造自己的玩法风格。</p>"
    },
    {
     "type": "html",
     "en": "<p>We&#x27;ve heard the comments (and seen in the data) that the Skill Tree was not living up to its role in offering sufficiently interesting ways of building your character to better define and refine your playstyle. The goal of the Skill Tree revamp is twofold: to look at under-performing skills, modify or replace them, and to get closer to the goal of making choice and expression a more core feature of the Skill Tree.</p>",
-    "zh": "<p>我们听到了大家的反馈（也从数据中看到），技能树未能充分发挥其作用，没有提供足够有趣的方式来构建角色，以更好地定义和细化你的游玩风格。技能树改版的目标有两个：审视表现不佳的技能，修改或替换它们；并进一步实现让选择与表达成为技能树更核心特色的目标。</p>"
+    "zh": "<p>我们听到了大家的意见（也从数据中看到了），技能树没能很好地发挥作用，无法提供足够有趣的角色构建方式来帮助你确立和打磨自己的玩法风格。此次技能树重做有两个目标：审视表现不佳的技能，对其进行修改或替换；以及让选择与个性表达更进一步成为技能树的核心。</p>"
    },
    {
     "type": "html",
     "en": "<p>Alongside some new skills and a reshuffling of the layout, new functionality has been added to replace the previous &#x27;large&#x27; nodes at the middle and end of the branches. Now, for the middle of each branch, instead of having two selectable skills and two &#x27;paths&#x27;, there is one path where the node is a binary choice between two skills. You can only choose one; you will be able to make the choice again when you reset your skill tree. At the end of each branch are two nodes where you must make a choice out of three skills.  Here, you can choose up to two of the three, after reaching the required skill point investment.</p>",
-    "zh": "<p>除了新增技能和重新调整布局外，还加入了新功能，取代了此前分支中段和末端的“大型”节点。现在，每个分支的中段不再有两个可选技能和两条“路径”，而是只有一条路径，节点为两个技能之间的二选一。你只能选择其中一个；重置技能树后可以重新选择。每个分支末端有两个节点，你必须从三个技能中做出选择。达到所需技能点投入后，你最多可以选择三个中的两个。</p>"
+    "zh": "<p>除了一些新技能和布局调整外，我们还加入了新机制，取代此前位于各分支中段和末端的“大型”节点。现在，每个分支的中段不再有两个可选技能和两条“路径”，而是只有一条路径，其节点需要在两个技能中二选一。你只能选择其中一个；重置技能树后可以重新选择。每个分支末端有两个节点，需要在三个技能中做出选择：在投入足够的技能点后，你最多可以选择其中两个。</p>"
    },
    {
     "type": "html",
     "en": "<p>As this is a fairly big reimagining of the Skill Tree, there will likely be more tweaks and updates in the near future, to existing and new skills, as we see how you are engaging with it.</p>",
-    "zh": "<p>由于这是对技能树相当大规模的重新构想，随着我们观察你们的参与情况，未来很可能会对现有和新技能进行更多调整和更新。</p>"
+    "zh": "<p>由于这是对技能树相当大的重新构想，在观察大家如何使用它之后，我们可能会在不久的将来对现有技能和新技能做进一步的调整与更新。</p>"
    },
    {
     "type": "image",
@@ -303,22 +303,22 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Weapon Stencils</h2>",
-    "zh": "<h2>武器模板</h2>"
+    "zh": "<h2>武器贴花</h2>"
    },
    {
     "type": "html",
     "en": "<p>The Frozen Trail update introduces Weapon Stencils, a new cosmetic option that lets players personalize the look of their weapons with a range of stencil patterns. Note that stenciled weapons can still be lost like any other weapon: if you&#x27;re downed, other Raiders can loot your weapon along with its stencil.</p>",
-    "zh": "<p>“冰封之径”更新引入了武器模板，这是一种新的外观选项，让玩家可以通过一系列模板图案来个性化自己武器的外观。请注意，使用模板的武器仍可能像其他武器一样丢失：如果你倒地，其他奇袭者可以连同模板一起搜刮你的武器。</p>"
+    "zh": "<p>霜痕小径更新加入了武器贴花，这是一种新的外观选项，让玩家可以用各种贴花图案来个性化武器外观。请注意，带贴花的武器和其他武器一样可能会丢失：如果你倒地，其他奇袭者可以连同贴花一起搜刮走你的武器。</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>14 Weapon Stencils:</li><li><ul><li>5 Stencils are exclusive to Frozen Trail Premium Pass </li><li>1 Stencil is exclusive to DLC</li><li>8 Stencils can be found Topside</li></ul></li></ul>",
-    "zh": "<ul><li>14种武器模板：</li><li><ul><li>5种模板为冰封之径高级通行证专属</li><li>1种模板为DLC专属</li><li>8种模板可在上层找到</li></ul></li></ul>"
+    "zh": "<ul><li>共 14 种武器贴花：</li><li><ul><li>5 种为霜痕小径高级通行证独占</li><li>1 种为 DLC 独占</li><li>8 种可在上层找到</li></ul></li></ul>"
    },
    {
     "type": "html",
     "en": "<p>Stencils are similar to blueprints, once learned you can apply them to compatible weapons. Applying Stencils requires Stencil Parts, which can be found Topside.</p>",
-    "zh": "<p>模板与蓝图类似，一旦学会，就可以应用到兼容的武器上。应用模板需要模板零件，这些零件可在上层找到。</p>"
+    "zh": "<p>贴花与蓝图类似，学会后即可应用到兼容的武器上。应用贴花需要贴花零件，可在上层找到。</p>"
    },
    {
     "type": "image",
@@ -332,12 +332,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>New Outpost can be unlocked by completing a project. </p>",
-    "zh": "<p>完成一个项目即可解锁新哨站。</p>"
+    "zh": "<p>完成一项计划即可解锁新的哨站。</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>Remember to accept the quest and bring your camera! </li><li>Outpost can be expanded with different modules </li><li>Unlocking the outpost will unlock access to the research station </li></ul>",
-    "zh": "<ul><li>记得接受任务并带上你的摄像头！</li><li>哨站可以通过不同模块进行扩展</li><li>解锁哨站将开放研究所的访问权限</li></ul>"
+    "zh": "<ul><li>记得接取任务并带上你的相机！</li><li>哨站可以通过不同的模块进行扩建</li><li>解锁哨站后即可使用研究工作站</li></ul>"
    },
    {
     "type": "html",
@@ -347,12 +347,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Similar to blueprints, they can be learned and used to craft different furniture for your Outpost. </p>",
-    "zh": "<p>与蓝图类似，可以学习并用来为你的哨站制作不同家具。</p>"
+    "zh": "<p>与蓝图类似，家具设计图可以学习，并用来为你的哨站制作各种家具。</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>100 Furniture Designs have been added to the game </li><li>4 Furniture Designs are exclusive to Frozen Trail Pass </li><li>1 Furniture Design is exclusive to DLC </li><li>73 Furniture Designs can be found Topside</li><li>22 Furniture Designs are unlocked by upgrading the Outpost</li></ul>",
-    "zh": "<ul><li>游戏中新增了100种家具设计图</li><li>4种家具设计图为冰封之径通行证专属</li><li>1种家具设计图为DLC专属</li><li>73种家具设计图可在上层找到</li><li>22种家具设计图通过升级哨站解锁</li></ul>"
+    "zh": "<ul><li>游戏中新增了 100 种家具设计图</li><li>4 种为霜痕小径通行证独占</li><li>1 种为 DLC 独占</li><li>73 种可在上层找到</li><li>22 种通过升级哨站解锁</li></ul>"
    },
    {
     "type": "image",
@@ -366,17 +366,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Reward Pass is our new progression system and the evolution of Raider Decks. Alongside this change, Cred has been removed from the game and replaced by Reward Points, a new currency that&#x27;s automatically applied toward your progress on whichever pass you currently have active.</p>",
-    "zh": "<p>奖励通行证是我们全新的进度系统，也是奇袭者卡组的演变。伴随这一改动，信用点已从游戏中移除，取而代之的是奖励点数，这是一种新货币，会自动计入你当前激活的任意通行证的进度。</p>"
+    "zh": "<p>奖励通行证是我们新的进度系统，也是奇袭者套件的进化版。随着这项改动，信用点已从游戏中移除，由新货币奖励点数取代。奖励点数会自动计入你当前启用的通行证的进度。</p>"
    },
    {
     "type": "html",
     "en": "<p>The first new pass is the Frozen Trail Pass, featuring 60 levels across a Free and a Premium track.</p>",
-    "zh": "<p>第一个新通行证是冰封之径通行证，包含60个等级，分为免费和高级两条轨道。</p>"
+    "zh": "<p>第一张新通行证是霜痕小径通行证，共有 60 个等级，分为免费和高级两条路线。</p>"
    },
    {
     "type": "html",
     "en": "<p>Your existing Raider Decks haven&#x27;t gone anywhere. They&#x27;ve been moved into the new Legacy Pass, and any rewards you&#x27;ve already unlocked are kept and will appear as granted. You can continue progressing through the Legacy Pass at any time by setting it as your active pass. Note that only one Reward Pass can be active at a time, so your Reward Points will go toward whichever pass you&#x27;ve selected.</p>",
-    "zh": "<p>你现有的奇袭者卡组并未消失。它们已被移入新的传承通行证，你已解锁的任何奖励都会保留，并显示为已发放。你可以随时将传承通行证设为激活通行证，继续推进其进度。请注意，同一时间只能激活一个奖励通行证，因此你的奖励点数将计入你所选择的通行证。</p>"
+    "zh": "<p>你现有的奇袭者套件并没有消失。它们已被移入新的传承奖励通行证，已解锁的奖励都会保留并显示为已获得。你可以随时将传承奖励通行证设为当前启用的通行证，继续推进进度。请注意，同一时间只能启用一张奖励通行证，奖励点数会计入你所选的通行证。</p>"
    },
    {
     "type": "image",
@@ -390,37 +390,37 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Feats are now split into 3 different categories: Easy, Medium and Hard.</p>",
-    "zh": "<p>功绩现在分为3个不同类别：简单、中等和困难。</p>"
+    "zh": "<p>功绩现在分为 3 个难度：简单、中等和困难。</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>Easy: 15 Reward Points, +1 weekly milestone progression</li><li>Medium: 25 Reward Points, +2 weekly milestone progression</li><li>Hard: 50 Reward Points, +3 weekly milestone progression.</li></ul>",
-    "zh": "<ul><li>简单：15奖励点数，+1每周里程碑进度</li><li>中等：25奖励点数，+2每周里程碑进度</li><li>困难：50奖励点数，+3每周里程碑进度。</li></ul>"
+    "zh": "<ul><li>简单：15 奖励点数，每周里程碑进度 +1</li><li>中等：25 奖励点数，每周里程碑进度 +2</li><li>困难：50 奖励点数，每周里程碑进度 +3</li></ul>"
    },
    {
     "type": "html",
     "en": "<p>Weekly milestones are granting 250 Reward Points each, there are 3 of them available per week:</p>",
-    "zh": "<p>每周里程碑每次奖励250奖励点数，每周有3个：</p>"
+    "zh": "<p>每个每周里程碑奖励 250 奖励点数，每周共有 3 个：</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>Milestone 1: Get 4 weekly milestone progress</li><li>Milestone 2: Get 8 weekly milestone progress</li><li>Milestone 3: Get 12 weekly milestone progress</li></ul>",
-    "zh": "<ul><li>里程碑1：获得4点每周里程碑进度</li><li>里程碑2：获得8点每周里程碑进度</li><li>里程碑3：获得12点每周里程碑进度</li></ul>"
+    "zh": "<ul><li>里程碑 1：获得 4 点每周里程碑进度</li><li>里程碑 2：获得 8 点每周里程碑进度</li><li>里程碑 3：获得 12 点每周里程碑进度</li></ul>"
    },
    {
     "type": "html",
     "en": "<p>After completing your weekly milestones, you can keep completing Feats, but no major milestone rewards will be granted until the weekly timer is reset.</p>",
-    "zh": "<p>完成每周里程碑后，你仍可以继续完成功绩，但在每周计时器重置之前，不会发放主要里程碑奖励。</p>"
+    "zh": "<p>完成每周里程碑后，你仍可以继续完成功绩，但在每周计时重置之前不会再获得主要的里程碑奖励。</p>"
    },
    {
     "type": "html",
     "en": "<h2>Twitch Drops</h2>",
-    "zh": "<h2>Twitch掉宝</h2>"
+    "zh": "<h2>Twitch 掉宝</h2>"
    },
    {
     "type": "html",
     "en": "<p>You can grab some new backpack attachments by watching your favorite streamer play ARC Raiders! You’ll need to watch at least 60 minutes to receive the Oxygen Respirator, and 120 minutes for the Mailbox. These drops will be live between October 8 - November 4, 2026.<br></p>",
-    "zh": "<p>观看你喜爱的主播游玩ARC Raiders，即可获得一些新的背包挂件！你需要至少观看60分钟才能获得氧气呼吸器，观看120分钟获得邮箱。这些掉宝将在2026年10月8日至11月4日期间开放。<br></p>"
+    "zh": "<p>观看你喜欢的主播玩 ARC Raiders，就能领取新的背包挂件！观看至少 60 分钟可获得氧气呼吸器，观看 120 分钟可获得邮箱。掉宝活动时间为 2026 年 10 月 8 日至 11 月 4 日。<br></p>"
    },
    {
     "type": "image",
@@ -429,7 +429,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Content and Bug Fixes</h2>",
-    "zh": "<h2>内容与Bug修复</h2>"
+    "zh": "<h2>内容与漏洞修复</h2>"
    },
    {
     "type": "html",
@@ -439,7 +439,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Knockback animations now align with the actual direction you’re pushed in.</li><li>Fixed an issue where, after reconnecting and being revived, your character could jitter and display broken animations while moving.</li><li>Fixed an issue where you could get stuck on small obstacles when sliding.</li><li>Added animations to show the player interacting with their map and inventory.</li><li>Added mouth animation for when players are talking in proximity chat.</li><li>Added new contextual character animations; like exhaustion when running out of breath for a while and brushing off dust after sliding.</li><li>Fixed an issue where players kept some items in their hands during the knockout animation or during some interactions.</li><li>Additional animation polish and tweaks.</li></ul>",
-    "zh": "<ul><li>击退动画现在与实际被推动的方向一致。</li><li>修复了在重新连接并被救起后，角色移动时可能出现抖动并显示异常动画的问题。</li><li>修复了滑铲时可能卡在小型障碍物上的问题。</li><li>添加了玩家查看地图和物品栏的动画。</li><li>添加了玩家在近距离语音聊天时说话的口型动画。</li><li>添加了新的情境角色动画，例如长时间喘不过气时的疲惫表现，以及滑铲后拂去灰尘。</li><li>修复了玩家在击倒动画或某些交互过程中手中仍持有部分物品的问题。</li><li>其他动画打磨与调整。</li></ul>"
+    "zh": "<ul><li>击退动画现在与你实际被推开的方向一致。</li><li>修复了断线重连并被救起后，角色移动时可能抖动并出现动画错误的问题。</li><li>修复了滑行时可能卡在小障碍物上的问题。</li><li>新增玩家查看地图和物品栏时的交互动画。</li><li>新增玩家使用近距语音聊天时的口型动画。</li><li>新增情境化角色动画，例如长时间耗尽耐力后的疲惫动作，以及滑行后拍掉身上灰尘的动作。</li><li>修复了玩家在被击倒动画或部分交互过程中手里仍拿着某些物品的问题。</li><li>其他动画打磨与调整。</li></ul>"
    },
    {
     "type": "html",
@@ -449,7 +449,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Adjusted the multi-target laser from the Vaporizer to give players a clearer window for dodging with fast traversal and dodge mechanics. </li><li>Added fire status effect visuals for ARC drones.</li><li>Moved higher tier loot from the armor pieces of the legs to the legs pieces for Queen and Matriarch.</li><li><ul><li>The armor plates are supposed to protect the legs, so it made sense to relocate the loot to the protected area. Having the loot inside the armor took away from the experience and was inconsistent with how other ARC work. Armor pieces can still contain some loot.</li></ul></li><li>Improved AI sight handling to prevent rare detection errors in enemy awareness.</li><li>The Matriarch can once again use all of its ranged attacks.</li><li>Rebalanced physical force effects against certain ARC enemies.</li></ul>",
-    "zh": "<ul><li>调整了汽化者的多目标激光，为玩家提供更清晰的窗口，以便通过快速位移和闪避机制进行躲避。</li><li>为ARC无人机添加了火焰状态效果视觉表现。</li><li>将女王和族母腿部护甲中的高级搜刮物移至腿部部件。</li><li><ul><li>护甲板本应保护腿部，因此将搜刮物转移到受保护区域是合理的。将搜刮物放在护甲内部会削弱体验，且与其他ARC的行为不一致。护甲部件中仍可能包含部分搜刮物。</li></ul></li><li>改进了AI视野处理，以防止敌人感知中出现罕见的侦测错误。</li><li>族母再次可以使用其所有远程攻击。</li><li>重新平衡了对某些ARC敌人的物理力效果。</li></ul>"
+    "zh": "<ul><li>调整了汽化者的多目标激光，让玩家在使用快速移动和闪避动作时有更明确的躲避时机。</li><li>为 ARC 无人机新增着火状态的视觉效果。</li><li>女王和族母的高阶战利品从腿部的装甲件移到了腿部部件中。</li><li><ul><li>装甲板本应保护腿部，因此把战利品移到受保护的部位更合理。战利品藏在装甲里会影响体验，也与其他 ARC 的设计不一致。装甲件仍可能含有部分战利品。</li></ul></li><li>改进了 AI 视觉处理，防止敌人感知中罕见的侦测错误。</li><li>族母重新可以使用全部远程攻击。</li><li>重新平衡了对部分 ARC 敌人的物理冲击效果。</li></ul>"
    },
    {
     "type": "image",
@@ -463,7 +463,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Adjusted how character sounds are occluded by walls and obstacles for more natural audio positioning.</li><li>Added more variations to metal groan sound effects to improve environmental ambience.</li><li>Added missing sound effects to the Snap Hook for attaching, detaching, and rope movement to improve audio feedback.</li><li>Updated the sound for Skill Tree unlocks and added a hold-interaction audio cue in the UI.</li><li>Fixed an issue where some weapon sounds could fail to play.</li><li>Improved the quality of the Raider Voice model, providing a higher fidelity of voice conversion.</li></ul>",
-    "zh": "<ul><li>调整了角色声音被墙壁和障碍物遮挡的方式，使音频定位更自然。</li><li>为金属呻吟音效添加了更多变体，以改善环境氛围。</li><li>为安全钩添加了缺失的挂接、脱离和绳索移动音效，以改善音频反馈。</li><li>更新了技能树解锁音效，并在UI中添加了长按交互的音频提示。</li><li>修复了某些武器音效可能无法播放的问题。</li><li>改进了奇袭者语音模型的质量，提供更高保真度的语音转换。</li></ul>"
+    "zh": "<ul><li>调整了角色声音被墙壁和障碍物遮挡的方式，使声音定位更自然。</li><li>增加了金属吱嘎声音效的变化，改善环境氛围。</li><li>为安全钩补上了挂接、脱离和绳索移动时缺失的音效，改善音频反馈。</li><li>更新了技能树解锁音效，并在界面中新增长按交互的音频提示。</li><li>修复了部分武器音效可能无法播放的问题。</li><li>提升了奇袭者语音模型的质量，变声效果更加逼真。</li></ul>"
    },
    {
     "type": "html",
@@ -473,7 +473,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li><a href=\"https://arcraiders.com/news/celeste-capture-upgrade\" target=\"_blank\" rel=\"noopener\">Updated Celeste’s appearance</a>.</li><li>Added an Emissive Toggle for backpacks with light sources. That means you can now turn <em>off</em> the lights from your favorite backpacks to go full stealth mode.</li><li>The Zenith Outfit now has all of its intended toggles. Players who own the outfit will receive the missing toggles shortly.</li></ul>",
-    "zh": "<ul><li><a href=\"https://arcraiders.com/news/celeste-capture-upgrade\" target=\"_blank\" rel=\"noopener\">更新了塞莱斯特的外观</a>。</li><li>为带光源的背包添加了发光开关。这意味着你现在可以<em>关闭</em>心爱背包上的灯光，进入完全潜行模式。</li><li>Zenith套装现在拥有全部预期开关。拥有该套装的玩家将很快获得缺失的开关。</li></ul>"
+    "zh": "<ul><li><a href=\"https://arcraiders.com/news/celeste-capture-upgrade\" target=\"_blank\" rel=\"noopener\">更新了塞莱斯特的外貌</a>。</li><li>为带光源的背包新增发光开关。现在你可以<em>关掉</em>心爱背包上的灯光，彻底进入潜行模式。</li><li>天顶服装现已拥有全部应有的切换选项。已拥有该服装的玩家很快会收到缺失的切换选项。</li></ul>"
    },
    {
     "type": "html",
@@ -483,7 +483,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>“Solo vs. Squads” is no longer available in the matchmaking options. </li><li><ul><li>We want players to have a proper incentive to use all of the available matchmaking settings, which Solo vs. Squads currently lacks. To that end, we&#x27;re taking time to re-evaluate its role in the game.</li></ul></li><li>Reworked the explosive damage formula for ARC. In practice this means that explosive weapons like the Hullcracker will deal over 50% more damage against armor plates but around 30% less damage against more fragile parts.</li><li><ul><li>The intention is to make explosive damage feel more consistent across the board as well as increasing its effectiveness against heavy armor. Since most ARC are heavily armored and we want the numeric damage output to be more consistent this also means that its effectiveness against weak points is slightly reduced.</li></ul></li><li>Made certain changes to skills that were in the previous Skill Tree iteration to fit them better within the new one:</li><li><ul><li>Stamina gained from Fight or Flight increased by ~25% per level.</li><li>Stubborn Mule stamina regen values increased by ~33%.</li><li>Increase Back on Your Feet healing from 30 to 40.</li></ul></li><li>Added more contextual Ping information for ARC and various objects.</li><li>The Stash can be upgraded further, by two tiers. The new maximum (without Expedition rewards or acquired Nomadic Envoy space) is 328 slots.</li><li>You can now drop loot to the ground directly from containers</li><li>You can no longer sprint-climb ladders when exhausted</li><li>Addressed some instances where vaulting onto destroyed ARC parts or other movable surfaces could unexpectedly launch or shove the player.</li><li>Weapon slot weight reduction now applies only to the loadout; other containers and sub-containers are unaffected.</li><li>You can now open the map while downed.</li><li>Improved hit registration when shooting while on top of ARC.</li><li>Heavy Shield: reduced durability decay from 0.20 to 0.15 and decreased movement penalty while equipped from 15% to 10%. </li><li>Added Scrambling. Sprinting at steep slopes will allow you to scramble up them for a short time.</li><li>You now automatically enter a sliding state after tumbling for too long.</li></ul>",
-    "zh": "<ul><li>“单人对抗小队”不再出现在匹配选项中。</li><li><ul><li>我们希望玩家有适当的动力去使用所有可用的匹配设置，而“单人对抗小队”目前缺乏这一点。为此，我们正在花时间重新评估它在游戏中的定位。</li></ul></li><li>重做了ARC的爆炸伤害公式。实际上，这意味着像裂甲者这样的爆炸武器对护甲板造成的伤害提高50%以上，但对更脆弱部件造成的伤害降低约30%。</li><li><ul><li>目的是让爆炸伤害在各方面的表现更加一致，并提高其对重型护甲的效果。由于大多数ARC都身披重甲，且我们希望数值伤害输出更加一致，这也意味着其对弱点的效果略有降低。</li></ul></li><li>对之前技能树版本中的部分技能进行了调整，使其更好地融入新技能树：</li><li><ul><li>“要么战，要么跑”获得的耐力每级提升约25%。</li><li>“吃苦耐劳”的耐力恢复数值提升约33%。</li><li>“不屈意志”的治疗量从30提高到40。</li></ul></li><li>为ARC及各种物体添加了更多情境标记信息。</li><li>储备箱可以再升级两个等级。新的最大容量（不含远征奖励或已获得的游牧使者空间）为328格。</li><li>现在可以直接从容器中将搜刮物丢到地上。</li><li>精疲力竭时不再能冲刺攀爬梯子。</li><li>解决了某些情况下翻越到被摧毁的ARC部件或其他可移动表面上时，可能会意外将玩家弹飞或推动的问题。</li><li>武器栏位减重现在仅适用于配装；其他容器和子容器不受影响。</li><li>倒地时现在可以打开地图。</li><li>改进了站在ARC顶部射击时的命中判定。</li><li>重型护盾：耐用性衰减从0.20降至0.15，装备时的移动惩罚从15%降至10%。</li><li>添加了攀爬冲刺。在陡坡上冲刺时，可以短时间内攀爬上去。</li><li>翻滚时间过长后现在会自动进入滑铲状态。</li></ul>"
+    "zh": "<ul><li>匹配选项中不再提供“单人对小队”。</li><li><ul><li>我们希望玩家有充分的理由去使用所有可用的匹配设置，而“单人对小队”目前缺乏这一点。为此，我们将花些时间重新评估它在游戏中的定位。</li></ul></li><li>重做了 ARC 的爆炸伤害公式。实际效果是，裂甲者等爆炸武器对装甲板的伤害提高 50% 以上，但对较脆弱部位的伤害降低约 30%。</li><li><ul><li>目的是让爆炸伤害整体上更加一致，同时提高其对重装甲的效果。由于大多数 ARC 都有厚重装甲，而我们希望伤害数值更加稳定，这也意味着爆炸伤害对弱点的效果略有降低。</li></ul></li><li>对上一版技能树中的部分技能做了调整，使其更契合新技能树：</li><li><ul><li>要么战，要么跑提供的耐力每级提高约 25%。</li><li>吃苦耐劳的耐力恢复数值提高约 33%。</li><li>不屈意志的治疗量从 30 提高到 40。</li></ul></li><li>为 ARC 和各类物体新增更多情境化的标记信息。</li><li>储备箱可以再升级两级。新的上限（不计远征奖励或已获得的游牧使节空间）为 328 格。</li><li>现在可以直接从容器中把战利品丢到地上</li><li>耐力耗尽时不能再冲刺爬梯子</li><li>处理了部分翻越到被摧毁的 ARC 部件或其他可移动表面上时，玩家被意外弹飞或推开的情况。</li><li>武器栏位的重量减免现在只作用于配装；其他容器和子容器不受影响。</li><li>现在倒地时也可以打开地图。</li><li>改进了站在 ARC 身上射击时的命中判定。</li><li>重型护盾：耐用性损耗从 0.20 降至 0.15，装备时的移动减速从 15% 降至 10%。</li><li>新增攀坡动作：在陡坡上冲刺时可以短时间向上攀爬。</li><li>滚落过久后现在会自动进入滑行状态。</li></ul>"
    },
    {
     "type": "image",
@@ -497,7 +497,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Increased Flame Spray range to better match its visual effect and improve usability. </li><li>Ziplines now break when intersecting something after being placed.</li><li>Reduced Snap Hook range from 20m to 18m, increased durability consumption from 2% to 4% per use, and raised power cost from 50 to 60.</li><li><ul><li>As we added more personal mobility items, it became clear we needed to begin differentiating them to a greater degree. While the Snap Hook has previously been a ‘general use’ mobility gadget, with the introduction of the Grappling Hook, we felt the need to give them their own identity outside of a ‘linear upgrade’ path. With these changes, we aim to make the Snap Hook better fit its role as being a burst mobility gadget; something that is used to quickly close distance or traverse a location, but with more commitment when doing so. The power cost increase will still allow for multiple uses within a short time when at full power, but will no longer allow for immediate back-to-back uses.</li></ul></li><li>Fixed an issue where items were appearing outside their intended areas or containers. These items will now only be available within their designated locations.</li></ul>",
-    "zh": "<ul><li>提升了火焰喷涂的射程，使其更匹配视觉效果并提高实用性。</li><li>滑索现在在放置后与物体相交时会断裂。</li><li>将安全钩的射程从20米降低到18米，每次使用的耐用性消耗从2%提高到4%，能量消耗从50提高到60。</li><li><ul><li>随着我们添加了更多个人移动物品，显然需要进一步对它们进行区分。虽然安全钩之前一直是“通用”移动小道具，但随着抓钩的引入，我们觉得有必要让它们在“线性升级”路径之外拥有自己的定位。通过这些改动，我们旨在让安全钩更好地契合其作为爆发性移动小道具的角色；一种用于快速拉近距离或穿越地点的工具，但使用时需要更多的投入。能量消耗的增加仍然允许在能量满时短时间内多次使用，但不再允许立即连续使用。</li></ul></li><li>修复了物品出现在其预期区域或容器之外的问题。这些物品现在只会出现在其指定位置。</li></ul>"
+    "zh": "<ul><li>提高了火焰喷涂的射程，使其与视觉效果更匹配，也更好用。</li><li>滑索放置后如与物体交叉，现在会断开。</li><li>安全钩射程从 20 米降至 18 米，每次使用的耐用性消耗从 2% 提高到 4%，能量消耗从 50 提高到 60。</li><li><ul><li>随着我们加入更多个人机动物品，很明显需要让它们更加差异化。安全钩以前是“通用型”机动小道具，而随着钩爪的加入，我们觉得需要让二者各有特色，而不只是“线性升级”的关系。通过这些改动，我们希望安全钩更符合爆发型机动小道具的定位：用于快速拉近距离或穿越某个地点，但使用时需要更加慎重。提高能量消耗后，满能量时仍可在短时间内多次使用，但不能再连续不间断地使用。</li></ul></li><li>修复了物品出现在其预定区域或容器之外的问题。这些物品现在只会出现在指定位置。</li></ul>"
    },
    {
     "type": "html",
@@ -507,7 +507,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Updated Anvil’s rarity from Green to Blue.</li><li><ul><li>The Anvil has been a tricky weapon to evaluate. It comes with a versatility that allows it to effectively take on both Raiders and ARC alike, and is outperforming weapons both within and above its own level of rarity. But it is also a fan-favourite and a staple of the game in its own way. We felt that increasing the rarity level for it would put it in a better place within the economy, while still maintaining the gameplay and power that we know and love. In its place, the Bantam will take the role of the uncommon hand cannon, with a balance that is more suitable for the role. </li></ul></li><li>The Anvil Splitter is no longer usable as a mod, and it has now become an improved upgrade option for the Amplified Anvil. We have also removed the Tech Mod slot from the Anvil to reflect this. The item itself should no longer drop, but will remain in the game for a while, allowing players to sell or recycle it into Amplified Fragments used for repairing Amplified Weapons.</li><li>Fixed an unintended behavior where the Jupiter&#x27;s damage would propagate twice to ARC parts behind its intended target. As a result, the Jupiter is now stronger against armor, but slightly weaker against weak spots.</li><li>The Hullcracker will no longer appear incomplete when inspected in the menu.</li><li>Fixed an issue where the Dolabra would not destroy the yellow weak points inside the Harvester.</li><li>Fixed an issue where weapons picked up from the ground appeared without their attached parts.</li></ul>",
-    "zh": "<ul><li>将铁砧的稀有度从绿色更新为蓝色。</li><li><ul><li>铁砧一直是一把难以评估的武器。它的多功能性使其能够有效对抗奇袭者和ARC，并且表现优于同稀有度甚至更高稀有度的武器。但它同时也是玩家最爱，并以自己的方式成为游戏的核心。我们认为提高其稀有度会使其在经济系统中处于更好的位置，同时保持我们所熟知和喜爱的玩法和威力。取而代之的是，班塔姆将承担罕见大口径手枪的角色，其平衡性更适合该定位。</li></ul></li><li>“铁砧”分流器不再可用作模组，并且现在已成为增幅铁砧的改进升级选项。我们也移除了铁砧的科技模组槽位以反映这一点。该物品本身不应再掉落，但会在游戏中保留一段时间，允许玩家将其出售或回收为用于修理增幅武器的增幅碎片。</li><li>修复了木星伤害会在其预期目标后方的ARC部件上重复触发的非预期行为。因此，木星现在对装甲更强，但对弱点稍弱。</li><li>裂甲者在菜单中检视时不再显示不完整。</li><li>修复了錾斧无法摧毁收割者内部黄色弱点的问题。</li><li>修复了从地面拾取的武器显示时没有附带其已安装部件的问题。</li></ul>"
+    "zh": "<ul><li>铁砧的稀有度由绿色调整为蓝色。</li><li><ul><li>铁砧一直是一把难以评估的武器。它用途广泛，对奇袭者和 ARC 都很有效，表现超过了同级乃至更高稀有度的武器。但它也深受玩家喜爱，在某种程度上是游戏的标志性武器。我们认为提高它的稀有度能让它在经济系统中处于更合适的位置，同时保留大家熟悉和喜爱的玩法与威力。小钢炮将取代它，成为罕见级的大口径手枪，其平衡性也更适合这一定位。</li></ul></li><li>“铁砧”分流器不能再作为改装件使用，而是成为增强型铁砧的进阶升级选项。为此，我们也移除了铁砧的科技改装栏位。该物品今后应不会再掉落，但会在游戏中保留一段时间，玩家可以将其出售，或回收为用于修理增强型武器的增强碎片。</li><li>修复了木星的伤害会二次传递到目标后方 ARC 部件的意外情况。因此，木星现在对装甲更强，但对弱点稍弱。</li><li>在菜单中检视裂甲者时，它不会再显示为不完整。</li><li>修复了錾斧无法摧毁收割者内部黄色弱点的问题。</li><li>修复了从地上捡起的武器不显示已安装配件的问题。</li></ul>"
    },
    {
     "type": "html",
@@ -517,7 +517,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Improved alignment of Doorblockers (now vertical) for small side-sliding-doors.</li><li>Improved texture quality on several maps, resolving blocky and inconsistent visuals. </li><li>Fixed areas on several maps where players could get stuck on terrain while in a Downed state.</li><li>Some areas on the edges of maps are darker than intended.</li></ul>",
-    "zh": "<ul><li>改进了小型侧滑门的挡门器对齐（现在为垂直）。</li><li>改善了多张地图的纹理质量，解决了块状和不一致视觉的问题。</li><li>修复了多张地图上玩家在倒地状态时可能卡在地形中的区域。</li><li>地图边缘的某些区域比预期更暗。</li></ul>"
+    "zh": "<ul><li>改进了小型侧滑门的阻门器对齐（现在为竖直方向）。</li><li>提高了多张地图的纹理质量，解决了画面呈块状、不一致的问题。</li><li>修复了多张地图上玩家倒地时可能卡在地形中的区域。</li><li>部分地图边缘区域比预期更暗。</li></ul>"
    },
    {
     "type": "html",
@@ -527,7 +527,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Adjusted lighting on Blue Gate, refining exposure, color grading, and atmosphere.</li><li>Fixed some spots on Blue Gate where players could get stuck.</li></ul>",
-    "zh": "<ul><li>调整了蓝门的照明，优化了曝光、色彩分级和氛围。</li><li>修复了蓝门上一些玩家可能被卡住的位置。</li></ul>"
+    "zh": "<ul><li>调整了蓝门的光照，优化了曝光、调色和氛围。</li><li>修复了蓝门上玩家可能卡住的一些位置。</li></ul>"
    },
    {
     "type": "html",
@@ -537,7 +537,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Fixed the Hospital Roof not being climbable.</li><li>Restored ray-traced lighting on boarded window shutters in Buried City.</li><li>Fixed a lighting issue in Buried City where illumination bled into an interior space.</li></ul>",
-    "zh": "<ul><li>修复了医院屋顶无法攀爬的问题。</li><li>恢复了掩埋废城中封窗木板上的光线追踪照明。</li><li>修复了掩埋废城中照明渗入室内空间的光照问题。</li></ul>"
+    "zh": "<ul><li>修复了医院屋顶无法攀爬的问题。</li><li>恢复了掩埋废城中钉着木板的百叶窗上的光线追踪光照。</li><li>修复了掩埋废城中光照渗入室内空间的问题。</li></ul>"
    },
    {
     "type": "html",
@@ -547,7 +547,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>As we’ve mentioned during our latest Q&amp;A, we will be testing out a <strong>Dynamic Loot Zone</strong> system, currently exclusive to Pendola Pass. The intent is to make the loot values of certain areas vary from raid to raid, thus making “routes” less predictable and scavenging more dynamic. An important distinction to make is that zones will not change their inherent loot type (therefore, Residential loot areas remain Residential loot areas no matter what), but rather, one such area may yield more value one Raid, and less value on another raid.</li></ul>",
-    "zh": "<ul><li>正如我们在最近问答中提到的那样，我们将测试一个<strong>动态搜刮区域</strong>系统，目前仅在彭多拉山口开放。其目的是让某些区域的搜刮价值在不同对局间变化，从而使“路线”更难预测，搜刮更加动态化。需要区分的重要一点是，区域不会改变其固有的搜刮类型（因此，居民区搜刮区域无论何时都仍是居民区搜刮区域），而是某个区域可能在一局奇袭中产出更高价值，而在另一局中产出较低价值。</li></ul>"
+    "zh": "<ul><li>正如我们在最近的问答中提到的，我们将测试<strong>动态战利品区域</strong>系统，目前仅在彭多拉山口启用。目的是让特定区域的战利品价值在每局奇袭之间有所变化，使“路线”更难预测，搜刮更具变化。需要强调的是，区域不会改变其原本的战利品类型（因此住宅类战利品区域始终是住宅类战利品区域），而是同一个区域可能这一局产出价值更高，下一局则更低。</li></ul>"
    },
    {
     "type": "html",
@@ -557,7 +557,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Increased overall loot value on Riven Tides by approximately 15%. </li><li>Fixed some spots where environmental objects could float unintentionally.</li></ul>",
-    "zh": "<ul><li>将裂潮镇的整体搜刮价值提高了约15%。</li><li>修复了环境物体可能意外漂浮的一些位置。</li></ul>"
+    "zh": "<ul><li>裂潮镇的整体战利品价值提高约 15%。</li><li>修复了部分环境物体意外悬浮的位置。</li></ul>"
    },
    {
     "type": "image",
@@ -571,7 +571,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Implemented various optimizations related to memory usage, general performance and stability.</li><li>Optimized character customization replication, fixing a bug where different players could sometimes see different outfits.</li><li>Reduced memory usage for enemies to improve stability and performance in busy encounters.</li><li>Fixed a crash that could occur when changing graphics settings.</li><li>Upgraded to AMD FSR version 4.1.1.</li></ul>",
-    "zh": "<ul><li>实施了与内存使用、整体性能和稳定性相关的多项优化。</li><li>优化了角色自定义同步，修复了不同玩家有时会看到不同服装的漏洞。</li><li>降低了敌人的内存占用，以提高繁忙遭遇战中的稳定性和性能。</li><li>修复了更改图形设置时可能发生的崩溃。</li><li>升级至AMD FSR 4.1.1版本。</li></ul>"
+    "zh": "<ul><li>针对内存占用、整体性能和稳定性进行了多项优化。</li><li>优化了角色自定义的同步，修复了不同玩家有时会看到不同服装的问题。</li><li>降低了敌人的内存占用，提高激烈交战时的稳定性和性能。</li><li>修复了更改图形设置时可能发生的崩溃。</li><li>升级至 AMD FSR 4.1.1 版本。</li></ul>"
    },
    {
     "type": "html",
@@ -581,7 +581,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Trader offers have been updated:</li><li><ul><li>Celeste now trades new materials used in crafting furniture and newly introduced gameplay items.</li><li>Tian Wen will no longer sell Anvil and Hullcracker offers. They will, instead, be part of the weekly Nomadic Envoys rotation.</li><li>Launcher Ammo and Energy Clips have a daily purchase limit.</li><li>Shani&#x27;s offers are now Coin based and include Cameras, Light Sticks and other social items.</li><li>Apollo has had a set of Epic Augments added to the offers.</li></ul></li><li>Living up to their reputation, the Nomadic Envoys have allowed Ermal to go back on the trail and have, instead, brought in Cassio, who will continue to trade for valuables, but also ask friendly Raiders for help with certain quests.</li></ul>",
-    "zh": "<ul><li>商人供应已更新：</li><li><ul><li>塞莱斯特现在交易用于制作家具和新引入玩法物品的新材料。</li><li>天玟将不再出售铁砧和裂甲者供应。它们将改为出现在每周游牧使者轮换中。</li><li>发射器弹药和能量弹匣有每日购买上限。</li><li>萨尼的供应现在以硬币计价，并包括相机、荧光棒和其他社交物品。</li><li>阿波罗的供应中新增了一组史诗增幅。</li></ul></li><li>名副其实，游牧使者让埃尔马尔重新上路，并带来了卡西奥，他将继续交易贵重物品，同时也会请求友好的奇袭者协助完成某些任务。</li></ul>"
+    "zh": "<ul><li>商人交易内容已更新：</li><li><ul><li>塞莱斯特现在出售用于制作家具的新材料，以及新加入的玩法物品。</li><li>天玟不再出售铁砧和裂甲者，它们将改为加入游牧使节的每周轮换。</li><li>发射器弹药和能量弹匣设有每日购买上限。</li><li>萨尼的商品现在以钱币购买，并包括相机、荧光棒和其他社交物品。</li><li>阿波罗的商品中新增了一批史诗强化。</li></ul></li><li>游牧使节一如其名：他们让埃尔马尔重新踏上旅途，换来了卡西奥。卡西奥将继续收购贵重物品，同时也会请友善的奇袭者帮忙完成一些任务。</li></ul>"
    },
    {
     "type": "html",
@@ -591,7 +591,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Completing quests and quest objectives now grants XP. Added XP as a visible reward in quest descriptions and on quest completion; XP is now shown alongside other rewards when claiming a completed quest.</li><li>Multiple older quests have been updated to require taking photos with the new camera to complete objectives that mentioned taking photos of something in the world.(The League, Reduced to Rubble, Life of a Pharmacist, Battening Down, Groundbreaking)</li></ul>",
-    "zh": "<ul><li>完成任务和任务目标现在会奖励经验值。在任务描述和任务完成时添加经验值作为可见奖励；领取已完成任务时，经验值现在与其他奖励一同显示。</li><li>多个旧任务已更新为需要使用新相机拍照来完成那些提到拍摄世界中某物照片的目标。（球队、化为废墟、药剂师的生活、加固防御、突破性进展）</li></ul>"
+    "zh": "<ul><li>完成任务和任务目标现在会获得 XP。任务说明和任务完成时会显示 XP 奖励；领取已完成任务的奖励时，XP 会与其他奖励一同显示。</li><li>多个旧任务中要求拍摄某样东西的目标，现在需要用新相机拍照才能完成。（球队、化为废墟、药剂师的生活、加固防御、突破性进展）</li></ul>"
    },
    {
     "type": "html",
@@ -601,27 +601,27 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Fixed party join not working sometimes when accepting game invites on XBOX.</li><li>Fixed an issue related to in-game Voice Chat not working in certain instances, particularly for PS5 and XBOX players.</li></ul>",
-    "zh": "<ul><li>修复了在XBOX上接受游戏邀请时队伍加入有时不生效的问题。</li><li>修复了与游戏内语音聊天在某些情况下无法使用的问题，尤其是PS5和XBOX玩家。</li></ul>"
+    "zh": "<ul><li>修复了在 XBOX 上接受游戏邀请时有时无法加入队伍的问题。</li><li>修复了游戏内语音聊天在某些情况下无法使用的问题，主要影响 PS5 和 XBOX 玩家。</li></ul>"
    },
    {
     "type": "html",
     "en": "<h3>UI</h3>",
-    "zh": "<h3>UI</h3>"
+    "zh": "<h3>界面</h3>"
    },
    {
     "type": "html",
     "en": "<ul><li>Updated quest list sorting, making progression easier to follow.</li><li>Fixed an issue where long lists could disappear while scrolling in the Settings menu.</li><li>Fix issue where the Nomadic Trader offers could appear when using the Acquire Resources menu.</li><li>Emote and Quick Wheels respond to mouse input more smoothly.</li><li>End-of-round screen now previews milestone progress and rewards earned this round, and milestone updates are shown in the in-round log.</li><li>Fixed an issue where learning certain recipes displayed an incorrect “unknown not installed” message instead of a proper unlock notification, including Snap Hook, Blaze Grenade, and Crash Mat.</li><li>Fixed formatting and text display for in-round daily quest notifications.</li><li>Store panels now scroll when content exceeds the screen and fixed an issue where the last toggle could be blocked and not selectable.</li><li>Fixed issue where not all data from a round would reliably show up in the End of Round Map screen.</li><li>Fixed a bug where closing the Inventory during matchmaking could disable gamepad navigation until switching screens.</li></ul>",
-    "zh": "<ul><li>更新了任务列表排序，使进度更容易跟进。</li><li>修复了在设置菜单中滚动时长列表可能消失的问题。</li><li>修复了使用获取资源菜单时可能出现游牧商人供应的问题。</li><li>表情和快捷轮盘对鼠标输入的响应更加流畅。</li><li>回合结束界面现在预览里程碑进度和本回合获得的奖励，里程碑更新显示在对局内日志中。</li><li>修复了学习某些配方时显示错误的“未知未安装”消息而非正确解锁通知的问题，包括安全钩、火焰手雷和缓冲垫。</li><li>修复了对局内每日任务通知的格式和文本显示。</li><li>商店面板现在在内容超出屏幕时会滚动，并修复了最后一个开关可能被阻挡且无法选择的问题。</li><li>修复了回合数据无法全部可靠显示在回合结束地图画面中的问题。</li><li>修复了在匹配过程中关闭物品栏可能导致手柄导航失效直至切换画面的漏洞。</li></ul>"
+    "zh": "<ul><li>更新了任务列表的排序，让进度更容易追踪。</li><li>修复了在设置菜单中滚动时，长列表可能消失的问题。</li><li>修复了使用获取资源菜单时可能出现游牧商人商品的问题。</li><li>表情轮盘和快捷轮盘对鼠标操作的响应更加流畅。</li><li>结算界面现在会预览里程碑进度和本局获得的奖励，里程碑更新也会显示在局内日志中。</li><li>修复了学习某些配方时显示错误的“未知 未安装”消息、而不是正常解锁通知的问题，涉及安全钩、火焰手雷和缓冲垫等。</li><li>修复了局内每日任务通知的格式和文字显示问题。</li><li>商店面板在内容超出屏幕时现在可以滚动，并修复了最后一个切换选项可能被遮挡而无法选择的问题。</li><li>修复了结算地图界面无法稳定显示本局全部数据的问题。</li><li>修复了在匹配期间关闭物品栏后，手柄导航可能失效、直到切换界面才恢复的问题。</li></ul>"
    },
    {
     "type": "html",
     "en": "<h3>VFX</h3>",
-    "zh": "<h3>视觉效果</h3>"
+    "zh": "<h3>视觉特效</h3>"
    },
    {
     "type": "html",
     "en": "<ul><li>Fixed an issue where burning visual effects could remain stuck on other players after the effect had ended.</li><li>Fixed an issue that could cause terrain textures to appear as blocky or mismatched squares on some maps when using higher graphics presets.</li></ul>",
-    "zh": "<ul><li>修复了燃烧视觉效果结束后可能残留在其他玩家身上的问题。</li><li>修复了使用较高图形预设时，某些地图上地形纹理可能显示为块状或不匹配方块的问题。</li></ul>"
+    "zh": "<ul><li>修复了燃烧效果结束后，燃烧视觉特效可能残留在其他玩家身上的问题。</li><li>修复了在部分地图上使用较高画质预设时，地形纹理可能显示为块状或错位方格的问题。</li></ul>"
    },
    {
     "type": "image",
@@ -635,7 +635,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>We have recently begun taking further action to restrict accounts that store high amounts of duplicated items and remove items that were obtained through duplication from player inventories. This is done to help correct the in-game economy and clean up items that have appeared through past exploits. </p>",
-    "zh": "<p>我们最近开始采取进一步措施，限制存储大量复制物品的账号，并从玩家物品栏中移除通过复制获得的物品。此举是为了帮助纠正游戏内经济，并清理通过过往漏洞出现的物品。</p>"
+    "zh": "<p>我们近期已开始采取进一步行动，限制存放大量复制物品的账号，并从玩家物品栏中移除通过复制获得的物品。此举是为了帮助修正游戏内经济，并清理过去通过漏洞产生的物品。</p>"
    },
    {
     "type": "html",
@@ -650,7 +650,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Weapon meshes can sometimes be partially invisible when equipped with weapon attachments.</li><li>In rare instances, vaulting onto destroyed ARC parts and similar movable surfaces can cause the player to be unexpectedly launched or shoved.</li><li>When swapping shoulders and sprinting, players’ footsteps can become inaudible.</li><li>Field Repair may sometimes be unavailable after unlocking. Restarting the game solves the issue and a fix is in the works.</li><li>The option to repair the Tether Launcher is currently unavailable. Will be fixed in the upcoming update.</li><li>Very rarely, some players may spawn into a lobby &quot;invisibly”, unable to loot, use quick wheel items or interact with containers. They can still fire their weapon and take damage. Returning to Speranza should leave your loadout in the way it was before the “affected” match started.</li><li>The Hydra can detect and shoot players through walls in the Cargo area.</li><li>Standing on the side of the Cargo drop can result in being instantly eliminated. A fix is in the works.</li></ul>",
-    "zh": "<ul><li>装备武器附件时，武器模型有时会部分不可见。</li><li>在极少数情况下，翻越到被摧毁的ARC部件和类似可移动表面上可能导致玩家被意外弹飞或推挤。</li><li>切换肩视角并冲刺时，玩家的脚步声可能变得听不见。</li><li>解锁后，现场修理有时可能不可用。重启游戏可解决此问题，修复正在进行中。</li><li>系绳发射器的修理选项当前不可用。将在即将到来的更新中修复。</li><li>极少数情况下，一些玩家可能“隐形”地出生在大厅中，无法搜刮、使用快捷轮盘物品或与容器互动。他们仍然可以开火并受到伤害。返回斯佩兰扎后，你的配装应保持在“受影响”对局开始前的状态。</li><li>九头蛇可以侦测并射击货舱区域墙壁后的玩家。</li><li>站在货物空投侧面可能导致被立即淘汰。修复正在进行中。</li></ul>"
+    "zh": "<ul><li>装备武器配件时，武器模型有时会部分不可见。</li><li>在极少数情况下，翻越到被摧毁的 ARC 部件或类似可移动表面上时，玩家可能会被意外弹飞或推开。</li><li>切换肩部视角并冲刺时，玩家的脚步声可能听不到。</li><li>战地维修在解锁后有时可能无法使用。重启游戏即可解决，修复正在进行中。</li><li>系索发射器目前无法修理，将在后续更新中修复。</li><li>在极少数情况下，部分玩家进入对局时可能处于“隐身”状态，无法搜刮、使用快捷轮盘物品或与容器交互，但仍可开火并会受到伤害。返回斯佩兰扎后，你的配装应会恢复到进入这局“受影响”对局之前的状态。</li><li>九头蛇在货舱区域可以隔墙发现并射击玩家。</li><li>站在货舱落差处的边缘可能会被瞬间淘汰。修复正在进行中。</li></ul>"
    },
    {
     "type": "html",
@@ -660,12 +660,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>(most fixes are already in the works and will be implemented in an upcoming Live Update)</p>",
-    "zh": "<p>（大多数修复已在开发中，并将在即将到来的在线更新中实施）</p>"
+    "zh": "<p>（大部分修复已在进行中，将在后续的实时更新中推出）</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>In order to unlock the Outpost, the first step - “Research Topside Living Conditions” requires you to take a photo of a farmland house. The Camera can be purchased at Shani’s, crafted at the Workbench, or found Topside. </li><li>Some furniture might clip through the Outpost structure.</li><li>Some slots in the Outpost will be unselectable when they should be, if a piece of furniture is blocking it.</li><li>The camera sometimes gets blocked by furniture or the character model at certain angles.</li><li>Lighting in the main Outpost building is corrupted when the Shadow quality is set to Low in settings.</li><li>The camera defaults back to the base room when you leave the decorating view, even if you were in a different module.</li><li>If the Raider sits by a table with chairs, they will clip through the table.</li><li>The Raider steps back from the Customization view with a 10 second delay.</li><li>The Outpost tab lacks the orange dot indicator after completing first stage objectives to unlock it.</li></ul>",
-    "zh": "<ul><li>为了解锁哨站，第一步——“研究上层生活条件”需要你拍摄一座农田房屋的照片。相机可在萨尼处购买、在工作台制作，或在上层找到。</li><li>某些家具可能穿模到哨站结构中。</li><li>当某件家具阻挡时，哨站中某些本应可选的槽位将无法选择。</li><li>在某些角度下，相机有时会被家具或角色模型阻挡。</li><li>当设置中阴影质量设为低时，主哨站建筑内的光照会异常。</li><li>当你退出装饰视图时，即使你之前在不同的模块中，相机也会默认回到基础房间。</li><li>如果奇袭者坐在带椅子的桌旁，他们会穿模到桌子中。</li><li>奇袭者从自定义视图后退时有10秒延迟。</li><li>完成第一阶段目标以解锁哨站后，哨站标签缺少橙色圆点指示。</li></ul>"
+    "zh": "<ul><li>要解锁哨站，第一步“调查上层生活条件”需要你拍摄一张农田房屋的照片。相机可以在萨尼处购买、在工作台制作，或在上层找到。</li><li>部分家具可能会穿过哨站结构。</li><li>如果有家具挡住，哨站中本应可选的部分槽位会无法选择。</li><li>在某些角度下，镜头有时会被家具或角色模型挡住。</li><li>在设置中将阴影质量设为“低”时，哨站主建筑的光照会出现异常。</li><li>离开装饰视图时，即使你之前在其他模块中，镜头也会回到基础房间。</li><li>奇袭者坐在带椅子的桌子旁时，会穿过桌子。</li><li>奇袭者从自定义视图中退出时会有 10 秒的延迟。</li><li>完成解锁哨站的第一阶段目标后，哨站标签页不会显示橙色提示点。</li></ul>"
    },
    {
     "type": "html",
@@ -675,7 +675,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>The cinematic fails to trigger upon completing the &#x27;Sizing Things Up&#x27; quest.</li><li>The quest &#x27;Picking up the Pieces&#x27; cannot be completed on Pendola Pass, but works normally on other maps. This will be fixed in an upcoming update.</li><li>The &#x27;Damage dealt using Light Impact Grenades&#x27; feat can be completed by using the Hullcracker.</li></ul>",
-    "zh": "<ul><li>完成“量力而行”任务后，过场动画无法触发。</li><li>“积少成多”任务在彭多拉山口无法完成，但在其他地图上正常。此问题将在即将到来的更新中修复。</li><li>“使用轻型冲击手雷造成的伤害”壮举可以通过使用裂甲者完成。</li></ul>"
+    "zh": "<ul><li>完成“Sizing Things Up”任务时，过场动画无法触发。</li><li>任务“积少成多”无法在彭多拉山口完成，但在其他地图上正常。这将在后续更新中修复。</li><li>“使用轻型冲击手雷造成伤害”功绩可以用裂甲者完成。</li></ul>"
    },
    {
     "type": "html",
@@ -685,17 +685,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Rarely, some weapons may not play their firing sounds on low-spec PCs (particularly the Anvil).</li><li>Rubber Ducks can be squeezed when equipped, making noise without requiring them to be thrown.</li></ul>",
-    "zh": "<ul><li>极少数情况下，在低配置PC上某些武器可能不会播放开火音效（尤其是铁砧）。</li><li>橡皮鸭在装备时可以被捏响，无需投掷即可发出声音。</li></ul>"
+    "zh": "<ul><li>在极少数情况下，低配置 PC 上部分武器可能不播放射击音效（尤其是铁砧）。</li><li>装备橡皮鸭子时可以捏响它，无需投掷就能发出声音。</li></ul>"
    },
    {
     "type": "html",
     "en": "<h3>UI:</h3>",
-    "zh": "<h3>UI：</h3>"
+    "zh": "<h3>界面：</h3>"
    },
    {
     "type": "html",
     "en": "<ul><li>Weapon meshes sometimes disappear partially.</li><li>Players that departed on the Expedition recently may have a notification dot on the Projects &amp; Raider tab that does not disappear.</li><li>Keybinds are reset to default after each raid when using a non-English keyboard layout.</li><li>The Expedition screen can still be accessed through the Nomadic Envoys, though it is not functional.</li><li>The weight of the loadout can differ slightly when viewing it in Speranza vs. what it shows in-game.</li><li>When purchasing the Premium Reward Pass, the lock icon is still present on the premium rewards despite them being unlocked.</li><li>The loadout weight amount differs between Main Menu and In-Round.</li></ul>",
-    "zh": "<ul><li>武器模型有时会部分消失。</li><li>最近出发远征的玩家可能在计划和奇袭者标签上有不消失的通知圆点。</li><li>使用非英语键盘布局时，键位绑定在每次奇袭后重置为默认值。</li><li>远征界面仍可通过游牧使者访问，但无法使用。</li><li>在斯佩兰扎查看配装重量时，与游戏内显示可能略有不同。</li><li>购买高级奖励通行证后，高级奖励上的锁定图标仍然存在，尽管它们已解锁。</li><li>主菜单和对局内显示的配装重量数值不同。</li></ul>"
+    "zh": "<ul><li>武器模型有时会部分消失。</li><li>近期出发远征的玩家，计划与奇袭者标签页上可能会有一个不会消失的通知提示点。</li><li>使用非英语键盘布局时，每局奇袭结束后按键绑定会重置为默认。</li><li>远征界面仍可通过游牧使节进入，但无法使用。</li><li>在斯佩兰扎查看的配装重量可能与局内显示的略有不同。</li><li>购买高级奖励通行证后，高级奖励上仍显示锁定图标，尽管它们已经解锁。</li><li>主菜单和局内显示的配装重量不一致。</li></ul>"
    },
    {
     "type": "html",
@@ -705,12 +705,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Various clipping and collision issues.</li><li>Vaulting onto some steep surfaces can occasionally cause players to slide back down.</li><li>Vaulting onto destroyed ARC parts or other movable surfaces could sometimes unexpectedly launch or shove the player.</li></ul>",
-    "zh": "<ul><li>各种穿模和碰撞问题。</li><li>翻越到某些陡峭表面时，偶发会导致玩家滑下来。</li><li>翻越到被摧毁的 ARC 部件或其他可移动表面时，有时会意外将玩家弹起或推开。</li></ul>"
+    "zh": "<ul><li>多处穿模和碰撞问题。</li><li>翻越某些陡峭表面时，玩家偶尔会滑回下方。</li><li>翻越到被摧毁的 ARC 部件或其他可移动表面上时，玩家有时可能会被意外弹飞或推开。</li></ul>"
    },
    {
     "type": "html",
     "en": "<p>See you on Pendola Pass,<br>The ARC Raiders Team</p>",
-    "zh": "<p>佩恩多拉通道见，<br>ARC Raiders 团队</p>"
+    "zh": "<p>彭多拉山口见，<br>ARC Raiders团队</p>"
    }
   ]
  },
@@ -733,7 +733,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Toledo is full of life. Among the bustling streets of our underground home, the neighborhood of Speranza endures. </p>",
-    "zh": "<p>托莱多充满了生机。在我们地下家园的繁华街道间，斯佩兰扎社区依然坚韧地存续着。</p>"
+    "zh": "<p>托雷多充满了生机。在我们地下家园的繁华街道间，斯佩兰扎社区依然坚韧地存续着。</p>"
    },
    {
     "type": "html",
@@ -776,12 +776,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Frozen Trail-er</h2>",
-    "zh": "<h2>冰封之径预告片</h2>"
+    "zh": "<h2>霜痕小径预告片</h2>"
    },
    {
     "type": "html",
     "en": "<p>On October 6, our trailer for Frozen Trail will be released. This is the first time we have used full motion capture, including a more detailed and accurate face, that allows us to map expressions and emotion in more detail. This means that more of Diana’s performance and identity comes through the screen. </p>",
-    "zh": "<p>10 月 6 日，我们的冰封之径预告片将发布。这是我们第一次使用全动作捕捉，包括更细致、更精准的面部捕捉，使我们能够更精细地映射表情和情感。这意味着更多戴安娜的表演和身份通过屏幕传递出来。</p>"
+    "zh": "<p>10 月 6 日，我们的霜痕小径预告片将发布。这是我们第一次使用全动作捕捉，包括更细致、更精准的面部捕捉，使我们能够更精细地映射表情和情感。这意味着更多戴安娜的表演和身份通过屏幕传递出来。</p>"
    },
    {
     "type": "html",
@@ -800,7 +800,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>We’re not stopping with our cinematic videos. It’s important to us to bring Celeste closer to Diana within our game as well. When Frozen Trail drops, you’ll also notice that Celeste looks more like Diana, her real voice and face matching up for the first time. It’s a start, and we will continue to improve our technology over time, to keep you all more immersed.</p>",
-    "zh": "<p>我们不会止步于电影视频。对我们来说，在游戏内也让塞莱斯特更接近戴安娜同样重要。当冰封之径推出时，你还会注意到塞莱斯特看起来更像戴安娜，她真实的声音和面孔第一次匹配起来。这只是一个开始，我们将随着时间继续改进我们的技术，让你们更加沉浸其中。</p>"
+    "zh": "<p>我们不会止步于电影视频。对我们来说，在游戏内也让塞莱斯特更接近戴安娜同样重要。当霜痕小径推出时，你还会注意到塞莱斯特看起来更像戴安娜，她真实的声音和面孔第一次匹配起来。这只是一个开始，我们将随着时间继续改进我们的技术，让你们更加沉浸其中。</p>"
    },
    {
     "type": "html",
@@ -810,7 +810,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>We can’t wait to see you all on the Frozen Trail!</p>",
-    "zh": "<p>我们迫不及待想在冰封之径上与大家相见！</p>"
+    "zh": "<p>我们迫不及待想在霜痕小径上与大家相见！</p>"
    },
    {
     "type": "html",
@@ -837,7 +837,7 @@ window.ARC_NEWS = [
   "thumb": "content/news-img/843a4b49-ae63-play-for-free-card-600x200-600x200.webp",
   "title": {
    "en": "Play ARC Raiders for free: October 8 - 12",
-   "zh": "免费畅玩ARC Raiders：10月8日至12日"
+   "zh": "免费畅玩《ARC Raiders》：10月8日至12日"
   },
   "body": [
    {
@@ -848,7 +848,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The downed Emperor, and the inevitable ARC response, present an existential threat to the Rust Belt. Whether you want to bring the fight to ARC or investigate the new frontier for riches and new tech, we need you there. </p>",
-    "zh": "<p>倒地的帝王，以及ARC不可避免的反应，对锈带构成了生死存亡的威胁。无论你是想与ARC正面对抗，还是为了财富和新技术探索这片新前沿，我们都需要你到场。</p>"
+    "zh": "<p>倒地的帝王，以及ARC不可避免的回应，对锈带构成了生存威胁。无论你是想与ARC正面对抗，还是探索新边疆以寻找财富和新技术，我们都需要你到场。</p>"
    },
    {
     "type": "image",
@@ -857,17 +857,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Play for free</h2>",
-    "zh": "<h2>免费游玩</h2>"
+    "zh": "<h2>免费畅玩</h2>"
    },
    {
     "type": "html",
     "en": "<p>From <strong>October 8 (09.00 UTC) to October 12 (08.00 UTC), 2026</strong>, ARC Raiders will be <strong>free to play across Steam, Xbox, and Playstation. </strong></p>",
-    "zh": "<p>从<strong>2026年10月8日（09:00 UTC）至10月12日（08:00 UTC）</strong>，ARC Raiders将在<strong>Steam、Xbox和Playstation上免费游玩。</strong></p>"
+    "zh": "<p>从<strong>2026年10月8日（09:00 UTC）至10月12日（08:00 UTC）</strong>，ARC Raiders将在<strong>Steam、Xbox和Playstation上免费畅玩。</strong></p>"
    },
    {
     "type": "html",
     "en": "<p>Free play will grant access to the full ARC Raiders game, so you can try out the award-winning extraction adventure before you buy! It’s the perfect chance to invite your friends to team up against the ARC, scavenge what you can, and extract to safety. </p>",
-    "zh": "<p>免费游玩期间可体验完整的ARC Raiders游戏，让你在购买前先尝试这款屡获殊荣的撤离冒险！这是邀请朋友组队对抗ARC、尽可能搜刮物资并撤离到安全地带的绝佳机会。</p>"
+    "zh": "<p>免费畅玩期间可体验完整的ARC Raiders游戏，让你在购买前试玩这款屡获殊荣的撤离冒险！这是邀请好友组队对抗ARC、尽可能搜集物资并安全撤离的绝佳机会。</p>"
    },
    {
     "type": "html",
@@ -877,17 +877,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Frozen Trail</h2>",
-    "zh": "<h2>冰封之径</h2>"
+    "zh": "<h2>霜痕小径</h2>"
    },
    {
     "type": "html",
     "en": "<p>The free play period also coincides with the launch of Frozen Trail, our biggest update since launch! New players will  be able to access Pendola Pass immediately if teamed up with other players who have already unlocked the new map. </p>",
-    "zh": "<p>免费游玩期间也恰逢冰封之径的推出，这是我们自发布以来最大的一次更新！新玩家如果与其他已解锁新地图的玩家组队，就可以立即进入彭多拉山口。</p>"
+    "zh": "<p>免费畅玩期间也恰逢霜痕小径上线，这是我们自发布以来最大的一次更新！新玩家只要与已解锁新地图的其他玩家组队，就能立即进入Pendola Pass。</p>"
    },
    {
     "type": "html",
     "en": "<p>Gear up and join us for four free days of ARC Raiders - see you Topside!</p>",
-    "zh": "<p>整装待发，加入我们为期四天的ARC Raiders免费游玩——上层见！</p>"
+    "zh": "<p>整装待发，加入我们为期四天的ARC Raiders免费畅玩——上层见！</p>"
    },
    {
     "type": "html",
@@ -1119,7 +1119,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>There is no update next Tuesday as we make way for Frozen Trail, arriving Thursday, October 8th!</p>",
-    "zh": "<p>下周二的更新将暂停，以便为 10 月 8 日周四到来的冰封之径做准备！</p>"
+    "zh": "<p>下周二的更新将暂停，以便为 10 月 8 日周四到来的霜痕小径做准备！</p>"
    },
    {
     "type": "html",
@@ -1147,7 +1147,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Frozen Trail arrives October 8, and with it, a new progression mechanic we call the Reward Pass. Here’s everything you need to know about the system, and what to expect from the two Passes coming with Frozen Trail. </p>",
-    "zh": "<p>冰封之径将于10月8日上线，随之而来的是一种全新的进度机制，我们称之为奖励通行证。以下是关于该系统的所有信息，以及冰封之径带来的两个通行证的内容。</p>"
+    "zh": "<p>霜痕小径将于10月8日上线，随之而来的是一种全新的进度机制，我们称之为奖励通行证。以下是关于该系统的所有信息，以及霜痕小径带来的两个通行证的内容。</p>"
    },
    {
     "type": "html",
@@ -1157,7 +1157,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Reward Passes are a natural evolution of Raider Decks, with some added benefits. They’re a progression mechanic that allows players to complete Feats to unlock unique and useful rewards coming with the Frozen Trail update: outfits, cosmetic items, gadgets, weapons, items, and Raider Tokens. </p>",
-    "zh": "<p>奖励通行证是奇袭者套件的自然演进，并带来了一些额外好处。这是一种进度机制，让玩家通过完成功绩来解锁冰封之径更新中独特且实用的奖励：服装、外观物品、小工具、武器、物品和奇袭者代币。</p>"
+    "zh": "<p>奖励通行证是奇袭者套件的自然演进，并带来了一些额外好处。这是一种进度机制，让玩家通过完成功绩来解锁霜痕小径更新中独特且实用的奖励：服装、外观物品、小工具、武器、物品和奇袭者代币。</p>"
    },
    {
     "type": "html",
@@ -1177,22 +1177,22 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Frozen Trail: Reward Passes</h2>",
-    "zh": "<h2>冰封之径：奖励通行证</h2>"
+    "zh": "<h2>霜痕小径：奖励通行证</h2>"
    },
    {
     "type": "html",
     "en": "<p>Frozen Trail will launch with two Reward Passes, the Frozen Trail Reward Pass and a Legacy Reward Pass.</p>",
-    "zh": "<p>冰封之径将推出两个奖励通行证：冰封之径奖励通行证和传承奖励通行证。</p>"
+    "zh": "<p>霜痕小径将推出两个奖励通行证：霜痕小径奖励通行证和传承奖励通行证。</p>"
    },
    {
     "type": "html",
     "en": "<p>The<strong> Frozen Trail Pass</strong> contains 60 levels to progress, with both a Free and Premium option. </p>",
-    "zh": "<p><strong>冰封之径通行证</strong>包含60个等级可供推进，提供免费和高级两种选项。</p>"
+    "zh": "<p><strong>霜痕小径通行证</strong>包含60个等级可供推进，提供免费和高级两种选项。</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>Free Pass - <strong>This track includes all the new base outfits</strong>, plus new cosmetic items, weapons, gadgets, items, and a total of up to 200 Raider Tokens.</li><li>Premium Pass - This offers a little bit extra. With this option, players will unlock all the premium toggles, modifications, and colorways for the new outfits. It also contains exclusive legendary weapon stencils, hairstyles, and a total of up to 1,150 Raider Tokens. Two things to note: the Premium Pass doesn’t contain items that benefit gameplay (like weapons or gadgets) like the Free Pass does. Also, the Premium Pass can be obtained for 1,150 Raider Tokens, so completing it means earning back the currency it takes to obtain it. </li></ul>",
-    "zh": "<ul><li>免费通行证——<strong>此路线包含所有新的基础服装</strong>，以及新的外观物品、武器、小工具、物品，总计最多200个奇袭者代币。</li><li>高级通行证——这提供了一点额外内容。选择此选项，玩家将解锁新服装的所有高级开关、修改和配色方案。它还包含专属的传奇武器模板、发型，以及总计最多1,150个奇袭者代币。有两点需要注意：高级通行证不像免费通行证那样包含对游玩有益的物品（如武器或小工具）。此外，高级通行证可以以1,150个奇袭者代币获取，因此完成它意味着赚回获取它所花费的货币。</li></ul>"
+    "zh": "<ul><li>免费通行证——<strong>此路线包含所有新的基础服装</strong>，以及新的外观物品、武器、小工具、物品，总计最多200个奇袭者代币。</li><li>高级通行证——这提供了一点额外内容。选择此选项，玩家将解锁新服装的所有高级开关、修改和配色方案。它还包含专属的传奇武器贴花、发型，以及总计最多1,150个奇袭者代币。有两点需要注意：高级通行证不像免费通行证那样包含对游玩有益的物品（如武器或小工具）。此外，高级通行证可以以1,150个奇袭者代币获取，因此完成它意味着赚回获取它所花费的货币。</li></ul>"
    },
    {
     "type": "image",
@@ -1201,17 +1201,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The <strong>Legacy Pass </strong>combines all of the cosmetic rewards and Raider Tokens in Raider Decks into a single Free Pass. If you earned these in the past, they’ll be kept and remain unlocked in the Legacy Reward Pass. Progressing the Legacy Reward Pass will otherwise earn all the rewards you weren’t able to get your hands on in the old Raider Deck system. </p>",
-    "zh": "<p><strong>传承通行证</strong>将奇袭者套件中的所有外观奖励和奇袭者代币合并为一个免费通行证。如果你过去已经获得过这些，它们将被保留，并在传承奖励通行证中保持解锁状态。推进传承奖励通行证将获得你在旧奇袭者套件系统中未能获得的所有奖励。</p>"
+    "zh": "<p><strong>传承奖励通行证</strong>将奇袭者套件中的所有外观奖励和奇袭者代币合并为一个免费通行证。如果你过去已经获得过这些，它们将被保留，并在传承奖励通行证中保持解锁状态。推进传承奖励通行证将获得你在旧奇袭者套件系统中未能获得的所有奖励。</p>"
    },
    {
     "type": "html",
     "en": "<h2>Frozen Trail Collector Set DLC</h2>",
-    "zh": "<h2>冰封之径收藏家套装DLC</h2>"
+    "zh": "<h2>霜痕小径收藏套装DLC</h2>"
    },
    {
     "type": "html",
     "en": "<p>For those Raiders that want the full Frozen Trail experience, the Collector Set DLC includes a new cosmetic set, the Renzo, Dragon’s Breath Weapon Stencil, Bob Hair Style, and 2,400 Raider Tokens. It also grants access to the Frozen Trail Premium Reward Pass! </p>",
-    "zh": "<p>对于那些想要完整体验冰封之径的奇袭者，收藏家套装DLC包含一套新的外观套装——Renzo、龙息武器模板、Bob发型，以及2,400个奇袭者代币。它还会授予冰封之径高级奖励通行证的访问权限！</p>"
+    "zh": "<p>对于那些想要完整体验霜痕小径的奇袭者，收藏套装DLC包含一套新的外观套装——伦佐套装、龙息武器贴花、波波头发型，以及2,400个奇袭者代币。它还会授予霜痕小径高级奖励通行证的访问权限！</p>"
    },
    {
     "type": "html",
@@ -1221,7 +1221,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Check out the Collector Set DLC on Steam now, and see the available cosmetics and rewards for yourself!</p>",
-    "zh": "<p>现在就前往Steam查看收藏家套装DLC，亲自看看可用的外观和奖励吧！</p>"
+    "zh": "<p>现在就前往Steam查看收藏套装DLC，亲自看看可用的外观和奖励吧！</p>"
    },
    {
     "type": "image",
@@ -1230,7 +1230,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>However you choose to experience the Frozen Trail Update, we hope this new system ensures your journey is garnished with rewards which feel exciting and worthwhile.</p>",
-    "zh": "<p>无论你选择如何体验冰封之径更新，我们希望这个新系统能确保你的旅程充满令人兴奋且值得的奖励。</p>"
+    "zh": "<p>无论你选择如何体验霜痕小径更新，我们希望这个新系统能确保你的旅程充满令人兴奋且值得的奖励。</p>"
    },
    {
     "type": "html",
@@ -1346,7 +1346,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>The test will run from <strong>October 13-20, 2026.</strong></li><li>During the test, you will be able to toggle between the classic ARC Raiders PvPvE experience and the PvE experience. </li><li>In the PvE experience there will be <strong>zero player-to-player damage</strong>, and the session is <strong>purely focused on the ARC threat and co-op social dynamics.</strong></li><li>PvE sessions will include <strong>Solos, Duos and Trios in the same session.</strong></li><li>We’re designing the system for<strong> seamless switching</strong>, play PvE for a relaxed solo session then switch back to PvPvE for a high tension match.</li><li>Some <strong>major conditions, Night Raids, Hidden Bunker, Locked Gate and Frigate will be excluded</strong> from the PvE matchmaking test. These are designed with higher tension in mind and rely on the uncertainty of encountering a variety of players.</li><li>Your <strong>PvPvE matchmaking rating will not be affected</strong> while playing in PvE sessions.</li><li>It’s important to remember that <strong>this is, at least initially, a limited test.</strong> When the test ends, the toggle will be removed and matchmaking will return to normal. Your feedback and data will help to shape the future of this system.</li></ul>",
-    "zh": "<ul><li>测试将于 <strong>2026年10月13日至20日</strong> 进行。</li><li>在测试期间，你将能够在经典的 ARC Raiders PvPvE 体验和 PvE 体验之间切换。</li><li>在 PvE 体验中，将<strong>完全没有玩家对玩家的伤害</strong>，并且对局<strong>纯粹专注于 ARC 威胁和合作社交动态。</strong></li><li>PvE 对局将包含<strong>同一局中的单排、双排和三排。</strong></li><li>我们正在为此系统设计<strong>无缝切换</strong>，先玩一局轻松的 PvE 单人局，然后切回 PvPvE 进行一场高张力的对局。</li><li>一些<strong>主要条件：夜袭、隐藏地堡、上锁的大门和护卫舰将被排除</strong>在 PvE 匹配测试之外。这些内容的设计考虑了更高的张力，并依赖于遭遇各种玩家的不确定性。</li><li>在 PvE 对局中进行游戏时，你的 <strong>PvPvE 匹配评分不会受到影响</strong>。</li><li>重要的是要记住，<strong>这至少最初是一个有限测试。</strong>测试结束后，开关将被移除，匹配将恢复正常。你的反馈和数据将有助于塑造这个系统的未来。</li></ul>"
+    "zh": "<ul><li>测试将于 <strong>2026年10月13日至20日</strong> 进行。</li><li>在测试期间，你将能够在经典的 ARC Raiders PvPvE 体验和 PvE 体验之间切换。</li><li>在 PvE 体验中，将<strong>完全没有玩家对玩家的伤害</strong>，并且对局<strong>纯粹专注于 ARC 威胁和合作社交动态。</strong></li><li>PvE 对局将包含<strong>同一局中的单排、双排和三排。</strong></li><li>我们正在为此系统设计<strong>无缝切换</strong>，先玩一局轻松的 PvE 单人局，然后切回 PvPvE 进行一场高张力的对局。</li><li>一些<strong>主要条件：夜间奇袭、隐藏地堡、上锁的大门和ARC护卫者将被排除</strong>在 PvE 匹配测试之外。这些内容的设计考虑了更高的张力，并依赖于遭遇各种玩家的不确定性。</li><li>在 PvE 对局中进行游戏时，你的 <strong>PvPvE 匹配评分不会受到影响</strong>。</li><li>重要的是要记住，<strong>这至少最初是一个有限测试。</strong>测试结束后，开关将被移除，匹配将恢复正常。你的反馈和数据将有助于塑造这个系统的未来。</li></ul>"
    },
    {
     "type": "html",
@@ -1421,7 +1421,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Our goal is to keep the communication open with you, and we’ll share our findings and future plans sometime after the test. We hope that you participate and share with us what you liked (and disliked!) about the PvE matchmaking test, as well as all the content we have for you in the Frozen Trail update. </p>",
-    "zh": "<p>我们的目标是保持与你们的沟通畅通，我们将在测试后的某个时间分享我们的发现和未来计划。我们希望你能参与进来，并与我们分享你对 PvE 匹配测试喜欢（和不喜欢！）的地方，以及我们在冰封之径更新中为你们准备的所有内容。</p>"
+    "zh": "<p>我们的目标是保持与你们的沟通畅通，我们将在测试后的某个时间分享我们的发现和未来计划。我们希望你能参与进来，并与我们分享你对 PvE 匹配测试喜欢（和不喜欢！）的地方，以及我们在霜痕小径更新中为你们准备的所有内容。</p>"
    },
    {
     "type": "html",
@@ -1458,7 +1458,7 @@ window.ARC_NEWS = [
   "thumb": "content/news-img/2c0b3305-9d3d-first-look-card-600x200-600x200.webp",
   "title": {
    "en": "Frozen Trail First Look: Content highlights from October 8",
-   "zh": "冰封之径抢先看：10月8日内容亮点"
+   "zh": "霜痕小径抢先看：10月8日内容亮点"
   },
   "body": [
    {
@@ -1469,7 +1469,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Frozen Trail Update is just around the corner. Are you ready to gear up and face whatever is waiting for us beyond the Rust Belt? </p>",
-    "zh": "<p>冰封之径更新即将到来。你准备好整装待发，去面对锈带之外等待着我们的一切了吗？</p>"
+    "zh": "<p>霜痕小径更新即将到来。你准备好整装待发，去面对锈带之外等待着我们的一切了吗？</p>"
    },
    {
     "type": "html",
@@ -1479,7 +1479,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Here’s a glimpse of the content we have in store for Frozen Trail.</p>",
-    "zh": "<p>以下是我们为冰封之径准备的内容预览。</p>"
+    "zh": "<p>以下是我们为霜痕小径准备的内容预览。</p>"
    },
    {
     "type": "video",
@@ -1494,7 +1494,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>With your help, Celeste and Shani have triangulated the source of the strange signal that’s been ringing across Toledo. All signs point toward an old Italian village and Exodus transport hub called Pendola Pass. </p>",
-    "zh": "<p>在你们的帮助下，塞莱斯特和萨尼已经三角定位了那个在托莱多上空回响的奇怪信号的来源。所有迹象都指向一个古老的意大利村庄，同时也是离巢计划的交通枢纽——彭多拉山口。</p>"
+    "zh": "<p>在你们的帮助下，塞莱斯特和萨尼已经三角定位了那个在托雷多上空回响的奇怪信号的来源。所有迹象都指向一个古老的意大利村庄，同时也是离巢计划的交通枢纽——彭多拉山口。</p>"
    },
    {
     "type": "html",
@@ -1504,7 +1504,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>But dominating everything else lies the reason Raiders are called to Pendola Pass - one of the Emperors has fallen. Rare technology lies within, and your job is simple - get there, and find a way inside. </p>",
-    "zh": "<p>但真正主宰一切、也是奇袭者们被召唤到彭多拉山口的原因——一位皇帝已经陨落。稀有科技就在其中，而你的任务很简单——到那里去，找到进去的路。</p>"
+    "zh": "<p>但真正主宰一切、也是奇袭者们被召唤到彭多拉山口的原因——一台“帝王”已经倒下。稀有科技就在其中，而你的任务很简单——到那里去，找到进去的路。</p>"
    },
    {
     "type": "html",
@@ -1518,17 +1518,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Frigate</h2>",
-    "zh": "<h2>护卫舰</h2>"
+    "zh": "<h2>护卫者</h2>"
    },
    {
     "type": "html",
     "en": "<p>A fallen Emperor is unprecedented, and ARC are quick to react. They’re sending one of their largest vessels to patrol the area - Raiders have started calling it the Frigate. </p>",
-    "zh": "<p>陨落的皇帝是前所未有的事件，ARC反应迅速。他们正派遣一艘最大的舰艇在该区域巡逻——奇袭者们已经开始称它为护卫舰。</p>"
+    "zh": "<p>“帝王”倒下是前所未有的事件，ARC反应迅速。他们正派遣一艘最大的舰艇在该区域巡逻——奇袭者们已经开始称它为护卫者。</p>"
    },
    {
     "type": "html",
     "en": "<p>The Frigate presents a substantial challenge to highly skilled Raiders who, despite the danger, see opportunity within. After finding a way to get on board, you’ll need to navigate its internal passageways, unlock paths, and defend yourself against ARC new and old. </p>",
-    "zh": "<p>护卫舰对高水平的奇袭者来说是一个巨大的挑战，尽管危险重重，他们仍看到了其中的机会。在找到登舰方法后，你需要在其内部通道中穿行，解锁道路，并抵御新老ARC的进攻。</p>"
+    "zh": "<p>护卫者对高水平的奇袭者来说是一个巨大的挑战，尽管危险重重，他们仍看到了其中的机会。在找到登舰方法后，你需要在其内部通道中穿行，解锁道路，并抵御新老ARC的进攻。</p>"
    },
    {
     "type": "html",
@@ -1571,7 +1571,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>This enemy may not traverse, but it sure does move. Split into three stacked and autonomous portions, the Hydra is a turret that can handle entire squads with its triple-threat of weaponry. Found upon the Frigate, the Hydra will require a tactical approach in which Raiders divert attention, find cover quickly, and attack rapidly when the moment arises. </p>",
-    "zh": "<p>这个敌人或许不会移动，但它确实会动。九头蛇分为三层堆叠且各自独立的炮塔，凭借三重火力威胁，能够应对整支小队。九头蛇出现在护卫舰上，需要奇袭者们采取战术配合：分散其注意力、迅速寻找掩体，并在时机出现时快速集火攻击。</p>"
+    "zh": "<p>这个敌人或许不会移动，但它确实会动。九头蛇分为三层堆叠且各自独立的炮塔，凭借三重火力威胁，能够应对整支小队。九头蛇出现在护卫者上，需要奇袭者们采取战术配合：分散其注意力、迅速寻找掩体，并在时机出现时快速集火攻击。</p>"
    },
    {
     "type": "image",
@@ -1590,7 +1590,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Customize your new home with different modules and embellish the interiors with furniture. Investigate new elements of the world using the Research Workstation which will allow you to access higher levels of weapon customization and modding, preparing you for the journey beyond the mountain. </p>",
-    "zh": "<p>用不同的模块定制你的新家，并用家具装饰内部。使用研究所工作站探索世界的新元素，它将让你解锁更高等级的武器定制与改装，为你翻越山脉之后的旅程做好准备。</p>"
+    "zh": "<p>用不同的模块定制你的新家，并用家具装饰内部。使用研究工作站探索世界的新元素，它将让你解锁更高等级的武器定制与改装，为你翻越山脉之后的旅程做好准备。</p>"
    },
    {
     "type": "html",
@@ -1604,17 +1604,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Amplified Weapons</h2>",
-    "zh": "<h2>强化武器</h2>"
+    "zh": "<h2>增强型武器</h2>"
    },
    {
     "type": "html",
     "en": "<p>New weapons are great, and Frozen Trail certainly introduces fresh guns for your stash, but we wanted to systemically change how you interact with combat in the late game. We know that highly-skilled Raiders are loyal to their favorite weapons, but that means others barely get used - that’s why we’ve been building an upgrade system that totally reimagines some of the guns you’re already used to. </p>",
-    "zh": "<p>新武器固然很棒，冰封之径也确实为你的储备箱带来了新枪械，但我们想系统性地改变你在后期阶段的战斗体验。我们知道高水平的奇袭者对自己钟爱的武器非常忠诚，但这意味着其他武器几乎无人问津——因此我们一直在打造一个升级系统，彻底重塑一些你已经熟悉的枪械。</p>"
+    "zh": "<p>新武器固然很棒，霜痕小径也确实为你的储备箱带来了新枪械，但我们想系统性地改变你在后期阶段的战斗体验。我们知道高水平的奇袭者对自己钟爱的武器非常忠诚，但这意味着其他武器几乎无人问津——因此我们一直在打造一个升级系统，彻底重塑一些你已经熟悉的枪械。</p>"
    },
    {
     "type": "html",
     "en": "<p>Using the fully-upgraded Research Workstation in your Outpost, Raiders will have the opportunity to access a fifth quality level for a range of guns. This level lets you unlock a branching path of abilities and enhancements to your weapons that can completely change their behavior; imagine a fully-automatic Burletta, a Renegade with a scope, or a Rattler with incendiary bullets and a 64 bullet magazine.</p>",
-    "zh": "<p>利用哨站中完全升级的研究所工作站，奇袭者们将有机会为一系列枪械解锁第五个品质等级。这个等级让你解锁一条分支路径，为武器带来各种能力和强化，彻底改变它们的行为方式；想象一下全自动的布尔莱塔、带瞄准镜的叛逆，或是配备燃烧弹和64发弹匣的响尾蛇。</p>"
+    "zh": "<p>利用哨站中完全升级的研究工作站，奇袭者们将有机会为一系列枪械解锁第五个品质等级。这个等级让你解锁一条分支路径，为武器带来各种能力和强化，彻底改变它们的行为方式；想象一下全自动的布尔莱塔、带瞄准镜的叛逆，或是配备燃烧弹和64发弹匣的响尾蛇。</p>"
    },
    {
     "type": "html",
@@ -1628,12 +1628,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>New Weapon: Stiletto</h2>",
-    "zh": "<h2>新武器：细剑</h2>"
+    "zh": "<h2>新武器：短剑</h2>"
    },
    {
     "type": "html",
     "en": "<p>The Stiletto is a light-ammo battle rifle that fits in as an early-game alternative to the Renegade. Cheap to craft and easy to wield, it’s the perfect choice for Raiders with a steady shot looking to attack from distance. Fire rate can be fast, but button mashing will sacrifice accuracy - keep a cool head and hit your shots. </p>",
-    "zh": "<p>细剑是一把使用轻型弹药的战斗步枪，作为叛逆的前期替代品非常合适。制作成本低廉，易于上手，对于枪法稳定、喜欢远距离攻击的奇袭者来说是完美的选择。射速可以很快，但狂按扳机会牺牲精度——保持冷静，打准每一枪。</p>"
+    "zh": "<p>短剑是一把使用轻型弹药的战斗步枪，作为叛逆的前期替代品非常合适。制作成本低廉，易于上手，对于枪法稳定、喜欢远距离攻击的奇袭者来说是完美的选择。射速可以很快，但狂按扳机会牺牲精度——保持冷静，打准每一枪。</p>"
    },
    {
     "type": "image",
@@ -1642,12 +1642,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>New Weapon: Bantam</h2>",
-    "zh": "<h2>新武器：矮脚鸡</h2>"
+    "zh": "<h2>新武器：小钢炮</h2>"
    },
    {
     "type": "html",
     "en": "<p>The Bantam is a snub-nosed revolver that uses heavy ammo to punch a hole straight through your adversaries. Effective against ARC and Raiders, the Bantam comes with a unique hip-fire capability to help you live out the cowboy fantasy… even if you’ve got frozen fingers. </p>",
-    "zh": "<p>矮脚鸡是一把短鼻左轮手枪，使用重型弹药，能在你的对手身上打出一个大洞。它对ARC和奇袭者都同样有效，独特的腰射能力能帮你实现牛仔梦……即使你的手指已经冻僵了。</p>"
+    "zh": "<p>小钢炮是一把短鼻左轮手枪，使用重型弹药，能在你的对手身上打出一个大洞。它对ARC和奇袭者都同样有效，独特的腰射能力能帮你实现牛仔梦……即使你的手指已经冻僵了。</p>"
    },
    {
     "type": "image",
@@ -1656,12 +1656,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Grappling Hook</h2>",
-    "zh": "<h2>抓钩</h2>"
+    "zh": "<h2>钩爪</h2>"
    },
    {
     "type": "html",
     "en": "<p>It’s important for us to focus on gadgets and items that offer new ways to play and fresh modes of traversal. That’s where the Grapple Hook comes in, letting you climb hard to reach spots, abseil off buildings, and swing over large gaps. Raiders who get creative will find themselves able to navigate the terrain in totally new ways. </p>",
-    "zh": "<p>对我们来说，专注于那些能带来新玩法和新移动方式的小道具和物品非常重要。抓钩正是为此而生，让你能够攀爬难以到达的地方、从建筑上速降，并荡过巨大的间隙。富有创意的奇袭者将发现自己能够以全新的方式穿越地形。</p>"
+    "zh": "<p>对我们来说，专注于那些能带来新玩法和新移动方式的小道具和物品非常重要。钩爪正是为此而生，让你能够攀爬难以到达的地方、从建筑上速降，并荡过巨大的间隙。富有创意的奇袭者将发现自己能够以全新的方式穿越地形。</p>"
    },
    {
     "type": "image",
@@ -1670,12 +1670,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Tethers</h2>",
-    "zh": "<h2>系绳装置</h2>"
+    "zh": "<h2>系索</h2>"
    },
    {
     "type": "html",
     "en": "<p>As part of our larger system of tethers and constraints, we’ve built two new gadgets that let you trip up your enemies. The Tether Launcher allows you to connect two separate points with a wire, rooting them in place for easy pickings or even attaching Raiders to ARC and watching as they’re dragged away. The Yank Grenade works on the same principle, but when it explodes, it pulls a nearby target with a violent force. This is perfect for smashing flying ARC to the ground or pulling other Raiders out of cover. </p>",
-    "zh": "<p>作为我们更大的系绳与约束系统的一部分，我们制作了两款新小道具，让你能够绊住敌人。系绳发射器能让你用一根线连接两个独立的点，将它们固定在原地任你宰割，甚至可以把奇袭者拴在ARC身上，看着他们被拖走。猛拉手雷遵循同样的原理，但爆炸时，它会以猛烈的力量将附近的目标拽过来。这非常适合把飞行中的ARC砸到地面，或者把其他奇袭者从掩体里拽出来。</p>"
+    "zh": "<p>作为我们更大的系索与束缚系统的一部分，我们制作了两款新小道具，让你能够绊住敌人。系索发射器能让你用一根线连接两个独立的点，将它们固定在原地任你宰割，甚至可以把奇袭者拴在ARC身上，看着他们被拖走。系索弹遵循同样的原理，但爆炸时，它会以猛烈的力量将附近的目标拽过来。这非常适合把飞行中的ARC砸到地面，或者把其他奇袭者从掩体里拽出来。</p>"
    },
    {
     "type": "image",
@@ -1703,7 +1703,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Two new instruments can be heard Topside this October, the Harmonica, and the Banjo (Blueprint offered in the Collector Set DLC). Bring the sounds of southern swamps to the Rust Belt this fall - It’s time to get the band back together!</p>",
-    "zh": "<p>今年十月，上层将响起两种新乐器的声音：口琴和班卓琴（蓝图包含在收藏家套装DLC中）。这个秋天，把南方沼泽的声音带到锈带来吧——是时候让乐队重聚了！</p>"
+    "zh": "<p>今年十月，上层将响起两种新乐器的声音：口琴和班卓琴（蓝图包含在收藏套装DLC中）。这个秋天，把南方沼泽的声音带到锈带来吧——是时候让乐队重聚了！</p>"
    },
    {
     "type": "image",
@@ -1712,12 +1712,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Weapon Stencils</h2>",
-    "zh": "<h2>武器模板涂装</h2>"
+    "zh": "<h2>武器贴花</h2>"
    },
    {
     "type": "html",
     "en": "<p>Re-skin your weapon with a pinch of Raider flair using the new Weapon Stencils coming in the Frozen Trail update! Leave enemies in no doubt who shot them, but beware - Raiders who best you will be more than happy to take your personalized weapon for themselves. </p>",
-    "zh": "<p>用冰封之径更新中带来的全新武器模板涂装，为你的武器换上新装，增添一抹奇袭者的风采！让敌人毫不怀疑是谁开的枪，但要小心——击败你的奇袭者会非常乐意把你的个性化武器据为己有。</p>"
+    "zh": "<p>用霜痕小径更新中带来的全新武器贴花，为你的武器换上新装，增添一抹奇袭者的风采！让敌人毫不怀疑是谁开的枪，但要小心——击败你的奇袭者会非常乐意把你的个性化武器据为己有。</p>"
    },
    {
     "type": "html",
@@ -1727,22 +1727,22 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Frozen Trail update also launches with a new progression mechanic, the Reward Pass. These passes are an evolution of the Raider Decks, allowing you to try out all of the exciting new items and content from the update.</p>",
-    "zh": "<p>冰封之径更新还推出了一个全新的进度机制：奖励通行证。这些通行证是奇袭者卡组的进化版本，让你可以体验更新中所有令人兴奋的新物品和内容。</p>"
+    "zh": "<p>霜痕小径更新还推出了一个全新的进度机制：奖励通行证。这些通行证是奇袭者套件的进化版本，让你可以体验更新中所有令人兴奋的新物品和内容。</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>The Free Pass offers a series of rewards unlocked by completing Feats, such as 200 Raider Tokens, five new outfits, new gameplay items, as well as 20 cosmetic items including Scrappy Outfits, Furniture, Charms, Attachments, and Emotes. </li><li>The Premium Pass is designed for Raiders who want to get even more out of the update: this Pass includes premium toggles for all the outfits, exclusive colorways, weapon stencils, hairstyles, and 1,150 Raider Tokens. </li><li>The Legacy Pass is free for all Raiders and combines all our existing Raider Decks, so you won’t lose any existing progress and can still work your way through those rewards.</li></ul>",
-    "zh": "<ul><li>免费通行证提供一系列通过完成功绩解锁的奖励，例如200奇袭者代币、五套新服装、全新玩法物品，以及20件外观物品，包括废品仔服装、家具、挂饰、配件和表情。</li><li>高级通行证专为想从更新中获得更多内容的奇袭者设计：该通行证包含所有服装的高级切换选项、独占配色、武器模板涂装、发型，以及1,150奇袭者代币。</li><li>传承通行证对所有奇袭者免费开放，整合了我们现有的所有奇袭者卡组，因此你不会丢失任何已有进度，仍然可以继续获取那些奖励。</li></ul>"
+    "zh": "<ul><li>免费通行证提供一系列通过完成功绩解锁的奖励，例如200奇袭者代币、五套新服装、全新玩法物品，以及20件外观物品，包括废品仔服装、家具、挂饰、配件和表情。</li><li>高级通行证专为想从更新中获得更多内容的奇袭者设计：该通行证包含所有服装的高级切换选项、独占配色、武器贴花、发型，以及1,150奇袭者代币。</li><li>传承奖励通行证对所有奇袭者免费开放，整合了我们现有的所有奇袭者套件，因此你不会丢失任何已有进度，仍然可以继续获取那些奖励。</li></ul>"
    },
    {
     "type": "html",
     "en": "<h2>Collector Set DLC</h2>",
-    "zh": "<h2>收藏家套装DLC</h2>"
+    "zh": "<h2>收藏套装DLC</h2>"
    },
    {
     "type": "html",
     "en": "<p>For those Raiders that want the full Frozen Trail experience, the Collector Set DLC offers all both the free and premium Reward Passes, as well as a new cosmetic set, the Renzo, Dragon’s Breath Weapon Stencil, Bob Hair Style, and 2,400 Raider Tokens.</p>",
-    "zh": "<p>对于那些想要完整体验冰封之径的奇袭者，收藏家套装DLC包含免费和高级奖励通行证的全部内容，以及一套新外观：伦佐套装、龙息武器模板涂装、短发发型，以及2,400奇袭者代币。</p>"
+    "zh": "<p>对于那些想要完整体验霜痕小径的奇袭者，收藏套装DLC包含免费和高级奖励通行证的全部内容，以及一套新外观：伦佐套装、龙息武器贴花、波波头发型，以及2,400奇袭者代币。</p>"
    },
    {
     "type": "html",
@@ -1757,7 +1757,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>On Friday, September 25, 6pm CEST, we will host a dev Q&amp;A livestream event about the Frozen Trail update. Join us live and submit questions about the First Look event!</p>",
-    "zh": "<p>9月25日（周五）中欧夏令时下午6点，我们将举办一场关于冰封之径更新的开发者问答直播活动。届时请加入我们，提交关于首次抢先看活动的问题！</p>"
+    "zh": "<p>9月25日（周五）中欧夏令时下午6点，我们将举办一场关于霜痕小径更新的开发者问答直播活动。届时请加入我们，提交关于首次抢先看活动的问题！</p>"
    },
    {
     "type": "html",
@@ -1802,17 +1802,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Frozen Trail - First Look coming September 23rd!</li><li>New Camo &amp; White variants for the Riposta Set</li><li>An update on our ongoing Fair Play efforts</li><li>Fixes for the Rawhide Outfit, Keyboard Input issues and the occasional invisible door</li><li>Expedition 5 Sign-Up Reminder</li></ul>",
-    "zh": "<ul><li>冰封之径——9月23日首次前瞻！</li><li>Riposta套装新增迷彩与白色变体</li><li>公平竞技持续努力的最新进展</li><li>修复Rawhide套装、键盘输入问题及偶尔出现的隐形门</li><li>远征5报名提醒</li></ul>"
+    "zh": "<ul><li>霜痕小径——9月23日首次前瞻！</li><li>Riposta套装新增迷彩与白色变体</li><li>公平竞技持续努力的最新进展</li><li>修复Rawhide套装、键盘输入问题及偶尔出现的隐形门</li><li>远征5报名提醒</li></ul>"
    },
    {
     "type": "html",
     "en": "<h2>Frozen Trail is coming - tune in for a First Look!</h2>",
-    "zh": "<h2>冰封之径即将到来——敬请收看首次前瞻！</h2>"
+    "zh": "<h2>霜痕小径即将到来——敬请收看首次前瞻！</h2>"
    },
    {
     "type": "html",
     "en": "<p><a href=\"https://x.com/ARCRaidersGame/status/2100978160364146717\" target=\"_blank\" rel=\"noopener\">In case you missed it</a>, we’ll be holding a First Look at Frozen Trail and what’s coming with the update <em>tomorrow!</em> <strong>On September 23rd, at 10am PDT (7pm CEST)</strong>, tune in for an extended peek at our biggest update yet.<br><br>Can’t wait to hear what you think! We’ve got more planned ahead of October 8th, stay tuned.</p>",
-    "zh": "<p><a href=\"https://x.com/ARCRaidersGame/status/2100978160364146717\" target=\"_blank\" rel=\"noopener\">如果你错过了消息</a>，我们将于<em>明天</em>举办冰封之径及更新内容的首次前瞻！<strong>9月23日上午10点PDT（晚上7点CEST）</strong>，敬请收看我们迄今为止最大规模更新的加长版预览。<br><br>期待听到你们的想法！在10月8日之前我们还有更多计划，敬请关注。</p>"
+    "zh": "<p><a href=\"https://x.com/ARCRaidersGame/status/2100978160364146717\" target=\"_blank\" rel=\"noopener\">如果你错过了消息</a>，我们将于<em>明天</em>举办霜痕小径及更新内容的首次前瞻！<strong>9月23日上午10点PDT（晚上7点CEST）</strong>，敬请收看我们迄今为止最大规模更新的加长版预览。<br><br>期待听到你们的想法！在10月8日之前我们还有更多计划，敬请关注。</p>"
    },
    {
     "type": "html",
@@ -1947,7 +1947,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>While our dev team is hard at work putting the finishing touches on Frozen Trail, our Anti-Cheat team is making constant updates and improvements across the board to our Fair Play initiatives.</p>",
-    "zh": "<p>在开发团队全力为冰封之径做最后打磨的同时，我们的反作弊团队也在持续对公平竞技举措进行全面更新与改进。</p>"
+    "zh": "<p>在开发团队全力为霜痕小径做最后打磨的同时，我们的反作弊团队也在持续对公平竞技举措进行全面更新与改进。</p>"
    },
    {
     "type": "html",
