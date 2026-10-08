@@ -78,6 +78,26 @@ export const TEXT = {
     '每 5 秒恢复 2 点生命值，受到伤害后暂停 30 秒。',
   '1 health every 5 seconds. When damage is taken, the effect is paused for 30 seconds.':
     '每 5 秒 1 点生命值，受到伤害后暂停 30 秒。',
+  'Restores 1 health every 5 seconds. When damage is taken, the effect is paused for 30 seconds.':
+    '每 5 秒恢复 1 点生命值，受到伤害后暂停 30 秒。',
+  'Restores 2 health every 5 seconds. When damage is taken, the effect is paused for 30 seconds.':
+    '每 5 秒恢复 2 点生命值，受到伤害后暂停 30 秒。',
+  'Stowed or unequipped Pistols and Hand Cannons are 33% faster to equip.': '收起或未装备的手枪和大口径手枪，装备速度加快 33%。',
+  'Automatically throws off attached Ticks after 1s.': '吸附在身上的跳蚤会在 1 秒后被自动甩掉。',
+  'Upon Shield break, automatically administers a weak Adrenaline Shot. Has a fixed cooldown.':
+    '护盾被击碎时，自动注射一剂弱效的肾上腺素针剂。有固定冷却时间。',
+  'Can be equipped and used like regular binoculars, but cannot be dropped or removed from their slot.':
+    '可像普通望远镜一样装备和使用，但不能丢弃，也不能从栏位中取出。',
+  'While downed and stationary, health regenerates up to 75% of max downed health.':
+    '倒地且静止不动时，生命值会恢复到倒地生命值上限的 75%。',
+  'Upon Shield break, deploys a small smoke grenade. Has a fixed cooldown.': '护盾被击碎时会放出一枚小型烟雾手雷。有固定冷却时间。',
+  'Reusable Shield Recharger on a fixed cooldown. Can be used like a normal Shield Recharger, but cannot be dropped or removed from its slot.':
+    '可重复使用的护盾充能器，有固定冷却时间。可像普通护盾充能器一样使用，但不能丢弃，也不能从栏位中取出。',
+  'Allows Shield Rechargers to be used while running.': '奔跑时也能使用护盾充能器。',
+  'When revived from being downed, releases a healing cloud that restores 45 health over 3 seconds. Has a 45-second cooldown.':
+    '倒地后被救援时，会释放一团治疗云雾，在 3 秒内恢复 45 点生命值。冷却时间 45 秒。',
+  'Reusable Defibrillator on a fixed cooldown. Can be used like a normal Defibrillator, but cannot be dropped or removed from its slot.':
+    '可重复使用的复苏剂，有固定冷却时间。可像普通复苏剂一样使用，但不能丢弃，也不能从栏位中取出。',
 
   // ---- items: descriptions ---------------------------------------------------
   // Only the sentences before a generated "Compatible with:" / "Used to craft:"

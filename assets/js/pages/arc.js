@@ -26,17 +26,20 @@
             <h2>${L(b.name)}</h2>
             <p class="detail__alt">${[alt(b.name), L(b.type)].filter(Boolean).join(' / ')}</p>
           </div>
-          ${meter(b.threat)}
+          ${b.threat ? meter(b.threat) : ''}
         </header>
+        ${b.threat ? '' : html`<p class="note">${t('arc.pending')}</p>`}
         ${englishOnly(b.desc)}
         ${b.desc ? html`<p class="arc-card__desc" lang="${b.desc.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(b.desc)}</p>` : ''}
         ${b.weakness
           ? html`<div class="arc-card__block"><h3>${t('arc.weakness')}</h3><p lang="${b.weakness.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(b.weakness)}</p></div>`
           : ''}
-        <dl class="arc-card__facts">
-          <div><dt>${t('arc.destroyXp')}</dt><dd class="num">${num(b.xp.destroy)}</dd></div>
-          <div><dt>${t('arc.lootXp')}</dt><dd class="num">${num(b.xp.loot)}</dd></div>
-        </dl>
+        ${b.xp
+          ? html`<dl class="arc-card__facts">
+              <div><dt>${t('arc.destroyXp')}</dt><dd class="num">${num(b.xp.destroy)}</dd></div>
+              <div><dt>${t('arc.lootXp')}</dt><dd class="num">${num(b.xp.loot)}</dd></div>
+            </dl>`
+          : ''}
         ${b.maps
           ? html`<div class="arc-card__block"><h3>${t('arc.maps')}</h3><div class="tags">${b.maps.map((id) => {
               const spot = ARC.mapSpots(b.id).find((s) => s.map === id);

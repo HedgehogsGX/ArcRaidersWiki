@@ -1,6 +1,10 @@
 #!/usr/bin/env node
-// Builds the site's data bundles from the upstream RaidTheory/arcraiders-data
-// submodule in vendor/arcraiders-data.
+// Builds the site's data bundles from two sources: items, quests, workshop
+// stations and projects from arctracker.io (vendor/arctracker/, saved by
+// scripts/fetch-arctracker.mjs), and the skill tree, ARC, traders and maps from
+// the RaidTheory/arcraiders-data submodule in vendor/arcraiders-data, which
+// stopped at game version 1.42. Content newer than both comes from
+// scripts/additions.mjs.
 //
 //   node scripts/build-data.mjs            data bundles only (any OS)
 //   node scripts/build-data.mjs --images   also regenerate game images (macOS, uses sips)
@@ -32,15 +36,21 @@ import {
   TRADERS,
 } from './glossary.mjs';
 import { PATTERNS, TERM_FIXES, TEXT } from './translations.mjs';
+import { BOTS as ADDED_BOTS, MAPS as ADDED_MAPS } from './additions.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'vendor/arcraiders-data');
+const AT = path.join(ROOT, 'vendor/arctracker');
 const OUT = path.join(ROOT, 'data');
 const IMG_OUT = path.join(ROOT, 'assets/img/game');
 const WITH_IMAGES = process.argv.includes('--images');
 
 if (!fs.existsSync(path.join(SRC, 'items'))) {
   console.error('vendor/arcraiders-data is empty. Run: git submodule update --init');
+  process.exit(1);
+}
+if (!fs.existsSync(path.join(AT, 'items.json'))) {
+  console.error('vendor/arctracker is empty. Run: node scripts/fetch-arctracker.mjs');
   process.exit(1);
 }
 
@@ -50,6 +60,7 @@ const readDir = (rel) =>
     .filter((f) => f.endsWith('.json'))
     .sort()
     .map((f) => readJson(path.join(rel, f)));
+const readAt = (name) => JSON.parse(fs.readFileSync(path.join(AT, `${name}.json`), 'utf8'));
 
 const ui = readJson('arctracker-ui/zh-CN.json');
 
@@ -83,6 +94,9 @@ const titleCase = (s) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()
 const withZh = (en, zh) => (zh && zh !== en ? { en, zh } : { en });
 
 // Drop undefined / empty values so bundles stay small.
+// Entries from additions.mjs that the data doesn't have yet, by id or English name.
+const missingFrom = (list, added) => added.filter((a) => !list.some((x) => x.id === a.id || x.name.en === a.name.en));
+
 function compact(obj) {
   for (const k of Object.keys(obj)) {
     const v = obj[k];
@@ -146,7 +160,7 @@ function zhName(en) {
 
 // ---- items -----------------------------------------------------------------
 
-const rawItems = readDir('items');
+const rawItems = readAt('items');
 const itemNames = new Map(rawItems.map((i) => [i.id, gameName(i.name)]));
 for (const name of itemNames.values()) if (name.zh) itemZh.set(name.en, name.zh);
 
@@ -209,7 +223,8 @@ function effects(raw) {
 
 // Item icons are served from assets/img/game/items/ (written with the bundles
 // below) so pages don't depend on the arctracker CDN, which is slow from
-// mainland China. Icons upstream doesn't ship yet keep their CDN URL.
+// mainland China. They come from the submodule, else from vendor/arctracker/items/;
+// an icon neither has keeps its CDN URL.
 const upstreamIcons = new Set(
   execFileSync('git', ['-C', SRC, 'ls-tree', '--name-only', 'HEAD', 'images/items/'], { encoding: 'utf8' })
     .split('\n')
@@ -218,7 +233,7 @@ const upstreamIcons = new Set(
 const icons = new Set();
 function icon(src) {
   const file = src && src.slice(src.lastIndexOf('/') + 1);
-  if (!file || !upstreamIcons.has(file)) return src;
+  if (!file || !(upstreamIcons.has(file) || fs.existsSync(path.join(AT, 'items', file)))) return src;
   icons.add(file);
   return `assets/img/game/items/${file}`;
 }
@@ -260,14 +275,23 @@ const itemIds = new Set(items.map((i) => i.id));
 
 // ---- quests ----------------------------------------------------------------
 
-const rawQuests = readDir('quests');
+// arctracker's API leaves out which objectives must be done in one round and the
+// other requirements; the submodule's copy of the same quest still has them.
+const repoQuests = new Map(readDir('quests').map((q) => [q.id, q]));
+// arctracker's id for Riven Tides differs from the submodule's, which the site uses.
+const QUEST_MAPS = { riven_tide: 'riven_tides' };
+const rawQuests = readAt('quests').map((q) => ({
+  objectivesOneRound: repoQuests.get(q.id)?.objectivesOneRound,
+  otherRequirements: repoQuests.get(q.id)?.otherRequirements,
+  ...q,
+}));
 const quests = rawQuests.map((q) =>
   compact({
     id: q.id,
     name: localize(q.name),
     desc: localize(q.description),
     trader: q.trader,
-    maps: q.map,
+    maps: q.map?.map((id) => QUEST_MAPS[id] || id),
     objectives: q.objectives?.map(localize),
     oneRound: q.objectivesOneRound,
     required: pairs(q.requiredItemIds),
@@ -330,7 +354,7 @@ const STATION_IMAGES = {
 };
 const STATION_ORDER = ['workbench', 'weapon_bench', 'equipment_bench', 'utility_bench', 'explosives_bench', 'med_station', 'refiner', 'scrappy', 'stash'];
 
-const hideout = readDir('hideout')
+const hideout = readAt('hideout')
   .map((h) =>
     compact({
       id: h.id,
@@ -388,7 +412,7 @@ const levelOf = Object.fromEntries(
 );
 const mapId = (id) => levelOf[id] || id;
 
-const maps = readJson('maps.json')
+const repoMaps = readJson('maps.json')
   .filter((m, i, all) => all.findIndex((x) => mapId(x.id) === mapId(m.id)) === i)
   .map((m) => {
     const id = mapId(m.id);
@@ -412,6 +436,7 @@ const maps = readJson('maps.json')
       }),
     });
   });
+const maps = [...repoMaps, ...missingFrom(repoMaps, ADDED_MAPS)];
 
 const rawEvents = readJson('map-events/map-events.json').eventTypes;
 const events = Object.entries(rawEvents)
@@ -428,8 +453,7 @@ const events = Object.entries(rawEvents)
 // ---- ARC -------------------------------------------------------------------
 
 const THREAT_RANK = Object.keys(THREATS);
-const bots = readJson('bots.json')
-  .map((b) =>
+const repoBots = readJson('bots.json').map((b) =>
     compact({
       id: b.id,
       name: withZh(titleCase(b.name), clientName(BOT_ALIASES[titleCase(b.name)] || titleCase(b.name))),
@@ -442,8 +466,9 @@ const bots = readJson('bots.json')
       drops: b.drops,
       img: `assets/img/game/arc/${b.id}.jpg`,
     })
-  )
-  .sort((a, b) => THREAT_RANK.indexOf(b.threat) - THREAT_RANK.indexOf(a.threat) || a.name.en.localeCompare(b.name.en));
+);
+// Units without a threat level (additions.mjs) go last.
+const bots = [...repoBots, ...missingFrom(repoBots, ADDED_BOTS)].sort((a, b) => THREAT_RANK.indexOf(b.threat) - THREAT_RANK.indexOf(a.threat) || a.name.en.localeCompare(b.name.en));
 const threats = THREAT_RANK.map((id) => ({ id, name: withZh(id, THREATS[id]) }));
 
 // ---- traders -----------------------------------------------------------------
@@ -477,7 +502,26 @@ const CATEGORY_LABELS = {
   InteractTask: { en: 'Complete the task in raid', zh: '在局内完成任务' },
 };
 
-const projects = readJson('projects.json').map((p) =>
+// arctracker lists only current projects; the submodule's ended ones stay listed.
+// Their items use the submodule's ids; arctracker renamed the Colorful Shoes, and
+// its ids name the other colour (matched here by name and rarity).
+const RENAMED_ITEMS = {
+  colorful_shoes_green: 'football_shoes_red',
+  colorful_shoes_red: 'football_shoes_green',
+  colorful_shoes_silver: 'football_shoes_silver',
+};
+const renamed = (list) => list?.map((r) => ({ ...r, itemId: RENAMED_ITEMS[r.itemId] || r.itemId }));
+const rawProjects = readAt('projects');
+const endedProjects = readJson('projects.json')
+  .filter((p) => !rawProjects.some((x) => x.id === p.id))
+  .map((p) => ({
+    ...p,
+    phases: p.phases.map((ph) => ({
+      ...ph,
+      requirementItemIds: ph.requirementItemIds?.map((r) => ({ ...r, itemId: RENAMED_ITEMS[r.itemId] || r.itemId, rewardItemIds: renamed(r.rewardItemIds) })),
+    })),
+  }));
+const projects = [...rawProjects, ...endedProjects].map((p) =>
   compact({
     id: p.id,
     name: gameName(p.name),
@@ -590,10 +634,12 @@ const latest = versions.sort((a, b) => {
   return a1 - b1 || a2 - b2;
 }).at(-1);
 
+const arctracker = readAt('source').generatedAt.slice(0, 10);
 const meta = {
   gameVersion: latest,
   recent: items.filter((i) => i.added === latest).map((i) => i.id),
-  updated: git('log', '-1', '--format=%cs'),
+  updated: [arctracker, git('log', '-1', '--format=%cs')].sort().at(-1),
+  arctracker,
   commit: git('rev-parse', '--short', 'HEAD'),
   counts: {
     items: items.length,
@@ -625,13 +671,15 @@ const missing = [...new Set(refs.filter((id) => !itemIds.has(id) && !labels.curr
 
 const bundles = { meta, labels, items, itemIndex, quests, skills, hideout, arc: bots, maps, events, traders, projects, search };
 
+// Files are overwritten in place and only stale ones deleted: deleting and
+// recreating a file in an iCloud Drive folder leaves copies named "items 2.js".
 fs.mkdirSync(OUT, { recursive: true });
-for (const file of fs.readdirSync(OUT)) if (file.endsWith('.js')) fs.rmSync(path.join(OUT, file));
+for (const file of fs.readdirSync(OUT)) if (file.endsWith('.js') && !Object.hasOwn(bundles, file.slice(0, -3))) fs.rmSync(path.join(OUT, file));
 
 let total = 0;
 for (const [name, value] of Object.entries(bundles)) {
   const body =
-    `// Generated by scripts/build-data.mjs from arcraiders-data@${meta.commit}. Do not edit.\n` +
+    `// Generated by scripts/build-data.mjs from arctracker.io (${meta.arctracker}) and arcraiders-data@${meta.commit}. Do not edit.\n` +
     `(window.ARC_DATA = window.ARC_DATA || {}).${name} = ${JSON.stringify(value)};\n`;
   fs.writeFileSync(path.join(OUT, `${name}.js`), body);
   total += body.length;
@@ -639,17 +687,19 @@ for (const [name, value] of Object.entries(bundles)) {
 }
 console.log(`  ${'total'.padEnd(22)} ${(total / 1024).toFixed(1).padStart(7)} KB`);
 
-// Rewritten each run so icons of removed items don't linger.
+// Icons of removed items are deleted so they don't linger.
 const ICON_OUT = path.join(IMG_OUT, 'items');
-fs.rmSync(ICON_OUT, { recursive: true, force: true });
 fs.mkdirSync(ICON_OUT, { recursive: true });
+for (const file of fs.readdirSync(ICON_OUT)) if (!icons.has(file)) fs.rmSync(path.join(ICON_OUT, file));
 for (const file of icons) {
-  const png = execFileSync('git', ['-C', SRC, 'show', `HEAD:images/items/${file}`], { maxBuffer: 64 << 20 });
+  const png = upstreamIcons.has(file)
+    ? execFileSync('git', ['-C', SRC, 'show', `HEAD:images/items/${file}`], { maxBuffer: 64 << 20 })
+    : fs.readFileSync(path.join(AT, 'items', file));
   fs.writeFileSync(path.join(ICON_OUT, file), png);
 }
 const cdnIcons = items.filter((i) => /^https?:/.test(i.img || '')).map((i) => i.id);
 console.log(`  ${icons.size} item icons in assets/img/game/items/; still on the CDN: ${cdnIcons.join(', ') || 'none'}`);
-console.log(`Game ${meta.gameVersion}, upstream ${meta.commit} (${meta.updated})`);
+console.log(`Game ${meta.gameVersion}; arctracker.io ${meta.arctracker}, upstream ${meta.commit} (${git('log', '-1', '--format=%cs')})`);
 if (missing.length) console.log(`Referenced ids without an item file: ${missing.join(', ')}`);
 if (unnamed.size) console.log(`Names without Chinese (add to NAMES in scripts/glossary.mjs): ${[...unnamed].sort().join(', ')}`);
 
@@ -676,7 +726,7 @@ function buildImages() {
     execFileSync('sips', [...args, input, '--out', output], { stdio: 'ignore' });
   };
 
-  for (const b of bots) sips(extract(`images/bots/${b.id}.png`), path.join(IMG_OUT, `arc/${b.id}.jpg`), 640, true);
+  for (const b of repoBots) sips(extract(`images/bots/${b.id}.png`), path.join(IMG_OUT, `arc/${b.id}.jpg`), 640, true);
   for (const t of traders) sips(extract(`images/traders/${t.id}.png`), path.join(IMG_OUT, `traders/${t.id}.jpg`), 480, true);
   for (const [id, file] of Object.entries(STATION_IMAGES))
     sips(extract(`images/workshop/${file}.png`), path.join(IMG_OUT, `stations/${id}.png`), 320, false);

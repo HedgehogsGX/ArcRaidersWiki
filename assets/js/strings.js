@@ -227,6 +227,7 @@ window.ARC_STRINGS = {
   'arc.drops': { zh: '掉落', en: 'Drops' },
   'arc.destroyXp': { zh: '摧毁 XP', en: 'Destroy XP' },
   'arc.lootXp': { zh: '搜刮 XP', en: 'Loot XP' },
+  'arc.pending': { zh: '霜痕小径新增，威胁等级、弱点、XP 和掉落待补充。', en: 'New in Frozen Trail; threat, weak points, XP and drops to come.' },
 
   // Maps
   'maps.lede': {
@@ -239,6 +240,7 @@ window.ARC_STRINGS = {
   'maps.major': { zh: '大型地图条件', en: 'Major events' },
   'maps.minor': { zh: '小型地图条件', en: 'Minor events' },
   'maps.open': { zh: '打开互动地图', en: 'Open interactive map' },
+  'maps.noMap': { zh: '互动地图待有地图图像后加入。', en: 'The interactive map follows once a map image is available.' },
 
   // Interactive map
   'map.lede': {

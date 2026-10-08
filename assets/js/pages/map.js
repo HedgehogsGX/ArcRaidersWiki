@@ -10,7 +10,8 @@
 (function () {
   const { html, mount, t, L, alt, asset, link, url, data, num, label } = ARC;
   const leaflet = window.L;
-  const maps = data.maps;
+  // Maps without an image yet (see maps.js) have nothing to show here.
+  const maps = data.maps.filter((m) => m.tiles || m.levels);
   const index = window.ARC_MARKER_INDEX;
   const types = index ? index.types : {};
   const STORE = 'arc-wiki-map';
