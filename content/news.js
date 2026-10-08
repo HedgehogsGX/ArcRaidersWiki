@@ -685,7 +685,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Rarely, some weapons may not play their firing sounds on low-spec PCs (particularly the Anvil).</li><li>Rubber Ducks can be squeezed when equipped, making noise without requiring them to be thrown.</li></ul>",
-    "zh": "<ul><li>在极少数情况下，低配置 PC 上部分武器可能不播放射击音效（尤其是铁砧）。</li><li>装备橡皮鸭时可以捏响它，无需投掷就能发出声音。</li></ul>"
+    "zh": "<ul><li>在极少数情况下，低配置 PC 上部分武器可能不播放射击音效（尤其是铁砧）。</li><li>装备橡皮鸭子时可以捏响它，无需投掷就能发出声音。</li></ul>"
    },
    {
     "type": "html",
