@@ -13,7 +13,8 @@
 // and within the hour when Embark changes the schedule.
 //
 // Condition icons are copied once from the official site into
-// assets/img/game/conditions/. Chinese names come from CLIENT_ZH, then data/events.js.
+// assets/img/game/conditions/. Chinese names come from CLIENT_ZH, then
+// ANNOUNCED_ZH, then data/events.js.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -36,7 +37,19 @@ const FORCE = process.argv.includes('--force');
 const CLIENT_ZH = {
   'close-scrutiny': '严密排查',
   'lush-blooms': '收获季节',
+  'prospecting-probes': '四处窥探的探测器',
   'uncovered-caches': '暴露的奇袭者箱',
+};
+
+// Newer than the client glossary: the names in Embark's own Chinese announcement
+// of the 2.0 update on Steam (霜痕小径). Move them to CLIENT_ZH once a client
+// glossary has them. MAP_ZH names maps the wiki has no page for yet.
+const ANNOUNCED_ZH = {
+  'arc-frigate': 'ARC护卫者',
+  redirection: '航向重定向',
+};
+const MAP_ZH = {
+  'Pendola Pass': '彭多拉山口',
 };
 
 async function get(url, tries = 3) {
@@ -129,6 +142,10 @@ function loadData(names) {
 // Map names differ slightly between the two sites ("Spaceport" / "The Spaceport").
 const mapKey = (name) => name.toLowerCase().replace(/^the\s+/, '').replace(/[^a-z0-9]/g, '');
 
+// The page writes "$undefined" instead of an object when an entry has no
+// per-region times (seen on Pendola Pass); every region then uses the base time.
+const regionTimes = (e) => (e.regionTimestamps && typeof e.regionTimestamps === 'object' ? e.regionTimestamps : {});
+
 async function icon(id) {
   const rel = `${ICONS}/${id}.svg`;
   const file = path.join(ROOT, rel);
@@ -156,7 +173,7 @@ async function build({ entries, types, now, lookAhead }) {
   const conditions = {};
   for (const name of [...new Set(entries.map((e) => e.conditionName))].sort()) {
     const id = slug(name);
-    const zh = CLIENT_ZH[id] || eventNames[id]?.zh;
+    const zh = CLIENT_ZH[id] || ANNOUNCED_ZH[id] || eventNames[id]?.zh;
     if (!zh) console.log(`  no Chinese name for "${name}"; add the game's wording to CLIENT_ZH`);
     conditions[id] = { name: zh ? { en: name, zh } : { en: name }, major: major.has(name), icon: await icon(id) };
   }
@@ -165,13 +182,13 @@ async function build({ entries, types, now, lookAhead }) {
   const mapOf = {};
   for (const name of [...new Set(entries.map((e) => e.mapDisplayName))].sort()) {
     // The wiki's own names, so the home page reads like the rest of the site.
-    const [id, label] = mapIds[mapKey(name)] || [slug(name).replace(/-/g, '_'), { en: name }];
-    if (!mapIds[mapKey(name)]) console.log(`  unknown map "${name}"`);
+    const [id, label] = mapIds[mapKey(name)] || [slug(name).replace(/-/g, '_'), MAP_ZH[name] ? { en: name, zh: MAP_ZH[name] } : { en: name }];
+    if (!mapIds[mapKey(name)]) console.log(`  map "${name}" is not in data/labels.js${MAP_ZH[name] ? '' : '; add its Chinese name to MAP_ZH'}`);
     maps[id] = label;
     mapOf[name] = id;
   }
 
-  const regions = [BASE_REGION, ...new Set(entries.flatMap((e) => Object.keys(e.regionTimestamps || {})))];
+  const regions = [BASE_REGION, ...new Set(entries.flatMap((e) => Object.keys(regionTimes(e))))];
   const sec = (ms) => Math.round(ms / 1000);
   return {
     source: SOURCE,
@@ -186,7 +203,7 @@ async function build({ entries, types, now, lookAhead }) {
         slug(e.conditionName),
         mapOf[e.mapDisplayName],
         sec(e.endTimestamp - e.startTimestamp),
-        regions.map((r) => sec(r === BASE_REGION ? e.startTimestamp : e.regionTimestamps?.[r]?.[0] ?? e.startTimestamp)),
+        regions.map((r) => sec(r === BASE_REGION ? e.startTimestamp : regionTimes(e)[r]?.[0] ?? e.startTimestamp)),
       ])
       .sort((a, b) => a[3][0] - b[3][0] || a[0].localeCompare(b[0]) || a[1].localeCompare(b[1])),
   };
