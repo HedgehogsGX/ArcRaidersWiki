@@ -141,7 +141,7 @@ const TYPES = [
   { id: 'baron_husk', group: 'loot', mf: 'containers/baron_husk', en: 'Baron Husk', glyph: 'husk' },
   { id: 'rocketeer_husk', group: 'loot', mf: 'containers/rocketeer_husk', en: 'Rocketeer Husk', zh: '“火箭手”残骸', glyph: 'husk' },
   { id: 'wasp_husk', group: 'loot', mf: 'containers/wasp_husk', en: 'Wasp Husk', zh: '“黄蜂”残骸', glyph: 'husk' },
-  { id: 'deforester_husk', group: 'loot', mf: 'containers/deforester_husk', en: 'Deforester Husk', zh: '“伐林者”残骸', glyph: 'husk' },
+  { id: 'deforester_husk', group: 'loot', mf: 'containers/deforester_husk', en: 'Deforester Husk', zh: '“伐木手”残骸', glyph: 'husk' },
   { id: 'arc_husk', group: 'loot', mf: 'containers/arc_husk', en: 'ARC Husk', zh: 'ARC残骸', glyph: 'husk' },
   { id: 'android', group: 'loot', mf: 'containers/android', en: 'Android', zh: '仿生人', glyph: 'android' },
 

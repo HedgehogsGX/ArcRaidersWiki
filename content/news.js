@@ -255,7 +255,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>New Map - Pendola Pass</li><li>New Map Conditions - Frigate &amp; Redirection</li><li>New Enemies - Bully, Skulker, Hydra</li><li>New Weapons - Bantam &amp; Stiletto </li><li>Amplified Weapons</li><li>Revamped Skill Tree</li><li>New Items - Grappling Hook, Basic &amp; Advanced Cameras, Tether Launcher, Yank Grenade, Mountaineer’s Detector, Banjo &amp; Harmonica</li><li>The Outpost, including a new Research Bench</li><li>Lootable “Design” items that unlock craftable Outpost furniture</li><li>Quest System improvements, 22 new quests added</li><li>New Reward Pass system</li><li>Weapon Stencils</li><li>Updated default gamepad mapping</li><li>Reworked Map Selection screen, including visual and usability improvements</li><li>Collector DLC is available now</li><li>Max Stash Size increased by 2 new levels (328 Max without Expedition bonuses)</li></ul>",
-    "zh": "<ul><li>新地图：彭多拉山口</li><li>新地图条件：ARC护卫者与航向重定向</li><li>新敌人：恶霸、潜伏者、九头蛇</li><li>新武器：小钢炮与短剑</li><li>增强型武器</li><li>技能树重做</li><li>新物品：钩爪、基础相机与高级相机、系索发射器、系索弹、登山者探测器、班卓琴与口琴</li><li>哨站，以及全新的研究工作站</li><li>可搜刮的“设计图”物品，用于解锁可制作的哨站家具</li><li>任务系统改进，新增 22 个任务</li><li>全新奖励通行证系统</li><li>武器贴花</li><li>更新默认手柄按键配置</li><li>重做地图选择界面，改进视觉效果与易用性</li><li>收藏套装DLC 现已推出</li><li>储备箱上限新增 2 个等级（不计远征奖励时最多 328 格）</li></ul>"
+    "zh": "<ul><li>新地图：彭多拉山口</li><li>新地图条件：ARC护卫者与航向重定向</li><li>新敌人：恶霸、潜伏者、九头蛇</li><li>新武器：小钢炮与细剑</li><li>增强型武器</li><li>技能树重做</li><li>新物品：钩爪、简易相机与高级相机、系索发射器、系索弹、登山者探测器、班卓琴与口琴</li><li>哨站，以及全新的研究站</li><li>可搜刮的“设计图”物品，用于解锁可制作的哨站家具</li><li>任务系统改进，新增 22 个任务</li><li>全新奖励通行证系统</li><li>武器贴花</li><li>更新默认手柄按键配置</li><li>重做地图选择界面，改进视觉效果与易用性</li><li>收藏套装DLC 现已推出</li><li>储备箱上限新增 2 个等级（不计远征奖励时最多 328 格）</li></ul>"
    },
    {
     "type": "html",
@@ -318,7 +318,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Stencils are similar to blueprints, once learned you can apply them to compatible weapons. Applying Stencils requires Stencil Parts, which can be found Topside.</p>",
-    "zh": "<p>贴花与蓝图类似，学会后即可应用到兼容的武器上。应用贴花需要贴花零件，可在上层找到。</p>"
+    "zh": "<p>贴花与蓝图类似，学会后即可应用到兼容的武器上。应用贴花需要贴花组件，可在上层找到。</p>"
    },
    {
     "type": "image",
@@ -337,7 +337,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Remember to accept the quest and bring your camera! </li><li>Outpost can be expanded with different modules </li><li>Unlocking the outpost will unlock access to the research station </li></ul>",
-    "zh": "<ul><li>记得接取任务并带上你的相机！</li><li>哨站可以通过不同的模块进行扩建</li><li>解锁哨站后即可使用研究工作站</li></ul>"
+    "zh": "<ul><li>记得接取任务并带上你的相机！</li><li>哨站可以通过不同的模块进行扩建</li><li>解锁哨站后即可使用研究站</li></ul>"
    },
    {
     "type": "html",
@@ -366,7 +366,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Reward Pass is our new progression system and the evolution of Raider Decks. Alongside this change, Cred has been removed from the game and replaced by Reward Points, a new currency that&#x27;s automatically applied toward your progress on whichever pass you currently have active.</p>",
-    "zh": "<p>奖励通行证是我们新的进度系统，也是奇袭者套件的进化版。随着这项改动，信用点已从游戏中移除，由新货币奖励点数取代。奖励点数会自动计入你当前启用的通行证的进度。</p>"
+    "zh": "<p>奖励通行证是我们新的进度系统，也是奇袭者套件的进化版。随着这项改动，信用点已从游戏中移除，由新货币奖励通行证点数取代。奖励通行证点数会自动计入你当前启用的通行证的进度。</p>"
    },
    {
     "type": "html",
@@ -376,7 +376,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Your existing Raider Decks haven&#x27;t gone anywhere. They&#x27;ve been moved into the new Legacy Pass, and any rewards you&#x27;ve already unlocked are kept and will appear as granted. You can continue progressing through the Legacy Pass at any time by setting it as your active pass. Note that only one Reward Pass can be active at a time, so your Reward Points will go toward whichever pass you&#x27;ve selected.</p>",
-    "zh": "<p>你现有的奇袭者套件并没有消失。它们已被移入新的传承奖励通行证，已解锁的奖励都会保留并显示为已获得。你可以随时将传承奖励通行证设为当前启用的通行证，继续推进进度。请注意，同一时间只能启用一张奖励通行证，奖励点数会计入你所选的通行证。</p>"
+    "zh": "<p>你现有的奇袭者套件并没有消失。它们已被移入新的传承奖励通行证，已解锁的奖励都会保留并显示为已获得。你可以随时将传承奖励通行证设为当前启用的通行证，继续推进进度。请注意，同一时间只能启用一张奖励通行证，奖励通行证点数会计入你所选的通行证。</p>"
    },
    {
     "type": "image",
@@ -395,12 +395,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Easy: 15 Reward Points, +1 weekly milestone progression</li><li>Medium: 25 Reward Points, +2 weekly milestone progression</li><li>Hard: 50 Reward Points, +3 weekly milestone progression.</li></ul>",
-    "zh": "<ul><li>简单：15 奖励点数，每周里程碑进度 +1</li><li>中等：25 奖励点数，每周里程碑进度 +2</li><li>困难：50 奖励点数，每周里程碑进度 +3</li></ul>"
+    "zh": "<ul><li>简单：15 奖励通行证点数，每周里程碑进度 +1</li><li>中等：25 奖励通行证点数，每周里程碑进度 +2</li><li>困难：50 奖励通行证点数，每周里程碑进度 +3</li></ul>"
    },
    {
     "type": "html",
     "en": "<p>Weekly milestones are granting 250 Reward Points each, there are 3 of them available per week:</p>",
-    "zh": "<p>每个每周里程碑奖励 250 奖励点数，每周共有 3 个：</p>"
+    "zh": "<p>每个每周里程碑奖励 250 奖励通行证点数，每周共有 3 个：</p>"
    },
    {
     "type": "html",
@@ -483,7 +483,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>“Solo vs. Squads” is no longer available in the matchmaking options. </li><li><ul><li>We want players to have a proper incentive to use all of the available matchmaking settings, which Solo vs. Squads currently lacks. To that end, we&#x27;re taking time to re-evaluate its role in the game.</li></ul></li><li>Reworked the explosive damage formula for ARC. In practice this means that explosive weapons like the Hullcracker will deal over 50% more damage against armor plates but around 30% less damage against more fragile parts.</li><li><ul><li>The intention is to make explosive damage feel more consistent across the board as well as increasing its effectiveness against heavy armor. Since most ARC are heavily armored and we want the numeric damage output to be more consistent this also means that its effectiveness against weak points is slightly reduced.</li></ul></li><li>Made certain changes to skills that were in the previous Skill Tree iteration to fit them better within the new one:</li><li><ul><li>Stamina gained from Fight or Flight increased by ~25% per level.</li><li>Stubborn Mule stamina regen values increased by ~33%.</li><li>Increase Back on Your Feet healing from 30 to 40.</li></ul></li><li>Added more contextual Ping information for ARC and various objects.</li><li>The Stash can be upgraded further, by two tiers. The new maximum (without Expedition rewards or acquired Nomadic Envoy space) is 328 slots.</li><li>You can now drop loot to the ground directly from containers</li><li>You can no longer sprint-climb ladders when exhausted</li><li>Addressed some instances where vaulting onto destroyed ARC parts or other movable surfaces could unexpectedly launch or shove the player.</li><li>Weapon slot weight reduction now applies only to the loadout; other containers and sub-containers are unaffected.</li><li>You can now open the map while downed.</li><li>Improved hit registration when shooting while on top of ARC.</li><li>Heavy Shield: reduced durability decay from 0.20 to 0.15 and decreased movement penalty while equipped from 15% to 10%. </li><li>Added Scrambling. Sprinting at steep slopes will allow you to scramble up them for a short time.</li><li>You now automatically enter a sliding state after tumbling for too long.</li></ul>",
-    "zh": "<ul><li>匹配选项中不再提供“单人对小队”。</li><li><ul><li>我们希望玩家有充分的理由去使用所有可用的匹配设置，而“单人对小队”目前缺乏这一点。为此，我们将花些时间重新评估它在游戏中的定位。</li></ul></li><li>重做了 ARC 的爆炸伤害公式。实际效果是，裂甲者等爆炸武器对装甲板的伤害提高 50% 以上，但对较脆弱部位的伤害降低约 30%。</li><li><ul><li>目的是让爆炸伤害整体上更加一致，同时提高其对重装甲的效果。由于大多数 ARC 都有厚重装甲，而我们希望伤害数值更加稳定，这也意味着爆炸伤害对弱点的效果略有降低。</li></ul></li><li>对上一版技能树中的部分技能做了调整，使其更契合新技能树：</li><li><ul><li>要么战，要么跑提供的耐力每级提高约 25%。</li><li>吃苦耐劳的耐力恢复数值提高约 33%。</li><li>不屈意志的治疗量从 30 提高到 40。</li></ul></li><li>为 ARC 和各类物体新增更多情境化的标记信息。</li><li>储备箱可以再升级两级。新的上限（不计远征奖励或已获得的游牧使节空间）为 328 格。</li><li>现在可以直接从容器中把战利品丢到地上</li><li>耐力耗尽时不能再冲刺爬梯子</li><li>处理了部分翻越到被摧毁的 ARC 部件或其他可移动表面上时，玩家被意外弹飞或推开的情况。</li><li>武器栏位的重量减免现在只作用于配装；其他容器和子容器不受影响。</li><li>现在倒地时也可以打开地图。</li><li>改进了站在 ARC 身上射击时的命中判定。</li><li>重型护盾：耐用性损耗从 0.20 降至 0.15，装备时的移动减速从 15% 降至 10%。</li><li>新增攀坡动作：在陡坡上冲刺时可以短时间向上攀爬。</li><li>滚落过久后现在会自动进入滑行状态。</li></ul>"
+    "zh": "<ul><li>匹配选项中不再提供“单人对小队”。</li><li><ul><li>我们希望玩家有充分的理由去使用所有可用的匹配设置，而“单人对小队”目前缺乏这一点。为此，我们将花些时间重新评估它在游戏中的定位。</li></ul></li><li>重做了 ARC 的爆炸伤害公式。实际效果是，裂甲者等爆炸武器对装甲板的伤害提高 50% 以上，但对较脆弱部位的伤害降低约 30%。</li><li><ul><li>目的是让爆炸伤害整体上更加一致，同时提高其对重装甲的效果。由于大多数 ARC 都有厚重装甲，而我们希望伤害数值更加稳定，这也意味着爆炸伤害对弱点的效果略有降低。</li></ul></li><li>对上一版技能树中的部分技能做了调整，使其更契合新技能树：</li><li><ul><li>要么战，要么跑提供的耐力每级提高约 25%。</li><li>吃苦耐劳的耐力恢复数值提高约 33%。</li><li>不屈意志的治疗量从 30 提高到 40。</li></ul></li><li>为 ARC 和各类物体新增更多情境化的标记信息。</li><li>储备箱可以再升级两级。新的上限（不计远征奖励或已获得的游牧使团空间）为 328 格。</li><li>现在可以直接从容器中把战利品丢到地上</li><li>耐力耗尽时不能再冲刺爬梯子</li><li>处理了部分翻越到被摧毁的 ARC 部件或其他可移动表面上时，玩家被意外弹飞或推开的情况。</li><li>武器栏位的重量减免现在只作用于配装；其他容器和子容器不受影响。</li><li>现在倒地时也可以打开地图。</li><li>改进了站在 ARC 身上射击时的命中判定。</li><li>重型护盾：耐用性损耗从 0.20 降至 0.15，装备时的移动减速从 15% 降至 10%。</li><li>新增攀爬陡坡动作：在陡坡上冲刺时可以短时间向上攀爬。</li><li>滚落过久后现在会自动进入滑行状态。</li></ul>"
    },
    {
     "type": "image",
@@ -581,7 +581,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Trader offers have been updated:</li><li><ul><li>Celeste now trades new materials used in crafting furniture and newly introduced gameplay items.</li><li>Tian Wen will no longer sell Anvil and Hullcracker offers. They will, instead, be part of the weekly Nomadic Envoys rotation.</li><li>Launcher Ammo and Energy Clips have a daily purchase limit.</li><li>Shani&#x27;s offers are now Coin based and include Cameras, Light Sticks and other social items.</li><li>Apollo has had a set of Epic Augments added to the offers.</li></ul></li><li>Living up to their reputation, the Nomadic Envoys have allowed Ermal to go back on the trail and have, instead, brought in Cassio, who will continue to trade for valuables, but also ask friendly Raiders for help with certain quests.</li></ul>",
-    "zh": "<ul><li>商人交易内容已更新：</li><li><ul><li>塞莱斯特现在出售用于制作家具的新材料，以及新加入的玩法物品。</li><li>天玟不再出售铁砧和裂甲者，它们将改为加入游牧使节的每周轮换。</li><li>发射器弹药和能量弹匣设有每日购买上限。</li><li>萨尼的商品现在以钱币购买，并包括相机、荧光棒和其他社交物品。</li><li>阿波罗的商品中新增了一批史诗强化。</li></ul></li><li>游牧使节一如其名：他们让埃尔马尔重新踏上旅途，换来了卡西奥。卡西奥将继续收购贵重物品，同时也会请友善的奇袭者帮忙完成一些任务。</li></ul>"
+    "zh": "<ul><li>商人交易内容已更新：</li><li><ul><li>塞莱斯特现在出售用于制作家具的新材料，以及新加入的玩法物品。</li><li>天玟不再出售铁砧和裂甲者，它们将改为加入游牧使团的每周轮换。</li><li>发射器弹药和能量弹匣设有每日购买上限。</li><li>萨尼的商品现在以钱币购买，并包括相机、荧光棒和其他社交物品。</li><li>阿波罗的商品中新增了一批史诗强化。</li></ul></li><li>游牧使团一如其名：他们让埃尔马尔重新踏上旅途，换来了卡西奥。卡西奥将继续收购贵重物品，同时也会请友善的奇袭者帮忙完成一些任务。</li></ul>"
    },
    {
     "type": "html",
@@ -650,7 +650,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Weapon meshes can sometimes be partially invisible when equipped with weapon attachments.</li><li>In rare instances, vaulting onto destroyed ARC parts and similar movable surfaces can cause the player to be unexpectedly launched or shoved.</li><li>When swapping shoulders and sprinting, players’ footsteps can become inaudible.</li><li>Field Repair may sometimes be unavailable after unlocking. Restarting the game solves the issue and a fix is in the works.</li><li>The option to repair the Tether Launcher is currently unavailable. Will be fixed in the upcoming update.</li><li>Very rarely, some players may spawn into a lobby &quot;invisibly”, unable to loot, use quick wheel items or interact with containers. They can still fire their weapon and take damage. Returning to Speranza should leave your loadout in the way it was before the “affected” match started.</li><li>The Hydra can detect and shoot players through walls in the Cargo area.</li><li>Standing on the side of the Cargo drop can result in being instantly eliminated. A fix is in the works.</li></ul>",
-    "zh": "<ul><li>装备武器配件时，武器模型有时会部分不可见。</li><li>在极少数情况下，翻越到被摧毁的 ARC 部件或类似可移动表面上时，玩家可能会被意外弹飞或推开。</li><li>切换肩部视角并冲刺时，玩家的脚步声可能听不到。</li><li>战地维修在解锁后有时可能无法使用。重启游戏即可解决，修复正在进行中。</li><li>系索发射器目前无法修理，将在后续更新中修复。</li><li>在极少数情况下，部分玩家进入对局时可能处于“隐身”状态，无法搜刮、使用快捷轮盘物品或与容器交互，但仍可开火并会受到伤害。返回斯佩兰扎后，你的配装应会恢复到进入这局“受影响”对局之前的状态。</li><li>九头蛇在货舱区域可以隔墙发现并射击玩家。</li><li>站在货舱落差处的边缘可能会被瞬间淘汰。修复正在进行中。</li></ul>"
+    "zh": "<ul><li>装备武器配件时，武器模型有时会部分不可见。</li><li>在极少数情况下，翻越到被摧毁的 ARC 部件或类似可移动表面上时，玩家可能会被意外弹飞或推开。</li><li>切换肩部视角并冲刺时，玩家的脚步声可能听不到。</li><li>野外维修在解锁后有时可能无法使用。重启游戏即可解决，修复正在进行中。</li><li>系索发射器目前无法修理，将在后续更新中修复。</li><li>在极少数情况下，部分玩家进入对局时可能处于“隐身”状态，无法搜刮、使用快捷轮盘物品或与容器交互，但仍可开火并会受到伤害。返回斯佩兰扎后，你的配装应会恢复到进入这局“受影响”对局之前的状态。</li><li>九头蛇在货舱区域可以隔墙发现并射击玩家。</li><li>站在货舱落差处的边缘可能会被瞬间淘汰。修复正在进行中。</li></ul>"
    },
    {
     "type": "html",
@@ -695,7 +695,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Weapon meshes sometimes disappear partially.</li><li>Players that departed on the Expedition recently may have a notification dot on the Projects &amp; Raider tab that does not disappear.</li><li>Keybinds are reset to default after each raid when using a non-English keyboard layout.</li><li>The Expedition screen can still be accessed through the Nomadic Envoys, though it is not functional.</li><li>The weight of the loadout can differ slightly when viewing it in Speranza vs. what it shows in-game.</li><li>When purchasing the Premium Reward Pass, the lock icon is still present on the premium rewards despite them being unlocked.</li><li>The loadout weight amount differs between Main Menu and In-Round.</li></ul>",
-    "zh": "<ul><li>武器模型有时会部分消失。</li><li>近期出发远征的玩家，计划与奇袭者标签页上可能会有一个不会消失的通知提示点。</li><li>使用非英语键盘布局时，每局奇袭结束后按键绑定会重置为默认。</li><li>远征界面仍可通过游牧使节进入，但无法使用。</li><li>在斯佩兰扎查看的配装重量可能与局内显示的略有不同。</li><li>购买高级奖励通行证后，高级奖励上仍显示锁定图标，尽管它们已经解锁。</li><li>主菜单和局内显示的配装重量不一致。</li></ul>"
+    "zh": "<ul><li>武器模型有时会部分消失。</li><li>近期出发远征的玩家，计划与奇袭者标签页上可能会有一个不会消失的通知提示点。</li><li>使用非英语键盘布局时，每局奇袭结束后按键绑定会重置为默认。</li><li>远征界面仍可通过游牧使团进入，但无法使用。</li><li>在斯佩兰扎查看的配装重量可能与局内显示的略有不同。</li><li>购买高级奖励通行证后，高级奖励上仍显示锁定图标，尽管它们已经解锁。</li><li>主菜单和局内显示的配装重量不一致。</li></ul>"
    },
    {
     "type": "html",
@@ -882,7 +882,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The free play period also coincides with the launch of Frozen Trail, our biggest update since launch! New players will  be able to access Pendola Pass immediately if teamed up with other players who have already unlocked the new map. </p>",
-    "zh": "<p>免费畅玩期间也恰逢霜痕小径上线，这是我们自发布以来最大的一次更新！新玩家只要与已解锁新地图的其他玩家组队，就能立即进入Pendola Pass。</p>"
+    "zh": "<p>免费畅玩期间也恰逢霜痕小径上线，这是我们自发布以来最大的一次更新！新玩家只要与已解锁新地图的其他玩家组队，就能立即进入彭多拉山口。</p>"
    },
    {
     "type": "html",
@@ -1499,7 +1499,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Beyond the peaks that envelope the Rust Belt, icy air preserves Pendola Pass in its eerie grasp. Classic signs of an old-world civilization punctuate the narrow stretch: a supermarket, and a lifeless town square. Signs of the Exodus Project loom large: the observatory and buried train depot that once served as a major transit hub.</p>",
-    "zh": "<p>在环绕锈带的山峰之外，冰冷的空气将彭多拉山口封存在它诡异的掌控之中。旧世界文明的典型痕迹点缀着这片狭长的地带：一家超市，一个毫无生气的城镇广场。离巢计划的痕迹则赫然在目：曾作为主要交通枢纽的天文台和埋藏在地下的列车站。</p>"
+    "zh": "<p>在环绕锈带的山峰之外，冰冷的空气将彭多拉山口封存在它诡异的掌控之中。旧世界文明的典型痕迹点缀着这片狭长的地带：一家超市，一个毫无生气的城镇广场。离巢计划的痕迹则赫然在目：曾作为主要交通枢纽的天文台和被掩埋的火车转运站。</p>"
    },
    {
     "type": "html",
@@ -1509,7 +1509,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Between a scrambled ARC response and brutal flash freezes that cut through the valley, the adventure will be dangerous. Are you sure you’re ready for what lies beyond the Rust Belt?</p>",
-    "zh": "<p>在ARC混乱的应对和横扫山谷的残酷速冻之间，这场冒险将充满危险。你确定自己准备好面对锈带之外的一切了吗？</p>"
+    "zh": "<p>在ARC混乱的应对和横扫山谷的残酷极寒冰爆之间，这场冒险将充满危险。你确定自己准备好面对锈带之外的一切了吗？</p>"
    },
    {
     "type": "image",
@@ -1590,7 +1590,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Customize your new home with different modules and embellish the interiors with furniture. Investigate new elements of the world using the Research Workstation which will allow you to access higher levels of weapon customization and modding, preparing you for the journey beyond the mountain. </p>",
-    "zh": "<p>用不同的模块定制你的新家，并用家具装饰内部。使用研究工作站探索世界的新元素，它将让你解锁更高等级的武器定制与改装，为你翻越山脉之后的旅程做好准备。</p>"
+    "zh": "<p>用不同的模块定制你的新家，并用家具装饰内部。使用研究站探索世界的新元素，它将让你解锁更高等级的武器定制与改装，为你翻越山脉之后的旅程做好准备。</p>"
    },
    {
     "type": "html",
@@ -1614,7 +1614,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Using the fully-upgraded Research Workstation in your Outpost, Raiders will have the opportunity to access a fifth quality level for a range of guns. This level lets you unlock a branching path of abilities and enhancements to your weapons that can completely change their behavior; imagine a fully-automatic Burletta, a Renegade with a scope, or a Rattler with incendiary bullets and a 64 bullet magazine.</p>",
-    "zh": "<p>利用哨站中完全升级的研究工作站，奇袭者们将有机会为一系列枪械解锁第五个品质等级。这个等级让你解锁一条分支路径，为武器带来各种能力和强化，彻底改变它们的行为方式；想象一下全自动的布尔莱塔、带瞄准镜的叛逆，或是配备燃烧弹和64发弹匣的响尾蛇。</p>"
+    "zh": "<p>利用哨站中完全升级的研究站，奇袭者们将有机会为一系列枪械解锁第五个品质等级。这个等级让你解锁一条分支路径，为武器带来各种能力和强化，彻底改变它们的行为方式；想象一下全自动的布尔莱塔、带瞄准镜的叛逆，或是配备燃烧弹和64发弹匣的响尾蛇。</p>"
    },
    {
     "type": "html",
@@ -1628,12 +1628,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>New Weapon: Stiletto</h2>",
-    "zh": "<h2>新武器：短剑</h2>"
+    "zh": "<h2>新武器：细剑</h2>"
    },
    {
     "type": "html",
     "en": "<p>The Stiletto is a light-ammo battle rifle that fits in as an early-game alternative to the Renegade. Cheap to craft and easy to wield, it’s the perfect choice for Raiders with a steady shot looking to attack from distance. Fire rate can be fast, but button mashing will sacrifice accuracy - keep a cool head and hit your shots. </p>",
-    "zh": "<p>短剑是一把使用轻型弹药的战斗步枪，作为叛逆的前期替代品非常合适。制作成本低廉，易于上手，对于枪法稳定、喜欢远距离攻击的奇袭者来说是完美的选择。射速可以很快，但狂按扳机会牺牲精度——保持冷静，打准每一枪。</p>"
+    "zh": "<p>细剑是一把使用轻型弹药的战斗步枪，作为叛逆的前期替代品非常合适。制作成本低廉，易于上手，对于枪法稳定、喜欢远距离攻击的奇袭者来说是完美的选择。射速可以很快，但狂按扳机会牺牲精度——保持冷静，打准每一枪。</p>"
    },
    {
     "type": "image",
@@ -1972,7 +1972,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<h2>Reminder - Claim your Rubber Ducks!</h2>",
-    "zh": "<h2>提醒——领取你的橡皮鸭！</h2>"
+    "zh": "<h2>提醒——领取你的橡皮鸭子！</h2>"
    },
    {
     "type": "image",
@@ -1981,7 +1981,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Heads up! After <strong>October 8th</strong>, the inbox message that contains the community-made Rubber Ducks will no longer be sent out. <strong>Make sure to log in and claim them before that deadline. </strong><br><br>Wouldn’t wanna miss out on those awesome ducks!</p>",
-    "zh": "<p>请注意！<strong>10月8日</strong>之后，包含社区制作橡皮鸭的收件箱消息将不再发送。<strong>请务必在截止日期前登录并领取。</strong><br><br>可别错过这些超棒的鸭子！</p>"
+    "zh": "<p>请注意！<strong>10月8日</strong>之后，包含社区制作橡皮鸭子的收件箱消息将不再发送。<strong>请务必在截止日期前登录并领取。</strong><br><br>可别错过这些超棒的鸭子！</p>"
    },
    {
     "type": "html",
