@@ -44,7 +44,7 @@ window.ARC_MARKER_INDEX = {
   "baron_husk": {"group":"loot","name":{"en":"Baron Husk","zh":"“男爵”残骸"},"glyph":"husk"},
   "rocketeer_husk": {"group":"loot","name":{"en":"Rocketeer Husk","zh":"“火箭手”残骸"},"glyph":"husk"},
   "wasp_husk": {"group":"loot","name":{"en":"Wasp Husk","zh":"“黄蜂”残骸"},"glyph":"husk"},
-  "deforester_husk": {"group":"loot","name":{"en":"Deforester Husk","zh":"“伐林者”残骸"},"glyph":"husk"},
+  "deforester_husk": {"group":"loot","name":{"en":"Deforester Husk","zh":"“伐木手”残骸"},"glyph":"husk"},
   "arc_husk": {"group":"loot","name":{"en":"ARC Husk","zh":"ARC残骸"},"glyph":"husk"},
   "android": {"group":"loot","name":{"en":"Android","zh":"仿生人"},"glyph":"android"},
   "great_mullein": {"group":"nature","name":{"en":"Great Mullein","zh":"大毛蕊花"},"img":"assets/img/game/items/great_mullein.png","link":["item","great_mullein"]},

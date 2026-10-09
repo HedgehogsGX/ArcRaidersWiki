@@ -14,7 +14,7 @@
 //
 // Condition icons are copied once from the official site into
 // assets/img/game/conditions/. Chinese names come from CLIENT_ZH, then
-// ANNOUNCED_ZH, then data/events.js.
+// data/events.js.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -35,19 +35,15 @@ const FORCE = process.argv.includes('--force');
 // glossary) for conditions that data/events.js has no Chinese for yet. Lush Blooms
 // is translated from its internal name, Harvest Season, not literally.
 const CLIENT_ZH = {
+  'arc-frigate': 'ARC护卫者',
   'close-scrutiny': '严密排查',
   'lush-blooms': '收获季节',
   'prospecting-probes': '四处窥探的探测器',
+  redirection: '航向重定向',
   'uncovered-caches': '暴露的奇袭者箱',
 };
 
-// Newer than the client glossary: the names in Embark's own Chinese announcement
-// of the 2.0 update on Steam (霜痕小径). Move them to CLIENT_ZH once a client
-// glossary has them. MAP_ZH names maps the wiki has no page for yet.
-const ANNOUNCED_ZH = {
-  'arc-frigate': 'ARC护卫者',
-  redirection: '航向重定向',
-};
+// Maps the wiki has no page for yet.
 const MAP_ZH = {
   'Pendola Pass': '彭多拉山口',
 };
@@ -173,7 +169,7 @@ async function build({ entries, types, now, lookAhead }) {
   const conditions = {};
   for (const name of [...new Set(entries.map((e) => e.conditionName))].sort()) {
     const id = slug(name);
-    const zh = CLIENT_ZH[id] || ANNOUNCED_ZH[id] || eventNames[id]?.zh;
+    const zh = CLIENT_ZH[id] || eventNames[id]?.zh;
     if (!zh) console.log(`  no Chinese name for "${name}"; add the game's wording to CLIENT_ZH`);
     conditions[id] = { name: zh ? { en: name, zh } : { en: name }, major: major.has(name), icon: await icon(id) };
   }

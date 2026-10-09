@@ -60,7 +60,14 @@ const SPECIAL = {
   'Broken／Locked Return Point': { 'Broken Return Point': '损坏的返回点', 'Locked Return Point': '锁定的返回点' },
   'loot value（low／medium／high）': {},
   'weapon tier I–IV': {},
+  'Amplified 〈weapon〉': {},
+  // Bare words that would mistranslate the news: "the design should be …",
+  // "Amplified Anvil" (增强型铁砧, not 已增强铁砧).
+  'Design／Furniture Design': { 'Furniture Design': '家具设计图' },
+  'rarity：Amplified': {},
 };
+
+const ROMAN = ['I', 'II', 'III', 'IV', 'V'];
 
 const md = fs.readFileSync(SOURCE, 'utf8');
 const updated = /^updated:\s*(\S+)/m.exec(md)?.[1];
@@ -93,7 +100,9 @@ for (const line of md.split('\n')) {
     continue;
   }
   if (!INCLUDE.has(number) || !line.startsWith('|') || /^\|\s*-/.test(line)) continue;
-  const [en, zh] = line.slice(1, -1).split('|').map((c) => c.trim());
+  const [en, cell] = line.slice(1, -1).split('|').map((c) => c.trim());
+  // "**（建议译名）**" marks the glossary's own wording for a name the client doesn't have.
+  const zh = cell?.replace(/\s*\*\*（建议译名）\*\*/g, '');
   if (!zh || ['英文或缩写', '英文'].includes(en) || /^["“]/.test(en)) continue;
 
   if (en in SPECIAL) {
@@ -101,10 +110,10 @@ for (const line of md.split('\n')) {
     continue;
   }
   const name = en.replace(/^[a-z]+：/, '').replace(/（[^）]*）/g, '').trim();
-  const range = /^(.*) I–III$/.exec(name);
-  const zhRange = /^(.*) I–III$/.exec(zh);
+  const range = /^(.*) I–(III|IV|V)$/.exec(name);
+  const zhRange = /^(.*) I–(III|IV|V)$/.exec(zh);
   if (range && zhRange) {
-    ['I', 'II', 'III'].forEach((n) => add(`${range[1]} ${n}`, `${zhRange[1]} ${n}`));
+    ROMAN.slice(0, ROMAN.indexOf(range[2]) + 1).forEach((n) => add(`${range[1]} ${n}`, `${zhRange[1]} ${n}`));
     continue;
   }
   const names = name.split('／');

@@ -302,11 +302,13 @@ function buildGlossary(data) {
   return terms;
 }
 
-// Only the glossary entries that occur in this text as whole words.
+// Only the glossary entries that occur in this text as whole words, plurals
+// ("Nomadic Envoys") and curly apostrophes ("Mountaineer’s Detector") included.
 function glossaryFor(text, terms) {
   const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const plain = text.replace(/’/g, "'");
   return [...terms]
-    .filter(([en]) => new RegExp(`(^|[^A-Za-z])${escape(en)}(?![A-Za-z])`, 'i').test(text))
+    .filter(([en]) => new RegExp(`(^|[^A-Za-z])${escape(en)}s?(?![A-Za-z])`, 'i').test(plain))
     .sort((a, b) => b[0].length - a[0].length)
     .map(([en, zh]) => `${en} = ${zh}`)
     .join('\n');
