@@ -1,6 +1,8 @@
 {
-  "post": "store-update-1-47-0",
-  "date": "2026-09-22",
-  "title": "Store Update 1.47.0",
-  "banner": "https://assets.arcraiders.com/media/ed2c29dc-6dce-ARC-Raiders_Steam_EventHeader_StoreUpdate_1920x622 (2).jpg"
+  "post": "trials-season-6",
+  "date": "2026-10-12",
+  "title": "Trials Season 6: Frozen Trials",
+  "image": "https://assets.arcraiders.com/media/0f0364ca-a160-ArcRaiders_ScreenShot_16x9_TrialsS06_02_4K.jpg",
+  "crop": "0.3,0,0.7,0.91",
+  "picked": true
 }

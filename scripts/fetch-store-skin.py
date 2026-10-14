@@ -9,8 +9,14 @@ figure out and saves it as assets/img/brand/store-skin.webp.
 
     python3 scripts/fetch-store-skin.py          only when there is a newer post
     python3 scripts/fetch-store-skin.py --force  cut out the newest post again
+    python3 scripts/fetch-store-skin.py --image URL_OR_FILE [--crop L,T,R,B]
+                                                 cut out a picture of your choice
 
-content/store-skin.json records which post the current image came from. The
+--crop keeps that part of the picture before the cutout, as shares of its width
+and height (0.3,0,0.7,0.91 drops the sides and the footer of a 16:9 wallpaper).
+A picture chosen this way stays until you run the script with --force.
+
+content/store-skin.json records which post or picture the current image came from. The
 cutout uses BiRefNet (MIT licence), the model rembg ships as birefnet-general.
 The 928 MB model is downloaded on first use into ~/.cache/arc-raiders-wiki/ and
 checked against its MD5. Needs `pip install onnxruntime numpy pillow`, but only
@@ -46,6 +52,11 @@ LOGO_WIDTH = 0.46
 EDGE_FADE = 0.16
 # Share of the cropped banner the figure should cover; outside it, something went wrong.
 COVERAGE = (0.08, 0.85)
+# The hero frames an upper body. A taller figure is cut off below this height
+# (times its width), where the page fades it out anyway.
+TALLEST = 1.25
+# Wide enough for the desktop hero on a retina screen; a 4K source would weigh 350 KB.
+WIDEST = 860
 
 
 def get(url):
@@ -120,8 +131,56 @@ def cut_out(image):
     return cutout, alpha.mean() / 255
 
 
+def news_post_with(url):
+    """The synced post that shows `url`, if any."""
+    with open(NEWS, encoding="utf-8") as f:
+        text = f.read()
+    news = json.loads(re.search(r"window\.ARC_NEWS = (.*);", text, re.S).group(1))
+    return next((p for p in news if any(url in (b.get("en") or b.get("html") or "") for b in p["body"])), None)
+
+
+def save(cutout, record):
+    from PIL import Image
+
+    cutout = cutout.crop(cutout.getchannel("A").getbbox())
+    if cutout.height > cutout.width * TALLEST:
+        cutout = cutout.crop((0, 0, cutout.width, round(cutout.width * TALLEST)))
+    if cutout.width > WIDEST:
+        cutout = cutout.resize((WIDEST, round(cutout.height * WIDEST / cutout.width)), Image.Resampling.LANCZOS)
+    cutout.save(OUT, "WEBP", quality=82, method=6)
+    with open(STATE, "w", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False, indent=2) + "\n")
+    return cutout
+
+
+def picked(source, crop):
+    """Cuts out a picture of the reader's choice (--image)."""
+    from PIL import Image
+
+    data = get(source) if re.match(r"https?://", source) else open(source, "rb").read()
+    image = Image.open(io.BytesIO(data))
+    w, h = image.size
+    if crop:
+        l, t, r, b = (float(x) for x in crop.split(","))
+        image = image.crop((round(w * l), round(h * t), round(w * r), round(h * b)))
+    cutout, coverage = cut_out(image)
+    if not COVERAGE[0] < coverage < COVERAGE[1]:
+        print(f"The cutout covers {coverage:.0%} of the picture, which doesn't look like a figure; the hero figure stays.")
+        return
+    record = {"image": source, "crop": crop, "picked": True}
+    post = news_post_with(source) if source.startswith("http") else None
+    if post:
+        record = {"post": post["id"], "date": post["date"], "title": post["title"]["en"], **record}
+    cutout = save(cutout, {k: v for k, v in record.items() if v is not None})
+    print(f"Saved {os.path.relpath(OUT, ROOT)} ({cutout.width}x{cutout.height}) from {source}.")
+
+
 def main():
     force = "--force" in sys.argv
+    if "--image" in sys.argv:
+        args = sys.argv
+        crop = args[args.index("--crop") + 1] if "--crop" in args else None
+        return picked(args[args.index("--image") + 1], crop)
     post = newest_store_post()
     if not post:
         print("No Store Update among the synced posts; the hero figure stays.")
@@ -130,6 +189,9 @@ def main():
     if os.path.exists(STATE):
         with open(STATE, encoding="utf-8") as f:
             state = json.load(f)
+    if state.get("picked") and not force:
+        print(f"The hero figure was picked by hand ({state.get('post') or state['image']}); --force replaces it with the newest store banner.")
+        return
     if state.get("post") == post["id"] and not force:
         print(f"Hero figure is up to date ({post['id']}).")
         return
@@ -150,12 +212,7 @@ def main():
     if not COVERAGE[0] < coverage < COVERAGE[1]:
         print(f"The cutout covers {coverage:.0%} of the {post['id']} banner, which doesn't look like a figure; the hero figure stays.")
         return
-    cutout = cutout.crop(cutout.getchannel("A").getbbox())
-    cutout.save(OUT, "WEBP", quality=88, method=6)
-
-    record = {"post": post["id"], "date": post["date"], "title": post["title"]["en"], "banner": url}
-    with open(STATE, "w", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False, indent=2) + "\n")
+    cutout = save(cutout, {"post": post["id"], "date": post["date"], "title": post["title"]["en"], "banner": url})
     print(f"Saved {os.path.relpath(OUT, ROOT)} ({cutout.width}x{cutout.height}) from {post['title']['en']}.")
 
 

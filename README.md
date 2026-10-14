@@ -49,7 +49,7 @@ node scripts/fetch-arctracker.mjs        # 物品、任务、工坊、计划的�
 node scripts/fetch-skill-tree.mjs        # 技能树
 node scripts/build-data.mjs              # 游戏数据，先 git submodule update --init
 TRANSLATE_API_KEY=… npm run news         # 公告，先 npm install
-python3 scripts/fetch-store-skin.py      # 首页外观（只手动更新），先 pip install onnxruntime numpy pillow
+python3 scripts/fetch-store-skin.py      # 首页外观（只手动更新），先 pip install onnxruntime numpy pillow；--image 换成指定图片
 node scripts/fetch-map-conditions.mjs    # 地图条件
 node scripts/fetch-map-markers.mjs       # 互动地图标记
 ```
