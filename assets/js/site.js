@@ -312,6 +312,7 @@
           <ul>
             ${external('RaidTheory/arcraiders-data', 'https://github.com/RaidTheory/arcraiders-data')}
             ${external('arctracker.io', 'https://arctracker.io')}
+            ${external('Raider Tools', 'https://github.com/baschny/arcraiders-raider-tools')}
             ${external('MetaForge', 'https://metaforge.app/arc-raiders')}
           </ul>
         </div>
