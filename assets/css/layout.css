@@ -528,8 +528,20 @@
   min-height: min(640px, 88vh);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--rule);
   isolation: isolate;
+}
+
+/* The hero runs out into the page instead of ending on a line: the figure, the
+   stripes and the halftone dots fade into the page color over its last stretch.
+   It sits under the hero's text. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+  height: clamp(120px, 32%, 220px);
+  background: linear-gradient(rgba(19, 9, 24, 0), rgba(19, 9, 24, 0.55) 45%, var(--night));
+  pointer-events: none;
 }
 
 /* Halftone dots fading in from the right, like the print texture of the key art. */
