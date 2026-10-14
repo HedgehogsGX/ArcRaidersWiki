@@ -382,8 +382,19 @@
   color: var(--dust);
 }
 
+/* The home page has its own search field in the hero; the header's appears once
+   that one has scrolled out of sight (home.js), and stays while someone is typing
+   in it. */
 .is-home .search--header {
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+
+.is-home.has-header-search .search--header,
+.is-home .search--header:focus-within {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* ---- responsive header ------------------------------------------------ */
