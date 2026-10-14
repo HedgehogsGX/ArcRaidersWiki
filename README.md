@@ -1,6 +1,6 @@
 # ARC Raiders 维基
 
-非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、工坊、ARC、地图与互动地图、商人、计划，以及同步自官网的公告和地图条件。中文使用简中客户端的官方译名。
+非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、工坊、ARC、地图与互动地图、商人、计划，同步自官网的公告和地图条件，以及可下载 4K 原图的官方美术图库。中文使用简中客户端的官方译名。
 
 网站：https://arcraiderswiki.pages.dev
 
@@ -18,7 +18,7 @@ npm run serve    # 然后打开 http://localhost:8000
 index.html, pages/       页面
 assets/                  样式、脚本、图片、字体；界面文字在 js/strings.js
 data/                    游戏数据（build-data.mjs 生成，不要手动修改）
-content/                 公告、地图条件、地图标记（同步脚本生成，不要手动修改）
+content/                 公告、地图条件、地图标记、图库（同步脚本生成，不要手动修改）
 scripts/                 构建与同步脚本，每个脚本开头有详细说明
 worker.js, functions/    公告原图的 /news-full/ 路由（Workers 与 Pages 各一个入口）
 vendor/arctracker        arctracker.io 的物品、任务、工坊、计划（fetch-arctracker.mjs 生成）
@@ -50,6 +50,7 @@ node scripts/fetch-skill-tree.mjs        # 技能树
 node scripts/build-data.mjs              # 游戏数据，先 git submodule update --init
 TRANSLATE_API_KEY=… npm run news         # 公告，先 npm install
 python3 scripts/fetch-store-skin.py      # 首页外观（只手动更新），先 pip install onnxruntime numpy pillow；--image 换成指定图片
+node scripts/fetch-gallery.mjs           # 图库（只手动更新），先 npm install；新图片加到脚本里的列表
 node scripts/fetch-map-conditions.mjs    # 地图条件
 node scripts/fetch-map-markers.mjs       # 互动地图标记
 ```
@@ -61,7 +62,7 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 - **Cloudflare Pages**（当前网站）：构建命令 `npm run build`，输出目录 `dist`。
 - **腾讯云 EdgeOne Pages**（中国大陆）：设置相同；自定义域名要先完成 ICP 备案，页脚需显示备案号。
 
-公告图片点开后显示官网原图（最大 3840 像素），可下载，手机上可存到相册。原图不进仓库，由 `/news-full/<文件名>` 从 assets.arcraiders.com 取来再从本站发出（`worker.js`，Cloudflare Pages 通过 `functions/` 自动启用；`npm run serve` 本地也有）。没有这个路由的托管平台上，原图直接从官网载入，"下载原图"改为在新标签页打开官网原图。
+公告图片和图库图片点开后显示官网原图（最大 3840 像素），可下载，手机上可存到相册。原图不进仓库，由 `/news-full/<文件名>` 从 assets.arcraiders.com 取来再从本站发出（`worker.js`，Cloudflare Pages 通过 `functions/` 自动启用；`npm run serve` 本地也有）。没有这个路由的托管平台上，原图直接从官网载入，"下载原图"改为在新标签页打开官网原图。图库里不在这个图床上的几张（Embark 媒体资料包的主视觉、官网首页的 4K 图）放在 `content/gallery-full/`，由本站直接发出。
 
 ## 译名
 
@@ -72,6 +73,7 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 - **游戏数据**：[arctracker.io](https://arctracker.io) 与 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)（MIT）。2.0 的技能树取自 [baschny/arcraiders-raider-tools](https://github.com/baschny/arcraiders-raider-tools) 从游戏数据生成的文件，左右顺序对照 arctracker.io 的技能树页。2.0 新增的 ARC 和地图在两者更新前取自官方公告（`scripts/additions.mjs`）
 - **互动地图标记**：[MetaForge](https://metaforge.app/arc-raiders) 社区。按其 API 条款注明来源并链接，互动地图页和页脚的链接请保留；网站如要盈利，需先联系 MetaForge。
 - **官方公告、地图条件与商店横幅**：[arcraiders.com](https://arcraiders.com)
+- **图库**：arcraiders.com 公告与首页的美术图，以及 [Embark 媒体资料包](https://www.embark-studios.com/press)，版权归 Embark Studios AB
 - **中文译名**：ARC Raiders 简中客户端
 - **公告翻译**：[DeepSeek](https://www.deepseek.com)
 - **首页抠图**：[BiRefNet](https://github.com/ZhengPeng7/BiRefNet)（MIT），模型文件来自 [rembg](https://github.com/danielgatis/rembg)

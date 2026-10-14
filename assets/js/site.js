@@ -53,7 +53,9 @@
         </div>
         <nav class="site-nav" id="site-nav" aria-label="${t('site.menu')}">
           <ul class="site-nav__list">
-            <li class="nav-link"><a href="${url('pages/news.html')}"${current === 'news' ? html` aria-current="page"` : ''}>${t('page.news')}</a></li>
+            ${['news', 'gallery'].map(
+              (id) => html`<li class="nav-link"><a href="${url(`pages/${id}.html`)}"${current === id ? html` aria-current="page"` : ''}>${t(`page.${id}`)}</a></li>`
+            )}
             ${SECTIONS.map((s) => {
               const links = pageLinks(s);
               const here = links.some((l) => l.id === current);
@@ -298,7 +300,7 @@
         </div>
         <div class="site-footer__col">
           <h2>${t('footer.browse')}</h2>
-          <ul>${['news', ...SECTIONS.flatMap((s) => s.pages).map(([id]) => id)].map(
+          <ul>${['news', 'gallery', ...SECTIONS.flatMap((s) => s.pages).map(([id]) => id)].map(
             (id) => html`<li><a href="${url(`pages/${id}.html`)}">${t(`page.${id}`)}</a></li>`
           )}</ul>
         </div>

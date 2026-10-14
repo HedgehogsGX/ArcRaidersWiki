@@ -431,6 +431,11 @@
     gap: 28px;
   }
 
+  /* The top-level links (News, Gallery) sit together, like a group's pages. */
+  .nav-link + .nav-link {
+    margin-top: -28px;
+  }
+
   .nav-group__btn {
     pointer-events: none;
     height: auto;

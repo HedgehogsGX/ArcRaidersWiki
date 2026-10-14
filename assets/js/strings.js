@@ -132,6 +132,29 @@ window.ARC_STRINGS = {
   'news.image.size': { zh: '原图 {w} × {h}', en: 'Original, {w} × {h}' },
   'news.image.failed': { zh: '原图载入失败，当前为预览图', en: "Couldn't load the original; this is the preview" },
 
+  // Gallery
+  'page.gallery': { zh: '图库', en: 'Gallery' },
+  'desc.gallery': { zh: '官方美术图，可下载 4K 原图', en: 'Official artwork, with 4K downloads' },
+  'gallery.lede': {
+    zh: 'Embark Studios 官方发布的 ARC Raiders 美术图：主视觉、奇袭者、商人、地点和 ARC，大多是 4K。点开图片查看原图，可下载或存到相册。',
+    en: 'Official ARC Raiders artwork from Embark Studios: key art, Raiders, traders, places and ARC, most of it in 4K. Open a picture to see it full size and download the original.',
+  },
+  'gallery.count': { zh: '共 {n} 张，其中 {k} 张为 4K', en: '{n} pictures, {k} in 4K' },
+  'gallery.viewer': { zh: '图库图片', en: 'Gallery picture' },
+  'gallery.open': { zh: '查看原图：{title}', en: 'View full size: {title}' },
+  'gallery.tag.key': { zh: '主视觉', en: 'Key art' },
+  'gallery.tag.raiders': { zh: '奇袭者', en: 'Raiders' },
+  'gallery.tag.traders': { zh: '商人', en: 'Traders' },
+  'gallery.tag.places': { zh: '地点', en: 'Places' },
+  'gallery.tag.arc': { zh: 'ARC', en: 'ARC' },
+  'gallery.tag.objects': { zh: '物件', en: 'Objects' },
+  'gallery.from.kit': { zh: 'Embark 媒体资料包', en: 'Embark media kit' },
+  'gallery.from.site': { zh: 'ARC Raiders 官网', en: 'arcraiders.com' },
+  'gallery.credit': {
+    zh: '图片版权归 Embark Studios AB 所有，取自 ARC Raiders 官网公告与 Embark 媒体资料包，每张都链接到出处。',
+    en: 'Artwork © Embark Studios AB, from arcraiders.com posts and Embark’s media kit; each picture links to where it was posted.',
+  },
+
   // Items
   'items.lede': {
     zh: '游戏内全部 {count} 件物品。点开任一物品，查看制作配方、回收产出、获取途径和用途。',
