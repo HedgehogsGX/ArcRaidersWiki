@@ -1,4 +1,5 @@
-/* Home: hero search and live map conditions, section directory, newest items, latest official news. */
+/* Home: hero search (and the header's once it scrolls away) and live map conditions, section directory,
+   newest items, latest official news. */
 
 (function () {
   const { html, mount, t, L, url, link, asset, data, num, item, label } = ARC;
@@ -107,8 +108,18 @@
     renderNews();
   }
 
+  // The header's search field stays out of sight while the hero's is on screen,
+  // and appears once the hero's has scrolled away under the header.
+  function headerSearchWhenHeroGone(hero) {
+    const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 64;
+    new IntersectionObserver(([e]) => document.body.classList.toggle('has-header-search', !e.isIntersecting), {
+      rootMargin: `-${headerHeight}px 0px 0px 0px`,
+    }).observe(hero);
+  }
+
   render();
   ARC.conditions.start(null, document.getElementById('now'));
   ARC.setupSearch(document.querySelector('.search--hero'));
+  headerSearchWhenHeroGone(document.querySelector('.search--hero'));
   document.addEventListener('arc:lang', render);
 })();
