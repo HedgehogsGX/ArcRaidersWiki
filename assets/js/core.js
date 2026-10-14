@@ -11,7 +11,8 @@
 
   // ---- language ------------------------------------------------------------
 
-  let lang = 'zh';
+  // English unless the reader has switched to Chinese (saved by setLang).
+  let lang = 'en';
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'en' || saved === 'zh') lang = saved;
