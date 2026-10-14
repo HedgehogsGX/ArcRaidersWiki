@@ -5,6 +5,18 @@
   font-size: 0.875rem;
 }
 
+/* Shows the rest of a folded list, centered under it. */
+.fold-toggle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.fold-toggle[hidden] {
+  display: none;
+}
+
 /* ---- home: directory ------------------------------------------------------ */
 
 .directory {
@@ -1039,7 +1051,6 @@ html:has(.viewer[open]) {
 
 .branch__tree {
   position: relative;
-  height: 644px;
 }
 
 .branch__links {
@@ -1064,7 +1075,7 @@ html:has(.viewer[open]) {
   --d: 40px;
   position: absolute;
   left: calc((var(--col) * 2 + 1) / 6 * 100%);
-  top: calc((var(--row) + 0.5) / 7 * 100%);
+  top: calc(var(--y) * 1px);
   width: 33.34%;
   transform: translate(-50%, calc(var(--d) / -2));
   display: flex;
@@ -1075,8 +1086,54 @@ html:has(.viewer[open]) {
   text-decoration: none;
 }
 
-.skill-node.is-major {
-  --d: 50px;
+/* A choice: its skills share a capsule, with the points it needs on a chip above. */
+.skill-choice {
+  position: absolute;
+  left: calc((var(--from) * 2 + 1) / 6 * 100% - 32px);
+  width: calc((var(--to) - var(--from)) / 3 * 100% + 64px);
+  top: calc(var(--y) * 1px - 28px);
+  height: 56px;
+  border: 1px dashed color-mix(in srgb, var(--tone) 55%, transparent);
+  border-radius: 28px;
+  background: color-mix(in srgb, var(--tone) 7%, var(--night));
+}
+
+.skill-choice.is-lit {
+  border-style: solid;
+  border-color: var(--tone);
+}
+
+.skill-choice__gate {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  padding: 1px 8px;
+  border: 1px solid color-mix(in srgb, var(--tone) 55%, transparent);
+  border-radius: 2px;
+  background: var(--night);
+  color: var(--tone);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.skill-choice__gate span {
+  color: var(--bone-2);
+  font-weight: 400;
+}
+
+/* Names clear the capsule's edge. */
+.skill-node.is-choice {
+  gap: 12px;
+}
+
+.skill-node.is-choice .skill-node__dot,
+.skill-head__dot.is-choice {
+  border-radius: 30%;
 }
 
 .skill-node__dot {
@@ -1092,11 +1149,6 @@ html:has(.viewer[open]) {
   font-size: 0.8125rem;
   font-weight: 600;
   transition: background 0.15s, color 0.15s;
-}
-
-.skill-node.is-major .skill-node__dot,
-.skill-head__dot.is-major {
-  box-shadow: 0 0 0 3px var(--night), 0 0 0 4px color-mix(in srgb, var(--tone) 55%, transparent);
 }
 
 .skill-node:hover .skill-node__dot {

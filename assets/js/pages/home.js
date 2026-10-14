@@ -41,6 +41,11 @@
     );
   }
 
+  // A big update adds hundreds of items (400 in 2.0), so the list starts folded to
+  // three rows, however many columns fit; the button below shows the rest.
+  const FOLDED_ROWS = 3;
+  let recentOpen = false;
+
   function renderRecent() {
     const ids = meta.recent || [];
     if (!ids.length) return;
@@ -48,7 +53,7 @@
       '#recent',
       html`<div class="section__head"><h2>${t('home.recent', { version: meta.gameVersion })}</h2>
         <a class="section__more" href="${url('pages/items.html')}">${t('page.items')}</a></div>
-      <div class="item-grid">
+      <div class="item-grid" id="recent-grid">
         ${ids.map((id) => {
           const it = item(id);
           return html`<a class="item-tile" href="${link('item', id)}" data-rarity="${it.rarity}">
@@ -58,9 +63,31 @@
               <span class="item-tile__meta"><span>${label('itemTypes', it.type)}</span><span>${label('rarities', it.rarity)}</span></span>
             </span></a>`;
         })}
-      </div>`
+      </div>
+      <button class="button fold-toggle" type="button" aria-controls="recent-grid" aria-expanded="${recentOpen}" hidden>
+        ${t(recentOpen ? 'home.recent.less' : 'home.recent.all', { n: num(ids.length) })}</button>`
     );
+    foldRecent();
   }
+
+  function foldRecent() {
+    const grid = document.getElementById('recent-grid');
+    if (!grid) return;
+    const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+    const shown = recentOpen ? Infinity : cols * FOLDED_ROWS;
+    [...grid.children].forEach((tile, i) => (tile.hidden = i >= shown));
+    grid.nextElementSibling.hidden = grid.children.length <= cols * FOLDED_ROWS;
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#recent .fold-toggle')) return;
+    recentOpen = !recentOpen;
+    renderRecent();
+    // Folding up from far down the list brings its heading back into view.
+    const section = document.getElementById('recent');
+    if (!recentOpen && section.getBoundingClientRect().top < 0) section.scrollIntoView({ block: 'start' });
+  });
+  window.addEventListener('resize', foldRecent);
 
   function renderNews() {
     const all = ARC.news.posts.length;

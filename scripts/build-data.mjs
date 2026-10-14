@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// Builds the site's data bundles from two sources: items, quests, workshop
+// Builds the site's data bundles from three sources: items, quests, workshop
 // stations and projects from arctracker.io (vendor/arctracker/, saved by
-// scripts/fetch-arctracker.mjs), and the skill tree, ARC, traders and maps from
-// the RaidTheory/arcraiders-data submodule in vendor/arcraiders-data, which
-// stopped at game version 1.42. Content newer than both comes from
-// scripts/additions.mjs.
+// scripts/fetch-arctracker.mjs), the 2.0 skill tree from the game's data
+// (vendor/skill-tree.json, saved by scripts/fetch-skill-tree.mjs), and ARC,
+// traders and maps from the RaidTheory/arcraiders-data submodule in
+// vendor/arcraiders-data, which stopped at game version 1.42. Content newer than
+// all of them comes from scripts/additions.mjs.
 //
 //   node scripts/build-data.mjs            data bundles only (any OS)
 //   node scripts/build-data.mjs --images   also regenerate game images (macOS, uses sips)
@@ -321,22 +322,90 @@ const quests = rawQuests.map((q) =>
 
 // ---- skills ----------------------------------------------------------------
 
+// The 2.0 tree comes from vendor/skill-tree.json (scripts/fetch-skill-tree.mjs).
+// Each branch runs seven rows up from its root: two lanes, a choice of one skill
+// out of two, three lanes, and a choice of two out of three at the top. The data
+// has no positions: rows follow the links, and left to right follows the game as
+// https://arctracker.io/skill-tree lays it out, with each choice's skills in the
+// game's own order. A node missing here goes last in its row, with a warning.
+const SKILL_ORDER = [
+  // Conditioning, top row first
+  'Security Breach', 'Weapon Bash', 'Bull Rush',
+  'Proficient Pryer', 'Speedy Mule', 'Crawl Before You Walk',
+  'Loaded Arms', 'Broad Shoulders', 'Downed But Determined',
+  "Mule's Gallop", 'Back On Your Feet',
+  'Vigorous Vaulter', "Vault 'n' Carry",
+  'Three Deep Breaths', 'Stubborn Mule',
+  // Mobility
+  'Sprinting On Fumes', 'Wall Run', 'In The Flow',
+  'Swift Start', 'Off The Wall', 'Slip and Slide',
+  'Marathon Runner', 'Right Back At It', 'Effortless Roll',
+  'Vault Spring', 'Vaults on Vaults on Vaults',
+  'Ready To Roll', 'Fight Or Flight',
+  'Sure-Footed Scrambler', 'Nimble Climber',
+  // Survival
+  'Road Warrior', 'Nomadic Crafting', 'Field Repair',
+  "Looter's Luck", 'Turtle Crawl', 'A Little Extra',
+  'Traveling Tinkerer', 'Stylish Landing', 'Gentle Pressure',
+  'Quick Roll', 'Minesweeper',
+  'Agile Croucher', 'Silent Scavenger',
+  'Sturdy Ankles', "Looter's Instincts",
+];
+// Pages place a node by x (branch center ±5 per column) and y (15 for the top row,
+// +10 per row), the scale of the 1.x data, so older copies of the app still draw it.
+const SKILL_CENTER = { CONDITIONING: 25, MOBILITY: 50, SURVIVAL: 75 };
+const skillSlug = (en) => en.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+
 const skillCats = ui.SkillTreePage.categories;
-const skills = readJson('skillNodes.json').map((s) =>
-  compact({
-    id: s.id,
-    name: gameName(s.name),
-    desc: localize(s.description),
-    category: s.category,
-    major: s.isMajor,
-    max: s.maxPoints,
-    impact: localize(s.impactedSkill),
-    known: s.knownValue?.map(localize),
-    x: s.position.x,
-    y: s.position.y,
-    prereq: s.prerequisiteNodeIds,
-  })
-);
+const skillTree = JSON.parse(fs.readFileSync(path.join(ROOT, 'vendor/skill-tree.json'), 'utf8'));
+const skillNodes = new Map(skillTree.nodes.map((n) => [n.id, n]));
+const skillGroup = new Map(skillTree.groups.flatMap((g) => g.nodes.map((id) => [id, g])));
+const skillDepth = (n) => (n.parents.length ? 1 + Math.max(...n.parents.map((p) => skillDepth(skillNodes.get(p)))) : 0);
+const skillOrder = (n) => {
+  const i = SKILL_ORDER.indexOf(n.name.en);
+  if (i < 0) console.warn(`Skill "${n.name.en}" has no place in SKILL_ORDER (scripts/build-data.mjs); it goes last in its row.`);
+  return i < 0 ? Infinity : i;
+};
+
+const skillPlace = new Map();
+for (const cat of new Set(skillTree.nodes.map((n) => n.category))) {
+  const nodes = skillTree.nodes.filter((n) => n.category === cat);
+  const top = Math.max(...nodes.map(skillDepth));
+  for (let depth = 0; depth <= top; depth++) {
+    const row = nodes.filter((n) => skillDepth(n) === depth).sort((a, b) => skillOrder(a) - skillOrder(b));
+    // Two lanes sit in the outer columns; the two skills of a choice sit closer together.
+    const cols =
+      row.length === 1 ? [1] : row.length === 2 ? (skillGroup.has(row[0].id) ? [0.5, 1.5] : [0, 2]) : row.map((_, i) => (i * 2) / (row.length - 1));
+    row.forEach((n, i) => skillPlace.set(n.id, { row: top - depth, col: cols[i] }));
+  }
+}
+
+const skills = [...skillTree.nodes]
+  .sort((a, b) => a.category.localeCompare(b.category) || skillPlace.get(b.id).row - skillPlace.get(a.id).row || skillPlace.get(a.id).col - skillPlace.get(b.id).col)
+  .map((n) => {
+    const category = n.category.toUpperCase();
+    const { row, col } = skillPlace.get(n.id);
+    const group = skillGroup.get(n.id);
+    const desc = n.description && { ...n.description, en: n.description.en?.replace(/ {2,}/g, ' ') };
+    return compact({
+      id: skillSlug(n.name.en),
+      name: gameName(n.name),
+      desc: localize(desc),
+      category,
+      max: n.maxLevel,
+      x: SKILL_CENTER[category] + (col - 1) * 5,
+      y: 15 + row * 10,
+      prereq: n.parents
+        .map((p) => skillNodes.get(p))
+        .sort((a, b) => skillPlace.get(a.id).col - skillPlace.get(b.id).col)
+        .map((p) => skillSlug(p.name.en)),
+      // A choice: `pick` of the skills sharing this group, the first opening at
+      // need[0] points invested, the next at need[1].
+      group: group && `${n.category.toLowerCase()}_${row}`,
+      pick: group?.maxSelectable,
+      need: group ? group.minTotalInvestmentOverridePerUnlock || [n.minTotalInvestment] : n.minTotalInvestment ? [n.minTotalInvestment] : undefined,
+    });
+  });
 const skillCategories = Object.keys(skillCats).map((id) => ({
   id,
   name: withZh(titleCase(id), skillCats[id]),
@@ -640,7 +709,7 @@ const meta = {
   recent: items.filter((i) => i.added === latest).map((i) => i.id),
   updated: [arctracker, git('log', '-1', '--format=%cs')].sort().at(-1),
   arctracker,
-  commit: git('rev-parse', '--short', 'HEAD'),
+  commit: git('rev-parse', '--short=7', 'HEAD'),
   counts: {
     items: items.length,
     quests: quests.length,

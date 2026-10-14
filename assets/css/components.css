@@ -239,6 +239,10 @@ img.is-broken {
   gap: 10px;
 }
 
+.item-grid > [hidden] {
+  display: none;
+}
+
 .item-tile {
   display: flex;
   flex-direction: column;

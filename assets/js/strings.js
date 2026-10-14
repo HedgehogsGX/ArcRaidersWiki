@@ -76,6 +76,8 @@ window.ARC_STRINGS = {
   },
   'home.directory': { zh: '资料目录', en: 'Browse the wiki' },
   'home.recent': { zh: '{version} 版本新增', en: 'New in {version}' },
+  'home.recent.all': { zh: '展开全部 {n} 件', en: 'Show all {n}' },
+  'home.recent.less': { zh: '收起', en: 'Show fewer' },
   'home.news': { zh: '官方公告', en: 'Announcements' },
   'home.conditions': { zh: '地图条件', en: 'Map conditions' },
 
@@ -198,11 +200,19 @@ window.ARC_STRINGS = {
     en: 'Three branches with {count} nodes. Pick a node to see its effect and what unlocks it.',
   },
   'skills.maxPoints': { zh: '最大点数：{max}', en: 'Max points: {max}' },
-  'skills.impact': { zh: '效果', en: 'Impact' },
   'skills.prereq': { zh: '前置条件', en: 'Prerequisite' },
+  'skills.prereqAny': { zh: '前置条件（满足其一）', en: 'Unlocked by any of' },
   'skills.unlocks': { zh: '解锁', en: 'Unlocks' },
-  'skills.major': { zh: '关键节点', en: 'Key node' },
-  'skills.known': { zh: '已知数值', en: 'Known values' },
+  'skills.choice': { zh: '{of}选{pick}', en: 'Pick {pick} of {of}' },
+  'skills.need': { zh: '需 {points} 点', en: '{points} points' },
+  'skills.choiceOne': {
+    zh: '投入 {need} 点后可选。{of}个技能只能选一个，重置技能树后可以重新选。另一个是：',
+    en: 'Opens at {need} points invested. Only one of the {of} can be taken; resetting the skill tree lets you choose again. The other is:',
+  },
+  'skills.choiceMany': {
+    zh: '投入 {first} 点后可选第一个，{last} 点后可选第二个，{of}个技能最多选{pick}个。另外两个是：',
+    en: 'The first pick opens at {first} points invested and the second at {last}; up to {pick} of the {of} can be taken. The others are:',
+  },
   'skills.pick': { zh: '选择一个节点。', en: 'Pick a node.' },
 
   // Hideout
