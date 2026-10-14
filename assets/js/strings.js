@@ -76,6 +76,8 @@ window.ARC_STRINGS = {
   },
   'home.directory': { zh: '资料目录', en: 'Browse the wiki' },
   'home.recent': { zh: '{version} 版本新增', en: 'New in {version}' },
+  'home.recent.all': { zh: '展开全部 {n} 件', en: 'Show all {n}' },
+  'home.recent.less': { zh: '收起', en: 'Show fewer' },
   'home.news': { zh: '官方公告', en: 'Announcements' },
   'home.conditions': { zh: '地图条件', en: 'Map conditions' },
 
