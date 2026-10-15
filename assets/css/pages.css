@@ -1101,6 +1101,10 @@ html:has(.viewer[open]) {
   margin-bottom: 10px;
 }
 
+.upgrade-needs {
+  margin: 8px 0 10px;
+}
+
 /* ---- quests ------------------------------------------------------------------ */
 
 .quests-maps {

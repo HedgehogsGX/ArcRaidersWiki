@@ -222,6 +222,25 @@ function effects(raw) {
   return out.length ? out : undefined;
 }
 
+// Weapon upgrades: tier steps (Kettle I → II …), tier IV → Amplified, and each
+// Amplified perk, which leads to a variant named after its perks ("Amplified
+// Aphelion · Bigger Mag + Charged Burst"). Each upgrade needs a station level
+// or a research item. arctracker's upgradesTo / upgradeCost repeat the tier
+// steps, with the cost on the item upgraded to, so they are left out.
+function upgrades(raw) {
+  if (!raw?.length) return undefined;
+  return raw.map((u) => {
+    const station = u.requires?.find((r) => r.station);
+    return compact({
+      to: u.to,
+      cost: pairs(u.cost),
+      research: u.requires?.filter((r) => r.itemId).map((r) => r.itemId),
+      bench: station?.station,
+      level: station?.level,
+    });
+  });
+}
+
 // Item icons are served from assets/img/game/items/ (written with the bundles
 // below) so pages don't depend on the arctracker CDN, which is slow from
 // mainland China. They come from the submodule, else from vendor/arctracker/items/;
@@ -256,9 +275,8 @@ const items = rawItems.map((i) =>
     craftQty: i.craftQuantity,
     recycles: pairs(i.recyclesInto),
     salvages: pairs(i.salvagesInto),
-    upgradeCost: pairs(i.upgradeCost),
+    upgrades: upgrades(i.upgrades),
     repairCost: pairs(i.repairCost),
-    upgradesTo: i.upgradesTo,
     effects: effects(i.effects),
     foundIn: i.foundIn ? i.foundIn.split(',').map((s) => s.trim()).filter(Boolean) : undefined,
     compatible: i.compatibleWith?.map((w) => withZh(w, zhName(w))),
@@ -757,6 +775,7 @@ const refs = [
   ...quests.flatMap((q) => [...(q.required || []), ...(q.rewards || []), ...(q.granted || [])]),
   ...hideout.flatMap((h) => (h.levels || []).flatMap((l) => l.items || [])),
   ...items.flatMap((i) => [...(i.recipe || []), ...(i.recycles || []), ...(i.salvages || [])]),
+  ...items.flatMap((i) => (i.upgrades || []).flatMap((u) => [[u.to], ...(u.cost || []), ...(u.research || []).map((id) => [id])])),
   ...projects.flatMap((p) => p.phases.flatMap((ph) => (ph.items || []).flatMap((r) => [[r.id], ...(r.rewards || [])]))),
   ...traders.flatMap((t) => t.shop.flatMap((s) => [[s.item], s.cost])),
 ].map(([id]) => id);

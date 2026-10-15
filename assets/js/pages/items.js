@@ -123,17 +123,62 @@
     syncUrl();
   });
 
+  // ---- Amplified perks -------------------------------------------------------------
+  // Amplified variants are named "<weapon> · <perk> + <perk>" in both languages, so an
+  // upgrade from one to another adds the perk the target's name has and the source's
+  // lacks. Every item of a tree starts with the base's id, "aphelion_amplified".
+
+  const amplifiedBase = (id) => byId.get((/^.+?_amplified(?=_|$)/.exec(id) || [])[0]);
+  function perks(i) {
+    const en = i.name.en.split(' · ')[1];
+    if (!en) return [];
+    const zh = (i.name.zh || '').split(' · ')[1];
+    const ens = en.split(' + ');
+    const zhs = zh ? zh.split(' + ') : [];
+    return ens.map((p, n) => (zhs.length === ens.length ? { en: p, zh: zhs[n] } : { en: p }));
+  }
+  function addedPerk(i, to) {
+    const had = perks(i);
+    return byId.has(to) ? perks(byId.get(to)).find((p) => !had.some((h) => h.en === p.en)) : undefined;
+  }
+
   // ---- reverse lookups (built on first use) -------------------------------------
 
   let uses;
   function lookups() {
     if (uses) return uses;
     const push = (map, key, value) => (map.get(key) || map.set(key, []).get(key)).push(value);
-    uses = { craft: new Map(), hideout: new Map(), quest: new Map(), reward: new Map(), project: new Map(), drop: new Map(), from: new Map() };
+    uses = { craft: new Map(), hideout: new Map(), quest: new Map(), reward: new Map(), project: new Map(), drop: new Map(), from: new Map(), perks: new Map(), amplify: new Map() };
     items.forEach((i) => {
       (i.recipe || []).forEach(([id, qty]) => push(uses.craft, id, [i.id, qty]));
-      if (i.upgradesTo) uses.from.set(i.upgradesTo, i.id);
+      (i.upgrades || []).forEach((u) => {
+        push(uses.from, u.to, { i, u });
+        const perk = addedPerk(i, u.to);
+        const base = amplifiedBase(i.id);
+        // Tier IV → Amplified: the Amplification Module it takes.
+        const amplified = !perk && amplifiedBase(u.to);
+        if (amplified && amplified.id === u.to)
+          (u.cost || []).forEach(([id, qty]) => push(uses.amplify, id, { id: u.to, names: [amplified.name], qty }));
+        if (!perk || !base) return;
+        // Each perk of a tree once (its cost is the same on every route), with the
+        // perks every route to it picked first, linked to the variant with fewest perks.
+        const tree = uses.perks.get(base.id) || uses.perks.set(base.id, new Map()).get(base.id);
+        const had = perks(i);
+        const row = tree.get(perk.en);
+        if (!row) tree.set(perk.en, { ...u, base, perk, after: had, depth: had.length });
+        else {
+          row.after = row.after.filter((p) => had.some((h) => h.en === p.en));
+          if (had.length < row.depth) Object.assign(row, { to: u.to, depth: had.length });
+        }
+      });
     });
+    uses.perks.forEach((tree) =>
+      tree.forEach((row) => {
+        const names = [row.base.name, row.perk];
+        (row.cost || []).forEach(([id, qty]) => push(uses.amplify, id, { id: row.base.id, names, qty }));
+        (row.research || []).forEach((id) => push(uses.amplify, id, { id: row.base.id, names }));
+      })
+    );
     (data.hideout || []).forEach((s) =>
       (s.levels || []).forEach((l) => (l.items || []).forEach(([id, qty]) => push(uses.hideout, id, { s, level: l.level, qty })))
     );
@@ -154,9 +199,42 @@
   const valueText = (v) => (v && typeof v === 'object' ? L(v) : v);
   const benchText = (bench, level) =>
     bench === 'in_raid' ? label('benches', bench) : t('items.station', { bench: label('benches', bench), level: level || 1 });
+  const costText = (cost) => (cost || []).map(([id, qty]) => `${num(qty)} ${L(ARC.item(id).name)}`).join(' + ');
+  const researchText = (id) => t('items.needsResearch', { name: L(ARC.item(id).name) });
+
+  // What an upgrade needs besides its cost: a station level, research, perks picked first.
+  function needs(u, after) {
+    const tags = [];
+    if (u.bench) tags.push(html`<a class="tag" href="${link('station', u.bench)}">${benchText(u.bench, u.level)}</a>`);
+    (u.research || []).forEach((id) => tags.push(html`<a class="tag" href="${link('item', id)}">${researchText(id)}</a>`));
+    if (after && after.length) tags.push(html`<span class="tag">${t('items.perkAfter', { perk: after.map(L).join(' + ') })}</span>`);
+    return tags.length ? html`<div class="tags upgrade-needs">${tags}</div>` : '';
+  }
+
+  // Tier steps show the next tier and its cost. An Amplified weapon lists every perk
+  // of its tree; a variant, the perks it can still add.
+  function upgradesTo(i, u) {
+    const tree = u.perks.get(i.id);
+    const rows = tree
+      ? [...tree.values()].sort((a, b) => a.depth - b.depth)
+      : (i.upgrades || []).map((up) => ({ ...up, perk: addedPerk(i, up.to) }));
+    if (!rows.length) return '';
+    return rows.map((r) =>
+      r.perk
+        ? html`<h4><a href="${link('item', r.to)}">${L(r.perk)}</a></h4>${needs(r, r.after)}${chipList(r.cost)}`
+        : html`<div class="chip-list">${itemChip(r.to)}</div>${needs(r)}
+            ${r.cost ? html`<h4>${t('items.upgradeCost')}</h4>${chipList(r.cost)}` : ''}`
+    );
+  }
 
   function sources(i, u) {
     const parts = [];
+    const from = u.from.get(i.id);
+    if (from)
+      parts.push(html`<h4>${t('items.upgradedFrom')}</h4><ul class="link-list">${from.map(
+        ({ i: f, u: up }) => html`<li><a href="${link('item', f.id)}">${L(f.name)}</a>
+          <span class="note">${[costText(up.cost), up.bench && benchText(up.bench, up.level), ...(up.research || []).map(researchText)].filter(Boolean).join(' · ')}</span></li>`
+      )}</ul>`);
     if (i.vendors)
       parts.push(
         html`<h4>${t('page.traders')}</h4><ul class="link-list">${i.vendors.map(
@@ -189,6 +267,11 @@
     const parts = [];
     const craft = u.craft.get(i.id);
     if (craft) parts.push(html`<h4>${t('items.usedCraft')}</h4>${chipList(craft.map(([id]) => [id]))}`);
+    const amplify = u.amplify.get(i.id);
+    if (amplify)
+      parts.push(html`<h4>${t('items.usedAmplify')}</h4><ul class="link-list">${amplify.map(
+        (a) => html`<li><a href="${link('item', a.id)}">${a.names.map(L).join(' · ')}</a>${a.qty ? html`<span class="note">×${num(a.qty)}</span>` : ''}</li>`
+      )}</ul>`);
     const hideout = u.hideout.get(i.id);
     if (hideout)
       parts.push(html`<h4>${t('items.usedHideout')}</h4><ul class="link-list">${hideout.map(
@@ -233,7 +316,6 @@
 
   function detail(i) {
     const u = lookups();
-    const upgradedFrom = u.from.get(i.id);
     return html`${ARC.closeButton(t('items.close'))}
       <div class="detail__head" data-rarity="${i.rarity}">
         <div class="detail__img">${i.img ? html`<img src="${asset(i.img)}" alt="" data-fallback>` : ''}</div>
@@ -272,12 +354,7 @@
             ${i.craftQty ? html`<span class="tag">${t('items.makes', { n: i.craftQty })}</span>` : ''}</div>
             ${chipList(i.recipe)}`
       )}
-      ${section(
-        t('items.upgradesTo'),
-        (i.upgradesTo || upgradedFrom) &&
-          html`${i.upgradesTo ? html`<div class="chip-list">${itemChip(i.upgradesTo)}</div>` : ''}
-            ${i.upgradeCost ? html`<h4>${t('items.upgradeCost')}</h4>${chipList(i.upgradeCost)}` : ''}`
-      )}
+      ${section(t('items.upgradesTo'), upgradesTo(i, u))}
       ${section(t('items.recycles'), chipList(i.recycles))}
       ${section(t('items.salvages'), chipList(i.salvages))}
       ${section(t('items.repairCost'), chipList(i.repairCost))}
