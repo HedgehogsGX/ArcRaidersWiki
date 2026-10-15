@@ -274,6 +274,31 @@ const items = rawItems.map((i) =>
 );
 const itemIds = new Set(items.map((i) => i.id));
 
+// ---- guides ----------------------------------------------------------------
+// Player guides written for this site (guides/*.json): what an item is for, how
+// to get it, and advice gathered from the community. A guide covers one or more
+// items (all tiers of a weapon share one); each covered item gets a `guide` id and
+// the text goes to data/guides.js, which the items page loads on demand. Ids of
+// items the game has since removed are skipped, so a data sync never fails on them.
+
+const GUIDES = path.join(ROOT, 'guides');
+const guides = {};
+const guideOf = new Map();
+const staleGuideItems = [];
+for (const file of fs.existsSync(GUIDES) ? fs.readdirSync(GUIDES).filter((f) => f.endsWith('.json')).sort() : []) {
+  const doc = JSON.parse(fs.readFileSync(path.join(GUIDES, file), 'utf8'));
+  for (const { id, items: covers, ...guide } of doc.guides) {
+    if (guides[id]) throw new Error(`guides/${file}: guide id "${id}" is already used`);
+    guides[id] = compact({ ...guide, version: doc.version });
+    for (const itemId of covers) {
+      if (guideOf.has(itemId)) throw new Error(`guides/${file}: ${itemId} is in guides "${guideOf.get(itemId)}" and "${id}"`);
+      if (itemIds.has(itemId)) guideOf.set(itemId, id);
+      else staleGuideItems.push(itemId);
+    }
+  }
+}
+for (const i of items) if (guideOf.has(i.id)) i.guide = guideOf.get(i.id);
+
 // ---- quests ----------------------------------------------------------------
 
 // arctracker's API leaves out which objectives must be done in one round and the
@@ -712,6 +737,7 @@ const meta = {
   commit: git('rev-parse', '--short=7', 'HEAD'),
   counts: {
     items: items.length,
+    guides: guideOf.size,
     quests: quests.length,
     skills: skills.length,
     hideout: hideout.length,
@@ -738,7 +764,7 @@ const missing = [...new Set(refs.filter((id) => !itemIds.has(id) && !labels.curr
 
 // ---- write -------------------------------------------------------------------------
 
-const bundles = { meta, labels, items, itemIndex, quests, skills, hideout, arc: bots, maps, events, traders, projects, search };
+const bundles = { meta, labels, items, itemIndex, quests, skills, hideout, arc: bots, maps, events, traders, projects, search, guides };
 
 // Files are overwritten in place and only stale ones deleted: deleting and
 // recreating a file in an iCloud Drive folder leaves copies named "items 2.js".
@@ -770,6 +796,7 @@ const cdnIcons = items.filter((i) => /^https?:/.test(i.img || '')).map((i) => i.
 console.log(`  ${icons.size} item icons in assets/img/game/items/; still on the CDN: ${cdnIcons.join(', ') || 'none'}`);
 console.log(`Game ${meta.gameVersion}; arctracker.io ${meta.arctracker}, upstream ${meta.commit} (${git('log', '-1', '--format=%cs')})`);
 if (missing.length) console.log(`Referenced ids without an item file: ${missing.join(', ')}`);
+console.log(`Guides cover ${guideOf.size} of ${items.length} items` + (staleGuideItems.length ? `; ids no longer in the game (remove from guides/): ${staleGuideItems.join(', ')}` : ''));
 if (unnamed.size) console.log(`Names without Chinese (add to NAMES in scripts/glossary.mjs): ${[...unnamed].sort().join(', ')}`);
 
 // ---- images (optional) --------------------------------------------------------------

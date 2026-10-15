@@ -1,6 +1,6 @@
 # ARC Raiders 维基
 
-非官方的 ARC Raiders 中英双语资料站：物品、任务、技能树、工坊、ARC、地图与互动地图、商人、计划，同步自官网的公告和地图条件，以及可下载 4K 原图的官方美术图库。中文使用简中客户端的官方译名。
+非官方的 ARC Raiders 中英双语资料站：物品（附玩家攻略）、任务、技能树、工坊、ARC、地图与互动地图、商人、计划，同步自官网的公告和地图条件，以及可下载 4K 原图的官方美术图库。中文使用简中客户端的官方译名。
 
 网站：https://arcraiderswiki.pages.dev
 
@@ -19,6 +19,7 @@ index.html, pages/       页面
 assets/                  样式、脚本、图片、字体；界面文字在 js/strings.js
 data/                    游戏数据（build-data.mjs 生成，不要手动修改）
 content/                 公告、地图条件、地图标记、图库（同步脚本生成，不要手动修改）
+guides/                  物品的玩家攻略（手写，见下文「物品攻略」）
 scripts/                 构建与同步脚本，每个脚本开头有详细说明
 worker.js, functions/    公告原图的 /news-full/ 路由（Workers 与 Pages 各一个入口）
 vendor/arctracker        arctracker.io 的物品、任务、工坊、计划（fetch-arctracker.mjs 生成）
@@ -64,6 +65,12 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 公告图片和图库图片点开后显示官网原图（最大 3840 像素），可下载，手机上可存到相册。原图不进仓库，由 `/news-full/<文件名>` 从 assets.arcraiders.com 取来再从本站发出（`worker.js`，Cloudflare Pages 通过 `functions/` 自动启用；`npm run serve` 本地也有）。没有这个路由的托管平台上，原图直接从官网载入，"下载原图"改为在新标签页打开官网原图。图库里不在这个图床上的几张（Embark 媒体资料包的主视觉、官网首页的 4K 图）放在 `content/gallery-full/`，由本站直接发出。
 
+## 物品攻略
+
+物品详情里的「玩家攻略」写在 `guides/*.json`，按类别分文件：一句话结论（`verdict`）、怎么用（`use`）、怎么获得（`obtain`）、增强型（`amplified`，仅武器）、建议（`tips`），每段都有 `en` 和 `zh`，`sources` 记参考过的网页。一条攻略可以覆盖多件物品（同一把武器的 I–IV 级和增强型共用一条）。内容综合社区 wiki 和攻略站点的玩家经验改写而成，不照抄原文；数字、配方以游戏数据为准。中文名称用客户端译名。
+
+`build-data.mjs` 把它们打包成 `data/guides.js`（物品页在网格渲染后再加载），并给每件物品标上 `guide`。游戏删掉的物品会被跳过并在输出里列出，不会让数据同步失败。文件顶部的 `version` 是攻略对应的游戏版本，大版本更新后要重新核对。
+
 ## 译名
 
 以客户端术语表为准：简中客户端 1.47.0 的译名，加上 2.0「霜痕小径」新增内容的官方名（取自 2.0 游戏数据和 Embark 在 Steam 发布的简中公告）。导入在 `scripts/glossary-client.json`，术语表更新后运行 `node scripts/import-glossary.mjs`。公告和客户端说法不同时用客户端的，如 Research Station 写「研究站」，不写公告里的「研究工作站」。术语表没有的名称写在 `scripts/glossary.mjs`：游戏数据用 `NAMES`，公告里的名称用 `NEWS_TERMS`（如 Frozen Trail = 霜痕小径）。本站自译的句子在 `scripts/translations.mjs`。
@@ -74,6 +81,7 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 - **互动地图标记**：[MetaForge](https://metaforge.app/arc-raiders) 社区。按其 API 条款注明来源并链接，互动地图页和页脚的链接请保留；网站如要盈利，需先联系 MetaForge。
 - **官方公告、地图条件与商店横幅**：[arcraiders.com](https://arcraiders.com)
 - **图库**：arcraiders.com 公告与首页的美术图，以及 [Embark 媒体资料包](https://www.embark-studios.com/press)，版权归 Embark Studios AB
+- **物品攻略**：综合 [arcraiders.wiki](https://arcraiders.wiki) 社区 wiki 与 Dexerto、KeenGamer、Nerdschalk、Destructoid 等攻略站点的玩家经验改写，每条攻略下列出参考网页
 - **中文译名**：ARC Raiders 简中客户端
 - **公告翻译**：[DeepSeek](https://www.deepseek.com)
 - **首页抠图**：[BiRefNet](https://github.com/ZhengPeng7/BiRefNet)（MIT），模型文件来自 [rembg](https://github.com/danielgatis/rembg)

@@ -198,6 +198,16 @@ window.ARC_STRINGS = {
   'items.added': { zh: '{version} 版本加入', en: 'Added in {version}' },
   'items.limit': { zh: '限购 {n}', en: 'Limit {n}' },
   'items.tip': { zh: '提示', en: 'Tip' },
+  'items.guide': { zh: '玩家攻略', en: 'Player guide' },
+  'items.guide.use': { zh: '怎么用', en: 'How to use it' },
+  'items.guide.obtain': { zh: '怎么获得', en: 'How to get it' },
+  'items.guide.amplified': { zh: '增强型', en: 'Amplified versions' },
+  'items.guide.tips': { zh: '建议', en: 'Tips' },
+  'items.guide.about': {
+    zh: '综合玩家社区的经验整理改写，适用于 {version} 版本。',
+    en: 'Gathered from the player community and rewritten for version {version}.',
+  },
+  'items.guide.sources': { zh: '参考：', en: 'Sources:' },
   'items.close': { zh: '关闭详情', en: 'Close details' },
   'items.notFound': { zh: '找不到这件物品。', en: 'That item does not exist.' },
 

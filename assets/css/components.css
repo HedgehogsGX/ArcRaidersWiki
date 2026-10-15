@@ -493,6 +493,40 @@ a.tag:hover {
   font-variant-numeric: tabular-nums;
 }
 
+/* Player guide in the item drawer: the verdict leads, the rest reads as prose. */
+.guide__verdict {
+  margin-bottom: 4px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--tone, var(--green));
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--night-3);
+  color: var(--bone);
+  font-weight: 500;
+}
+
+.guide h4,
+.guide h4:first-of-type {
+  margin-top: 16px;
+}
+
+.guide__tips {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.guide__tips li + li {
+  margin-top: 0.4em;
+}
+
+.guide__foot {
+  margin-top: 16px;
+}
+
+.guide__foot a {
+  color: var(--bone-2);
+}
+
 .stat-list {
   display: grid;
   grid-template-columns: 1fr auto;
