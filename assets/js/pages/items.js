@@ -207,6 +207,30 @@
     return parts.length ? parts : '';
   }
 
+  // Player guides arrive after the page renders (data/guides.js, loaded in boot).
+  function guide(i) {
+    const g = i.guide && data.guides && data.guides[i.guide];
+    if (!g) return '';
+    const part = (key, v) => (v ? html`<h4>${t(`items.guide.${key}`)}</h4><p class="prose">${L(v)}</p>` : '');
+    // One link per site, so five wiki pages read as "arcraiders.wiki".
+    const hosts = new Map();
+    for (const s of g.sources || []) {
+      const host = new URL(s).hostname.replace(/^www\./, '');
+      if (!hosts.has(host)) hosts.set(host, s);
+    }
+    return html`<section class="detail__section guide">
+      <h3>${t('items.guide')}</h3>
+      <p class="guide__verdict">${L(g.verdict)}</p>
+      ${part('use', g.use)}
+      ${part('obtain', g.obtain)}
+      ${part('amplified', g.amplified)}
+      ${g.tips && g.tips.length ? html`<h4>${t('items.guide.tips')}</h4><ul class="guide__tips prose">${g.tips.map((tip) => html`<li>${L(tip)}</li>`)}</ul>` : ''}
+      <p class="note guide__foot">${t('items.guide.about', { version: g.version })}${hosts.size
+        ? html` ${t('items.guide.sources')} ${[...hosts].map(([host, href], n) => html`${n ? ', ' : ''}<a href="${href}" target="_blank" rel="noopener">${host}</a>`)}`
+        : ''}</p>
+    </section>`;
+  }
+
   function detail(i) {
     const u = lookups();
     const upgradedFrom = u.from.get(i.id);
@@ -231,6 +255,7 @@
         <div><dt>${t('items.weight')}</dt><dd>${i.weight != null ? `${num(i.weight)} kg` : '—'}</dd></div>
         <div><dt>${t('items.stack')}</dt><dd>${i.stack != null ? num(i.stack) : '—'}</dd></div>
       </dl>
+      ${guide(i)}
       ${section(
         t('items.stats'),
         i.effects &&
@@ -266,7 +291,7 @@
           )
       )}
       ${section(t('items.compatible'), i.compatible && html`<div class="tags">${i.compatible.map((w) => html`<span class="tag">${L(w)}</span>`)}</div>`)}
-      ${i.tip ? section(t('items.tip'), html`<p class="prose" lang="${i.tip.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(i.tip)}</p>`) : ''}`;
+      ${i.tip && !i.guide ? section(t('items.tip'), html`<p class="prose" lang="${i.tip.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(i.tip)}</p>`) : ''}`;
   }
 
   // ---- drawer ------------------------------------------------------------------------
@@ -290,4 +315,11 @@
   render();
   drawer.sync();
   document.addEventListener('arc:lang', render);
+
+  // Guides are a large file only the drawer needs, so they load after the grid.
+  // A script tag (not fetch) keeps this working when the page is opened from disk.
+  const s = document.createElement('script');
+  s.src = ARC.fresh('data/guides.js');
+  s.onload = drawer.refresh;
+  document.head.appendChild(s);
 })();
