@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/baschny/arcraiders-raider-tools/tree/main/public/data/game",
   "gameVersion": "2.0",
-  "generatedFrom": "02576cc",
+  "generatedFrom": "bd1e1fc",
   "nodes": [
     {"id":"-1304868535","name":{"en":"Back On Your Feet","zh-CN":"不屈意志"},"description":{"en":"When you're critically hurt, your health regenerates until a certain limit.","zh-CN":"在重伤状态下，你的生命值会逐渐恢复至一个固定值。"},"category":"Conditioning","parents":["1974512097","-285853040"],"maxLevel":1,"minTotalInvestment":10,"requireAllParents":false},
     {"id":"-854229429","name":{"en":"Broad Shoulders","zh-CN":"阔肩载物"},"description":{"en":"Increases the maximum weight you can carry.","zh-CN":"提高你的负重上限。"},"category":"Conditioning","parents":["-2089305208","-1304868535"],"maxLevel":5,"minTotalInvestment":0,"requireAllParents":false},
