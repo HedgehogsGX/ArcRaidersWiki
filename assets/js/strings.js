@@ -142,9 +142,13 @@ window.ARC_STRINGS = {
     zh: '网站在浏览器标签页中打开时（任意页面均可）会弹出通知。想在关闭网站后也收到提醒，请添加到日历：日历文件包含官方排期范围内（约 24 小时）的场次。',
     en: 'Notifications arrive while the wiki is open in a browser tab, on any page. To be reminded when it is closed, add your alerts to your calendar; the file covers the official schedule, about the next 24 hours.',
   },
+  'alerts.status.push': {
+    zh: '关闭网站后也会收到通知（在电脑上，浏览器本身需要保持运行）。也可以添加到日历作为备用。',
+    en: 'Notifications arrive even when the wiki is closed (on a computer, the browser itself has to be running). You can also add your alerts to your calendar as a backup.',
+  },
   'alerts.status.default': {
-    zh: '开启通知后，网站在浏览器中打开时会提醒你；也可以添加到日历。',
-    en: 'Turn on notifications to be alerted while the wiki is open in your browser, or add your alerts to your calendar.',
+    zh: '开启通知即可接收提醒，也可以添加到日历。',
+    en: 'Turn on notifications to get your alerts, or add them to your calendar.',
   },
   'alerts.status.denied': {
     zh: '此网站的通知已被浏览器阻止，可在浏览器的网站设置中允许。添加到日历不受影响。',

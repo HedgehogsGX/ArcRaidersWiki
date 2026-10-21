@@ -6,10 +6,13 @@
 
    On the maps page a reader can focus on a map, a condition or both: the schedule
    then lists every time it comes up (?map= and ?cond= keep the choice), and
-   "Alert me" saves an alert for it in the browser. Alerts notify while any page
-   of the site is open, which is why site.js loads this script on every page once
-   one is set, and go to the reader's calendar for when it isn't. sw.js only opens
-   the wiki when a notification is clicked. */
+   "Alert me" saves an alert for it in the browser. Once notifications are allowed,
+   the alerts also go to the server (worker.js), which sends them by Web Push, so
+   they arrive while the site is closed; sw.js shows them. Where that isn't
+   available (no push API on this host, or the browser can't subscribe) alerts
+   notify while any page of the site is open, which is why site.js loads this
+   script on every page once one is set, and go to the reader's calendar for when
+   it isn't. */
 
 (function () {
   const { html, mount, t, L, url, link } = ARC;
@@ -17,6 +20,9 @@
   const ALERTS_KEY = 'arc-wiki-alerts';
   const LEAD_KEY = 'arc-wiki-alert-lead';
   const SENT_KEY = 'arc-wiki-alerts-sent';
+  const PUSH_KEY = 'arc-wiki-push';
+  // The VAPID public key from scripts/vapid-keys.mjs; empty turns push off.
+  const VAPID_KEY = '';
   const REGIONS = ['europe', 'north-america', 'brazil', 'east-asia', 'oceania'];
   const LEADS = [0, 5, 10, 15, 30];
   let root = null;
@@ -252,19 +258,21 @@
 
   // Notify once for each occurrence an alert covers, `lead` minutes before it
   // starts, or as soon as a page is open if that moment passed while it is still on.
+  // What the server pushes is only marked as done here.
   function checkAlerts() {
     const list = alerts();
     if (!list.length || permission() !== 'granted' || !schedule()) return;
     const sent = stored(SENT_KEY, {});
     const at = now();
     const ahead = lead() * 60;
+    const after = pushedAfter();
     let changed = false;
     for (const o of occurrences((id, map) => list.some((a) => matches(a, id, map)))) {
       const key = `${o.id}|${o.map}|${o.start}`;
       if (sent[key] || o.start - ahead > at || !list.some((a) => matches(a, o.id, o.map) && o.start > (a.since || 0))) continue;
       sent[key] = o.end;
       changed = true;
-      notify(o);
+      if (o.start - ahead <= after) notify(o);
     }
     for (const [key, end] of Object.entries(sent))
       if (end < at - 86400) {
@@ -272,6 +280,80 @@
         changed = true;
       }
     if (changed) store(SENT_KEY, sent);
+  }
+
+  // ---- push ----------------------------------------------------------------------------
+
+  // What the server holds for this browser once it has confirmed it:
+  // { endpoint, sig, rules, at, posted }, `at` being when it took over these rules.
+  const pushed = () => stored(PUSH_KEY, null);
+  const rules = () => JSON.stringify([alerts(), lead(), currentRegion()]);
+
+  // The server pushes what is due after `at`; open pages notify for anything due
+  // before then, and for everything when it doesn't hold the current alerts.
+  function pushedAfter() {
+    const p = pushed();
+    return p && p.at && p.rules === rules() ? p.at : Infinity;
+  }
+
+  async function api(action, body) {
+    const res = await fetch(url(`api/alerts/${action}`), {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    // Hosts without the API answer 404, or a page.
+    if (!res.ok || !/json/.test(res.headers.get('content-type') || '')) throw new Error(`alerts API: ${res.status}`);
+    return res.json();
+  }
+
+  // Back to open pages only: the server forgets this browser if it can.
+  function dropPush() {
+    const p = pushed();
+    if (!p) return;
+    store(PUSH_KEY, null);
+    if (p.endpoint) return api('unsubscribe', { endpoint: p.endpoint }).catch(() => {});
+  }
+
+  const vapidBytes = () => Uint8Array.from(atob(VAPID_KEY.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
+  const sameKey = (sub) => {
+    const key = sub.options && sub.options.applicationServerKey;
+    return !key || String(new Uint8Array(key)) === String(vapidBytes());
+  };
+
+  // Subscribes this browser to push and gives the server its alerts. Posts only
+  // when something changed, and weekly, as the server forgets a browser after 90
+  // days without one.
+  async function syncPush() {
+    const list = alerts();
+    const reg = VAPID_KEY && list.length && 'PushManager' in window ? await registerWorker() : null;
+    if (!reg || !reg.pushManager) return dropPush();
+    let sub = await reg.pushManager.getSubscription();
+    if (sub && !sameKey(sub)) {
+      await sub.unsubscribe();
+      sub = null;
+    }
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: vapidBytes() });
+    const body = { subscription: sub.toJSON(), alerts: list, lead: lead(), region: currentRegion(), lang: ARC.lang };
+    const sig = JSON.stringify(body);
+    const state = pushed();
+    if (state && state.sig === sig && now() - state.posted < 7 * 86400) return;
+    if (state && state.endpoint !== sub.endpoint) await dropPush();
+    const { at } = await api('subscribe', body);
+    store(PUSH_KEY, { endpoint: sub.endpoint, sig, rules: rules(), at, posted: Math.floor(now()) });
+  }
+
+  // One sync at a time; a failure leaves alerts to open pages until the next one.
+  let pushing = Promise.resolve();
+  function updatePush() {
+    if (!schedule()) return;
+    pushing = pushing
+      .then(syncPush)
+      .catch(dropPush)
+      .then(() => {
+        const status = root && root.querySelector('.cond-alerts__status');
+        if (status) status.textContent = statusText();
+      });
   }
 
   // Asks from the click that set the first alert, so the browser shows its prompt.
@@ -285,6 +367,7 @@
     await registerWorker();
     renderAlerts();
     checkAlerts();
+    updatePush();
   }
 
   function toggleAlert() {
@@ -295,6 +378,7 @@
     else list.push({ map: focus.map, cond: focus.cond, since: Math.floor(now()) });
     store(ALERTS_KEY, list);
     if (i < 0) askToNotify();
+    else updatePush();
     renderFocus();
     renderAlerts();
     renderLists();
@@ -304,6 +388,7 @@
     const list = alerts();
     list.splice(i, 1);
     store(ALERTS_KEY, list);
+    updatePush();
     renderFocus();
     renderAlerts();
     renderLists();
@@ -540,8 +625,14 @@
         ${state === 'default' ? html`<button type="button" class="button" data-alert-enable>${BELL}${t('alerts.enable')}</button>` : ''}
         <button type="button" class="button" data-alert-ics>${CALENDAR}${t('alerts.calendar')}</button>
       </div>
-      <p class="note cond-alerts__status">${t(`alerts.status.${state}`)}</p>`
+      <p class="note cond-alerts__status">${statusText()}</p>`
     );
+  }
+
+  // How the alerts will arrive: pushed, only while a page is open, or not at all.
+  function statusText() {
+    const state = permission();
+    return t(`alerts.status.${state === 'granted' && pushedAfter() < Infinity ? 'push' : state}`);
   }
 
   function render() {
@@ -643,11 +734,13 @@
         document.querySelectorAll('[data-region]').forEach((select) => (select.value = region));
         renderAlerts();
         renderLists();
+        updatePush();
       } else if (target.matches('[data-focus]')) {
         setFocus({ ...focus, [target.dataset.focus]: target.value }, target.dataset.focus);
       } else if (target.matches('[data-alert-lead]')) {
         store(LEAD_KEY, Number(target.value));
         checkAlerts();
+        updatePush();
       }
     });
     document.addEventListener('click', (e) => {
@@ -682,9 +775,11 @@
   setInterval(reload, 3600 * 1000);
   setInterval(checkAlerts, 15 * 1000);
   document.addEventListener('visibilitychange', checkAlerts);
-  // Alerts set or removed in another tab.
+  // Pushed alerts are in the reader's language.
+  document.addEventListener('arc:lang', updatePush);
+  // Alerts set or removed in another tab, which updates the server itself.
   window.addEventListener('storage', (e) => {
-    if (e.key !== ALERTS_KEY && e.key !== LEAD_KEY) return;
+    if (e.key !== ALERTS_KEY && e.key !== LEAD_KEY && e.key !== PUSH_KEY) return;
     renderFocus();
     renderAlerts();
     renderLists();
@@ -693,6 +788,7 @@
     registerWorker();
     setTimeout(checkAlerts, 1000);
   }
+  if (alerts().length || pushed()) updatePush();
 
   ARC.conditions = { start, activeOn };
 })();
