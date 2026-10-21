@@ -294,7 +294,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Fixed audio when opening and searching loot containers on the Frigate and inside the Emperor.</li><li>Tuned distance and air absorption for Frigate engine and Frigate Cannon audio to improve balance over range.</li><li>Adjusted blunt damage and debris impact sounds to be louder and scale properly.</li><li>Fixed missing looting sounds on Transmitter Debris objects.</li><li>Adjusted Bombardier mortar firing audio to reduce overly loud, close-sounding effects at long distances.</li><li>Polished Cassio’s and Celeste’s voice lines for improved clarity and consistency.</li><li>Added voice responses for the Cowboy emote.</li></ul>",
-    "zh": "<ul><li>修复了在护卫者上和帝王体内打开并搜刮搜刮容器时的音频。</li><li>调整了护卫者引擎和护卫者炮台音频的距离与空气吸收，以改善远距离的音量平衡。</li><li>调整了钝击伤害和碎片撞击音效，使其更响亮并合理缩放。</li><li>修复了发射器残骸物体缺少搜刮音效的问题。</li><li>调整了投弹手迫击炮发射音效，减少远距离时过于响亮、过近的听感。</li><li>优化了卡西奥和塞莱斯特的语音台词，提升清晰度和一致性。</li><li>为牛仔表情添加了语音回应。</li></ul>"
+    "zh": "<ul><li>修复了在护卫者上和帝王体内打开并搜刮容器时的音频。</li><li>调整了护卫者引擎和护卫者炮台音频的距离与空气吸收，以改善远距离的音量平衡。</li><li>调整了钝击伤害和碎片撞击音效，使其更响亮并合理缩放。</li><li>修复了发射器残骸物体缺少搜刮音效的问题。</li><li>调整了投弹手迫击炮发射音效，减少远距离时过于响亮、过近的听感。</li><li>优化了卡西奥和塞莱斯特的语音台词，提升清晰度和一致性。</li><li>为牛仔表情添加了语音回应。</li></ul>"
    },
    {
     "type": "html",
