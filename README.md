@@ -77,7 +77,7 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 ## 致谢
 
-- **游戏数据**：[arctracker.io](https://arctracker.io) 与 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)（MIT）。2.0 的技能树取自 [baschny/arcraiders-raider-tools](https://github.com/baschny/arcraiders-raider-tools) 从游戏数据生成的文件，左右顺序对照 arctracker.io 的技能树页。2.0 新增的 ARC 和地图在两者更新前取自官方公告（`scripts/additions.mjs`）
+- **游戏数据**：[arctracker.io](https://arctracker.io) 与 [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)（MIT）。2.0 的技能树取自 [baschny/arcraiders-raider-tools](https://github.com/baschny/arcraiders-raider-tools) 从游戏数据生成的文件，左右顺序对照 arctracker.io 的技能树页。2.0 新增的 ARC 和地图在两者更新前取自官方公告（`scripts/additions.mjs`）；上游没有的彭多拉山口地图图块取自 arctracker.io，与其他地图同一格式（`npm run images`）
 - **互动地图标记**：[MetaForge](https://metaforge.app/arc-raiders) 社区。按其 API 条款注明来源并链接，互动地图页和页脚的链接请保留；网站如要盈利，需先联系 MetaForge。
 - **官方公告、地图条件与商店横幅**：[arcraiders.com](https://arcraiders.com)
 - **图库**：arcraiders.com 公告与首页的美术图，以及 [Embark 媒体资料包](https://www.embark-studios.com/press)，版权归 Embark Studios AB

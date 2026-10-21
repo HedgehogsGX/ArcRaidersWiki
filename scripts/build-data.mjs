@@ -505,6 +505,10 @@ const MAP_TILES = {
   riven_tides: 'riven-tides',
 };
 const TILE_ZOOMS = [['low', 0], ['low', 1], ['high', 2]];
+// Maps newer than upstream. arctracker.io, whose renders upstream's tiles are,
+// serves theirs in the same layout; --images downloads them.
+const CDN_TILES = { pendola_pass: 'pendola-pass' };
+const TILE_CDN = 'https://cdn.arctracker.io/maps/tiles';
 
 // maps.json lists each Stella Montis floor as its own map; the site shows one map
 // with both, under the id quests already use. Upstream's file names have the floors
@@ -548,7 +552,12 @@ const repoMaps = readJson('maps.json')
       }),
     });
   });
-const maps = [...repoMaps, ...missingFrom(repoMaps, ADDED_MAPS)];
+const maps = [
+  ...repoMaps,
+  ...missingFrom(repoMaps, ADDED_MAPS).map((m) =>
+    CDN_TILES[m.id] ? { ...m, tiles: `assets/img/game/maps/${m.id}`, zoom: TILE_ZOOMS.length - 1 } : m
+  ),
+];
 
 const rawEvents = readJson('map-events/map-events.json').eventTypes;
 const events = Object.entries(rawEvents)
@@ -820,9 +829,9 @@ if (unnamed.size) console.log(`Names without Chinese (add to NAMES in scripts/gl
 
 // ---- images (optional) --------------------------------------------------------------
 
-if (WITH_IMAGES) buildImages();
+if (WITH_IMAGES) await buildImages();
 
-function buildImages() {
+async function buildImages() {
   if (process.platform !== 'darwin') {
     console.error('--images needs macOS (sips). Images are committed, so this step is optional.');
     process.exit(1);
@@ -853,6 +862,18 @@ function buildImages() {
         for (let y = 0; y < 2 ** (z + 1); y++) {
           fs.mkdirSync(path.join(out, `${z}/${x}`), { recursive: true });
           fs.copyFileSync(extract(`images/maps/${dir}/v2/${set}/${z}/${x}/${y}.webp`), path.join(out, `${z}/${x}/${y}.webp`));
+        }
+  }
+  for (const [id, dir] of Object.entries(CDN_TILES)) {
+    const out = path.join(IMG_OUT, 'maps', id);
+    fs.rmSync(out, { recursive: true, force: true });
+    for (const [set, z] of TILE_ZOOMS)
+      for (let x = 0; x < 2 ** (z + 1); x++)
+        for (let y = 0; y < 2 ** (z + 1); y++) {
+          const res = await fetch(`${TILE_CDN}/${dir}/v2/${set}/${z}/${x}/${y}.webp`);
+          if (!res.ok) throw new Error(`${res.status} for ${dir} tile ${z}/${x}/${y}`);
+          fs.mkdirSync(path.join(out, `${z}/${x}`), { recursive: true });
+          fs.writeFileSync(path.join(out, `${z}/${x}/${y}.webp`), Buffer.from(await res.arrayBuffer()));
         }
   }
   // A small image that loads first, and the full one the map swaps in on top.

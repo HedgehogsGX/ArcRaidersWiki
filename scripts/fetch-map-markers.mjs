@@ -11,7 +11,8 @@
 // map's AFFINE below converts them onto this site's tiles (the arctracker images
 // from arcraiders-data). The coefficients come from matching the two sites' map
 // images with SIFT features (thousands of matches per map, about half a unit of
-// error on the 1000-unit grid). MetaForge's coordinates are world positions and
+// error on the 1000-unit grid); Pendola Pass, which upstream has no image of, is
+// matched to arctracker.io's own tiles (build-data.mjs). MetaForge's coordinates are world positions and
 // stay put when they re-render their images, so only a change to our tiles calls
 // for recalibrating.
 //
@@ -69,6 +70,11 @@ const MAPS = {
     affine: [[0.113281, -0.000048, -340.295046], [0.000048, 0.113281, -107.61198]],
     conditions: { 7: 'night-raid', 15: 'beachcombing' },
   },
+  pendola_pass: {
+    mf: 'pendola-pass',
+    affine: [[0.102802, 0, -342.066016], [-0.000001, 0.102803, -341.96568]],
+    conditions: { 7: 'night-raid', 16: 'arc-frigate', 17: 'redirection' },
+  },
 };
 
 // English names of the conditions, for the client's Chinese.
@@ -88,6 +94,8 @@ const CONDITIONS = {
   'hidden-bunker': 'Hidden Bunker',
   'locked-gate': 'Locked Gate',
   beachcombing: 'Beachcombing',
+  'arc-frigate': 'ARC Frigate',
+  redirection: 'Redirection',
 };
 
 // Marker types, in the order the map lists them. `mf` is MetaForge's
@@ -114,6 +122,9 @@ const TYPES = [
     ['turret', 'arc_turret'],
     ['wasp', 'arc_wasp'],
     ['rollbot', 'arc_surveyor'], // MetaForge's key for the Surveyor
+    ['hydra', 'arc_hydra'],
+    ['skulker', 'arc_skulker'],
+    ['bully', 'arc_bully'],
   ].map(([mf, id]) => ({ id, group: 'arc', mf: `arc/${mf}`, arc: id })),
   // ARC the site has no page for yet (not in arcraiders-data 1.42).
   { id: 'arc_comet', group: 'arc', mf: 'arc/comet', en: 'Comet' },
@@ -127,6 +138,7 @@ const TYPES = [
   { id: 'utility_crate', group: 'loot', mf: 'containers/utility_crate', en: 'Grenade Tube', zh: '手雷筒', glyph: 'grenade' },
   { id: 'combat_supplies', group: 'loot', mf: 'containers/combat_supplies', en: 'Combat Supplies', zh: '战斗补给', glyph: 'case' },
   { id: 'raider_cache', group: 'loot', mf: 'containers/raider_cache', en: 'Raider Cache', glyph: 'cache' },
+  { id: 'frozen_raider_cache', group: 'loot', mf: 'containers/frozen_raider_cache', en: 'Frozen Raider Cache', zh: '冰封的奇袭者箱', glyph: 'cache' },
   { id: 'hurricane_cache', group: 'loot', mf: 'containers/hurricane_cache', en: 'Hurricane Cache', zh: '飓风物资箱', glyph: 'cache' },
   { id: 'security_breach', group: 'loot', mf: 'containers/security_breach', en: 'Security Breach safe', zh: '保险柜（安防突破）', glyph: 'safe' },
   { id: 'breachable_container', group: 'loot', mf: 'containers/breachable_container', en: 'Breachable Container', zh: '可突破的容器', glyph: 'breach' },
@@ -172,6 +184,9 @@ const TYPES = [
   { id: 'fuel_cell', group: 'place', mf: 'locations/fuel-cell', en: 'Fuel cell', zh: '燃料电池', glyph: 'bolt' },
   { id: 'button', group: 'place', mf: 'locations/button', en: 'Button', zh: '按钮', glyph: 'button' },
   { id: 'antenna', group: 'place', mf: ['locations/antenna', 'events/antenna'], en: 'Antenna', zh: '天线', glyph: 'antenna' },
+  { id: 'gondola_landing', group: 'place', mf: 'locations/gondola_landing', en: 'Ballistic Gondola landing', zh: '弹道吊舱降落点', glyph: 'exit' },
+  { id: 'emergency_shelter', group: 'place', mf: 'locations/emergency_shelter', en: 'Emergency shelter', zh: '紧急避难所', glyph: 'depot' },
+  { id: 'mountaineers_detector', group: 'place', mf: 'locations/mountaineers_detector', en: "Mountaineer's Detector", glyph: 'antenna' },
   { id: 'player_spawn', group: 'place', mf: 'locations/player_spawn', en: 'Raider spawn', zh: '出生点', glyph: 'spawn' },
 
   { id: 'harvester', group: 'event', mf: 'events/harvester', en: 'Harvester', glyph: 'star' },
@@ -183,6 +198,9 @@ const TYPES = [
   { id: 'bird_nest', group: 'event', mf: 'events/bird', en: 'Bird nest', zh: '鸟巢', glyph: 'bird' },
   { id: 'dig_spot', group: 'event', mf: 'events/dig_spot', en: 'Dig spot', zh: '挖掘点', glyph: 'dig' },
   { id: 'mine', group: 'event', mf: 'events/mine', en: 'Mine', zh: '地雷', glyph: 'mine' },
+  { id: 'emperor_payload', group: 'event', mf: 'events/emperor_payload', en: 'Emperor payload', zh: '“帝王”空投', glyph: 'box' },
+  { id: 'frigate_cargo', group: 'event', mf: 'events/frigate_cargo', en: 'Frigate cargo drop', zh: '“护卫者”货物空投', glyph: 'ship' },
+  { id: 'flash_freeze', group: 'event', mf: 'events/flash_freeze', en: 'Flash Freeze', glyph: 'snow' },
   { id: 'puzzle_button', group: 'event', mf: 'events/puzzle_button', en: 'Puzzle button', zh: '谜题按钮', glyph: 'button' },
 
   // Every quest shares one type; each marker says which quest.
@@ -290,7 +308,7 @@ function convert(mapId, conf, rows, types, quests) {
     const mask = m.eventConditionMask ?? 1;
     if (mask !== 1) {
       const list = [];
-      for (let bit = 0; bit < 16; bit++) {
+      for (let bit = 0; bit < 31; bit++) {
         if (!(mask & (1 << bit))) continue;
         if (bit === 0) list.push('normal');
         else if (conf.conditions[bit]) list.push(conf.conditions[bit]);
