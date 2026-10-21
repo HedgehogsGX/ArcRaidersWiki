@@ -15,6 +15,12 @@
 // Condition icons are copied once from the official site into
 // assets/img/game/conditions/. Chinese names come from CLIENT_ZH, then
 // data/events.js.
+//
+// Readers can set alerts for a condition on a map (assets/js/conditions.js), so
+// the file names every condition and map the page knows, not only those in the
+// next 24 hours, and `seen` keeps which conditions have come up on which map in
+// any schedule so far. The official page doesn't say; each write adds to the
+// published list.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,6 +52,28 @@ const CLIENT_ZH = {
 // Maps the wiki has no page for yet.
 const MAP_ZH = {
   'Pendola Pass': '彭多拉山口',
+};
+
+// Conditions per map in the schedules synced before the file kept `seen`
+// (2026-09-25 to 2026-10-22, from this repository's history).
+const SEEN_BEFORE = {
+  'arc-frigate': ['buried_city', 'dam_battlegrounds', 'pendola_pass', 'the_blue_gate', 'the_spaceport'],
+  beachcombing: ['riven_tides'],
+  'bird-city': ['buried_city'],
+  'close-scrutiny': ['buried_city', 'dam_battlegrounds', 'the_blue_gate', 'the_spaceport'],
+  'electromagnetic-storm': ['dam_battlegrounds', 'the_blue_gate', 'the_spaceport'],
+  harvester: ['dam_battlegrounds', 'the_blue_gate', 'the_spaceport'],
+  'hidden-bunker': ['the_spaceport'],
+  hurricane: ['buried_city', 'dam_battlegrounds', 'the_blue_gate', 'the_spaceport'],
+  'husk-graveyard': ['buried_city', 'dam_battlegrounds', 'riven_tides', 'the_blue_gate', 'the_spaceport'],
+  'launch-tower-loot': ['the_spaceport'],
+  'locked-gate': ['the_blue_gate'],
+  'lush-blooms': ['buried_city', 'dam_battlegrounds', 'riven_tides', 'the_blue_gate', 'the_spaceport'],
+  matriarch: ['dam_battlegrounds', 'the_blue_gate', 'the_spaceport'],
+  'night-raid': ['buried_city', 'dam_battlegrounds', 'pendola_pass', 'riven_tides', 'stella_montis', 'the_blue_gate', 'the_spaceport'],
+  'prospecting-probes': ['buried_city', 'dam_battlegrounds', 'riven_tides', 'the_blue_gate', 'the_spaceport'],
+  redirection: ['pendola_pass'],
+  'uncovered-caches': ['buried_city', 'dam_battlegrounds', 'riven_tides', 'the_blue_gate', 'the_spaceport'],
 };
 
 async function get(url, tries = 3) {
@@ -106,6 +134,7 @@ function parseSchedule(html) {
   const payload = flightPayload(html);
   const entries = valueAfter(payload, 'liveEntries');
   const types = valueAfter(payload, 'conditionItems') || [];
+  const mapNames = valueAfter(payload, 'mapNames') || [];
   const now = valueAfter(payload, 'serverNow');
   const lookAhead = valueAfter(payload, 'lookAheadMs');
   const valid =
@@ -121,7 +150,7 @@ function parseSchedule(html) {
         e.endTimestamp > e.startTimestamp
     );
   if (!valid) throw new Error('Schedule not found on the map conditions page; the site layout may have changed.');
-  return { entries, types, now, lookAhead };
+  return { entries, types, mapNames, now, lookAhead };
 }
 
 // ---- names and icons -----------------------------------------------------------
@@ -160,14 +189,14 @@ async function icon(id) {
   }
 }
 
-async function build({ entries, types, now, lookAhead }) {
+async function build({ entries, types, mapNames, now, lookAhead }, old) {
   const data = loadData(['labels', 'events']);
   const eventNames = Object.fromEntries((data.events || []).map((e) => [e.id, e.name]));
   const mapIds = Object.fromEntries(Object.entries(data.labels?.maps || {}).map(([id, name]) => [mapKey(name.en), [id, name]]));
   const major = new Set(types.filter((c) => c.type === 'major').map((c) => c.name));
 
   const conditions = {};
-  for (const name of [...new Set(entries.map((e) => e.conditionName))].sort()) {
+  for (const name of [...new Set([...types.map((c) => c.name), ...entries.map((e) => e.conditionName)])].sort()) {
     const id = slug(name);
     const zh = CLIENT_ZH[id] || eventNames[id]?.zh;
     if (!zh) console.log(`  no Chinese name for "${name}"; add the game's wording to CLIENT_ZH`);
@@ -176,13 +205,18 @@ async function build({ entries, types, now, lookAhead }) {
 
   const maps = {};
   const mapOf = {};
-  for (const name of [...new Set(entries.map((e) => e.mapDisplayName))].sort()) {
+  for (const name of [...new Set([...mapNames, ...entries.map((e) => e.mapDisplayName)])].sort()) {
     // The wiki's own names, so the home page reads like the rest of the site.
     const [id, label] = mapIds[mapKey(name)] || [slug(name).replace(/-/g, '_'), MAP_ZH[name] ? { en: name, zh: MAP_ZH[name] } : { en: name }];
     if (!mapIds[mapKey(name)]) console.log(`  map "${name}" is not in data/labels.js${MAP_ZH[name] ? '' : '; add its Chinese name to MAP_ZH'}`);
     maps[id] = label;
     mapOf[name] = id;
   }
+
+  const seen = {};
+  const see = (condition, map) => (seen[condition] ||= new Set()).add(map);
+  for (const [condition, list] of [...Object.entries(SEEN_BEFORE), ...Object.entries(old?.seen || {})]) list.forEach((map) => see(condition, map));
+  for (const e of entries) see(slug(e.conditionName), mapOf[e.mapDisplayName]);
 
   const regions = [BASE_REGION, ...new Set(entries.flatMap((e) => Object.keys(regionTimes(e))))];
   const sec = (ms) => Math.round(ms / 1000);
@@ -193,6 +227,7 @@ async function build({ entries, types, now, lookAhead }) {
     regions,
     conditions,
     maps,
+    seen: Object.fromEntries(Object.keys(seen).sort().map((c) => [c, [...seen[c]].sort()])),
     // [condition, map, duration, start in each region, in `regions` order]
     entries: entries
       .map((e) => [
@@ -237,6 +272,8 @@ function reasonToWrite(old, next) {
   // Which conditions and maps are listed follows the rolling window; only a change to a shared one counts.
   const renamed = (a, b) => Object.keys(b).some((id) => a[id] && JSON.stringify(a[id]) !== JSON.stringify(b[id]));
   if (renamed(old.conditions, next.conditions) || renamed(old.maps, next.maps)) return 'names or icons changed';
+  if (Object.keys(next.conditions).some((id) => !old.conditions[id]) || Object.keys(next.maps).some((id) => !old.maps[id])) return 'new condition or map';
+  if (Object.entries(next.seen).some(([c, list]) => list.some((m) => !old.seen?.[c]?.includes(m)))) return 'a condition came up on a new map';
   const until = Math.min(old.until, next.until);
   if (occurrences(old, next.fetched, until) !== occurrences(next, next.fetched, until)) return 'official schedule changed';
   const left = old.until - next.fetched;
@@ -245,8 +282,8 @@ function reasonToWrite(old, next) {
 }
 
 async function main() {
-  const next = await build(parseSchedule(await get(SOURCE)));
   const old = loadPublished();
+  const next = await build(parseSchedule(await get(SOURCE)), old);
   const reason = reasonToWrite(old, next);
   const span = `${next.entries.length} entries, ${next.regions.length} regions, until ${new Date(next.until * 1000).toISOString()}`;
   if (!reason) {

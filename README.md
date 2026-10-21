@@ -71,6 +71,10 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 `build-data.mjs` 把它们打包成 `data/guides.js`（物品页在网格渲染后再加载），并给每件物品标上 `guide`。游戏删掉的物品会被跳过并在输出里列出，不会让数据同步失败。文件顶部的 `version` 是攻略对应的游戏版本，大版本更新后要重新核对。
 
+## 地图条件提醒
+
+地图页的排期可以只看一张地图、一种地图条件或两者的组合（`?map=`、`?cond=`），列出排期内每一次出现的时间，并可设置提醒。提醒保存在浏览器本地，没有服务器端：网站在浏览器标签页中打开时（任意页面）弹出通知，`sw.js` 只负责显示通知和点击后打开网站；关闭网站后的提醒靠「添加到日历」导出的 .ics 文件，覆盖官方排期的范围（约 24 小时）。官网不公布哪些地图条件会出现在哪张地图上，`fetch-map-conditions.mjs` 把历次排期里出现过的组合记在 `seen` 里，选项据此筛选。
+
 ## 译名
 
 以客户端术语表为准：简中客户端 1.47.0 的译名，加上 2.0「霜痕小径」新增内容的官方名（取自 2.0 游戏数据和 Embark 在 Steam 发布的简中公告）。导入在 `scripts/glossary-client.json`，术语表更新后运行 `node scripts/import-glossary.mjs`。公告和客户端说法不同时用客户端的，如 Research Station 写「研究站」，不写公告里的「研究工作站」。术语表没有的名称写在 `scripts/glossary.mjs`：游戏数据用 `NAMES`，公告里的名称用 `NEWS_TERMS`（如 Frozen Trail = 霜痕小径）。本站自译的句子在 `scripts/translations.mjs`。

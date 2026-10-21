@@ -348,8 +348,28 @@
     ARC.applyStrings();
   }
 
+  // Map condition alerts notify from any page, so pages without the schedule load
+  // it, then conditions.js, once the reader has set one.
+  function loadAlerts() {
+    let saved = null;
+    try {
+      saved = JSON.parse(localStorage.getItem('arc-wiki-alerts'));
+    } catch (e) {
+      /* storage blocked: no alerts */
+    }
+    if (!Array.isArray(saved) || !saved.length || document.querySelector('script[src*="assets/js/conditions.js"]')) return;
+    const load = (src, then) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = then;
+      document.head.append(script);
+    };
+    load(url(`content/map-conditions.js?t=${Date.now()}`), () => load(fresh('assets/js/conditions.js')));
+  }
+
   renderAll();
   setupNav();
+  loadAlerts();
   document.addEventListener('arc:lang', renderAll);
 
   // Close the mobile menu when navigating within the page.
