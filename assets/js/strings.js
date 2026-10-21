@@ -105,6 +105,56 @@ window.ARC_STRINGS = {
   'cond.source': { zh: '官网完整排期', en: 'Full schedule on arcraiders.com' },
   'cond.stale': { zh: '本站保存的排期已过期。', en: 'The saved schedule has run out.' },
 
+  // Focus and alerts (maps page; alerts also notify from other pages)
+  'cond.focus.map': { zh: '地图', en: 'Map' },
+  'cond.focus.cond': { zh: '地图条件', en: 'Condition' },
+  'cond.focus.allMaps': { zh: '全部地图', en: 'All maps' },
+  'cond.focus.allConds': { zh: '全部地图条件', en: 'All conditions' },
+  'cond.focus.anyMap': { zh: '任意地图', en: 'any map' },
+  'cond.focus.anyCond': { zh: '任意地图条件', en: 'Any condition' },
+  'cond.focus.hint': {
+    zh: '选一张地图或一种地图条件，查看它每次出现的时间，并可设置提醒。',
+    en: 'Pick a map or a condition to see every time it comes up, and to set an alert for it.',
+  },
+  'cond.focus.count': { zh: '截至{until}，共出现 {n} 次。', en: 'Comes up {n} times until {until}.' },
+  'cond.focus.once': { zh: '截至{until}，出现 1 次。', en: 'Comes up once until {until}.' },
+  'cond.focus.none': {
+    zh: '截至{until}的排期里没有。官方排期只提前约一天公布；设置提醒后，排到时会通知你。',
+    en: 'Not in the schedule until {until}. The official schedule only looks about a day ahead; set an alert to hear when it comes up.',
+  },
+  'alerts.add': { zh: '提醒我', en: 'Alert me' },
+  'alerts.on': { zh: '已设提醒', en: 'Alert on' },
+  'alerts.title': { zh: '我的提醒', en: 'Your alerts' },
+  'alerts.lead': { zh: '提醒时间', en: 'Remind me' },
+  'alerts.lead.0': { zh: '开始时', en: 'When it starts' },
+  'alerts.lead.n': { zh: '提前 {n} 分钟', en: '{n} min before' },
+  'alerts.remove': { zh: '删除提醒', en: 'Remove alert' },
+  'alerts.notSoon': { zh: '暂无排期', en: 'Not scheduled yet' },
+  'alerts.enable': { zh: '开启通知', en: 'Turn on notifications' },
+  'alerts.calendar': { zh: '添加到日历', en: 'Add to calendar' },
+  'alerts.calendar.none': {
+    zh: '截至{until}的排期里没有你提醒的地图条件，暂时没有可添加的内容。',
+    en: 'None of your alerts is in the schedule until {until}, so there is nothing to add yet.',
+  },
+  'alerts.ics.name': { zh: 'ARC Raiders 地图条件', en: 'ARC Raiders map conditions' },
+  'alerts.ics.desc': { zh: 'ARC Raiders 地图条件，{region}服务器。', en: 'ARC Raiders map condition, {region} servers.' },
+  'alerts.status.granted': {
+    zh: '网站在浏览器标签页中打开时（任意页面均可）会弹出通知。想在关闭网站后也收到提醒，请添加到日历：日历文件包含官方排期范围内（约 24 小时）的场次。',
+    en: 'Notifications arrive while the wiki is open in a browser tab, on any page. To be reminded when it is closed, add your alerts to your calendar; the file covers the official schedule, about the next 24 hours.',
+  },
+  'alerts.status.default': {
+    zh: '开启通知后，网站在浏览器中打开时会提醒你；也可以添加到日历。',
+    en: 'Turn on notifications to be alerted while the wiki is open in your browser, or add your alerts to your calendar.',
+  },
+  'alerts.status.denied': {
+    zh: '此网站的通知已被浏览器阻止，可在浏览器的网站设置中允许。添加到日历不受影响。',
+    en: "Notifications are blocked for this site; allow them in the browser's site settings. Adding your alerts to your calendar works either way.",
+  },
+  'alerts.status.unsupported': {
+    zh: '这个浏览器不能显示网页通知（iPhone 和 iPad 上需先把网站添加到主屏幕）。可以改为添加到日历。',
+    en: "This browser can't show notifications from a web page (on iPhone and iPad, only sites added to the Home Screen can). Add your alerts to your calendar instead.",
+  },
+
   // News
   'page.news': { zh: '官方公告', en: 'News' },
   'desc.news': { zh: '官网公告全文与视频', en: 'Official posts in full, with videos' },
@@ -314,6 +364,7 @@ window.ARC_STRINGS = {
   'map.cond': { zh: '地图条件', en: 'Map condition' },
   'map.cond.none': { zh: '无（常规对局）', en: 'None (regular raid)' },
   'map.cond.live': { zh: '· 进行中', en: '· live now' },
+  'map.cond.schedule': { zh: '排期与提醒', en: 'Schedule & alerts' },
   'map.shown': { zh: '显示 {n} 个标记', en: '{n} markers shown' },
   'map.loading': { zh: '正在载入标记…', en: 'Loading markers…' },
   'map.failed': { zh: '标记载入失败，请刷新重试。', en: 'Markers failed to load. Please reload.' },

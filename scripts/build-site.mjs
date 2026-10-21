@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'dist');
-const PUBLIC = ['index.html', 'pages', 'assets', 'data', 'content/news.js', 'content/news-img', 'content/gallery.js', 'content/gallery-img', 'content/gallery-full', 'content/map-conditions.js', 'content/map-markers'];
+const PUBLIC = ['index.html', 'sw.js', 'pages','assets', 'data', 'content/news.js', 'content/news-img', 'content/gallery.js', 'content/gallery-img', 'content/gallery-full', 'content/map-conditions.js', 'content/map-markers'];
 const SKIP = new Set(['pages/_template.html']);
 
 fs.rmSync(OUT, { recursive: true, force: true });

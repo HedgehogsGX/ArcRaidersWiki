@@ -458,6 +458,7 @@
           : ''}
         <label class="mapper__cond"><span class="note">${t('map.cond')}</span>
           <select class="select" data-cond>${conditionOptions(m)}</select></label>
+        <a class="mapper__schedule" href="${url(`pages/maps.html?map=${m.id}#conditions`)}">${t('map.cond.schedule')}</a>
         ${state.layer === 'under' ? html`<p class="note">${t('map.underNote')}</p>` : ''}
         ${state.quest && set && set.quests[state.quest]
           ? html`<p class="mapper__quest"><span>${t('map.questOnly', { quest: L(set.quests[state.quest]) })}</span>
