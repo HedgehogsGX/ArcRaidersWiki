@@ -11,5 +11,10 @@
     // Serve pages/items.html as is. The default strips .html with a redirect,
     // which breaks same-page #id links (core.js compares pathnames).
     "html_handling": "none"
-  }
+  },
+  // Map condition alerts by Web Push (worker.js). Off until set up: create the
+  // namespace with `npx wrangler kv namespace create ALERTS`, put its id below,
+  // add the VAPID_PRIVATE_KEY secret (scripts/vapid-keys.mjs), then uncomment.
+  // "kv_namespaces": [{ "binding": "ALERTS", "id": "<namespace id>" }],
+  // "triggers": { "crons": ["*/5 * * * *"] }
 }

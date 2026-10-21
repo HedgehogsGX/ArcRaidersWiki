@@ -21,7 +21,7 @@ data/                    游戏数据（build-data.mjs 生成，不要手动修�
 content/                 公告、地图条件、地图标记、图库（同步脚本生成，不要手动修改）
 guides/                  物品的玩家攻略（手写，见下文「物品攻略」）
 scripts/                 构建与同步脚本，每个脚本开头有详细说明
-worker.js, functions/    公告原图的 /news-full/ 路由（Workers 与 Pages 各一个入口）
+worker.js, functions/    公告原图的 /news-full/ 路由、地图条件提醒的推送接口与定时任务（Workers 与 Pages 各一个入口；webpush.js 是推送加密）
 vendor/arctracker        arctracker.io 的物品、任务、工坊、计划（fetch-arctracker.mjs 生成）
 vendor/skill-tree.json   2.0 技能树（fetch-skill-tree.mjs 生成）
 vendor/arcraiders-data   上游游戏数据（git 子模块，停在 1.42；ARC、商人、地图仍取自这里）
@@ -73,7 +73,17 @@ node scripts/fetch-map-markers.mjs       # 互动地图标记
 
 ## 地图条件提醒
 
-地图页的排期可以只看一张地图、一种地图条件或两者的组合（`?map=`、`?cond=`），列出排期内每一次出现的时间，并可设置提醒。提醒保存在浏览器本地，没有服务器端：网站在浏览器标签页中打开时（任意页面）弹出通知，`sw.js` 只负责显示通知和点击后打开网站；关闭网站后的提醒靠「添加到日历」导出的 .ics 文件，覆盖官方排期的范围（约 24 小时）。官网不公布哪些地图条件会出现在哪张地图上，`fetch-map-conditions.mjs` 把历次排期里出现过的组合记在 `seen` 里，选项据此筛选。
+地图页的排期可以只看一张地图、一种地图条件或两者的组合（`?map=`、`?cond=`），列出排期内每一次出现的时间，并可设置提醒。提醒保存在浏览器本地；读者允许通知后，`conditions.js` 用 Web Push 订阅，把提醒交给 `/api/alerts/subscribe`，存进 KV 命名空间 `ALERTS`（每个浏览器一个键）。Worker 的定时任务每 5 分钟读一次本次部署发布的 `content/map-conditions.js`，给提醒时间（开始时间减去提前量）落在这 5 分钟里的场次发推送，网站关着也能收到；`sw.js` 显示通知，文字与网页内的通知相同。删光提醒时调用 `/api/alerts/unsubscribe`；推送服务回 404 或 410 的订阅会被删掉，90 天没有更新的也会过期（网页每周至少重新提交一次）。
+
+服务器接手之前就该提醒的场次，以及没有推送的情况（托管平台没有这个接口，如 EdgeOne 和 `npm run serve`；浏览器不支持；`VAPID_KEY` 为空），仍由网页在标签页打开时（任意页面）弹出通知。关闭网站后的另一条路是「添加到日历」导出的 .ics 文件，覆盖官方排期的范围（约 24 小时）。官网不公布哪些地图条件会出现在哪张地图上，`fetch-map-conditions.mjs` 把历次排期里出现过的组合记在 `seen` 里，选项据此筛选。
+
+开启推送（Cloudflare 上的设置，按顺序做；最后一步给 Pages 绑定 KV 才会让访客开始订阅）：
+
+1. `node scripts/vapid-keys.mjs` 生成一对 VAPID 密钥。公钥填进 `assets/js/conditions.js` 顶部的 `VAPID_KEY`；私钥用 `npx wrangler secret put VAPID_PRIVATE_KEY` 存为 Worker 的密钥，不进仓库。
+2. `npx wrangler kv namespace create ALERTS`，把返回的 id 填进 `wrangler.jsonc`，并取消 `kv_namespaces` 和 `triggers`（`*/5 * * * *`）两行的注释。合并后 Workers Builds 部署时会建好定时任务。
+3. Cloudflare Pages 项目 → Settings → Bindings，添加 KV namespace 绑定，变量名 `ALERTS`，选同一个命名空间，然后重新部署。
+
+`node scripts/check-webpush.mjs` 用 RFC 8291 的示例检查加密。Workers 免费版每次定时任务最多发 50 个子请求、CPU 10 毫秒，同一时刻要推送的读者多了需要付费版。
 
 ## 译名
 

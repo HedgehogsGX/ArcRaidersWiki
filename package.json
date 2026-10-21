@@ -1,6 +1,7 @@
 {
   "name": "arc-raiders-wiki",
   "private": true,
+  "type": "module",
   "description": "Unofficial bilingual ARC Raiders wiki. Static site; npm run build copies the published files into dist/, the other scripts refresh its data.",
   "scripts": {
     "serve": "python3 scripts/serve.py",
