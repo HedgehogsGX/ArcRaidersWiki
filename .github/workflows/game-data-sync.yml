@@ -40,7 +40,11 @@ jobs:
       - name: Fetch arctracker.io data
         run: node scripts/fetch-arctracker.mjs
 
+      # baschny/arcraiders-raider-tools has returned 404 since 2026-10-20. A failed
+      # fetch leaves the saved vendor/skill-tree.json alone, so let the item sync
+      # go on; the error still shows in the run's annotations.
       - name: Fetch the skill tree
+        continue-on-error: true
         run: node scripts/fetch-skill-tree.mjs
 
       # source.json holds the fetch date, which changes every day; only open a PR
