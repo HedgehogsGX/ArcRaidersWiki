@@ -341,8 +341,8 @@ window.ARC_STRINGS = {
 
   // Interactive map
   'map.lede': {
-    zh: '{count} 张地图上的 ARC 出没点、容器、可采集资源、撤离点和任务地点，共 {markers} 个标记。按类型、地图条件和楼层筛选。',
-    en: 'ARC spawns, containers, plants, extractions and quest spots on {count} maps, {markers} markers in all. Filter by type, map condition and floor.',
+    zh: '{count} 张地图上的 ARC 出没点、容器、可采集资源、撤离点和任务地点，共 {markers} 个标记。按类型、地图条件和楼层筛选，也可以放置自己的图钉。',
+    en: 'ARC spawns, containers, plants, extractions and quest spots on {count} maps, {markers} markers in all. Filter by type, map condition and floor, and drop pins of your own.',
   },
   'map.pick': { zh: '选择地图', en: 'Choose a map' },
   'map.filters': { zh: '标记筛选', en: 'Marker filters' },
@@ -379,6 +379,15 @@ window.ARC_STRINGS = {
   'map.questAll': { zh: '显示全部任务', en: 'Show all quests' },
   'map.zoomIn': { zh: '放大', en: 'Zoom in' },
   'map.zoomOut': { zh: '缩小', en: 'Zoom out' },
+  'map.mine.add': { zh: '放置图钉', en: 'Drop pins' },
+  'map.mine.done': { zh: '完成', en: 'Done' },
+  'map.mine.clear': { zh: '清除图钉（{n}）', en: 'Clear pins ({n})' },
+  'map.mine.hint': { zh: '点击地图放置图钉', en: 'Click the map to drop a pin' },
+  'map.mine.hintTouch': { zh: '轻触地图放置图钉', en: 'Tap the map to drop a pin' },
+  'map.mine.name': { zh: '图钉 {n}', en: 'Pin {n}' },
+  'map.mine.sub': { zh: '你放置的图钉', en: 'Your pin' },
+  'map.mine.drag': { zh: '拖动可移到别处。', en: 'Drag it to move it.' },
+  'map.mine.remove': { zh: '删除图钉', en: 'Remove pin' },
   'map.credit': {
     zh: '标记由 {source} 社区标注，{date} 同步，可能有遗漏或偏差。地图图片来自 arcraiders-data。',
     en: 'Markers are placed by the {source} community, synced {date}, and may be incomplete. Map images from arcraiders-data.',
