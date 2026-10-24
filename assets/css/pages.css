@@ -2262,6 +2262,112 @@ html:has(.viewer[open]) {
   font-weight: 500;
 }
 
+/* The reader's own pins, and the bar for dropping them. */
+body:not(.leaflet-dragging) .mapper__map.is-placing {
+  cursor: crosshair;
+}
+
+/* On the map Leaflet positions the pin absolutely, which also anchors its number. */
+.mine-pin {
+  color: var(--night);
+}
+
+.mine-pin svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: var(--bone);
+  stroke: var(--night);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55));
+}
+
+.mine-pin:hover svg {
+  fill: #fff;
+}
+
+/* The number sits in the round head, the top three quarters of the drop. */
+.mine-pin span {
+  position: absolute;
+  inset: 0 0 24%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.pin-pop__head .mine-pin {
+  position: relative;
+  width: 22px;
+  height: 28px;
+  justify-self: center;
+}
+
+.pin-pop__head .mine-pin span {
+  font-size: 0.6875rem;
+}
+
+.mine-pop {
+  display: grid;
+  gap: 8px;
+}
+
+.mine-pop .button {
+  justify-self: start;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 0.875rem;
+}
+
+.mine-tools {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+}
+
+.mine-tools [hidden] {
+  display: none;
+}
+
+.mine-tools__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mine-tools .pill {
+  background: color-mix(in srgb, var(--night) 85%, transparent);
+  color: var(--bone);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.mine-tools .pill:hover {
+  background: var(--night-3);
+}
+
+.mine-tools .pill[aria-pressed='true'] {
+  background: var(--bone);
+  color: var(--night);
+}
+
+.mine-tools__ico {
+  width: 11px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.mine-tools__hint {
+  margin: 0;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--night) 85%, transparent);
+  color: var(--cyan);
+  font-size: var(--step--1);
+}
+
 @media (max-width: 959px) {
   .mapper__main {
     grid-template-columns: 1fr;

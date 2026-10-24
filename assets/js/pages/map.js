@@ -1,7 +1,8 @@
 /* Interactive map: each map's tiles with the community markers from MetaForge
    (content/map-markers/, see scripts/fetch-map-markers.mjs) on top, filtered by
    type, map condition and floor. Leaflet handles panning and zooming; markers are
-   painted on one canvas, so a few thousand of them stay smooth on phones.
+   painted on one canvas, so a few thousand of them stay smooth on phones. Readers
+   can also drop numbered pins of their own, kept per map in this browser.
 
    Maps use a 1000-unit grid with y pointing down, like the images. Leaflet takes
    [lat, lng], so a point is [y, x]. The URL keeps ?map= and accepts show= (type
@@ -228,6 +229,8 @@
 
   function setBase(m) {
     if (base) map.removeLayer(base);
+    // The reader's pins belong to the image they were dropped on.
+    drawMine();
     if (m.tiles) {
       base = leaflet.tileLayer(`${asset(m.tiles)}/{z}/{x}/{y}.webp`, {
         tileSize: 512,
@@ -283,6 +286,8 @@
     pinLayer.clearLayers();
     for (const p of shown) {
       const e = p.options.row[3];
+      // While pins are being dropped, a click on a marker drops one there instead.
+      p.options.interactive = !placing;
       p.options.pin.hl = !!(state.cond && e && e.c && e.c.includes(state.cond));
       p.setRadius(radiusFor(zoom, p.options.pin.def));
       pinLayer.addLayer(p);
@@ -548,6 +553,145 @@
     }
   }
 
+  // ---- your pins -------------------------------------------------------------------------
+
+  // { mapId: [{ x, y, l }] } in drop order; l is the floor, on maps that have floors.
+  const MINE = 'arc-wiki-pins';
+  let mine = {};
+  try {
+    mine = JSON.parse(localStorage.getItem(MINE)) || {};
+  } catch (e) {
+    /* storage blocked or empty */
+  }
+  const saveMine = () => {
+    try {
+      localStorage.setItem(MINE, JSON.stringify(mine));
+    } catch (e) {
+      /* not remembered; the pins last for this visit */
+    }
+  };
+
+  let mineLayer = null;
+  let tools = null;
+  let placing = false;
+  const minePins = () => mine[state.map] || [];
+  const round = (v) => Math.round(v * 10) / 10;
+
+  function inImage({ lat, lng }) {
+    const [[y0, x0], [y1, x1]] = imageBounds(mapById(state.map));
+    return lng >= x0 && lng <= x1 && lat >= y0 && lat <= y1;
+  }
+
+  // A bone teardrop with the pin's number, so a route reads in order.
+  const PIN_PATH = 'M14 1C6.8 1 1 6.6 1 13.6 1 22.6 14 35 14 35s13-12.4 13-21.4C27 6.6 21.2 1 14 1z';
+  const mineMark = (n) => html`<svg viewBox="0 0 28 36" aria-hidden="true"><path d="${PIN_PATH}"/></svg><span>${n}</span>`;
+
+  function drawMine() {
+    if (!mineLayer) return;
+    mineLayer.clearLayers();
+    const floors = !!mapById(state.map).levels;
+    minePins().forEach((p, i) => {
+      if (floors && p.l !== state.layer) return;
+      const n = i + 1;
+      const marker = leaflet.marker([p.y, p.x], {
+        icon: leaflet.divIcon({ className: 'mine-pin', html: String(mineMark(n)), iconSize: [28, 36], iconAnchor: [14, 35], popupAnchor: [0, -32] }),
+        title: t('map.mine.name', { n }),
+        draggable: true,
+      });
+      marker.on('dragend', () => {
+        const at = marker.getLatLng();
+        if (!inImage(at)) return marker.setLatLng([p.y, p.x]);
+        Object.assign(p, { x: round(at.lng), y: round(at.lat) });
+        saveMine();
+      });
+      marker.bindPopup(() => minePopup(p, n), { className: 'pin-pop', minWidth: 180, autoPanPadding: [20, 20] });
+      mineLayer.addLayer(marker);
+    });
+    renderTools();
+  }
+
+  function minePopup(p, n) {
+    const box = document.createElement('div');
+    box.className = 'mine-pop';
+    mount(
+      box,
+      html`<div class="pin-pop__head"><span class="mine-pin">${mineMark(n)}</span><div>
+          <strong>${t('map.mine.name', { n })}</strong><span class="pin-pop__sub">${t('map.mine.sub')}</span>
+        </div></div>
+        <p class="pin-pop__fact">${t('map.mine.drag')}</p>
+        <button type="button" class="button">${t('map.mine.remove')}</button>`
+    );
+    box.querySelector('button').addEventListener('click', () => {
+      mine[state.map] = minePins().filter((x) => x !== p);
+      if (!mine[state.map].length) delete mine[state.map];
+      saveMine();
+      map.closePopup();
+      drawMine();
+    });
+    return box;
+  }
+
+  function addMine(e) {
+    if (!placing || !inImage(e.latlng)) return;
+    const p = { x: round(e.latlng.lng), y: round(e.latlng.lat) };
+    if (mapById(state.map).levels) p.l = state.layer;
+    (mine[state.map] = minePins()).push(p);
+    saveMine();
+    drawMine();
+  }
+
+  function setPlacing(on) {
+    placing = on;
+    map.getContainer().classList.toggle('is-placing', on);
+    // Two quick clicks drop two pins rather than zooming in.
+    map.doubleClickZoom[on ? 'disable' : 'enable']();
+    if (on) map.closePopup();
+    refresh();
+    renderTools();
+  }
+
+  // The bar at the map's bottom left: start or stop dropping pins, and clear this map's.
+  const Tools = leaflet.Control.extend({
+    options: { position: 'bottomleft' },
+    onAdd() {
+      const box = leaflet.DomUtil.create('div', 'mine-tools');
+      box.innerHTML = String(html`<p class="mine-tools__hint" hidden></p>
+        <div class="mine-tools__row">
+          <button type="button" class="pill" data-place></button>
+          <button type="button" class="pill" data-clear hidden></button>
+        </div>`);
+      leaflet.DomEvent.disableClickPropagation(box);
+      leaflet.DomEvent.disableScrollPropagation(box);
+      box.addEventListener('click', (e) => {
+        const b = e.target.closest('button');
+        if (!b) return;
+        if (b.hasAttribute('data-place')) setPlacing(!placing);
+        else {
+          delete mine[state.map];
+          saveMine();
+          map.closePopup();
+          drawMine();
+        }
+      });
+      return box;
+    },
+  });
+
+  // Updated in place, so keyboard focus stays on the button just pressed.
+  function renderTools() {
+    if (!tools) return;
+    const n = minePins().length;
+    const hint = tools.querySelector('.mine-tools__hint');
+    const place = tools.querySelector('[data-place]');
+    const clear = tools.querySelector('[data-clear]');
+    hint.hidden = !placing;
+    hint.textContent = t(hover ? 'map.mine.hint' : 'map.mine.hintTouch');
+    place.setAttribute('aria-pressed', String(placing));
+    mount(place, html`<svg class="mine-tools__ico" viewBox="0 0 28 36" aria-hidden="true"><path d="${PIN_PATH}"/></svg>${t(placing ? 'map.mine.done' : 'map.mine.add')}`);
+    clear.hidden = !n;
+    clear.textContent = t('map.mine.clear', { n: num(n) });
+  }
+
   // ---- start ---------------------------------------------------------------------------
 
   function render() {
@@ -560,6 +704,7 @@
     );
     if (map) {
       map.closePopup();
+      drawMine();
       renderPanel();
       syncUrl();
       if (set) mount(stage.querySelector('.mapper__count'), t('map.shown', { n: num(pinLayer.getLayers().length) }));
@@ -598,7 +743,11 @@
     });
     leaflet.control.zoom({ position: 'topright', zoomInTitle: t('map.zoomIn'), zoomOutTitle: t('map.zoomOut') }).addTo(map);
     pinLayer = leaflet.layerGroup().addTo(map);
+    mineLayer = leaflet.layerGroup().addTo(map);
+    tools = new Tools().addTo(map).getContainer();
     map.on('zoomend', resize);
+    map.on('click', addMine);
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && placing && setPlacing(false));
 
     root.addEventListener('click', onPanelClick);
     panel.addEventListener('change', (e) => {
