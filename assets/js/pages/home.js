@@ -1,5 +1,5 @@
 /* Home: hero search (and the header's once it scrolls away) and live map conditions, section directory,
-   newest items, latest official news. */
+   latest official news, newest items. */
 
 (function () {
   const { html, mount, t, L, url, link, asset, data, num, item, label } = ARC;
@@ -104,8 +104,8 @@
   function render() {
     renderHero();
     renderDirectory();
-    renderRecent();
     renderNews();
+    renderRecent();
   }
 
   // The header's search field stays out of sight while the hero's is on screen,
