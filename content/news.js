@@ -7,7 +7,7 @@ window.ARC_NEWS = [
   "tags": [],
   "thumb": "content/news-img/a030fcbc-2f29-gondola-operator-card-600x200-600x200.webp",
   "title": {
-   "en": "SPERANZA SECURITY RECRUITMENT",
+   "en": "Speranza Security Recruitment",
    "zh": "斯佩兰扎安保区招募"
   },
   "body": [
@@ -23,67 +23,67 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>With ARC activity ramping up and Raiders pushing into new Northern Frontiers, Speranza Security is stretched thin. Tube Operators are working overtime, so Shani is recruiting new workers to get Raiders home safely from Pendola Pass.</p>",
-    "zh": "<p>随着 ARC 活动日益频繁，奇袭者们正向新的北部边境推进，斯佩兰扎安保区人手紧张。管道操作员正在加班加点，因此萨尼正在招募新工人，帮助奇袭者们从彭多拉山口安全撤离回家。</p>"
+    "zh": "<p>随着ARC活动日益频繁，奇袭者不断向新的北方边境推进，斯佩兰扎安保区人手紧缺。管道操作员们正加班加点，因此萨尼正在招募新员工，帮助奇袭者从彭多拉山口安全返回家园。</p>"
    },
    {
     "type": "html",
     "en": "<p>That’s where you come in, Raider - join the Speranza Security team and lend your voice to the new Gondola extract!</p>",
-    "zh": "<p>这就是你登场的时候了，奇袭者——加入斯佩兰扎安保团队，为新的吊舱撤离贡献你的声音！</p>"
+    "zh": "<p>奇袭者，这就是你登场的时候——加入斯佩兰扎安保团队，为新的吊舱撤离献声吧！</p>"
    },
    {
     "type": "html",
     "en": "<p>Send us a recording of your voice lines for a chance to be selected as a new Gondola operator, guiding frozen Raiders back to their warm home. We’ll select the best lines to be added into ARC Raiders, bringing your voice into the Rust Belt and rewarding you with Raider Tokens for your efforts. </p>",
-    "zh": "<p>把你的配音录音发给我们，就有机会被选为新的吊舱操作员，指引冻僵的奇袭者们回到温暖的家。我们会挑选最佳台词加入 ARC Raiders，让你的声音进入锈带，并奖励你奇袭者代币作为酬谢。</p>"
+    "zh": "<p>把你录制的语音台词发给我们，就有机会被选为新的吊舱操作员，引导冻僵的奇袭者回到温暖的家。我们会挑选最棒的台词加入ARC Raiders，让你的声音响彻锈带，并奖励你奇袭者代币，感谢你的付出。</p>"
    },
    {
     "type": "html",
     "en": "<p>Submit your line for either of these two categories:</p>",
-    "zh": "<p>请为以下两个类别之一提交你的台词：</p>"
+    "zh": "<p>请从以下两个类别中任选其一提交你的台词：</p>"
    },
    {
     "type": "html",
     "en": "<h2><strong>Category A - Scripted</strong></h2>",
-    "zh": "<h2><strong>A 类——指定台词</strong></h2>"
+    "zh": "<h2><strong>A类——指定台词</strong></h2>"
    },
    {
     "type": "html",
     "en": "<p>Record one of these Gondola operator lines:</p>",
-    "zh": "<p>录制以下吊舱操作员台词之一：</p>"
+    "zh": "<p>录制以下吊舱操作员台词中的一句：</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>“Let&#x27;s see, I have... Yes, on its way. Looks like it&#x27;s going to go... Northeast. Yes, start heading northeast.”</li><li>“Sending a Gondola, Raider. Looks like it&#x27;s heading... East of you. Yes, it&#x27;s going east.”</li><li>“Let me see what I can do... All right, coming your way. Start heading southeast.”</li><li>“Ballistic gondola, on the way. Let&#x27;s see where it&#x27;s... All right, should be landing south of you.”</li><li>“Got your signal. Gondola is taking off, and... Let&#x27;s see... Heading to your southwest. Repeat: to your southwest.”</li><li>“It&#x27;s coming your way, Raider. Flight path&#x27;s looking good. Should be landing west of you.” </li><li>“Let&#x27;s get you home, Raider. There&#x27;s a Gondola headed your way. Should be there soon - head northwest if you want to catch it.”</li><li>“Call received. Ballistic Gondola on the way to... To the north of you, looks like. Yes, start going north.”</li></ul>",
-    "zh": "<ul><li>“让我看看，我有……是的，正在路上。看起来它会飞向……东北。是的，开始往东北走。”</li><li>“派出一架吊舱，奇袭者。看起来它正飞向……你的东边。是的，它往东去了。”</li><li>“让我看看能做什么……好的，朝你那边来了。开始往东南走。”</li><li>“弹道吊舱，正在路上。让我看看它会在……好的，应该会降落在你南边。”</li><li>“收到你的信号。吊舱已经起飞，然后……让我看看……正向你的西南方向飞去。重复：你的西南方向。”</li><li>“它朝你那边去了，奇袭者。飞行路径看起来不错。应该会降落在你西边。”</li><li>“让我们送你回家，奇袭者。有一架吊舱正朝你那边去。应该很快就到——想赶上它的话就往西北走。”</li><li>“呼叫已收到。弹道吊舱正在飞往……看起来是你北边。是的，开始往北走。”</li></ul>"
+    "zh": "<ul><li>“让我看看，我这里有……好的，正在路上。看起来它会飞向……东北方。没错，开始往东北方向走。”</li><li>“奇袭者，正在为你发送吊舱。看起来它的落点在你……东边。没错，会落在东边。”</li><li>“让我看看能做什么……好，正在朝你那边去。开始往东南方向走。”</li><li>“弹道吊舱，正在路上。让我看看它会落在……好的，应该会降落在你的南边。”</li><li>“收到你的信号。吊舱已经起飞，而且……让我看看……正前往你的西南方。重复：你的西南方。”</li><li>“奇袭者，它正朝你那边去。飞行路径看起来不错。应该会降落在你的西边。”</li><li>“奇袭者，让我们送你回家。有一架吊舱正朝你那边去。应该很快就到——想赶上它就往西北方走。”</li><li>“呼叫已收到。弹道吊舱正在前往……看起来是你北边。没错，开始向北走。”</li></ul>"
    },
    {
     "type": "html",
     "en": "<h2><strong>Category B - Original</strong></h2>",
-    "zh": "<h2><strong>B 类——原创台词</strong></h2>"
+    "zh": "<h2><strong>B类——原创台词</strong></h2>"
    },
    {
     "type": "html",
     "en": "<p>Write and record your own original extraction operator line in accordance with the guidance below. You can use the lines in category A as inspiration:</p>",
-    "zh": "<p>根据以下指引，撰写并录制你自己的原创撤离操作员台词。你可以参考 A 类台词寻找灵感：</p>"
+    "zh": "<p>按照以下指引，撰写并录制你自己的原创撤离操作员台词。你可以参考A类台词寻找灵感：</p>"
    },
    {
     "type": "html",
     "en": "<p>What your character knows: </p>",
-    "zh": "<p>你的角色知道的信息：</p>"
+    "zh": "<p>你的角色所知信息：</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>A Raider has requested a Ballistic Gondola, from a specific, known transceiver around Pendola Pass.</li><li>You can roughly predict where the Gondola will land relative to the transceiver’s position, but it’s far from accurate.</li><li>You need to convey to the Raider one of eight compass directions of where the Gondola will land (north, northeast, east, southeast, south, southwest, west, or northwest).</li><li>You do not know which Raider called in the Gondola. More broadly, you do not know the majority of Raiders on a personal level. </li><li>Raiders can not speak to you, nor do you have any eyes on the surface.</li><li>Ballistic Gondolas are a new, experimental technology, so all operators are figuring out how to operate them as they go.</li></ul>",
-    "zh": "<ul><li>一名奇袭者从彭多拉山口附近一个特定的已知收发器请求了弹道吊舱。</li><li>你可以大致预测吊舱相对于收发器位置的降落地点，但远非精确。</li><li>你需要向奇袭者传达吊舱将降落的八个罗盘方向之一（北、东北、东、东南、南、西南、西或西北）。</li><li>你不知道是哪位奇袭者呼叫了吊舱。更广泛地说，你并不认识大多数奇袭者。</li><li>奇袭者无法与你对话，你也看不到地表的情况。</li><li>弹道吊舱是一项全新的实验性技术，所有操作员都在摸索如何操作。</li></ul>"
+    "zh": "<ul><li>一名奇袭者通过彭多拉山口附近一个特定的已知收发器请求了一架弹道吊舱。</li><li>你能大致预测吊舱相对于收发器位置的降落地点，但远远谈不上精确。</li><li>你需要向奇袭者传达吊舱将降落的八个罗盘方向之一（北、东北、东、东南、南、西南、西或西北）。</li><li>你不知道是哪位奇袭者呼叫的吊舱。更广泛地说，你并不认识大多数奇袭者。</li><li>奇袭者无法与你对话，你也看不到地表情况。</li><li>弹道吊舱是一项全新的实验性技术，所以所有操作员都在摸索中学习如何操作。</li></ul>"
    },
    {
     "type": "html",
     "en": "<p>Examples of character choices you can make:</p>",
-    "zh": "<p>你可以做出的角色选择示例：</p>"
+    "zh": "<p>你可以做出的角色设定示例：</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>How has today’s shift been so far? Are you stressed; excited; overwhelmed; determined?</li><li>How new are you to the job? Is this your usual role, or are you filling in for someone else?</li><li>How do you feel about Raiders? Do you consider them arrogant and difficult to work with, or do they inspire you?</li></ul>",
-    "zh": "<ul><li>今天的班次目前为止怎么样？你是感到紧张、兴奋、不堪重负，还是意志坚定？</li><li>你对这份工作有多熟悉？这是你的日常岗位，还是你在顶替别人？</li><li>你对奇袭者有什么看法？你觉得他们傲慢难相处，还是他们激励着你？</li></ul>"
+    "zh": "<ul><li>今天的班次到目前为止怎么样？你是感到压力大、兴奋、不堪重负，还是意志坚定？</li><li>你对这份工作有多陌生？这是你的常规岗位，还是你临时顶替别人？</li><li>你对奇袭者有什么看法？你觉得他们傲慢难相处，还是他们激励了你？</li></ul>"
    },
    {
     "type": "html",
@@ -93,7 +93,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<ul><li>Remember, ARC Raiders is set in the future! This means operators do not use contemporary slang.</li><li>Avoid mentioning the weather – the line may be heard in a range of different weather conditions.</li><li>Avoid referencing the presence of specific ARC machines, as this too may vary across rounds.</li><li>Operators never introduce themselves by name.</li><li>Operators are civilians, not Raiders. They do not go Topside themselves, and most of their knowledge is second-hand.</li><li>Of course, operators live inside our game world. This means out-of-game references are strictly forbidden.</li></ul>",
-    "zh": "<ul><li>记住，ARC Raiders 设定在未来！这意味着操作员不会使用当代俚语。</li><li>避免提及天气——台词可能会在各种天气条件下被听到。</li><li>避免提及特定 ARC 机器的存在，因为这在各轮对局中也可能不同。</li><li>操作员从不自报姓名。</li><li>操作员是平民，不是奇袭者。他们自己不会去上层，大多数知识都是二手信息。</li><li>当然，操作员生活在我们游戏世界中。这意味着严禁出现游戏外的引用。</li></ul>"
+    "zh": "<ul><li>请记住，ARC Raiders设定在未来！这意味着操作员不会使用当代俚语。</li><li>避免提及天气——这条台词可能会在各种不同天气条件下被听到。</li><li>避免提及特定ARC机器的存在，因为这在各轮游戏中也会有所不同。</li><li>操作员从不自我介绍姓名。</li><li>操作员是平民，不是奇袭者。他们自己不会去上层，大部分知识都是间接获得的。</li><li>当然，操作员生活在我们的游戏世界中。这意味着严禁出现游戏外的引用。</li></ul>"
    },
    {
     "type": "html",
@@ -103,17 +103,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Your submitted audio clip should be 10 seconds maximum.</p>",
-    "zh": "<p>你提交的音频片段最长不超过 10 秒。</p>"
+    "zh": "<p>你提交的音频片段最长不得超过10秒。</p>"
    },
    {
     "type": "html",
     "en": "<p>Submissions containing the following will be filtered out:</p>",
-    "zh": "<p>包含以下内容的提交将被过滤掉：</p>"
+    "zh": "<p>包含以下内容的提交将被筛除：</p>"
    },
    {
     "type": "html",
     "en": "<ul><li>Hateful and/or political dog whistles, including obscure or local ones.</li><li>Any religious phrases or references</li><li>Any contemporary slang, including ‘clankers’</li><li>Any out-of-fiction references, including:</li><li><ul><li>streamers&#x27; inside jokes or catchphrases</li><li>references to other games </li><li>references to pop culture</li><li>memes and trending audio </li></ul></li><li>Any lines referencing present-day AI developments or culture</li></ul>",
-    "zh": "<ul><li>仇恨性和/或政治性暗语，包括冷门或地方性的。</li><li>任何宗教用语或引用</li><li>任何当代俚语，包括“clankers”</li><li>任何虚构设定之外的引用，包括：</li><li><ul><li>主播的圈内笑话或口头禅</li><li>对其他游戏的引用</li><li>对流行文化的引用</li><li>梗和热门音频</li></ul></li><li>任何提及当今 AI 发展或文化的台词</li></ul>"
+    "zh": "<ul><li>仇恨言论和/或政治暗语，包括隐晦或地方性的暗语。</li><li>任何宗教用语或引用</li><li>任何当代俚语，包括“clankers”</li><li>任何虚构世界之外的引用，包括：</li><li><ul><li>主播的内部梗或口头禅</li><li>对其他游戏的引用</li><li>对流行文化的引用</li><li>梗图和热门音频</li></ul></li><li>任何提及当今AI发展或文化的台词</li></ul>"
    },
    {
     "type": "html",
@@ -123,7 +123,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Upload your 10 second max audio clip submission (WAV Format) here:</p>",
-    "zh": "<p>在此上传你最长 10 秒的音频片段（WAV 格式）：</p>"
+    "zh": "<p>在这里上传你最长10秒的音频片段（WAV格式）：</p>"
    },
    {
     "type": "html",
@@ -133,7 +133,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>For the best chance to be selected, check out this handy guide on how to record audio at home:</p>",
-    "zh": "<p>为了获得最佳入选机会，请查看这份在家录制音频的实用指南：</p>"
+    "zh": "<p>为了获得更高的入选机会，请查看这份在家录制音频的实用指南：</p>"
    },
    {
     "type": "html",
