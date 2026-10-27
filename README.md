@@ -32,7 +32,7 @@ vendor/arcraiders-data   上游游戏数据（git 子模块，停在 1.42；ARC�
 | 内容 | 来源 | 频率 | 上线方式 |
 |---|---|---|---|
 | 地图条件 | arcraiders.com 地图条件页 | 每小时 | 直接提交到 `main` |
-| 官方公告与中文翻译 | arcraiders.com 公告页 | 每天 | 开 "Sync official news" PR，合并后上线 |
+| 官方公告与中文翻译 | arcraiders.com 公告页 | 每天 | 直接提交到 `main` |
 | 互动地图标记 | MetaForge | 每周一 | 开 "Sync map markers" PR |
 | 物品、任务、工坊、计划、技能树 | arctracker.io API、Raider Tools | 每天 | 开 "Sync game data" PR |
 
@@ -41,7 +41,7 @@ vendor/arcraiders-data   上游游戏数据（git 子模块，停在 1.42；ARC�
 - Settings → Secrets and variables → Actions 中添加 `DEEPSEEK_API_KEY`（公告翻译用；没有时公告只有英文）；
 - Settings → Actions → General 中勾选 "Allow GitHub Actions to create and approve pull requests"。
 
-在 `main` 以外的分支手动运行公告同步只算测试：不开 PR，结果作为构件上传。
+在 `main` 以外的分支手动运行公告同步只算测试：不提交到 `main`，结果作为构件上传。
 
 ## 手动更新
 
