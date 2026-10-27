@@ -5,7 +5,7 @@
 #
 # Scheduled runs only start once this file is on the default branch. The PR step
 # needs Settings → Actions → General → "Allow GitHub Actions to create and approve
-# pull requests", the same as the news sync.
+# pull requests".
 
 name: Game data sync
 

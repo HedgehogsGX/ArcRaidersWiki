@@ -1,15 +1,17 @@
 # Checks arcraiders.com once a day and, when there are new or changed posts,
-# opens (or updates) a "Sync official news" pull request for review. The home
+# commits them straight to main, and both hosts redeploy from there. The home
 # page figure is not part of it: scripts/fetch-store-skin.py is run by hand.
 #
+# Like map conditions, this skips the pull request, so new posts go live the day
+# they are fetched instead of waiting for a merge.
+#
 # Needs the repository secret DEEPSEEK_API_KEY for Chinese translations; without
-# it the PR still brings in the English posts. To translate with another
+# it the sync still brings in the English posts. To translate with another
 # OpenAI-compatible provider, set the repository variables TRANSLATE_BASE_URL and
 # TRANSLATE_MODEL and pass its key instead. Scheduled runs only start once this
-# file is on the default branch. The PR step also needs Settings → Actions →
-# General → "Allow GitHub Actions to create and approve pull requests".
+# file is on the default branch.
 #
-# A manual run on any other branch is a test: instead of opening the PR, it
+# A manual run on any other branch is a test: instead of committing to main, it
 # uploads the files it would have changed as the "news-sync" artifact.
 
 name: News sync
@@ -21,7 +23,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: news-sync
@@ -57,20 +58,20 @@ jobs:
             content/news.js
             content/news-zh.json
 
-      - name: Open pull request
+      - name: Commit to main when it changed
         if: github.ref == 'refs/heads/main'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: news-sync
-          delete-branch: true
-          add-paths: |
-            content/news.js
-            content/news-zh.json
-            content/news-img
-          commit-message: Sync official news from arcraiders.com
-          author: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
-          committer: HedgehogsGX <203076171+HedgehogsGX@users.noreply.github.com>
-          title: Sync official news
-          body: |
-            New or updated posts from https://arcraiders.com/news, fetched by the daily News sync workflow.
-            Chinese is translated with the official in-game terms; posts show English until a translation exists.
+        run: |
+          git add content/news.js content/news-zh.json content/news-img
+          if git diff --cached --quiet; then
+            echo "News unchanged."
+            exit 0
+          fi
+          git config user.name HedgehogsGX
+          git config user.email 203076171+HedgehogsGX@users.noreply.github.com
+          git commit --quiet -m "Sync official news from arcraiders.com"
+          # main may have moved since checkout; this job only touches its own files.
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin main && git push --quiet origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1

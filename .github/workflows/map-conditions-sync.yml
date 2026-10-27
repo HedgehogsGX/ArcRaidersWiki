@@ -4,7 +4,7 @@
 # redeploy from there. Most hours nothing changes and nothing is committed; see
 # scripts/fetch-map-conditions.mjs for the rules.
 #
-# Unlike news, this skips the pull request: the schedule is plain data that goes
+# Like news, this skips the pull request: the schedule is plain data that goes
 # stale within a day, so waiting for a review would defeat the sync. Scheduled
 # runs only start once this file is on the default branch.
 
