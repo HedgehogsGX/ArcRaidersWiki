@@ -1,9 +1,10 @@
-# Checks arcraiders.com once a day and, when there are new or changed posts,
+# Checks arcraiders.com every 30 minutes and, when there are new or changed posts,
 # commits them straight to main, and both hosts redeploy from there. The home
 # page figure is not part of it: scripts/fetch-store-skin.py is run by hand.
 #
-# Like map conditions, this skips the pull request, so new posts go live the day
-# they are fetched instead of waiting for a merge.
+# Like map conditions, this skips the pull request, so new posts go live as soon
+# as they are fetched instead of waiting for a merge. Translations are cached and
+# nothing is committed when the news is unchanged, so most runs do no work.
 #
 # Needs the repository secret DEEPSEEK_API_KEY for Chinese translations; without
 # it the sync still brings in the English posts. To translate with another
@@ -18,7 +19,7 @@ name: News sync
 
 on:
   schedule:
-    - cron: '17 3 * * *' # 03:17 UTC daily
+    - cron: '17,47 * * * *' # every 30 minutes; GitHub may start scheduled runs a few minutes late
   workflow_dispatch:
 
 permissions:
