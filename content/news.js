@@ -191,17 +191,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p><strong>How long has it been since the storm that first swept you into Speranza? </strong></p>",
-    "zh": "<p><strong>自从那场风暴第一次把你卷入斯佩兰扎，已经过去了多久？ </strong></p>"
+    "zh": "<p><strong>那场最初将你卷入斯佩兰扎的风暴，距今已经多久了？</strong></p>"
    },
    {
     "type": "html",
     "en": "<p>It’s given you a home, a place to grow, and the tools to become the Raider you were meant to be. With everything Speranza has offered, it’s easy to believe that this is the only kernel of civilization left. </p>",
-    "zh": "<p>它给了你一个家，一个成长的地方，以及成为你注定要成为的奇袭者所需的工具。斯佩兰扎给予的一切，让人很容易相信这是仅存的文明火种。 </p>"
+    "zh": "<p>它给了你一个家、一个成长的地方，以及成为你注定要成为的奇袭者所需的工具。斯佩兰扎给予的一切，让人很容易相信这里是仅存的文明火种。</p>"
    },
    {
     "type": "html",
     "en": "<p>But you’re not just a citizen of Speranza, you’re a citizen of Toledo; a larger collection of neighborhoods that form the only reliable refuge in the Rust Belt. The alliance between Speranza and the other ‘Contradas’ is shaky and transactional, but necessary.</p>",
-    "zh": "<p>但你不只是斯佩兰扎的公民，你还是托雷多的公民；这是一个由多个街区组成的更大集合，构成了锈带中唯一可靠的避难所。斯佩兰扎与其他“城区”之间的联盟脆弱且充满交易色彩，但却是必要的。</p>"
+    "zh": "<p>但你不只是斯佩兰扎的公民，你还是托雷多的公民；这是一个由多个街区组成的更大集合，构成了锈带中唯一可靠的避难所。斯佩兰扎与其他“孔特拉达”之间的联盟脆弱且充满交易色彩，但却是必要的。</p>"
    },
    {
     "type": "image",
@@ -210,17 +210,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The season of Soul’s Offering is upon Toledo, a time when citizens pause to honor the Raiders that came before by building shrines for the fallen. Celeste wants to forge more resilient bonds with the neighboring Contradas at this time of unity, by collecting items to build offerings for each of the neighborhoods: Ferrovia, Murteta, and Vaulto. </p>",
-    "zh": "<p>奉灵节已降临托雷多，这是一个公民们停下脚步、通过为逝者建造神龛来纪念先辈奇袭者的时节。塞莱斯特希望在这个团结的时刻，与邻近城区建立更坚韧的纽带，收集物品为每个街区制作祭品：费罗维亚街区、穆尔泰塔和沃尔托。 </p>"
+    "zh": "<p>奉灵节的时节已经降临托雷多，这是公民们停下脚步，通过为逝者建造神龛来纪念先辈奇袭者的时刻。塞莱斯特希望在这个团结的时刻，与邻近的孔特拉达建立更坚韧的纽带，为此收集物品，为每一个街区——费罗维亚街区、穆尔泰塔和沃尔托——制作祭品。</p>"
    },
    {
     "type": "html",
     "en": "<p>Every Contrada brings something crucial to the security and prosperity of Toledo. But with each neighborhood driven by fiercely conflicting values, managing these relationships is more important than ever.</p>",
-    "zh": "<p>每个城区都为托雷多的安全与繁荣贡献着至关重要的力量。但由于各街区秉持着激烈冲突的价值观，处理这些关系比以往任何时候都更加重要。</p>"
+    "zh": "<p>每一个孔特拉达都为托雷多的安全与繁荣贡献着至关重要的力量。但每个街区都由激烈冲突的价值观驱动，处理这些关系比以往任何时候都更加重要。</p>"
    },
    {
     "type": "html",
     "en": "<p>So who are the various Contradas, and what do they mean for the society of Toledo as a whole?</p>",
-    "zh": "<p>那么，各个城区都是谁，它们对托雷多整体社会意味着什么？</p>"
+    "zh": "<p>那么，各个孔特拉达究竟是谁？它们对整个托雷多社会又意味着什么？</p>"
    },
    {
     "type": "html",
@@ -230,17 +230,17 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The oldest neighborhood of Toledo, your home. Established as an independent settlement after the Second Wave of ARC forced humanity underground, its citizens doggedly pursue a spirit of resilience, ambition, and hope.</p>",
-    "zh": "<p>托雷多最古老的街区，你的家。在第二波ARC浪潮迫使人类转入地下后，它作为独立定居点建立起来，其公民顽强地追求着坚韧、雄心和希望的精神。</p>"
+    "zh": "<p>托雷多最古老的街区，你的家。在第二波ARC浪潮迫使人类转入地下后建立为独立定居点，这里的公民顽强地追求着坚韧、雄心和希望的精神。</p>"
    },
    {
     "type": "html",
     "en": "<p>Neapolitan buildings and infrastructure, swallowed by sinkholes and preserved below the ground. Vaulted glass skylights illuminate the bustling plazas and marketplaces which you’ve seen are as busy as ever.</p>",
-    "zh": "<p>那不勒斯风格的建筑和基础设施，被天坑吞没并保存在地下。拱形玻璃天窗照亮了熙攘的广场和市场，你所见之处一如既往地繁忙。</p>"
+    "zh": "<p>那不勒斯风格的建筑和基础设施，被天坑吞没后保存在地下。拱形玻璃天窗照亮了熙熙攘攘的广场和市场，你已看到这些地方一如既往地繁忙。</p>"
    },
    {
     "type": "html",
     "en": "<p>Speranza is a melting pot, culturally porous and welcoming of strangers. Its open way-of-life cultivates a diversity of Raiders, from fearless warriors to peaceful collectors, but their community-focus and uncodified power structure are frowned upon by some. </p>",
-    "zh": "<p>斯佩兰扎是一个大熔炉，文化上开放包容，欢迎陌生人。其开放的生活方式培育了多样化的奇袭者，从无畏的战士到平和的收藏家，但他们以社区为中心、不成文的权力结构却遭到一些人的非议。 </p>"
+    "zh": "<p>斯佩兰扎是一个大熔炉，文化上开放包容，欢迎陌生人。其开放的生活方式孕育了多样化的奇袭者，从无畏的战士到平和的收集者，但他们以社区为中心、不成文的权力结构却受到一些人的非议。</p>"
    },
    {
     "type": "html",
@@ -250,7 +250,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Frustrated by Speranza’s laissez-faire attitude to societal structure, Murteta prioritizes rules, order, and strict hierarchy. With more rigorous vetting of newcomers and higher standards demanded of residents, Murteta sees itself as the true spine of Toledo. </p>",
-    "zh": "<p>穆尔泰塔对斯佩兰扎在社会结构上的放任态度感到不满，因此优先强调规则、秩序和严格的等级制度。通过对新来者更严格的审查和对居民更高的要求，穆尔泰塔视自己为托雷多真正的脊梁。 </p>"
+    "zh": "<p>由于对斯佩兰扎在社会结构上的放任态度感到沮丧，穆尔泰塔将规则、秩序和严格的等级制度放在首位。对新来者进行更严格的审查，对居民提出更高标准的要求，穆尔泰塔自视为托雷多真正的脊梁。</p>"
    },
    {
     "type": "image",
@@ -259,12 +259,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Made up of structured survivalists, the Contrada asks a lot of those who make it their home, but offers an enviable level of luxury to those that rise in its ranks. </p>",
-    "zh": "<p>这个城区由有组织的生存主义者组成，对那些在此安家的人要求很高，但也为那些在阶层中崛起的人提供了令人艳羡的奢华生活。 </p>"
+    "zh": "<p>这个孔特拉达由有组织的生存主义者组成，对选择在此安家的人要求很高，但为那些在阶层中晋升的人提供了令人艳羡的奢华生活。</p>"
    },
    {
     "type": "html",
     "en": "<p>Celeste has witnessed Murteta’s attitude to the other Contradas continue to harden. She hopes to ease the tension by honoring their fallen Raiders. Help her collect an offering that celebrates their contribution to Toledo’s enduring safety.</p>",
-    "zh": "<p>塞莱斯特目睹了穆尔泰塔对其他城区的态度持续强硬。她希望通过纪念他们逝去的奇袭者来缓和紧张局势。帮她收集一份祭品，以表彰他们对托雷多持久安全所做的贡献。</p>"
+    "zh": "<p>塞莱斯特目睹了穆尔泰塔对其他孔特拉达的态度持续强硬。她希望通过纪念他们逝去的奇袭者来缓解紧张局势。帮助她收集祭品，以赞颂他们为托雷多长久安全所做的贡献。</p>"
    },
    {
     "type": "html",
@@ -274,7 +274,7 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The intellectual heart of Toledo. Founded by the original engineers of the reinvigorated tube network, Ferrovia boasts the most creative and shrewd of Toledo’s citizens. </p>",
-    "zh": "<p>托雷多的智慧中心。由振兴地铁网络的首批工程师创立，费罗维亚街区拥有托雷多最具创造力和精明头脑的公民。 </p>"
+    "zh": "<p>托雷多的智识中心。由重振地铁网络的最初工程师们创立，费罗维亚街区拥有托雷多最具创造力和最精明的公民。</p>"
    },
    {
     "type": "image",
@@ -283,12 +283,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Ferrovia has become a refuge for the gifted… and the devious. Made up of artists, engineers, traders, and smugglers, the neighborhood is a crucible of talent. A renaissance of brilliant minds has flowered in Ferrovia, some of whom were instrumental in building the Ballistic Gondolas. </p>",
-    "zh": "<p>费罗维亚街区已成为天才……以及狡诈之徒的庇护所。这里汇聚了艺术家、工程师、商人和走私者，这个街区是才华的熔炉。杰出思想的复兴在费罗维亚街区绽放，其中一些人曾在建造弹道吊舱中发挥了重要作用。 </p>"
+    "zh": "<p>费罗维亚街区已成为天才……以及狡诈者的避难所。这里聚集了艺术家、工程师、商人和走私者，是才华的熔炉。费罗维亚街区涌现出一批杰出头脑的复兴，其中一些人曾在建造弹道吊舱中发挥了关键作用。</p>"
    },
    {
     "type": "html",
     "en": "<p>Celeste wants to recognize their contribution to opening Pendola Pass, and she needs your help gathering items for their lantern-inspired offering. </p>",
-    "zh": "<p>塞莱斯特希望认可他们为打通彭多拉山口所做的贡献，她需要你帮忙收集物品，制作他们受灯笼启发的祭品。 </p>"
+    "zh": "<p>塞莱斯特希望认可他们为打通彭多拉山口所做的贡献，她需要你帮忙收集物品，制作以灯笼为灵感的祭品。</p>"
    },
    {
     "type": "html",
@@ -297,8 +297,8 @@ window.ARC_NEWS = [
    },
    {
     "type": "html",
-    "en": "<p>Little is known about the Contrada of Vaulto. As Toledo’s most secretive neighborhood, information about what happens inside is limited to whispered stories and hand-written notes</p>",
-    "zh": "<p>关于沃尔托城区，人们知之甚少。作为托雷多最神秘的街区，有关其内部情况的信息仅限于耳语传闻和手写笔记。</p>"
+    "en": "<p>Little is known about the Contrada of Vaulto. As Toledo’s most secretive neighborhood, information about what happens inside is limited to whispered stories and hand-written notes.</p>",
+    "zh": "<p>关于沃尔托这个孔特拉达，人们知之甚少。作为托雷多最神秘的街区，有关其内部情况的信息仅限于耳语相传的故事和手写笔记。</p>"
    },
    {
     "type": "image",
@@ -307,12 +307,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>Regardless, Celeste holds them in high esteem; their sophisticated jamming technology interferes with ARC’s signals and protects Toledo from detection. Raiders from Vaulto are rarely seen on the surface, implying that their Topside expeditions are meticulously planned, efficient, and infrequent. </p>",
-    "zh": "<p>尽管如此，塞莱斯特对他们极为敬重；他们精密的干扰技术能干扰ARC的信号，保护托雷多不被探测。沃尔托的奇袭者很少出现在地表，这意味着他们的上层远征经过精心策划、高效且不频繁。 </p>"
+    "zh": "<p>尽管如此，塞莱斯特对他们评价很高；他们先进的干扰技术能干扰ARC的信号，保护托雷多免受探测。来自沃尔托的奇袭者很少出现在地表，这意味着他们的上层远征经过周密计划、高效且不常进行。</p>"
    },
    {
     "type": "html",
     "en": "<p>What you don’t know <em>can </em>hurt you. At least, that’s what Celeste believes. She wants to form a point of communication with Vaulto, starting with an offering to celebrate their fallen Raiders. </p>",
-    "zh": "<p>你不知道的事<em>确实可能</em>伤害你。至少，塞莱斯特是这么认为的。她希望与沃尔托建立沟通渠道，从献上一份祭品以纪念他们逝去的奇袭者开始。 </p>"
+    "zh": "<p>你不知道的事<em>确实</em>可能会伤害你。至少，塞莱斯特是这样认为的。她希望与沃尔托建立沟通的切入点，从献上祭品以纪念他们逝去的奇袭者开始。</p>"
    },
    {
     "type": "html",
@@ -322,12 +322,12 @@ window.ARC_NEWS = [
    {
     "type": "html",
     "en": "<p>The Soul’s Offering is the perfect opportunity to build goodwill with Speranza’s neighbors, and hopefully, learn more about them. </p>",
-    "zh": "<p>奉灵节是与斯佩兰扎的邻居们建立善意的绝佳机会，或许还能更多地了解他们。 </p>"
+    "zh": "<p>奉灵节是与斯佩兰扎的邻邦建立善意、并有望进一步了解它们的绝佳机会。</p>"
    },
    {
     "type": "html",
     "en": "<p>Unnurtured relationships begin to rot… then they fall apart. In the spirit of tolerance and togetherness, aid Celeste in strengthening the bonds throughout Toledo, before it’s too late. </p>",
-    "zh": "<p>未经培育的关系会开始腐烂……然后分崩离析。本着宽容与团结的精神，帮助塞莱斯特在一切为时已晚之前，加强整个托雷多的纽带。 </p>"
+    "zh": "<p>未经培养的关系会开始腐烂……然后分崩离析。本着宽容与团结的精神，帮助塞莱斯特在托雷多各地加强纽带，趁一切还来得及。</p>"
    }
   ]
  },
