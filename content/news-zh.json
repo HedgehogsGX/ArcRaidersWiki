@@ -1,20 +1,4 @@
 {
-  "collector-set-dlc": {
-    "source": "2a863bc718b563d2",
-    "title": "收藏套装DLC：为霜痕小径整装待发",
-    "blocks": [
-      "<p>奇袭者们，</p>",
-      "<p>霜痕小径已经上线——立即登录，体验全部新内容：新地图、大规模 ARC 行动、新敌人、武器升级、新物品、哨站等等！</p>",
-      null,
-      "<h2>收藏套装DLC</h2>",
-      "<p>想为新边境做好万全准备的奇袭者可以选择收藏套装DLC，其中包含全新外观套装伦佐套装、龙息武器贴花、波波头发型，以及 2,400 枚奇袭者代币。它还附赠一款可摆放在奇袭者哨站的独家复古沙发，并且是获得新乐器班卓琴蓝图的唯一途径。</p>",
-      "<p>收藏套装DLC 还包含霜痕小径高级奖励通行证！高级奖励通行证会解锁新服装的全部高级切换、修改和配色，还包含独家传奇武器贴花、发型，以及总计最多 1,150 枚奇袭者代币。</p>",
-      null,
-      "<p>收藏套装DLC 现已在 <a href=\"https://www.microsoft.com/store/productid/9p76gm1x63vk\" target=\"_blank\" rel=\"noopener\">Xbox</a>、<a href=\"https://store.playstation.com/en-us/product/EP6848-PPSA04998_00-0970183989801781\" target=\"_blank\" rel=\"noopener\">Playstation</a>、<a href=\"https://store.epicgames.com/p/arc-raiders-arc-raiders-frozen-trail-collector-set-e8cd45\" target=\"_blank\" rel=\"noopener\">Epic</a> 和 <a href=\"https://store.steampowered.com/app/5201760/ARC_Raiders__Frozen_Trail_Collector_Set/\" target=\"_blank\" rel=\"noopener\">Steam</a> 上推出，快去亲自看看其中的外观和奖励吧。</p>",
-      "<p>整装出发吧，奇袭者。</p>",
-      "<p>ARC Raiders团队</p>"
-    ]
-  },
   "store-update-2-1-0": {
     "source": "21853f0e6a1896a3",
     "title": "商店更新 2.1.0",
@@ -312,26 +296,26 @@
     ]
   },
   "corsair-collab-exclusive-rewards": {
-    "source": "92277f667891dfeb",
-    "title": "ARC Raiders × CORSAIR：官方外设系列与独家游戏内奖励",
+    "source": "40230bd746fbcce2",
+    "title": "ARC Raiders x CORSAIR：官方装备系列与游戏内独占奖励",
     "blocks": [
       null,
-      "<h2>绝不让撤离失手</h2>",
-      "<p>你是否遇到过这种情况？背包里装满了搜刮来的物资。电梯门打开。你几乎就要安全脱身了。</p>",
-      "<p>然后某个腿多得离谱的东西翻过山脊。你想翻滚闪避，拇指离开摇杆，突然之间……一切都完了。</p>",
-      "<p>接下来你就在斯佩兰扎醒来，少了一套装备，只剩下对“本该如此”的遗憾。</p>",
-      "<p>奇袭第一法则：<em>手指永远不要离开操控装置。</em></p>",
-      "<p>ARC Raiders 与 CORSAIR、SCUF Gaming 和 Elgato 合作，推出专为上层打造的官方装备系列。每件装备都采用奇袭者风格设计，每次购买都能解锁专属游戏内奖励。</p>",
+      "<h2>绝不搞砸撤离</h2>",
+      "<p>你遇到过这种情况吗？包里装满搜刮来的物资。电梯门打开。你眼看就要安全脱身。</p>",
+      "<p>然后一个长着太多条腿的东西翻过山脊。你准备翻滚闪避，拇指离开了摇杆，突然……一切都完了。</p>",
+      "<p>等你回过神来，已经在斯佩兰扎醒来，少了一套装备，只剩下“本可以怎样”的遗憾。</p>",
+      "<p>奇袭的第一条法则：<em>永远别让手指离开操控设备。</em></p>",
+      "<p>ARC Raiders 与 CORSAIR、SCUF Gaming 和 Elgato 联手推出了一套专为上层打造的正版装备系列。每件装备都采用奇袭者风格设计，每次购买都能解锁专属游戏内奖励。</p>",
       null,
-      "<h2>系列包含哪些内容</h2>",
-      "<p>适用于 PlayStation、Xbox 和 PC 的手柄。键盘、鼠标、耳机、两块鼠标垫和一个 Stream Deck。全部采用 ARC Raiders 灵感设计。详情如下：</p>",
-      "<ul><li><strong>SCUF Gaming</strong> – Omega（PS5 和 PC）、Valor Pro Wireless（Xbox 和 PC）、Valor Pro 面板套件，以及 Nemesis Pro 8K（即将推出，PC）。可定制游戏手柄，带背部拨片，让你的拇指永不离开摇杆，扳机在你扣下的瞬间即触发。</li><li><strong>CORSAIR</strong> – CLIPPER PRO MINI 60 键盘、SABRE v2 PRO Wireless MG 鼠标、HS80 RGB WIRELESS 耳机，以及大号和 2XL 两种尺寸的 MM 布面鼠标垫。2XL 款是一张地图。它指向何处……嗯，这正是你需要其余装备的原因。</li><li><strong>Elgato</strong> – Stream Deck MK.2 和配套面板，适合直播、多任务处理并在奇袭期间掌控整个设备的奇袭者。</li></ul>",
-      "<p>数量有限。废品仔不包含在内，但他表示认可。</p>",
+      "<h2>系列包含什么</h2>",
+      "<p>适用于 PlayStation、Xbox 和 PC 的手柄。键盘、鼠标、耳机、两块鼠标垫，以及一个 Stream Deck。全部采用 ARC Raiders 灵感设计。详情如下：</p>",
+      "<ul><li><strong>SCUF Gaming</strong> – Omega（PS5 和 PC）、Valor Pro Wireless（Xbox 和 PC）、Valor Pro 面板套件，以及 Nemesis Pro 8K（PC）。可自定义的游戏手柄，配备背部拨片，让拇指始终不离开摇杆，扳机在你扣动的瞬间即刻触发。</li><li><strong>CORSAIR</strong> – CLIPPER PRO MINI 60 键盘、SABRE v2 PRO Wireless MG 鼠标、HS80 RGB WIRELESS 耳机，以及 Large 和 2XL 两种尺寸的 MM 布面鼠标垫。2XL 款是一张地图。它指向哪里……嗯，这正是你需要其余装备的原因。</li><li><strong>Elgato</strong> – Stream Deck MK.2 和配套面板，适合直播、多任务处理以及在奇袭期间掌控整套设备的奇袭者。</li></ul>",
+      "<p>数量有限。废品仔不包含在内，但他表示赞同。</p>",
       null,
       "<h2>如何获取游戏内奖励</h2>",
-      "<p>从 10 月 29 日起，凡在 corsair.com 官方系列购买合格产品，都将获得一个独特的一次性代码，用于解锁专属游戏内物品。代码可在 PlayStation、Xbox 或 PC 上通过 Embark ID 门户兑换：<a href=\"https://id.embark.games/id/arc-raiders/giveaway\" target=\"_blank\" rel=\"noopener\">https://id.embark.games/id/arc-raiders/giveaway</a>。</p>",
-      "<p>预购于 10 月 29 日开启，恰逢 ARC Raiders 一周年，具体发货日期会有所不同。霜痕小径已上线，锈带有了新前线，而现在你也有了相应的装备。</p>",
-      "<p>查看完整详情、产品供应情况和兑换代码，请访问 <a href=\"https://corsair.com/arc-raiders\" target=\"_blank\" rel=\"noopener\">corsair.com/arc-raiders</a>。</p>",
+      "<p>从 10 月 29 日起，在 corsair.com 官方系列中购买的每一件合格产品，都会附带一个独特的一次性代码，用于解锁专属游戏内物品。代码可在 PlayStation、Xbox 或 PC 上通过 Embark ID 门户兑换：<a href=\"https://id.embark.games/id/arc-raiders/giveaway\" target=\"_blank\" rel=\"noopener\">https://id.embark.games/id/arc-raiders/giveaway</a>。</p>",
+      "<p>预购于 10 月 29 日开启，恰逢 ARC Raiders 一周年纪念，具体发货日期会有所不同。霜痕小径现已上线，锈带有了新边疆，而现在你也有了对应的装备。</p>",
+      "<p>如需查看完整详情、产品供应情况和兑换代码，请访问 <a href=\"https://corsair.com/arc-raiders\" target=\"_blank\" rel=\"noopener\">corsair.com/arc-raiders</a>。</p>",
       "<p><br></p>"
     ]
   },
@@ -387,6 +371,17 @@
       "<p>奇袭者们，为下一年干杯。我们为未来准备了很多计划，希望你们能继续与我们同行。</p>",
       "<p>上层见，</p>",
       "<p>ARC Raiders 团队</p>"
+    ]
+  },
+  "store-update-2-4-0": {
+    "source": "0d34a3102361cf81",
+    "title": "商店更新 2.4.0",
+    "blocks": [
+      null,
+      "<p>奇袭者们！ </p>",
+      "<p>2.4.0 更新现已上线，带来“死神之眼”套装，并修复了装备不同皮肤时奇袭工具显示为默认样式的问题。无需重启！</p>",
+      "<p>提醒一下，我们已恢复每周商店更新、每三周一次修复的常规安排。一如既往，团队正密切关注任何严重问题并持续改进。</p>",
+      "<p>上层见，<br>ARC Raiders 团队</p>"
     ]
   }
 }
