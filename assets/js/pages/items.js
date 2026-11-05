@@ -307,7 +307,6 @@
       ${part('use', g.use)}
       ${part('obtain', g.obtain)}
       ${part('amplified', g.amplified)}
-      ${g.tips && g.tips.length ? html`<h4>${t('items.guide.tips')}</h4><ul class="guide__tips prose">${g.tips.map((tip) => html`<li>${L(tip)}</li>`)}</ul>` : ''}
       <p class="note guide__foot">${t('items.guide.about', { version: g.version })}${hosts.size
         ? html` ${t('items.guide.sources')} ${[...hosts].map(([host, href], n) => html`${n ? ', ' : ''}<a href="${href}" target="_blank" rel="noopener">${host}</a>`)}`
         : ''}</p>
@@ -367,8 +366,7 @@
             ([slot, ids]) => html`<h4>${label('modSlots', slot)}</h4>${chipList(ids.map((id) => [id]))}`
           )
       )}
-      ${section(t('items.compatible'), i.compatible && html`<div class="tags">${i.compatible.map((w) => html`<span class="tag">${L(w)}</span>`)}</div>`)}
-      ${i.tip && !i.guide ? section(t('items.tip'), html`<p class="prose" lang="${i.tip.zh && ARC.lang === 'zh' ? 'zh-CN' : 'en'}">${L(i.tip)}</p>`) : ''}`;
+      ${section(t('items.compatible'), i.compatible && html`<div class="tags">${i.compatible.map((w) => html`<span class="tag">${L(w)}</span>`)}</div>`)}`;
   }
 
   // ---- drawer ------------------------------------------------------------------------
