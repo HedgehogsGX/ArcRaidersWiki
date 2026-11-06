@@ -286,15 +286,14 @@ const items = rawItems.map((i) =>
     ),
     blueprint: i.blueprintLocked,
     questItem: i.questItem,
-    tip: localize(i.tip),
     added: i.addedIn,
   })
 );
 const itemIds = new Set(items.map((i) => i.id));
 
 // ---- guides ----------------------------------------------------------------
-// Player guides written for this site (guides/*.json): what an item is for, how
-// to get it, and advice gathered from the community. A guide covers one or more
+// Player guides written for this site (guides/*.json): what an item is for and how
+// to get it, gathered from the community. A guide covers one or more
 // items (all tiers of a weapon share one); each covered item gets a `guide` id and
 // the text goes to data/guides.js, which the items page loads on demand. Ids of
 // items the game has since removed are skipped, so a data sync never fails on them.

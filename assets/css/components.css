@@ -509,16 +509,6 @@ a.tag:hover {
   margin-top: 16px;
 }
 
-.guide__tips {
-  margin: 0;
-  padding-left: 1.2em;
-  list-style: disc;
-}
-
-.guide__tips li + li {
-  margin-top: 0.4em;
-}
-
 .guide__foot {
   margin-top: 16px;
 }

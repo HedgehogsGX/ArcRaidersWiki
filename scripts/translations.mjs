@@ -61,17 +61,6 @@ export const TEXT = {
     '滚动型ARC中体型最大的一种。会不时停下来发送信号，很少主动攻击，通常会躲开奇袭者。受到伤害时会碎裂成许多块。',
   'Exposes his energy core when shooting his blue beam into the sky.': '向天空发射蓝色光束时会暴露能量核心。',
 
-  // ---- items: tips ---------------------------------------------------------
-
-  'The Hornet Driver is a rare item is dropped by Hornets that can be recycled into crafting materials.':
-    '“马蜂”引擎是击毁马蜂后掉落的稀有物品，可回收为制作材料。',
-  'The Queen Reactor is a legendary item only acquired by defeating The Queen that can be recycled into crafting materials.':
-    '“女王”反应堆是只有击败女王才能获得的传奇物品，可回收为制作材料。',
-  'The Wasp Driver is a rare item is dropped by Wasps that can be recycled into crafting materials.':
-    '“黄蜂”引擎是击毁黄蜂后掉落的稀有物品，可回收为制作材料。',
-  'Wires are an uncommon item used to craft weapon mods that can be recycled into crafting materials.':
-    '导线是罕见物品，用于制作武器改装件，也可回收为制作材料。',
-
   // ---- items: stat values ----------------------------------------------------
 
   'Restores 2 health every 5 seconds. When damage is taken the effect is paused for 30 seconds.':
