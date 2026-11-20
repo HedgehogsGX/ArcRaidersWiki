@@ -1,21 +1,4 @@
 {
-  "frozen-trail-photo-competition": {
-    "source": "7e4a7a57998229b4",
-    "title": "说“别动！”霜痕小径摄影大赛现已开启",
-    "blocks": [
-      "<p>嘿，奇袭者们，</p>",
-      "<p>相机小道具终于来了，随之而来的还有全新的社区摄影比赛…… 不许动！</p>",
-      "<p>我们希望奇袭者们前往上层，拍下霜痕小径更新的最佳照片。捕捉护卫者的恐怖、帝王的腹部，或是彭多拉山口的暴风雪！自拍也欢迎，甚至鼓励哦。</p>",
-      null,
-      "<h2>如何提交照片</h2>",
-      "<p><strong>加入我们的 </strong><a href=\"https://discord.com/channels/1107589599045361695/1560628472773222480\" target=\"_blank\" rel=\"noopener\"><strong>Discord</strong></a><strong> 分享你的照片</strong>！Embark 开发者将选出他们最喜欢的 10 张，每位获胜者将获得<strong> 1,150 奇袭者代币</strong>，可在商店中用于购买外观（甚至新的高级奖励通行证）。获胜者还将获得一个<strong>专属背包挂饰</strong>——即时胶片相机！</p>",
-      "<p>投稿开放时间为 <strong>10 月 16 日至 26 日</strong>，我们迫不及待想透过你们的眼睛看到霜痕小径更新！</p>",
-      "<p>完整条款与细则请<a href=\"https://id.embark.games/arc-raiders/support/faq/284-say-freeze---frozen-trail-community-competition---official-rules/\" target=\"_blank\" rel=\"noopener\">点击此处</a>阅读。</p>",
-      "<p>快拿起相机，上层见！</p>",
-      "<p>ARC Raiders 团队</p>",
-      "<p><br></p>"
-    ]
-  },
   "speranza-security-recruitment": {
     "source": "d856978c3fb9976f",
     "title": "斯佩兰扎安保区招募",
@@ -360,6 +343,20 @@
       "<h2>已知问题</h2>",
       "<ul><li>在彭多拉山口从深空望远镜呼叫补给投放点，可能导致其落在界外。</li><li>在 ARC护卫者地图条件下，晴空天文台的钥匙房在使用钥匙后偶尔仍会保持关闭。</li><li>在 ARC回收者上翻越时，玩家可能被错误地推下。</li><li>玩家贴着地面起飞的 ARC涡轮时，有时可能被卡在涡轮内部。</li><li>在大坝战场，降落在水处理控制中心附近的树上可能导致玩家卡住。</li><li>投掷可投掷物品后反复按鼠标右键，会导致角色在几秒内无法拔出武器。</li><li>对部分玩家来说，万物崩塌之时无法正常完成，因为给发射塔拍照无法正确记录。</li></ul>",
       "<p>上层见，<br>ARC Raiders 团队</p>"
+    ]
+  },
+  "black-friday-sale": {
+    "source": "58c49c0ea37bb0b0",
+    "title": "ARC Raiders 2026黑色星期五：50%折扣的获取地点和时间",
+    "blocks": [
+      "<p>如果你一直在等待进入锈带，2026年的黑色星期五就是整装出发的最佳时机。</p>",
+      "<p>ARC Raiders现已在所有主要平台<strong>五折优惠</strong>（仅限史诗版、豪华版及升级包）。豪华版升级包在参与活动的商店同样享受五折优惠。</p>",
+      "<p>由于各数字商店的黑色星期五活动时间略有不同，请查看以下日期，以免错过你常用平台的优惠窗口：</p>",
+      "<ul><li><strong>PlayStation 5：</strong>活动时间为<strong>11月16日至11月30日（仅基础版）</strong>。<a href=\"https://store.playstation.com/en-us/product/EP6848-PPSA04998_00-4085881659726287\" target=\"_blank\" rel=\"noopener\">在PlayStation Store购买</a></li><li><strong>Epic Games Store：</strong>活动时间为<strong>11月17日至12月1日（豪华版及豪华版升级包）</strong>。<a href=\"https://store.epicgames.com/p/arc-raiders\" target=\"_blank\" rel=\"noopener\">在Epic Games Store购买</a></li><li><strong>Steam：</strong>活动时间为<strong>11月19日至12月3日（基础版、豪华版、升级包）</strong>。<a href=\"https://store.steampowered.com/app/1808500/ARC_Raiders/\" target=\"_blank\" rel=\"noopener\">在Steam购买</a></li><li><strong>Xbox Series X|S：</strong>活动时间为<strong>11月19日至12月3日（基础版、豪华版、升级包）</strong>。<a href=\"https://www.xbox.com/en-US/games/store/arc-raiders/9ndf1f263rz4\" target=\"_blank\" rel=\"noopener\">在Xbox Store购买</a></li></ul>",
+      "<p>游戏支持PC和主机之间的跨平台联机，且<strong>2.7.0实时更新</strong>即将到来，现在正是组队出击、登上上层的最佳时机。</p>",
+      "<p>到时候见！</p>",
+      "<p>ARC Raiders团队</p>",
+      "<p><br></p>"
     ]
   }
 }
